@@ -108,7 +108,7 @@
       <fieldconfig fieldExpr="length" showInResults="false" displayer="/model/sequenceShortDisplayerWithField.jsp" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="chromosome" showInInlineCollection="false" showInSummary="false" />
       <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="true" />
-      <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false" showInHeader="true" showInSummary="true" />
+      <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false"  showInSummary="true" />
     </fields>
     <bagdisplayers>
     </bagdisplayers>
@@ -122,7 +122,9 @@
 
   <class className="org.intermine.model.bio.OntologyTerm">
     <headerconfig>
-      <titles mainTitles="identifier|name" subTitles="ontology.name" />
+      <titles>
+	<title mainTitles="identifier|name" subTitles="ontology.name" />
+      </titles>
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="identifier"/>
