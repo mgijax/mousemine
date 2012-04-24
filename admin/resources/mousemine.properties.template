@@ -86,21 +86,7 @@ feedback.destination=@email.feedback.address@
 resource.path.query.gff3=/query/results/gff3
 resource.path.query.fasta=/query/results/fasta
 
-#the config data for the Postgres Ad-hoc database for source queries
-db.adhoc.datasource.dataSourceName=db.adhoc
-db.adhoc.datasource.maxConnections=3
-db.adhoc.datasource.serverName=adhoc.informatics.jax.org
-db.adhoc.datasource.databaseName=mgd
-#db.adhoc.datasource.user=postgres
-#db.adhoc.datasource.password=H3GjVjrt
-db.adhoc.datasource.user=mgd_public
-db.adhoc.datasource.password=mgdpub
-db.adhoc.datasource.class=org.postgresql.jdbc3.Jdbc3PoolingDataSource
-#db.adhoc.datasource.class=org.postgresql.ds.PGPoolingDataSource
-db.adhoc.driver=org.postgresql.Driver
-db.adhoc.platform=PostgreSQL
-
-intermineHome=/Users/jer/work/intermine
+intermineHome=@intermineHome@
 
 gbrowse.prefix=http://gbrowse.informatics.jax.org/cgi-bin/gbrowse
 gbrowse_image.prefix=http://gbrowse.informatics.jax.org/cgi-bin/gbrowse_img
