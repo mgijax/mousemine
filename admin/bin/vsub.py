@@ -201,12 +201,14 @@ class VSubDriver(object):
         self.options, self.args = self.op.parse_args(args)
 	self.vsub = VSub(self.options.startregex, self.options.nameregex, self.options.endregex)
 	ifd = self.openFile(self.options.inputfile)
+	lines = ifd.readlines()
+	ifd.close()
+	#
 	ofd = self.openFile(self.options.outputfile, 'w')
-	for line in ifd:
+	for line in lines:
 	    if not(len(line.strip()) == 0 or line[0] == "#"):
 		line = self.vsub.vsub(line, self.options.vardefs, self.options.recursive)
 	    ofd.write(line)
-	ifd.close()
 	ofd.close()
 
 if __name__ == "__main__":
