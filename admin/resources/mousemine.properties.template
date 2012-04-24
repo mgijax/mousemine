@@ -55,7 +55,7 @@ webapp.password=@tomcat.login.password@
 webapp.baseurl=http://localhost:8080/mousemine
 
 #where to log errors to
-webapp.logdir=/etc/tomcat6/logs/mousemine.out
+webapp.logdir=@tomcat.log.dir@
 
 # account name for superuser (who can edit appearance and publish templates)
 superuser.account=@superuser.login.user@
