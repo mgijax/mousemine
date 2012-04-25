@@ -1,3 +1,8 @@
+<!DOCTYPE bio [
+<!ENTITY mm_data "@mousemine.dumper.output@">
+<!ENTITY mgi_build "@mgi.build.type@">
+]>
+
 <project type="bio">
 	
   <property name="target.model" value="genomic"/>
@@ -12,42 +17,34 @@
 
     <source name="mgi-mosh" type="mgi-mosh" >
 	<property name="src.data.file" 
-	          value="/Users/motenko/Documents/mouseminedata/output/obo/MOSH.obo"/>
+	          value="&mm_data;/obo/MOSH.obo"/>
     </source>
     <source name="mgi-mp" type="mgi-mp" >
 	<property name="src.data.file" 
-	          value="/Users/motenko/Documents/mouseminedata/output/obo/MammalianPhenotype.obo"/>
+	          value="&mm_data;/obo/MammalianPhenotype.obo"/>
     </source>
     <source name="mgi-go" type="mgi-go" >
 	<property name="src.data.file" 
-	          value="/Users/motenko/Documents/mouseminedata/output/obo/GeneOntology.obo"/>
+	          value="&mm_data;/obo/GeneOntology.obo"/>
     </source>
 <!--
     <source name="mgi-adultmouse" type="mgi-adultmouse" >
 	<property name="src.data.file" 
-	          value="/Users/jer/work/mouseminedata/output/obo/AdultMouseAnatomy.obo"/>
+	          value="&mm_data;/obo/AdultMouseAnatomy.obo"/>
     </source>
 -->
     <source name="so" type="so" dump="true" >
 	<property name="src.data.file" location="../../bio/sources/so/so.obo"/>
     </source>
 
-    <source name="mgi-sample" type="mgi-base" dump="true" >
-	<property name="src.data.dir" value="/Users/motenko/Documents/mouseminedata/output/mgi-sample/"/>
+
+    <source name="mgi-base" type="mgi-base" dump="true" >
+	<property name="src.data.dir" value="&mm_data;/&mgi_build;/"/>
     </source>
 
 <!--
-    <source name="mgi-base" type="mgi-base" dump="true" >
-	<property name="src.data.dir" value="/Users/motenko/Documents/mouseminedata/output/mgi-base/"/>
-    </source>
-
-
-    <source name="mgi-base" type="mgi-base" dump="true" >
-	<property name="src.data.dir" value="/Users/jer/work/mouseminedata/output/mgi-sample/"/>
-    </source>
-
     <source name="ncbi-synblock" type="ncbi-synblock" >
-	<property name="src.data.dir" value="/Users/jer/work/mouseminedata/output/ncbi-synblock/"/>
+	<property name="src.data.dir" value="&mm_data;/ncbi-synblock/"/>
     </source>
 	
     <source name="mgi-gff" type="mgi-gff">
