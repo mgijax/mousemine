@@ -1,0 +1,26 @@
+<items>
+<item id="-1_1" class="Organism">
+<attribute name="commonName" value="house mouse"/>
+<attribute name="genus" value="Mus"/>
+<attribute name="name" value="Mus musculus"/>
+<attribute name="shortName" value="M. musculus"/>
+<attribute name="species" value="musculus"/>
+<attribute name="taxonId" value="10090"/>
+</item>
+<item id="-1_2" class="Organism">
+<attribute name="commonName" value="Norway rat"/>
+<attribute name="genus" value="Rattus"/>
+<attribute name="name" value="Rattus norvegicus"/>
+<attribute name="shortName" value="R. norvegicus"/>
+<attribute name="species" value="norvegicus"/>
+<attribute name="taxonId" value="10116"/>
+</item>
+<item id="-1_3" class="Organism">
+<attribute name="commonName" value="human"/>
+<attribute name="genus" value="Homo"/>
+<attribute name="name" value="Homo sapiens"/>
+<attribute name="shortName" value="H. sapiens"/>
+<attribute name="species" value="sapiens"/>
+<attribute name="taxonId" value="9606"/>
+</item>
+</items>

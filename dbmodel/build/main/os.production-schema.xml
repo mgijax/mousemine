@@ -1,0 +1,1899 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<database name="">
+    <table name="SequenceFeature">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="SequenceFeature_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Publication">
+        <column name="pages" type="LONGVARCHAR"/>
+        <column name="intermine_year" type="INTEGER"/>
+        <column name="volume" type="LONGVARCHAR"/>
+        <column name="issue" type="LONGVARCHAR"/>
+        <column name="pubMedId" type="LONGVARCHAR"/>
+        <column name="mgiId" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="journal" type="LONGVARCHAR"/>
+        <column name="title" type="LONGVARCHAR"/>
+        <column name="firstAuthor" type="LONGVARCHAR"/>
+        <column name="abstractText" type="LONGVARCHAR"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Publication_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="UnclassifiedNcRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="UnclassifiedNcRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="MatchPart">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="matchId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="MatchPart_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ChromosomalDuplication">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ChromosomalDuplication_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="OntologyTerm">
+        <column name="identifier" type="LONGVARCHAR"/>
+        <column name="obsolete" type="BIT"/>
+        <column name="namespace" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="description" type="LONGVARCHAR"/>
+        <column name="ontologyId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="OntologyTerm_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Transgene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Transgene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Exon">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="geneId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Exon_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ReciprocalChromosomalTranslocation">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ReciprocalChromosomalTranslocation_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="CDS">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="geneId" type="INTEGER"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="transcriptId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="proteinId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="CDS_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="MPTerm">
+        <column name="identifier" type="LONGVARCHAR"/>
+        <column name="obsolete" type="BIT"/>
+        <column name="namespace" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="description" type="LONGVARCHAR"/>
+        <column name="ontologyId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="MPTerm_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="UnclassifiedCytogeneticMarker">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="UnclassifiedCytogeneticMarker_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="TRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="TRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ChromosomalTranslocation">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ChromosomalTranslocation_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="TmRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="TmRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="QTL">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="QTL_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ChromosomalInversion">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ChromosomalInversion_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="OtherGenomeFeature">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="OtherGenomeFeature_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="OntologyTermSynonym">
+        <column name="type" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="OntologyTermSynonym_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="SnoRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="SnoRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="LincRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="LincRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="GOTerm">
+        <column name="identifier" type="LONGVARCHAR"/>
+        <column name="obsolete" type="BIT"/>
+        <column name="namespace" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="description" type="LONGVARCHAR"/>
+        <column name="ontologyId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="GOTerm_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="HeritablePhenotypicMarker">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="HeritablePhenotypicMarker_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="GeneSegment">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="geneId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="GeneSegment_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="SOTerm">
+        <column name="identifier" type="LONGVARCHAR"/>
+        <column name="obsolete" type="BIT"/>
+        <column name="namespace" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="description" type="LONGVARCHAR"/>
+        <column name="ontologyId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="SOTerm_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Retrotransposon">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Retrotransposon_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="MRNA">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="proteinId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="geneId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="MRNA_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="NcRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="NcRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Comment">
+        <column name="type" type="LONGVARCHAR"/>
+        <column name="text" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Comment_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Allele">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="alleleType" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="isWildType" type="BIT"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="strainOfOriginId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="featureId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Allele_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="GenotypeAllelePair">
+        <column name="pairState" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="featureId" type="INTEGER"/>
+        <column name="allele2Id" type="INTEGER"/>
+        <column name="allele1Id" type="INTEGER"/>
+        <column name="genotypeId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="GenotypeAllelePair_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="SnRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="SnRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Pseudogene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Pseudogene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Genotype">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="existsAs" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="isConditional" type="BIT"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="note" type="LONGVARCHAR"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="backgroundId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Genotype_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="PolymorphicPseudogene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="PolymorphicPseudogene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ChromosomalDeletion">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ChromosomalDeletion_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Synonym">
+        <column name="intermine_value" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="subjectId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Synonym_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ChromosomeBand">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ChromosomeBand_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Organism">
+        <column name="shortName" type="LONGVARCHAR"/>
+        <column name="taxonId" type="INTEGER"/>
+        <column name="genus" type="LONGVARCHAR"/>
+        <column name="commonName" type="LONGVARCHAR"/>
+        <column name="species" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Organism_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="GOEvidenceCode">
+        <column name="code" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="GOEvidenceCode_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="BACEnd">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="BACEnd_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="FivePrimeUTR">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="geneId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="FivePrimeUTR_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="RRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="RRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ScRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ScRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="PseudogenicExon">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="pseudogenicTranscriptId" type="INTEGER"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="PseudogenicExon_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="YACEnd">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="YACEnd_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Telomere">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Telomere_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="GOEvidence">
+        <column name="inferredFrom" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="codeId" type="INTEGER"/>
+        <column name="annotationId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="GOEvidence_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="OrthologueEvidence">
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="evidenceCodeId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="OrthologueEvidence_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Protein">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="molecularWeight" type="INTEGER"/>
+        <column name="md5checksum" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="primaryAccession" type="LONGVARCHAR"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Protein_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="PseudogenicGeneSegment">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="PseudogenicGeneSegment_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Author">
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Author_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Insertion">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Insertion_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="OrthologueEvidenceCode">
+        <column name="abbreviation" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="OrthologueEvidenceCode_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Ontology">
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="url" type="LONGVARCHAR"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Ontology_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="DataSource">
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="description" type="LONGVARCHAR"/>
+        <column name="url" type="LONGVARCHAR"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="DataSource_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="OntologyAnnotationEvidence">
+        <column name="inferredFrom" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="codeId" type="INTEGER"/>
+        <column name="annotationId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="OntologyAnnotationEvidence_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="DNASegment">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="DNASegment_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="IntergenicRegion">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="IntergenicRegion_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="RNasePRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="RNasePRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="SyntenicRegion">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="partnerId" type="INTEGER"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="SyntenicRegion_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Gene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Gene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="intermine_Match">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="intermine_Match_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ChromosomeStructureVariation">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ChromosomeStructureVariation_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="UnclassifiedGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="UnclassifiedGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="PACEnd">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="PACEnd_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="PiRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="PiRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="OntologyAnnotation">
+        <column name="qualifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="ontologyTermId" type="INTEGER"/>
+        <column name="subjectId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="OntologyAnnotation_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="DataSet">
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="version" type="LONGVARCHAR"/>
+        <column name="description" type="LONGVARCHAR"/>
+        <column name="url" type="LONGVARCHAR"/>
+        <column name="dataSourceId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="DataSet_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="MiRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="MiRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="intermine_Sequence">
+        <column name="md5checksum" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER" required="true"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="residues" type="LONGVARCHAR"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="intermine_Sequence_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="RNaseMRPRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="RNaseMRPRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="PseudogenicTranscript">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="pseudogeneId" type="INTEGER"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="PseudogenicTranscript_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Homologue">
+        <column name="type" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="geneId" type="INTEGER"/>
+        <column name="homologueId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Homologue_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="UnclassifiedOtherGenomeFeature">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="UnclassifiedOtherGenomeFeature_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="StopCodon">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="transcriptId" type="INTEGER"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="CDSId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="StopCodon_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="UTR">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="geneId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="UTR_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Strain">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="strainType" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Strain_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="GRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="GRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="SRPRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="SRPRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="GeneFlankingRegion">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="distance" type="LONGVARCHAR"/>
+        <column name="includeGene" type="BIT"/>
+        <column name="direction" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="geneId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="GeneFlankingRegion_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="StRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="StRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ThreePrimeUTR">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="geneId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ThreePrimeUTR_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="BioEntity">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="BioEntity_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Intron">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Intron_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ChromosomalTransposition">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ChromosomalTransposition_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="TelomeraseRNAGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="TelomeraseRNAGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="OntologyRelation">
+        <column name="relationship" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="redundant" type="BIT"/>
+        <column name="direct" type="BIT"/>
+        <column name="childTermId" type="INTEGER"/>
+        <column name="parentTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="OntologyRelation_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="GOAnnotation">
+        <column name="qualifier" type="LONGVARCHAR"/>
+        <column name="withText" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="withId" type="INTEGER"/>
+        <column name="ontologyTermId" type="INTEGER"/>
+        <column name="subjectId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="GOAnnotation_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Transcript">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="proteinId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="geneId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Transcript_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ComplexClusterRegion">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ComplexClusterRegion_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="DiseaseTerm">
+        <column name="identifier" type="LONGVARCHAR"/>
+        <column name="obsolete" type="BIT"/>
+        <column name="namespace" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="description" type="LONGVARCHAR"/>
+        <column name="ontologyId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="DiseaseTerm_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="SequenceVariant">
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="SequenceVariant_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Minisatellite">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Minisatellite_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="CrossReference">
+        <column name="identifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="subjectId" type="INTEGER"/>
+        <column name="sourceId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="CrossReference_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="PseudogenicRegion">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="PseudogenicRegion_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="ProteinCodingGene">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="ncbiGeneNumber" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="downstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="upstreamIntergenicRegionId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="ProteinCodingGene_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="SequenceCollection">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="SequenceCollection_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Chromosome">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Chromosome_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="Location">
+        <column name="intermine_start" type="INTEGER"/>
+        <column name="intermine_end" type="INTEGER"/>
+        <column name="strand" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="featureId" type="INTEGER"/>
+        <column name="locatedOnId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="Location_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="StartCodon">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="CDSId" type="INTEGER"/>
+        <column name="transcriptId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="StartCodon_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="RobertsonianFusion">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="RobertsonianFusion_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="BindingSite">
+        <column name="secondaryIdentifier" type="LONGVARCHAR"/>
+        <column name="symbol" type="LONGVARCHAR"/>
+        <column name="primaryIdentifier" type="LONGVARCHAR"/>
+        <column name="length" type="INTEGER"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="name" type="LONGVARCHAR"/>
+        <column name="scoreType" type="LONGVARCHAR"/>
+        <column name="score" type="DOUBLE"/>
+        <column name="chromosomeId" type="INTEGER"/>
+        <column name="chromosomeLocationId" type="INTEGER"/>
+        <column name="organismId" type="INTEGER"/>
+        <column name="sequenceId" type="INTEGER"/>
+        <column name="sequenceOntologyTermId" type="INTEGER"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="BindingSite_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="OntologyAnnotationEvidenceCode">
+        <column name="code" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="OntologyAnnotationEvidenceCode_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="InterMineObject">
+        <column name="OBJECT" type="LONGVARCHAR"/>
+        <column name="id" type="INTEGER" required="true"/>
+        <column name="class" type="LONGVARCHAR"/>
+        <unique name="InterMineObject_pkey">
+            <unique-column name="id"/>
+        </unique>
+    </table>
+    <table name="AllelesGenotypes">
+        <column name="Alleles" type="INTEGER" required="true"/>
+        <column name="Genotypes" type="INTEGER" required="true"/>
+    </table>
+    <table name="GenesSequenceVariant">
+        <column name="SequenceVariant" type="INTEGER" required="true"/>
+        <column name="Genes" type="INTEGER" required="true"/>
+    </table>
+    <table name="DataSetsOntologyAnnotation">
+        <column name="OntologyAnnotation" type="INTEGER" required="true"/>
+        <column name="DataSets" type="INTEGER" required="true"/>
+    </table>
+    <table name="OntologyTermRelations">
+        <column name="OntologyTerm" type="INTEGER" required="true"/>
+        <column name="Relations" type="INTEGER" required="true"/>
+    </table>
+    <table name="GeneGoAnnotation">
+        <column name="Gene" type="INTEGER" required="true"/>
+        <column name="GoAnnotation" type="INTEGER" required="true"/>
+    </table>
+    <table name="OntologyAnnotationPublications">
+        <column name="OntologyAnnotation" type="INTEGER" required="true"/>
+        <column name="Publications" type="INTEGER" required="true"/>
+    </table>
+    <table name="DataSetsOntologyTerm">
+        <column name="OntologyTerm" type="INTEGER" required="true"/>
+        <column name="DataSets" type="INTEGER" required="true"/>
+    </table>
+    <table name="AuthorsPublications">
+        <column name="Publications" type="INTEGER" required="true"/>
+        <column name="Authors" type="INTEGER" required="true"/>
+    </table>
+    <table name="CrossReferenceDataSets">
+        <column name="CrossReference" type="INTEGER" required="true"/>
+        <column name="DataSets" type="INTEGER" required="true"/>
+    </table>
+    <table name="OverlappingFeaturesSequenceFeature">
+        <column name="SequenceFeature" type="INTEGER" required="true"/>
+        <column name="OverlappingFeatures" type="INTEGER" required="true"/>
+    </table>
+    <table name="TranscriptsUTRs">
+        <column name="UTRs" type="INTEGER" required="true"/>
+        <column name="Transcripts" type="INTEGER" required="true"/>
+    </table>
+    <table name="OntologyTermSynonyms">
+        <column name="OntologyTerm" type="INTEGER" required="true"/>
+        <column name="Synonyms" type="INTEGER" required="true"/>
+    </table>
+    <table name="DataSetsSynonym">
+        <column name="Synonym" type="INTEGER" required="true"/>
+        <column name="DataSets" type="INTEGER" required="true"/>
+    </table>
+    <table name="IntronsTranscripts">
+        <column name="Introns" type="INTEGER" required="true"/>
+        <column name="Transcripts" type="INTEGER" required="true"/>
+    </table>
+    <table name="DataSetsLocation">
+        <column name="Location" type="INTEGER" required="true"/>
+        <column name="DataSets" type="INTEGER" required="true"/>
+    </table>
+    <table name="AdjacentGenesIntergenicRegion">
+        <column name="IntergenicRegion" type="INTEGER" required="true"/>
+        <column name="AdjacentGenes" type="INTEGER" required="true"/>
+    </table>
+    <table name="BioEntitiesDataSets">
+        <column name="DataSets" type="INTEGER" required="true"/>
+        <column name="BioEntities" type="INTEGER" required="true"/>
+    </table>
+    <table name="GenesProteins">
+        <column name="Proteins" type="INTEGER" required="true"/>
+        <column name="Genes" type="INTEGER" required="true"/>
+    </table>
+    <table name="DataSetsHomologue">
+        <column name="Homologue" type="INTEGER" required="true"/>
+        <column name="DataSets" type="INTEGER" required="true"/>
+    </table>
+    <table name="OrthologueEvidencePublications">
+        <column name="OrthologueEvidence" type="INTEGER" required="true"/>
+        <column name="Publications" type="INTEGER" required="true"/>
+    </table>
+    <table name="OntologyAnnotationEvidencePublications">
+        <column name="OntologyAnnotationEvidence" type="INTEGER" required="true"/>
+        <column name="Publications" type="INTEGER" required="true"/>
+    </table>
+    <table name="OntologyTermParents">
+        <column name="OntologyTerm" type="INTEGER" required="true"/>
+        <column name="Parents" type="INTEGER" required="true"/>
+    </table>
+    <table name="BioEntityPublications">
+        <column name="BioEntity" type="INTEGER" required="true"/>
+        <column name="Publications" type="INTEGER" required="true"/>
+    </table>
+    <table name="GenesIntrons">
+        <column name="Genes" type="INTEGER" required="true"/>
+        <column name="Introns" type="INTEGER" required="true"/>
+    </table>
+    <table name="ExonsTranscripts">
+        <column name="Exons" type="INTEGER" required="true"/>
+        <column name="Transcripts" type="INTEGER" required="true"/>
+    </table>
+    <table name="EvidenceHomologue">
+        <column name="Homologue" type="INTEGER" required="true"/>
+        <column name="Evidence" type="INTEGER" required="true"/>
+    </table>
+    <table name="intermine_metadata">
+        <column name="key" type="LONGVARCHAR"/>
+        <column name="value" type="LONGVARCHAR"/>
+        <column name="blob_value" type="LONGVARBINARY"/>
+    <unique name="intermine_metadata_key">
+        <unique-column name="key"/>
+    </unique>
+    </table>
+    <table name="osbag_int">
+        <column name="bagid" type="INTEGER"/>
+        <column name="value" type="INTEGER"/>
+        <unique name="osbag_int_index1">
+            <unique-column name="bagid"/>
+            <unique-column name="value"/>
+        </unique>
+        <index name="osbag_int_index2">
+            <index-column name="value"/>
+            <index-column name="bagid"/>
+        </index>
+    </table>
+    <table name="clob">
+        <column name="clobid" type="INTEGER"/>
+        <column name="clobpage" type="INTEGER"/>
+        <column name="value" type="LONGVARCHAR"/>
+        <unique name="clob_index">
+            <unique-column name="clobid"/>
+            <unique-column name="clobpage"/>
+        </unique>
+    </table>
+</database>

@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<classes>
+<class name="Allele" extends="SequenceCollection" is-interface="true"></class>
+<class name="BACEnd" extends="SequenceFeature" is-interface="true"></class>
+<class name="BindingSite" extends="SequenceFeature" is-interface="true"></class>
+<class name="CDS" extends="SequenceFeature" is-interface="true">
+	<reference name="transcript" referenced-type="Transcript" reverse-reference="CDSs"/>
+	<collection name="startCodons" referenced-type="StartCodon" reverse-reference="CDS"/>
+	<collection name="stopCodons" referenced-type="StopCodon" reverse-reference="CDS"/>
+</class>
+<class name="ChromosomalDeletion" extends="ChromosomeStructureVariation" is-interface="true"></class>
+<class name="ChromosomalDuplication" extends="ChromosomeStructureVariation" is-interface="true"></class>
+<class name="ChromosomalInversion" extends="ChromosomeStructureVariation" is-interface="true"></class>
+<class name="ChromosomalTranslocation" extends="ChromosomeStructureVariation" is-interface="true"></class>
+<class name="ChromosomalTransposition" extends="ChromosomeStructureVariation" is-interface="true"></class>
+<class name="Chromosome" extends="SequenceFeature" is-interface="true"></class>
+<class name="ChromosomeBand" extends="SequenceFeature" is-interface="true">
+	<reference name="chromosome" referenced-type="Chromosome"/>
+</class>
+<class name="ChromosomeStructureVariation" extends="SequenceCollection" is-interface="true"></class>
+<class name="Exon" extends="SequenceFeature" is-interface="true">
+	<collection name="transcripts" referenced-type="Transcript" reverse-reference="exons"/>
+</class>
+<class name="FivePrimeUTR" extends="UTR" is-interface="true"></class>
+<class name="Gene" extends="SequenceFeature" is-interface="true">
+	<collection name="geneSegments" referenced-type="GeneSegment" reverse-reference="gene"/>
+	<collection name="transcripts" referenced-type="Transcript" reverse-reference="gene"/>
+</class>
+<class name="GeneSegment" extends="SequenceFeature" is-interface="true">
+	<reference name="gene" referenced-type="Gene" reverse-reference="geneSegments"/>
+</class>
+<class name="GRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="HeritablePhenotypicMarker" extends="SequenceFeature" is-interface="true"></class>
+<class name="Insertion" extends="SequenceFeature" is-interface="true"></class>
+<class name="IntergenicRegion" extends="SequenceFeature" is-interface="true"></class>
+<class name="Intron" extends="SequenceFeature" is-interface="true">
+	<collection name="transcripts" referenced-type="Transcript" reverse-reference="introns"/>
+</class>
+<class name="LincRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="Match" extends="SequenceFeature" is-interface="true">
+	<collection name="matchParts" referenced-type="MatchPart" reverse-reference="match"/>
+</class>
+<class name="MatchPart" extends="SequenceFeature" is-interface="true">
+	<reference name="match" referenced-type="Match" reverse-reference="matchParts"/>
+</class>
+<class name="Minisatellite" extends="SequenceFeature" is-interface="true"></class>
+<class name="MiRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="MRNA" extends="Transcript" is-interface="true"></class>
+<class name="NcRNAGene" extends="Gene" is-interface="true"></class>
+<class name="PACEnd" extends="SequenceFeature" is-interface="true"></class>
+<class name="PiRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="ProteinCodingGene" extends="Gene" is-interface="true"></class>
+<class name="Pseudogene" extends="PseudogenicRegion" is-interface="true">
+	<collection name="pseudogenicTranscripts" referenced-type="PseudogenicTranscript" reverse-reference="pseudogene"/>
+</class>
+<class name="PseudogenicExon" extends="PseudogenicRegion" is-interface="true">
+	<reference name="pseudogenicTranscript" referenced-type="PseudogenicTranscript" reverse-reference="pseudogenicExons"/>
+</class>
+<class name="PseudogenicRegion" extends="SequenceFeature" is-interface="true"></class>
+<class name="PseudogenicTranscript" extends="PseudogenicRegion" is-interface="true">
+	<reference name="pseudogene" referenced-type="Pseudogene" reverse-reference="pseudogenicTranscripts"/>
+	<collection name="pseudogenicExons" referenced-type="PseudogenicExon" reverse-reference="pseudogenicTranscript"/>
+</class>
+<class name="QTL" extends="SequenceFeature" is-interface="true"></class>
+<class name="ReciprocalChromosomalTranslocation" extends="ChromosomalTranslocation" is-interface="true"></class>
+<class name="Retrotransposon" extends="SequenceFeature" is-interface="true"></class>
+<class name="RNaseMRPRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="RNasePRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="RobertsonianFusion" extends="ChromosomalTranslocation" is-interface="true"></class>
+<class name="RRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="ScRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="SequenceCollection" is-interface="true"></class>
+<class name="SequenceFeature" is-interface="true"></class>
+<class name="SequenceVariant" is-interface="true"></class>
+<class name="SnoRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="SnRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="SRPRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="StartCodon" extends="SequenceFeature" is-interface="true">
+	<reference name="CDS" referenced-type="CDS" reverse-reference="startCodons"/>
+	<reference name="transcript" referenced-type="Transcript" reverse-reference="startCodons"/>
+</class>
+<class name="StopCodon" extends="SequenceFeature" is-interface="true">
+	<reference name="transcript" referenced-type="Transcript" reverse-reference="stopCodons"/>
+	<reference name="CDS" referenced-type="CDS" reverse-reference="stopCodons"/>
+</class>
+<class name="StRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="SyntenicRegion" extends="SequenceFeature" is-interface="true"></class>
+<class name="TelomeraseRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="Telomere" extends="SequenceFeature" is-interface="true">
+	<reference name="chromosome" referenced-type="Chromosome"/>
+</class>
+<class name="ThreePrimeUTR" extends="UTR" is-interface="true"></class>
+<class name="TmRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="Transcript" extends="SequenceFeature" is-interface="true">
+	<reference name="gene" referenced-type="Gene" reverse-reference="transcripts"/>
+	<collection name="introns" referenced-type="Intron" reverse-reference="transcripts"/>
+	<collection name="exons" referenced-type="Exon" reverse-reference="transcripts"/>
+	<collection name="UTRs" referenced-type="UTR" reverse-reference="transcripts"/>
+	<collection name="CDSs" referenced-type="CDS" reverse-reference="transcript"/>
+	<collection name="stopCodons" referenced-type="StopCodon" reverse-reference="transcript"/>
+	<collection name="startCodons" referenced-type="StartCodon" reverse-reference="transcript"/>
+</class>
+<class name="Transgene" extends="Gene" is-interface="true"></class>
+<class name="TRNAGene" extends="NcRNAGene" is-interface="true"></class>
+<class name="UTR" extends="SequenceFeature" is-interface="true">
+	<collection name="transcripts" referenced-type="Transcript" reverse-reference="UTRs"/>
+</class>
+<class name="YACEnd" extends="SequenceFeature" is-interface="true"></class>
+</classes>
