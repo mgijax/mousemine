@@ -52,7 +52,7 @@ webapp.manager=@tomcat.login.user@
 webapp.password=@tomcat.login.password@
 
 # 'Home' link
-webapp.baseurl=http://localhost:8080/mousemine
+webapp.baseurl=http://localhost:8080
 
 #where to log errors to
 webapp.logdir=@tomcat.log.dir@
