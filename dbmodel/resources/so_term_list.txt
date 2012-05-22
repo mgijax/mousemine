@@ -49,6 +49,7 @@ pseudogenic_transcript
 #point_mutation
 #primer
 QTL
+read
 reciprocal_chromosomal_translocation
 retrotransposon
 rRNA_gene
