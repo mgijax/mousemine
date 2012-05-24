@@ -15,6 +15,10 @@
 
   <sources>
 
+    <source name="mgi-base" type="mgi-base" dump="true" >
+	<property name="src.data.dir" value="&mm_data;/&mgi_build;/"/>
+    </source>
+
     <source name="mgi-mosh" type="mgi-mosh" >
 	<property name="src.data.file" 
 	          value="&mm_data;/obo/MOSH.obo"/>
@@ -38,15 +42,11 @@
     </source>
 
 
-    <source name="mgi-base" type="mgi-base" dump="true" >
-	<property name="src.data.dir" value="&mm_data;/&mgi_build;/"/>
-    </source>
-
-<!--
-    <source name="ncbi-synblock" type="ncbi-synblock" >
-	<property name="src.data.dir" value="&mm_data;/ncbi-synblock/"/>
+    <source name="mgi-synblock" type="mgi-synblock" >
+	<property name="src.data.dir" value="&mm_data;/mgi-synblock/"/>
     </source>
 	
+<!--
     <source name="mgi-gff" type="mgi-gff">
       <property name="gff3.taxonId" value="10090"/>
       <property name="gff3.seqDataSourceName" value="MGI"/>
