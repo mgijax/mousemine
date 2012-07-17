@@ -42,10 +42,6 @@
     </source>
 
 
-    <source name="mgi-synblock" type="mgi-synblock" >
-	<property name="src.data.dir" value="&mm_data;/mgi-synblock/"/>
-    </source>
-	
 <!--
     <source name="mgi-gff" type="mgi-gff">
       <property name="gff3.taxonId" value="10090"/>
