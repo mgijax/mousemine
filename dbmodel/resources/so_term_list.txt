@@ -1,4 +1,4 @@
-allele
+#allele
 BAC_end
 # no idea why I have to include this, but otherwise, I get a compiler error
 binding_site
