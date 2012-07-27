@@ -2,6 +2,8 @@
 # building and running and InterMine.bio warehouse.  Also some configuration
 # of InterMine behaviour.
 
+theme = mousemine
+
 #######################
 # database properties #
 #######################
