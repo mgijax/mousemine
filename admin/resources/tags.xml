@@ -1,0 +1,368 @@
+<tags>
+
+  <tag name="im:aspect:Alleles" objectIdentifier="SequenceFeature.alleles" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Diseases" objectIdentifier="HDisease_MGene" type="template">
+  </tag>
+
+  <tag name="im:aspect:Diseases" objectIdentifier="HGene_HDisease" type="template">
+  </tag>
+
+  <tag name="im:aspect:Diseases" objectIdentifier="HDisease_HGene" type="template">
+  </tag>
+
+  <tag name="im:aspect:Diseases" objectIdentifier="MGene_HDisease" type="template">
+  </tag>
+
+  <tag name="im:aspect:Diseases" objectIdentifier="MAllele_HDisease" type="template">
+  </tag>
+
+  <tag name="im:aspect:Function" objectIdentifier="GO_MGene" type="template">
+  </tag>
+
+  <tag name="im:aspect:Function" objectIdentifier="MGene_GO" type="template">
+  </tag>
+
+  <tag name="im:aspect:Function" objectIdentifier="GO_Publications" type="template">
+  </tag>
+
+  <tag name="im:aspect:Function" objectIdentifier="Publication_GO" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genes" objectIdentifier="GO_MGene" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genes" objectIdentifier="Gene_Ortholog" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Chromosome.features" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Chromosome.transcripts" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Protein.genes" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Transcript.introns" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="CDS.MRNA" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Chromosome.genes" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Gene_particularGoannotation" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="org.intermine.model.bio.Gene" type="class">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="LocatedSequenceFeature.sequence" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Transcript.gene" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Gene.transcripts" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="org.intermine.model.bio.UTR" type="class">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Gene_allGOTerms" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Gene.UTRs" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="Organism_GoTerm_Gene" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="GO_name_Gene" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="MRNA.UTRs" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="org.intermine.model.bio.ChromosomeBand" type="class">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="LocatedSequenceFeature.chromosome" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="org.intermine.model.bio.GOTerm" type="class">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="org.intermine.model.bio.Transcript" type="class">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="org.intermine.model.bio.Chromosome" type="class">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="org.intermine.model.bio.MRNA" type="class">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="LocatedSequenceFeature.chromosomeLocation" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Genomics" objectIdentifier="LocatedSequenceFeature.overlappingFeatures" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Homology" objectIdentifier="Gene_Ortholog" type="template">
+  </tag>
+
+  <tag name="im:aspect:Homology" objectIdentifier="HGene_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:aspect:Literature" objectIdentifier="BioEntity.publications" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Literature" objectIdentifier="GO_Publications" type="template">
+  </tag>
+
+  <tag name="im:aspect:Literature" objectIdentifier="Publication_GO" type="template">
+  </tag>
+
+  <tag name="im:aspect:Phenotypes" objectIdentifier="HGene_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:aspect:Phenotypes" objectIdentifier="MPhenotype_MGene" type="template">
+  </tag>
+
+  <tag name="im:aspect:Phenotypes" objectIdentifier="MGene_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:aspect:Phenotypes" objectIdentifier="MAllele_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="ProteinInteraction.protein" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Gene.proteins" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Protein.features" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Protein.proteinDomains" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Protein.sequence" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="CDS.protein" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="CDS.polypeptides" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Protein_GOtermsSpecificOntology" type="template">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Protein.keywords" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="org.intermine.model.bio.Protein" type="class">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Gene_To_Protein_Type_Converter" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Protein_To_Gene_Type_Converter" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="MGene_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Protein_GOterms" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Organism_GoTerm_GeneWithannotation" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Gene_allGOTerms" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="GO_MGene" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="HDisease_HGene" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="GO_Publications" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Publication_GO" type="template">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="BioEntity.subjects" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="BioEntity.objects" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="Evidence.relations" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="BioEntity.relations" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="BioEntity.organism" type="reference">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="BioEntity.dataSets" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="BioEntity.ontologyAnnotations" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="SequenceFeature.chromosome" type="reference">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="Gene.upstreamIntergenicRegion" type="reference">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="Gene.downstreamIntergenicRegion" type="reference">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="Allele.strainOfOrigin" type="reference">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="Gene.flankingRegions" type="collection">
+  </tag>
+
+  <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.Gene" type="class">
+  </tag>
+
+  <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.OntologyTerm" type="class">
+  </tag>
+
+  <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.Publication" type="class">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Protein_GOtermsSpecificOntology" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Protein_GOterms" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Gene_particularGoannotation" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="GOtermidentifier_name" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Gene_allGOTerms" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Organism_GoTerm_GeneWithannotation" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Organism_GoTerm_Gene" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Gene_Identifiers" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Gene_Ortholog" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="HDisease_HGene" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="HDisease_MGene" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="HGene_HDisease" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="MGene_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="MPhenotype_MGene" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="MQTL_MFeature" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="HGene_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="MGene_GO" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="GO_MGene" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Mouse DNA repair genes" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="MGene_HDisease" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="MAllele_HDisease" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="MAllele_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="GO_Publications" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Publication_GO" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Mouse MicroRNA targets from microRNA.org" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="human cancer genes: a census. Nat Rev Cancer 2004" type="bag">
+  </tag>
+
+  <tag name="im:report" objectIdentifier="MGene_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:report" objectIdentifier="MGene_HDisease" type="template">
+  </tag>
+
+  <tag name="im:report" objectIdentifier="MAllele_HDisease" type="template">
+  </tag>
+
+  <tag name="im:report" objectIdentifier="MAllele_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="MicroarrayOligo.transcript" type="reference">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="RegulatoryRegion.gene" type="reference">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="BioEntity.synonyms" type="collection">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="Gene.publications" type="collection">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="Gene.proteins" type="collection">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="Protein.publications" type="collection">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="Protein.genes" type="collection">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="BindingSite.factor" type="reference">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="Protein.comments" type="collection">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="org.intermine.model.bio.Organism" type="class">
+  </tag>
+
+  <tag name="im:summary" objectIdentifier="BioEntity.organism" type="reference">
+  </tag>
+</tags>
