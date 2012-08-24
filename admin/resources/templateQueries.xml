@@ -41,8 +41,8 @@
 
 <template name="HGene_HDisease" title="Human gene --&gt; Human diseases" comment="">
   <query name="HGene_HDisease" model="genomic" view="Gene.ontologyAnnotations.ontologyTerm.name Gene.ontologyAnnotations.ontologyTerm.identifier Gene.symbol Gene.primaryIdentifier" longDescription="Return human diseases associated with specified human genes." sortOrder="Gene.ontologyAnnotations.ontologyTerm.name asc" constraintLogic="A and B and C">
-    <constraint path="Gene.organism.taxonId" code="C" editable="false" description="" op="=" value="9606"/>
     <constraint path="Gene.ontologyAnnotations.dataSets.name" code="B" editable="false" description="" op="=" value="DiseaseTerm to Human Marker Annotations from MGI"/>
+    <constraint path="Gene.organism.taxonId" code="C" editable="false" description="" op="=" value="9606"/>
     <constraint path="Gene" code="A" editable="true" op="LOOKUP" value="CFTR" extraValue="H. sapiens"/>
   </query>
 </template>
@@ -50,9 +50,9 @@
 
 <template name="HGene_MPhenotype" title="Human gene --&gt; Phenotypes of mouse orthologs" comment="">
   <query name="HGene_MPhenotype" model="genomic" view="Gene.homologues.homologue.alleles.genotypes.ontologyAnnotations.ontologyTerm.name Gene.homologues.homologue.alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier Gene.homologues.homologue.symbol Gene.homologues.homologue.organism.name Gene.homologues.homologue.primaryIdentifier Gene.symbol Gene.organism.name Gene.primaryIdentifier" longDescription="Returns the phenotypes of mice with mutations in the orthologs of the specified human genes." sortOrder="Gene.homologues.homologue.alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier asc" constraintLogic="A and B and C and D">
-    <constraint path="Gene.organism.taxonId" code="D" editable="false" description="" op="=" value="9606"/>
-    <constraint path="Gene.homologues.dataSets.name" code="B" editable="false" description="" op="=" value="Mammalian Orthology Associations from MGI"/>
     <constraint path="Gene.homologues.homologue.alleles.genotypes.ontologyAnnotations.dataSets.name" code="C" editable="false" description="" op="=" value="MPTerm to Mouse Genotype Annotations from MGI"/>
+    <constraint path="Gene.homologues.dataSets.name" code="B" editable="false" description="" op="=" value="Mammalian Orthology Associations from MGI"/>
+    <constraint path="Gene.organism.taxonId" code="D" editable="false" description="" op="=" value="9606"/>
     <constraint path="Gene" code="A" editable="true" op="LOOKUP" value="BMP4" extraValue="H. sapiens"/>
   </query>
 </template>
@@ -60,17 +60,18 @@
 
 <template name="MAllele_HDisease" title="Mouse allele--&gt; Human diseases" comment="">
   <query name="MAllele_HDisease" model="genomic" view="Allele.genotypes.ontologyAnnotations.ontologyTerm.name Allele.genotypes.ontologyAnnotations.ontologyTerm.identifier Allele.symbol Allele.name Allele.id" longDescription="Return human diseases associated with (modeled by) mouse alleles." sortOrder="Allele.genotypes.ontologyAnnotations.ontologyTerm.name asc" constraintLogic="A and B and D">
-    <constraint path="Allele.genotypes.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
     <constraint path="Allele.genotypes.ontologyAnnotations.dataSets.name" code="A" editable="false" description="" op="=" value="DiseaseTerm to Mouse Genotype Annotations from MGI"/>
+    <constraint path="Allele.genotypes.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
     <constraint path="Allele" code="D" editable="true" op="LOOKUP" value="kras*" extraValue=""/>
   </query>
 </template>
 
 
 <template name="MAllele_MPhenotype" title="Mouse allele --&gt; Mouse phenotypes" comment="">
-  <query name="MAllele_MPhenotype" model="genomic" view="Allele.name Allele.genotypes.ontologyAnnotations.ontologyTerm.name Allele.genotypes.ontologyAnnotations.ontologyTerm.identifier Allele.id Allele.symbol" longDescription="Return phenotypes (MP terms) associated with specified mouse alleles." sortOrder="Allele.name asc" constraintLogic="A and C and D">
-    <constraint path="Allele.genotypes.ontologyAnnotations.dataSets.name" code="C" editable="false" description="" op="=" value="MPTerm to Mouse Genotype Annotations from MGI"/>
+  <query name="MAllele_MPhenotype" model="genomic" view="Allele.name Allele.genotypes.ontologyAnnotations.ontologyTerm.name Allele.genotypes.ontologyAnnotations.ontologyTerm.identifier Allele.id Allele.symbol" longDescription="Return phenotypes (MP terms) associated with specified mouse alleles." sortOrder="Allele.name asc" constraintLogic="A and C and D and B">
+    <constraint path="Allele.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
     <constraint path="Allele.genotypes.organism.taxonId" code="A" editable="false" description="" op="=" value="10090"/>
+    <constraint path="Allele.genotypes.ontologyAnnotations.dataSets.name" code="C" editable="false" description="" op="=" value="MPTerm to Mouse Genotype Annotations from MGI"/>
     <constraint path="Allele" code="D" editable="true" op="LOOKUP" value="kras*" extraValue=""/>
   </query>
 </template>
@@ -86,8 +87,8 @@
 
 <template name="MFeature_Publications" title="Mouse features --&gt; Publications" comment="">
   <query name="MFeature_Publications" model="genomic" view="Publication.citation Publication.mgiId Publication.pubMedId" longDescription="Returns publications for specified mouse genes, QTL, etc." sortOrder="Publication.citation desc" constraintLogic="A and B">
-    <constraint path="Publication.bioEntities" editable="false" type="SequenceFeature"/>
     <constraint path="Publication.bioEntities.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
+    <constraint path="Publication.bioEntities" editable="false" type="SequenceFeature"/>
     <constraint path="Publication.bioEntities" code="A" editable="true" op="LOOKUP" value="Hox*" extraValue="M. musculus"/>
   </query>
 </template>
@@ -103,8 +104,8 @@
 
 <template name="MGene_HDisease" title="Mouse gene --&gt; Human diseases" comment="">
   <query name="MGene_HDisease" model="genomic" view="Gene.primaryIdentifier Gene.symbol Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.name" longDescription="Return human diseases associated with (modeled by) mouse genes." sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B and C">
-    <constraint path="Gene.organism.taxonId" code="C" editable="false" description="" op="=" value="10090"/>
     <constraint path="Gene.alleles.genotypes.ontologyAnnotations.dataSets.name" code="B" editable="false" description="" op="=" value="DiseaseTerm to Mouse Genotype Annotations from MGI"/>
+    <constraint path="Gene.organism.taxonId" code="C" editable="false" description="" op="=" value="10090"/>
     <constraint path="Gene" code="A" editable="true" op="LOOKUP" value="Bmp4" extraValue="M. musculus"/>
   </query>
 </template>
@@ -112,8 +113,8 @@
 
 <template name="MGene_MPhenotype" title="Mouse gene --&gt; Mouse phenotypes" comment="">
   <query name="MGene_MPhenotype" model="genomic" view="Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.name Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier Gene.primaryIdentifier Gene.symbol" longDescription="Return phenotypes (MP terms) associated with specified mouse genes." sortOrder="Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier asc" constraintLogic="A and B and C">
-    <constraint path="Gene.organism.taxonId" code="C" editable="false" description="" op="=" value="10090"/>
     <constraint path="Gene.alleles.genotypes.ontologyAnnotations.dataSets.name" code="B" editable="false" description="" op="=" value="MPTerm to Mouse Genotype Annotations from MGI"/>
+    <constraint path="Gene.organism.taxonId" code="C" editable="false" description="" op="=" value="10090"/>
     <constraint path="Gene" code="A" editable="true" op="LOOKUP" value="Fgf8" extraValue="M. musculus"/>
   </query>
 </template>
@@ -122,22 +123,21 @@
 <template name="MPhenotype_MGene" title="Mouse phenotype --&gt; Mouse genes" comment="">
   <query name="MPhenotype_MGene" model="genomic" view="Gene.primaryIdentifier Gene.symbol Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.name" longDescription="Return mouse genes associated with the specified phenotypes (MP terms)." sortOrder="Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.name asc" constraintLogic="B and A">
     <constraint path="Gene.alleles.genotypes.ontologyAnnotations.dataSets.name" code="B" editable="false" description="" op="=" value="MPTerm to Mouse Genotype Annotations from MGI"/>
-    <constraint path="Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.parents" code="A" editable="true" op="LOOKUP" value="*tail morphology*" extraValue=""/>
+    <constraint path="Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.parents" code="A" editable="true" description="Phenotype" op="LOOKUP" value="*tail morphology*" extraValue=""/>
   </query>
 </template>
 
 
 <template name="MQTL_MFeature" title="Mouse QTL --&gt; Overlapping features" comment="">
-  <query name="MQTL_MFeature" model="genomic" view="QTL.overlappingFeatures.symbol QTL.overlappingFeatures.primaryIdentifier QTL.symbol QTL.primaryIdentifier QTL.chromosomeLocation.locatedOn.primaryIdentifier QTL.chromosomeLocation.start QTL.chromosomeLocation.end QTL.chromosomeLocation.strand" longDescription="Returns features that overlap specified mouse QTL." sortOrder="QTL.primaryIdentifier asc" constraintLogic="A and B and C">
+  <query name="MQTL_MFeature" model="genomic" view="QTL.overlappingFeatures.symbol QTL.overlappingFeatures.sequenceOntologyTerm.name QTL.overlappingFeatures.chromosomeLocation.locatedOn.primaryIdentifier QTL.overlappingFeatures.chromosomeLocation.start QTL.overlappingFeatures.chromosomeLocation.end QTL.overlappingFeatures.chromosomeLocation.strand QTL.symbol" longDescription="Returns features that overlap specified mouse QTL." sortOrder="QTL.overlappingFeatures.symbol asc" constraintLogic="A and C">
     <constraint path="QTL.organism.taxonId" code="C" editable="false" description="" op="=" value="10090"/>
-    <constraint path="QTL.overlappingFeatures.primaryIdentifier" code="B" editable="false" description="" op="CONTAINS" value="MGI:"/>
     <constraint path="QTL" code="A" editable="true" op="LOOKUP" value="Brml4" extraValue="M. musculus"/>
   </query>
 </template>
 
 
 <template name="Publication_GO" title="Publication --&gt; Functions (GO terms)" comment="">
-  <query name="Publication_GO" model="genomic" view="GOTerm.identifier GOTerm.name GOTerm.ontologyAnnotations.evidence.publications.pubMedId GOTerm.ontologyAnnotations.evidence.publications.mgiId GOTerm.ontologyAnnotations.evidence.publications.mgiJnum GOTerm.ontologyAnnotations.evidence.publications.citation" longDescription="Returns gene functions (GO terms) reported in specified publication(s)." sortOrder="GOTerm.identifier asc">
+  <query name="Publication_GO" model="genomic" view="GOTerm.name GOTerm.identifier GOTerm.ontologyAnnotations.evidence.publications.citation GOTerm.ontologyAnnotations.evidence.publications.pubMedId GOTerm.ontologyAnnotations.evidence.publications.mgiId GOTerm.ontologyAnnotations.evidence.publications.mgiJnum" longDescription="Returns gene functions (GO terms) reported in specified publication(s)." sortOrder="GOTerm.identifier asc">
     <constraint path="GOTerm.ontologyAnnotations.evidence.publications" editable="true" op="LOOKUP" value="12068289" extraValue=""/>
   </query>
 </template>
