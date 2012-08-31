@@ -1,5 +1,17 @@
 <tags>
 
+  <tag name="im:aspect:Disease" objectIdentifier="HDisease_HGene" type="template">
+  </tag>
+
+  <tag name="im:aspect:Disease" objectIdentifier="HDisease_MGene" type="template">
+  </tag>
+
+  <tag name="im:aspect:Disease" objectIdentifier="HGene_HDisease" type="template">
+  </tag>
+
+  <tag name="im:aspect:Disease" objectIdentifier="MGene_HDisease" type="template">
+  </tag>
+
   <tag name="im:aspect:Function" objectIdentifier="GO_MGene" type="template">
   </tag>
 
@@ -13,12 +25,6 @@
   </tag>
 
   <tag name="im:aspect:Function" objectIdentifier="Gene.goAnnotation" type="collection">
-  </tag>
-
-  <tag name="im:aspect:Genes" objectIdentifier="GO_MGene" type="template">
-  </tag>
-
-  <tag name="im:aspect:Genes" objectIdentifier="Gene_Ortholog" type="template">
   </tag>
 
   <tag name="im:aspect:Genome" objectIdentifier="Chromosome.features" type="collection">
@@ -96,6 +102,15 @@
   <tag name="im:aspect:Genome" objectIdentifier="LocatedSequenceFeature.overlappingFeatures" type="collection">
   </tag>
 
+  <tag name="im:aspect:Genome" objectIdentifier="Lookup_features" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="MQTL_MFeature" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Coords_MFeatures" type="template">
+  </tag>
+
   <tag name="im:aspect:Homology" objectIdentifier="Gene_Ortholog" type="template">
   </tag>
 
@@ -111,19 +126,7 @@
   <tag name="im:aspect:Literature" objectIdentifier="Publication_GO" type="template">
   </tag>
 
-  <tag name="im:aspect:Phenotype" objectIdentifier="HDisease_MGene" type="template">
-  </tag>
-
   <tag name="im:aspect:Phenotype" objectIdentifier="SequenceFeature.alleles" type="collection">
-  </tag>
-
-  <tag name="im:aspect:Phenotype" objectIdentifier="HGene_HDisease" type="template">
-  </tag>
-
-  <tag name="im:aspect:Phenotype" objectIdentifier="HDisease_HGene" type="template">
-  </tag>
-
-  <tag name="im:aspect:Phenotype" objectIdentifier="MGene_HDisease" type="template">
   </tag>
 
   <tag name="im:aspect:Phenotype" objectIdentifier="MAllele_HDisease" type="template">
@@ -139,6 +142,9 @@
   </tag>
 
   <tag name="im:aspect:Phenotype" objectIdentifier="MAllele_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:aspect:Phenotype" objectIdentifier="MQTL_MFeature" type="template">
   </tag>
 
   <tag name="im:converter" objectIdentifier="Gene_To_Protein_Type_Converter" type="template">
@@ -169,6 +175,15 @@
   </tag>
 
   <tag name="im:frontpage" objectIdentifier="Publication_GO" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Lookup_features" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="MQTL_MFeature" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Coords_MFeatures" type="template">
   </tag>
 
   <tag name="im:hidden" objectIdentifier="BioEntity.subjects" type="collection">
@@ -292,6 +307,12 @@
   </tag>
 
   <tag name="im:public" objectIdentifier="human cancer genes: a census. Nat Rev Cancer 2004" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Lookup_features" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Coords_MFeatures" type="template">
   </tag>
 
   <tag name="im:report" objectIdentifier="MGene_MPhenotype" type="template">
