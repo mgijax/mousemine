@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source ~/scripts/doExports.sh
+source ~/buildscripts/doExports.sh
 
 cd ~/intermine/mousemine/integrate
 ant acceptance-tests

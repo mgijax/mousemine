@@ -6,7 +6,7 @@ if [ "${WORKSPACE}" != "" ]
 		ln -s /usr/local/pgsql/dumps dumps
 	fi
 
-	source ~/scripts/doExports.sh		
+	source ~/buildscripts/doExports.sh		
 
 	dropdb mousemine
         createdb mousemine

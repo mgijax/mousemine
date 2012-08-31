@@ -8,7 +8,7 @@ find . -exec touch {} \;
 
 if [ "$1" != "" ]
 then
-	ant default remove-webapp release-webapp -Drelease=$1
+	ant default -Drelease=$1
 else
-	ant default remove-webapp release-webapp
+	ant default
 fi
