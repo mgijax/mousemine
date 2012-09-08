@@ -2,8 +2,9 @@
 
 source ~/buildscripts/doExports.sh
 
+
 cd ~/intermine/mousemine/webapp
-ant clean-all
+ant clean
 find . -exec touch {} \;
 
 if [ "$1" != "" ]
