@@ -2,7 +2,7 @@
 
 
 <template name="Coords_MFeatures" title="Coordinates --&gt; Mouse features" comment="">
-  <query name="Coords_MFeatures" model="genomic" view="SequenceFeature.symbol SequenceFeature.name SequenceFeature.primaryIdentifier SequenceFeature.sequenceOntologyTerm.name SequenceFeature.chromosomeLocation.locatedOn.primaryIdentifier SequenceFeature.chromosomeLocation.start SequenceFeature.chromosomeLocation.end SequenceFeature.chromosomeLocation.strand" longDescription="Returns mouse sequence features that overlap a specified coordinate range. (See also the Region Search tab.)" sortOrder="SequenceFeature.chromosomeLocation.start asc" constraintLogic="A and B and C and D">
+  <query name="Coords_MFeatures" model="genomic" view="SequenceFeature.symbol SequenceFeature.name SequenceFeature.primaryIdentifier SequenceFeature.sequenceOntologyTerm.name SequenceFeature.chromosomeLocation.locatedOn.primaryIdentifier SequenceFeature.chromosomeLocation.start SequenceFeature.chromosomeLocation.end SequenceFeature.chromosomeLocation.strand" longDescription="Returns mouse sequence features contained within a specified coordinate range. &lt;br&gt;&lt;strong&gt;(See also the &lt;a href=&quot;genomicRegionSearch.do&quot;&gt;Region Search&lt;/a&gt; tab.)&lt;/strong&gt;" sortOrder="SequenceFeature.chromosomeLocation.start asc" constraintLogic="A and B and C and D">
     <constraint path="SequenceFeature.chromosomeLocation.locatedOn" editable="false" type="Chromosome"/>
     <constraint path="SequenceFeature.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
     <constraint path="SequenceFeature.chromosomeLocation.locatedOn.primaryIdentifier" code="A" editable="true" description="" op="=" value="1"/>
@@ -71,8 +71,8 @@
 
 <template name="Lookup_features" title="STRING --&gt; Mouse features" comment="">
   <query name="Lookup_features" model="genomic" view="SequenceFeature.symbol SequenceFeature.name SequenceFeature.primaryIdentifier SequenceFeature.sequenceOntologyTerm.name SequenceFeature.locations.locatedOn.primaryIdentifier SequenceFeature.locations.start SequenceFeature.locations.end SequenceFeature.locations.strand" longDescription="Return mouse genome features that match a specified string. (ID, symbol, name, synonym)." sortOrder="SequenceFeature.symbol asc" constraintLogic="A and B">
-    <constraint path="SequenceFeature" code="A" editable="true" op="LOOKUP" value="Fgf4, Hoxa*, MGI:96677" extraValue="M. musculus"/>
     <constraint path="SequenceFeature.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
+    <constraint path="SequenceFeature" code="A" editable="true" op="LOOKUP" value="Fgf4, Hoxa*, MGI:96677" extraValue="M. musculus"/>
   </query>
 </template>
 
