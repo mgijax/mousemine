@@ -108,7 +108,7 @@
   <tag name="im:aspect:Genome" objectIdentifier="MQTL_MFeature" type="template">
   </tag>
 
-  <tag name="im:aspect:Genome" objectIdentifier="Coords_MFeatures" type="template">
+  <tag name="im:aspect:Genome" objectIdentifier="Coords_Features" type="template">
   </tag>
 
   <tag name="im:aspect:Homology" objectIdentifier="Gene_Ortholog" type="template">
@@ -124,6 +124,12 @@
   </tag>
 
   <tag name="im:aspect:Literature" objectIdentifier="Publication_GO" type="template">
+  </tag>
+
+  <tag name="im:aspect:Literature" objectIdentifier="MFeature_Publication" type="template">
+  </tag>
+
+  <tag name="im:aspect:Literature" objectIdentifier="Publication_MFeature" type="template">
   </tag>
 
   <tag name="im:aspect:Phenotype" objectIdentifier="SequenceFeature.alleles" type="collection">
@@ -183,7 +189,13 @@
   <tag name="im:frontpage" objectIdentifier="MQTL_MFeature" type="template">
   </tag>
 
-  <tag name="im:frontpage" objectIdentifier="Coords_MFeatures" type="template">
+  <tag name="im:frontpage" objectIdentifier="Coords_Features" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="MFeature_Publication" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Publication_MFeature" type="template">
   </tag>
 
   <tag name="im:hidden" objectIdentifier="BioEntity.subjects" type="collection">
@@ -312,7 +324,13 @@
   <tag name="im:public" objectIdentifier="Lookup_features" type="template">
   </tag>
 
-  <tag name="im:public" objectIdentifier="Coords_MFeatures" type="template">
+  <tag name="im:public" objectIdentifier="Coords_Features" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="MFeature_Publication" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Publication_MFeature" type="template">
   </tag>
 
   <tag name="im:report" objectIdentifier="MGene_MPhenotype" type="template">
