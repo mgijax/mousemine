@@ -12,7 +12,10 @@
   <tag name="im:aspect:Disease" objectIdentifier="MGene_HDisease" type="template">
   </tag>
 
-  <tag name="im:aspect:Function" objectIdentifier="GO_MGene" type="template">
+  <tag name="im:aspect:Disease" objectIdentifier="Lookup_HDisease" type="template">
+  </tag>
+
+  <tag name="im:aspect:Disease" objectIdentifier="HDisease_Publications" type="template">
   </tag>
 
   <tag name="im:aspect:Function" objectIdentifier="MGene_GO" type="template">
@@ -25,6 +28,12 @@
   </tag>
 
   <tag name="im:aspect:Function" objectIdentifier="Gene.goAnnotation" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Function" objectIdentifier="GO_MFeatures" type="template">
+  </tag>
+
+  <tag name="im:aspect:Function" objectIdentifier="Lookup_GO" type="template">
   </tag>
 
   <tag name="im:aspect:Genome" objectIdentifier="Chromosome.features" type="collection">
@@ -102,13 +111,13 @@
   <tag name="im:aspect:Genome" objectIdentifier="LocatedSequenceFeature.overlappingFeatures" type="collection">
   </tag>
 
-  <tag name="im:aspect:Genome" objectIdentifier="Lookup_features" type="template">
-  </tag>
-
   <tag name="im:aspect:Genome" objectIdentifier="MQTL_MFeature" type="template">
   </tag>
 
   <tag name="im:aspect:Genome" objectIdentifier="Coords_Features" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Lookup_Features" type="template">
   </tag>
 
   <tag name="im:aspect:Homology" objectIdentifier="Gene_Ortholog" type="template">
@@ -153,6 +162,9 @@
   <tag name="im:aspect:Phenotype" objectIdentifier="MQTL_MFeature" type="template">
   </tag>
 
+  <tag name="im:aspect:Phenotype" objectIdentifier="Lookup_MPhenotype" type="template">
+  </tag>
+
   <tag name="im:converter" objectIdentifier="Gene_To_Protein_Type_Converter" type="template">
   </tag>
 
@@ -171,9 +183,6 @@
   <tag name="im:frontpage" objectIdentifier="Gene_allGOTerms" type="template">
   </tag>
 
-  <tag name="im:frontpage" objectIdentifier="GO_MGene" type="template">
-  </tag>
-
   <tag name="im:frontpage" objectIdentifier="HDisease_HGene" type="template">
   </tag>
 
@@ -181,9 +190,6 @@
   </tag>
 
   <tag name="im:frontpage" objectIdentifier="Publication_GO" type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="Lookup_features" type="template">
   </tag>
 
   <tag name="im:frontpage" objectIdentifier="MQTL_MFeature" type="template">
@@ -196,6 +202,24 @@
   </tag>
 
   <tag name="im:frontpage" objectIdentifier="Publication_MFeature" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="GO_MFeatures" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Lookup_Features" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Lookup_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Lookup_GO" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Lookup_HDisease" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="HDisease_Publications" type="template">
   </tag>
 
   <tag name="im:hidden" objectIdentifier="BioEntity.subjects" type="collection">
@@ -294,9 +318,6 @@
   <tag name="im:public" objectIdentifier="MGene_GO" type="template">
   </tag>
 
-  <tag name="im:public" objectIdentifier="GO_MGene" type="template">
-  </tag>
-
   <tag name="im:public" objectIdentifier="Mouse DNA repair genes" type="bag">
   </tag>
 
@@ -321,9 +342,6 @@
   <tag name="im:public" objectIdentifier="human cancer genes: a census. Nat Rev Cancer 2004" type="bag">
   </tag>
 
-  <tag name="im:public" objectIdentifier="Lookup_features" type="template">
-  </tag>
-
   <tag name="im:public" objectIdentifier="Coords_Features" type="template">
   </tag>
 
@@ -331,6 +349,33 @@
   </tag>
 
   <tag name="im:public" objectIdentifier="Publication_MFeature" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="DNA repair genes - Mon Sep 10 2012" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="OntologyTerm list - Sat Sep 08 2012 (1)" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="SequenceFeature list - Fri Sep 07 2012" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="GO_MFeatures" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Lookup_Features" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Lookup_GO" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Lookup_MPhenotype" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Lookup_HDisease" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="HDisease_Publications" type="template">
   </tag>
 
   <tag name="im:report" objectIdentifier="MGene_MPhenotype" type="template">
