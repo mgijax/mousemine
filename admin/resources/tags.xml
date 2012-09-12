@@ -1,6 +1,4 @@
-<tags>
-
-  <tag name="im:aspect:Disease" objectIdentifier="HDisease_HGene" type="template">
+me="im:aspect:Disease" objectIdentifier="HDisease_HGene" type="template">
   </tag>
 
   <tag name="im:aspect:Disease" objectIdentifier="HDisease_MGene" type="template">
@@ -352,9 +350,6 @@
   </tag>
 
   <tag name="im:public" objectIdentifier="DNA repair genes - Mon Sep 10 2012" type="bag">
-  </tag>
-
-  <tag name="im:public" objectIdentifier="OntologyTerm list - Sat Sep 08 2012 (1)" type="bag">
   </tag>
 
   <tag name="im:public" objectIdentifier="SequenceFeature list - Fri Sep 07 2012" type="bag">
