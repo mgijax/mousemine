@@ -22,6 +22,10 @@ if [ "${WORKSPACE}" != "" ]
 
 	createdb -T template0 mousemine
 	pg_restore -d mousemine -U postgres ${WORKSPACE}/dumps/mm-dump.final
+
+	cd ~/intermine/mousemine/webapp
+	ant precompute-templates
+
 else
 	echo "script requires jenkins param WORKSPACE to be set."
 	exit 99

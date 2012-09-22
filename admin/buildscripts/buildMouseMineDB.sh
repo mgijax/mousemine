@@ -13,8 +13,12 @@ if [ "${WORKSPACE}" != "" ]
 
 	python ~/intermine/mousemine/admin/bin/vsub.py -i ~/intermine/mousemine/admin/resources/project.xml.template -v ~/.intermine/vsub.properties -o ~/intermine/mousemine/project.xml  --define=mgi.build.type=mgi-base
 
-	cd ~jenkins/intermine/mousemine
+	cd ~/intermine/mousemine
 	../bio/scripts/project_build -b -v localhost ${WORKSPACE}/dumps/mm-dump
+
+	cd ~/intermine/mousemine/webapp
+	ant precompute-templates
+
 else
 	echo "script requires jenkins param WORKSPACE to be set."
 	exit 99
