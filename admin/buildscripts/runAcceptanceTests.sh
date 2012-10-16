@@ -11,5 +11,7 @@ then
 elif [ "$RESULT" != 0 ]
 then
 	echo "Acceptance testing failed."
+	cp build/acceptance_test.html ${WORKSPACE}
+	echo "${JENKINS_URL}job/${JOB_NAME}/ws/acceptance_test.html"
 	exit 99
 fi
