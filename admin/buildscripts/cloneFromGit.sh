@@ -11,10 +11,15 @@ do
     esac
 done
 
-if [ $GIT_REPO = "" OR $CLONE_PATH = "" ]
+if [[ $GIT_REPO = "" || $CLONE_PATH = "" ]]
 then
     echo "Script requires parameters for repository and clone path"
     exit 99
+fi
+
+if [$CLONE_PATH = `pwd`]
+then
+    cd ..
 fi
 
 rm -fR $CLONE_PATH
