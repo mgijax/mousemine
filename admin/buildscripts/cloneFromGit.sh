@@ -17,7 +17,7 @@ then
     exit 99
 fi
 
-if [$CLONE_PATH = `pwd`]
+if [ $CLONE_PATH = `pwd` ]
 then
     cd ..
 fi
