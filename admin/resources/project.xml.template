@@ -1,6 +1,5 @@
 <!DOCTYPE bio [
 <!ENTITY mm_data "@mousemine.dumper.output@">
-<!ENTITY mgi_build "@mgi.build.type@">
 ]>
 
 <project type="bio">
@@ -19,7 +18,7 @@
          This source also defines all data model extensions for mousemine.
 	 -->
     <source name="mgi-base" type="mgi-base" >
-	<property name="src.data.dir" value="&mm_data;/&mgi_build;/"/>
+	<property name="src.data.dir" value="&mm_data;/mgi-base/"/>
     </source>
 
     <!-- The MEDIC disease ontology. (The name "MOSH" is historic.) -->
