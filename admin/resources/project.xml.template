@@ -21,10 +21,10 @@
 	<property name="src.data.dir" value="&mm_data;/mgi-base/"/>
     </source>
 
-    <!-- The MEDIC disease ontology. (The name "MOSH" is historic.) -->
-    <source name="mgi-mosh" type="mgi-mosh" >
+    <!-- The MEDIC disease ontology.  -->
+    <source name="mgi-medic" type="mgi-medic" >
 	<property name="src.data.file" 
-	          value="&mm_data;/obo/MOSH.obo"/>
+	          value="&mm_data;/obo/MEDIC.obo"/>
     </source>
 
     <!-- The Mammalian Phenotype ontology. -->
