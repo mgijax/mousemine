@@ -11,8 +11,6 @@ if [ "${WORKSPACE}" != "" ]
 	dropdb mousemine
         createdb mousemine
 
-	python ~/intermine/mousemine/admin/bin/vsub.py -i ~/intermine/mousemine/admin/resources/project.xml.template -v ~/.intermine/vsub.properties -o ~/intermine/mousemine/project.xml
-
 	cd ~/intermine/mousemine
 	../bio/scripts/project_build -b -v localhost ${WORKSPACE}/dumps/mm-dump
 
