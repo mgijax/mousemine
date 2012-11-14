@@ -42,8 +42,10 @@ PAC_end
 #PCR_product
 piRNA_gene
 protein_coding_gene
+polymorphic_pseudogene
 pseudogene
 pseudogenic_exon
+pseudogenic_gene_segment
 pseudogenic_region
 pseudogenic_transcript
 #point_mutation
