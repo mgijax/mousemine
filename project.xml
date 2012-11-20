@@ -1,5 +1,5 @@
 <!DOCTYPE bio [
-<!ENTITY mm_data "/var/lib/jenkins/jobs/Load_Build_Dumper/workspace/output">
+<!ENTITY mm_data "/home/motenko/dumper/output">
 ]>
 
 <project type="bio">
@@ -24,7 +24,7 @@
     <!-- The MEDIC disease ontology.  -->
     <source name="mgi-medic" type="mgi-medic" >
 	<property name="src.data.file" 
-	          value="&mm_data;/obo/MEDIC.obo"/>
+	          value="&mm_data;/obo/MEDIC_plusMgiOmim.obo"/>
     </source>
 
     <!-- The Mammalian Phenotype ontology. -->
