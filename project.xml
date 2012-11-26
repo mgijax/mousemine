@@ -1,5 +1,5 @@
 <!DOCTYPE bio [
-<!ENTITY mm_data "/home/motenko/dumper/output">
+<!ENTITY mm_data "/var/lib/jenkins/jobs/Load_Build_Dumper/workspace/output">
 ]>
 
 <project type="bio">
