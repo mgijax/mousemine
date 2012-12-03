@@ -24,7 +24,7 @@
     <!-- The MEDIC disease ontology.  -->
     <source name="mgi-medic" type="mgi-medic" >
 	<property name="src.data.file" 
-	          value="&mm_data;/obo/MEDIC_plusMgiOmim.obo"/>
+	          value="&mm_data;/obo/MEDIC_conflated.obo"/>
     </source>
 
     <!-- The Mammalian Phenotype ontology. -->
