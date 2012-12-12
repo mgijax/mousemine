@@ -1,5 +1,5 @@
 #!/bin/sh
-RESULT=`netstat -na | grep 8080 | awk '{print $7}' | wc -l`
+RESULT=`netstat -na | grep 8080 | grep LISTEN | wc -l`
 if [ "$RESULT" = 0 ] 
 then
 # Start tomcat in logs directory (to ensure intermine.log saved in the logs directory)
