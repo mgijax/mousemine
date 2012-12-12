@@ -5,12 +5,12 @@
 
 CookieFileName=cookies.txt
 
-if [ $INPUT_FILE = 0 ]
+if [ "$INPUT_FILE" = 0 ]
 then
  INPUT_FILE=templateQueries.xml
 fi
 
-if [ $WEBAPP_URL != 0 ]
+if [ "$WEBAPP_URL" != 0 ]
 then
 
 curl --cookie  $CookieFileName --cookie-jar \

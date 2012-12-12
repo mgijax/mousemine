@@ -29,7 +29,7 @@ do
 
 done	
 
-if [ $WEBAPP_URL = 0 ]
+if [ "$WEBAPP_URL" = 0 ]
 then
 	echo "-u must be the URL of the destination webapp." 
 fi

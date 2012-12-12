@@ -2,10 +2,10 @@
 
 . exportParams.sh
 
-if [ $quit = 0 ]
+if [ "$quit" = 0 ]
 then
 
-if [ $OUTPUT_FILE = 0 ]
+if [ "$OUTPUT_FILE" = 0 ]
 then
  OUTPUT_FILE=tags.xml
 fi
