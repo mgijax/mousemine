@@ -8,8 +8,12 @@ if [ "${WORKSPACE}" != "" ]
 
 	source ~/buildscripts/doExports.sh		
 
+	psql -c "select pg_terminate_backend(procpid) from pg_stat_activity where datname='mousemine'";
+
 	dropdb mousemine
         createdb mousemine
+
+	. ~/buildscripts/startTomcat.sh
 
 	cd ~/intermine/mousemine
 	../bio/scripts/project_build -b -v localhost ${WORKSPACE}/dumps/mm-dump
