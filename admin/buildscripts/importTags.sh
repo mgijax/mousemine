@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. importParams.sh
+. `dirname $0`/importParams.sh
 
 
 CookieFileName=cookies.txt

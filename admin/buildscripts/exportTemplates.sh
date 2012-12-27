@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. exportParams.sh
+. `dirname $0`/exportParams.sh
 
 if [ "$quit" = 0 ]
 then
