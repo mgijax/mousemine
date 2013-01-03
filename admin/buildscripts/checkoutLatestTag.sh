@@ -3,7 +3,8 @@
 if [ "$1" != "" ]
 then
     cd $1
-    LATEST_TAG=`git describe --abbrev=0`
+    LATEST_TAG=`git for-each-ref --sort='*authordate' --format='%(refname:short)' refs/tags | grep mousemine | tail -1`
+
     echo "Latest tag is $LATEST_TAG"
     git checkout $LATEST_TAG
 else
