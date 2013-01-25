@@ -18,7 +18,7 @@ $CookieFileName --user-agent Mozilla/4.0 \
 $WEBAPP_URL/loginAction.do? > /dev/null \
 
 
-curl --cookie cookies.txt --user-agent Mozilla/4.0 \
+curl --cookie $CookieFileName --user-agent Mozilla/4.0 \
  --data-urlencode xml@$INPUT_FILE $DELETE \
 $WEBAPP_URL/importTags.do > /dev/null \
 
