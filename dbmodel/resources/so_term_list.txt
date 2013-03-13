@@ -3,7 +3,7 @@
 # no idea why I have to include this, but otherwise, I get a compiler error
 #binding_site
 #cDNA_clone
-#CDS
+CDS
 #CRM
 #chromosomal_deletion
 #chromosomal_duplication
@@ -25,8 +25,8 @@ gene_segment
 #gRNA_gene
 heritable_phenotypic_marker
 insertion
-#intergenic_region
-#intron
+intergenic_region
+intron
 #lincRNA_gene
 #match
 #match_part
@@ -81,7 +81,7 @@ transgene
 transcript
 #transposable_element
 #transposable_element_insertion_site
-#UTR
+UTR
 #YAC_end
 
 # many-to-many part_of relationships (default is many-to-one)
