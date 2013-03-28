@@ -1,0 +1,528 @@
+<webconfig>
+  <class className="org.intermine.model.bio.Allele">
+    <headerconfig>
+      <titles>
+        <title mainTitles="symbol" numberOfMainTitlesToShow="1" subTitles="name"/>
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="symbol" />
+      <fieldconfig fieldExpr="name"/>
+      <fieldconfig fieldExpr="alleleType"/>
+      <fieldconfig fieldExpr="inheritanceMode" showInSummary="false" />
+      <fieldconfig fieldExpr="glTransmission" label="Transmission" showInSummary="false" />
+      <fieldconfig fieldExpr="strainOfOrigin.name" showInSummary="false" label="Strain of Origin"/>
+      <fieldconfig fieldExpr="primaryIdentifier" showInSummary="true"  label="MGI ID" /> <!--  displayer="/model/mgiAlleleLinkDisplayer.jsp"/>  having a displayer prevents the field from appearing the the summary -->
+      <fieldconfig fieldExpr="feature.symbol" showInSummary="false" showInInlineCollection="false" label="Gene" displayer="/model/genelinkdisplayer.jsp" />
+      <fieldconfig fieldExpr="description" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
+      <fieldconfig fieldExpr="molecularNote" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
+    </fields>
+   <inlinelist>
+      <table path="synonyms.value" showInHeader="true" lineLength="200" />
+      <table path="mutations.name" showInHeader="true" lineLength="200" />
+    </inlinelist>
+  </class>
+  
+  <class className="org.intermine.model.bio.CellLine">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" showInSummary="false" showInInlineCollection="false" />
+      <fieldconfig fieldExpr="name" showInSummary="true" showInInlineCollection="true" />
+      <fieldconfig fieldExpr="derivation.parentCellLine.name" showInSummary="true" />
+      <fieldconfig fieldExpr="strain.name" showInSummary="false"/>
+      <fieldconfig fieldExpr="cellLineType" showInSummary="true" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.CellLineDerivation">
+  </class>
+
+  <class className="org.intermine.model.bio.Genotype">
+    <headerconfig>
+      <titles>
+        <title mainTitles="symbol" numberOfMainTitlesToShow="1" />
+      </titles>
+    </headerconfig>
+    <fields>
+	<fieldconfig fieldExpr="symbol" label="Alleles" />
+	<fieldconfig fieldExpr="name" />
+	<fieldconfig fieldExpr="background.name"  label="Background" />
+    </fields>
+  </class>
+  
+  <class className="org.intermine.model.bio.Strain">
+    <fields>
+	<fieldconfig fieldExpr="strainType"/>
+	<fieldconfig fieldExpr="name"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.Author">
+    <fields>
+      <fieldconfig fieldExpr="name"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.BioEntity">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.Chromosome">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier"/>
+      <fieldconfig fieldExpr="organism.name" label="Organism"/>
+      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.Comment">
+    <fields>
+      <fieldconfig fieldExpr="type"/>
+      <fieldconfig fieldExpr="description"/>
+    </fields>
+  </class>
+  <class className="org.intermine.model.bio.CrossReference">
+    <fields>
+      <fieldconfig fieldExpr="identifier"/>
+      <fieldconfig fieldExpr="id" displayer="/model/crossReferenceLinkDisplayer.jsp" label="Link" />
+      <fieldconfig fieldExpr="source.name" />
+      <fieldconfig fieldExpr="source.url" />
+    </fields>
+  </class>
+  <class className="org.intermine.model.bio.DataSet">
+    <fields>
+      <fieldconfig fieldExpr="name"/>
+      <fieldconfig fieldExpr="url" doNotTruncate="true"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.DataSource">
+    <fields>
+      <fieldconfig fieldExpr="name"/>
+      <fieldconfig fieldExpr="url" doNotTruncate="true"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.Gene">
+   <inlinelist>
+      <table path="synonyms.value" showInHeader="true" lineLength="100" />
+    </inlinelist>
+    <bagdisplayers>
+      <displayer src="friendlyMineLinkDisplayer.tile" showOnLeft="false" />
+    </bagdisplayers>
+  </class>
+
+  <class className="org.intermine.model.bio.ProteinCodingGene">
+   <inlinelist>
+      <table path="synonyms.value" showInHeader="true" lineLength="100" />
+    </inlinelist>
+  </class>
+
+ <class className="org.intermine.model.bio.Location">
+    <fields>
+      <fieldconfig fieldExpr="locatedOn.primaryIdentifier" label="chromosome" />
+      <fieldconfig fieldExpr="start"/>
+      <fieldconfig fieldExpr="end"/>
+      <fieldconfig fieldExpr="strand"/>
+    </fields>
+  </class>
+
+
+  <class className="org.intermine.model.bio.SequenceFeature">
+    <headerconfig>
+      <titles>
+        <title mainTitles="symbol" numberOfMainTitlesToShow="1" subTitles="name" />
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" label="ID" />
+      <fieldconfig fieldExpr="symbol"/>
+      <fieldconfig fieldExpr="name" />
+      <fieldconfig fieldExpr="sequenceOntologyTerm.name" label="Type" />
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chromosome" showInInlineCollection="false" showInSummary="false" />
+      <fieldconfig fieldExpr="chromosomeLocation.id" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="true" />
+      <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false"/>
+      <fieldconfig fieldExpr="description" showInInlineCollection="false" doNotTruncate="true" />
+    </fields>
+    <bagdisplayers>
+    </bagdisplayers>
+  </class>
+
+  <class className="org.intermine.model.bio.Ontology">
+    <fields>
+    <fieldconfig fieldExpr="name"/>
+    </fields>
+  </class>
+
+ <!-- Inline lists are not inhereted so each subclass of OntologyTerm needs its own class config -->
+
+  <class className="org.intermine.model.bio.GOTerm">
+  <inlinelist>
+	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
+  </inlinelist>
+  </class>
+
+  <class className="org.intermine.model.bio.MPTerm">
+  <inlinelist>
+	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
+  </inlinelist>
+  </class>
+ 
+  <class className="org.intermine.model.bio.DiseaseTerm">
+  <inlinelist>
+	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
+  </inlinelist>
+  </class>
+  
+  <class className="org.intermine.model.bio.SOTerm">
+  <inlinelist>
+	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
+  </inlinelist>
+  </class>
+  
+<class className="org.intermine.model.bio.OntologyTerm">
+    <headerconfig>
+      <titles>
+	<title mainTitles="identifier|name" subTitles="ontology.name" />
+      </titles>
+    </headerconfig>
+    <inlinelist>
+      <table  path="synonyms.name" showInHeader="true" lineLength="100" />
+    </inlinelist>
+    <fields>
+      <fieldconfig fieldExpr="identifier"/>
+      <fieldconfig fieldExpr="name"/> 
+      <fieldconfig fieldExpr="description" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.OntologyRelation">
+    <fields>
+      <fieldconfig fieldExpr="relationship"/>
+      <fieldconfig fieldExpr="parentTerm.identifier" label="parent" />
+      <fieldconfig fieldExpr="childTerm.identifier" label="child" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.OntologyTermSynonym">
+    <fields>
+      <fieldconfig fieldExpr="name"/>
+      <fieldconfig fieldExpr="type"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.Organism">
+    <fields>
+      <fieldconfig fieldExpr="name"/>
+      <fieldconfig fieldExpr="taxonId" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.Protein">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier"/>
+      <fieldconfig fieldExpr="primaryAccession"/>
+      <fieldconfig fieldExpr="organism.name" label="Organism"/>
+      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+    </fields>
+    <bagdisplayers>
+    </bagdisplayers>
+  </class>
+
+  <class className="org.intermine.model.bio.Publication">
+    <headerconfig>
+      <titles>
+        <title mainTitles="title" />
+      </titles>
+    </headerconfig>
+    <inlinelist>
+      <table path="authors.name" showLinksToObjects="true" />
+    </inlinelist>
+    <fields>
+      <fieldconfig fieldExpr="firstAuthor"/>
+      <fieldconfig fieldExpr="year"/>
+      <fieldconfig fieldExpr="journal"/>
+      <fieldconfig fieldExpr="title"/>
+      <fieldconfig fieldExpr="volume"/>
+      <fieldconfig fieldExpr="issue"/>
+      <fieldconfig fieldExpr="pages"/>
+      <fieldconfig fieldExpr="pubMedId"/>
+      <fieldconfig fieldExpr="mgiId" label="MGI ID" showInSummary="false" displayer="/model/mgiPublicationLinkDisplayer.jsp"/>
+      <fieldconfig fieldExpr="abstractText" doNotTruncate="true"
+                   showInSummary="false" showInResults="false" showInInlineCollection="false"/>
+      <fieldconfig fieldExpr="doi"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.Sequence">
+    <fields>
+      <fieldconfig fieldExpr="residues" fieldExporter="org.intermine.bio.web.export.ResidueFieldExporter"
+                   sectionOnRight="true" sectionTitle="Residues" openByDefault="true"
+                   showInSummary="false" showInResults="false" showInInlineCollection="false"/>
+      <fieldconfig fieldExpr="length"/>
+    </fields>
+    <tabledisplayer src="/model/sequenceShortDisplayer.jsp"/>
+  </class>
+
+  <class className="org.intermine.model.bio.Synonym">
+    <fields>
+      <fieldconfig fieldExpr="value" label="synonym" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.Transcript">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier"/>
+      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+      <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false"/>
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="false" showInSummary="false" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="false" showInSummary="false" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="false" showInSummary="false" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.OntologyAnnotation">
+    <!--
+    <inlinelist>
+      <table path="evidence.code.code" showInHeader="true" lineLength="100" />
+    </inlinelist>
+    -->
+   <fields>
+	<fieldconfig fieldExpr="ontologyTerm.name" label="Term Name"/>
+	<fieldconfig fieldExpr="ontologyTerm.identifier" />
+	<fieldconfig fieldExpr="subject.symbol" label="Subject"/>
+	<fieldconfig fieldExpr="qualifier" label="Qualifier"/>
+	<fieldconfig fieldExpr="subject.symbol"/>
+   </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.IntergenicRegion">
+    <fields>
+        <fieldconfig fieldExpr="id"/>
+	<fieldconfig fieldExpr="length"/>
+	<fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" />
+	<fieldconfig fieldExpr="organism.name" label="Organism" />
+        <fieldconfig fieldExpr="symbol" showInResults="false" showInInlineCollection="false"/>
+	<fieldconfig fieldExpr="name" showInResults="false" showInInlineCollection="false"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.GeneFlankingRegion">
+    <fields>
+        <fieldconfig fieldExpr="id"/>
+	<fieldconfig fieldExpr="length"/>
+	<fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" />
+	<fieldconfig fieldExpr="organism.name" label="Organism" />
+        <fieldconfig fieldExpr="symbol" showInResults="false" showInInlineCollection="false"/>
+	<fieldconfig fieldExpr="name" showInResults="false" showInInlineCollection="false"/> 
+    </fields>
+  </class>
+
+<!-- exporters -->
+  <tableExportConfig id="sequence" className="org.intermine.bio.web.export.SequenceHttpExporter"/>
+  <tableExportConfig id="gff3" className="org.intermine.bio.web.export.GFF3HttpExporter"/>
+  <tableExportConfig id="bed" className="org.intermine.bio.web.export.BEDHttpExporter"/>
+
+<!-- report displayers -->
+<reportdisplayers>
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.SequenceFeatureDisplayer"
+	jspName="model/sequenceFeatureDisplayer.jsp"
+	replacesFields="chromosomeLocation,sequence,length,sequenceOntologyTerm,locations,cytoLocation"
+	placement="Genome"
+	types="SequenceFeature"/>
+
+
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.GBrowseDisplayer"
+	 jspName="model/gbrowseDisplayer.jsp"
+	 replacesFields=""
+	 placement="Genome"
+	 types="SequenceFeature"/>
+
+     <!--
+     <reportdisplayer javaClass="org.intermine.bio.web.displayer.OverlappingFeaturesDisplayer"
+                     jspName="model/overlappingFeaturesDisplayer.jsp"
+                     replacesFields="overlappingFeatures"
+                     placement="Genome"
+                     types="SequenceFeature"/>
+
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.HomologueDisplayer"
+	 jspName="model/homologueDisplayer.jsp"
+	 replacesFields="homologues"
+	 placement="Homology"
+	 parameters="{'dataSets': []}"
+	 types="Gene"/>
+
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.GeneOntologyDisplayer"
+                     jspName="model/geneOntologyDisplayer.jsp"
+                     replacesFields="goAnnotation,ontologyAnnotation"
+                     placement="Function"
+                     types="Gene"/>
+    -->
+
+</reportdisplayers>
+
+<widgets>
+
+ <enrichmentwidgetdisplayer id="medic_enrichment_for_gene"
+    title="Human Disease Enrichment"
+    description="MEDIC terms enriched for items in this list."
+    label="MEDIC Term"
+    startClass="Gene"
+    typeClass="Gene"
+    startClassDisplay="primaryIdentifier"
+    enrich="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
+    enrichIdentifier="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	alleles.genotypes.ontologyAnnotations.dataSets.name = DiseaseTerm to Mouse Genotype Annotations from MGI,
+	alleles.genotypes.ontologyAnnotations.qualifier = null"
+    views="symbol,name,primaryIdentifier,organism.name,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
+    />
+
+ <enrichmentwidgetdisplayer id="mp_enrichment_for_gene"
+    title="Mammalian Phenotype Ontology Enrichment"
+    description="MP terms enriched for items in this list."
+    label="MP Term"
+    startClass="Gene"
+    typeClass="Gene"
+    startClassDisplay="primaryIdentifier"
+    enrich="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
+    enrichIdentifier="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	alleles.genotypes.ontologyAnnotations.dataSets.name = MPTerm to Mouse Genotype Annotations from MGI,
+	alleles.genotypes.ontologyAnnotations.qualifier = null"
+    views="symbol,name,primaryIdentifier,organism.name,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
+    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
+
+ <enrichmentwidgetdisplayer id="go_enrichment_for_gene"
+    title="Gene Ontology Enrichment"
+    description="GO terms enriched for items in this list."
+    label="GO Term"
+    filterLabel="Ontology"
+    filters="biological_process,cellular_component,molecular_function"
+    startClass="Gene"
+    typeClass="Gene"
+    startClassDisplay="primaryIdentifier"
+    enrich="goAnnotation.ontologyTerm.parents.name"
+    enrichIdentifier="goAnnotation.ontologyTerm.parents.identifier"
+    constraints="goAnnotation.ontologyTerm.parents.namespace=[Ontology],organism.name=[list],
+	primaryIdentifier != null, goAnnotation.qualifier = null,
+	goAnnotation.evidence.code.code != ND,
+	goAnnotation.ontologyTerm.parents.identifier != go:0008150,
+	goAnnotation.ontologyTerm.parents.identifier != go:0003674,
+	goAnnotation.ontologyTerm.parents.identifier != go:0005575"
+    views="symbol,name,primaryIdentifier,organism.name,
+	goAnnotation.ontologyTerm.identifier, goAnnotation.ontologyTerm.name,
+	goAnnotation.ontologyTerm.parents.identifier,goAnnotation.ontologyTerm.parents.name"
+    externalLink="http://www.informatics.jax.org/searches/GO.cgi?id="/>
+
+<graphdisplayer id="chromosome_distribution_for_gene"
+    title="Chromosome Distribution"
+    description="Actual: number of items in this list found on each chromosome. Expected: given the total number of items on the chromosome and the number of items in this list, the number of items expected to be found on each chromosome."
+    graphType="ColumnChart"
+    rangeLabel="Count"
+    domainLabel="Chromosome"
+    filterLabel="Organism"
+    filters="organism.name=[list]"
+    startClass="Gene"
+    typeClass="Gene"
+    categoryPath="chromosome.primaryIdentifier"
+    seriesLabels="Actual,Expected"
+    seriesPath="ActualExpectedCriteria"
+    constraints="organism.name=[Organism]"
+    views="primaryIdentifier, symbol, organism.name, chromosome.primaryIdentifier,
+	chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand"/>
+
+<!-- HAVE TO REPLICATE THE WIDGETS FOR EACH CLASS YOU WANT. INHERITANCE DOESN'T WORK. -->
+
+ <enrichmentwidgetdisplayer id="medic_enrichment_for_feature"
+    title="Human Disease Enrichment"
+    description="MEDIC terms enriched for items in this list."
+    label="MEDIC Term"
+    startClass="SequenceFeature"
+    typeClass="SequenceFeature"
+    startClassDisplay="primaryIdentifier"
+    enrich="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
+    enrichIdentifier="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	alleles.genotypes.ontologyAnnotations.dataSets.name = DiseaseTerm to Mouse Genotype Annotations from MGI,
+	alleles.genotypes.ontologyAnnotations.qualifier = null"
+    views="symbol,name,primaryIdentifier,organism.name,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
+    />
+ <enrichmentwidgetdisplayer id="mp_enrichment_for_feature"
+    title="Mammalian Phenotype Ontology Enrichment"
+    description="MP terms enriched for items in this list."
+    label="MP Term"
+    startClass="SequenceFeature"
+    typeClass="SequenceFeature"
+    startClassDisplay="primaryIdentifier"
+    enrich="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
+    enrichIdentifier="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	alleles.genotypes.ontologyAnnotations.dataSets.name = MPTerm to Mouse Genotype Annotations from MGI,
+	alleles.genotypes.ontologyAnnotations.qualifier = null"
+    views="symbol,name,primaryIdentifier,organism.name,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
+    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
+
+ <enrichmentwidgetdisplayer id="go_enrichment_for_feature"
+    title="Gene Ontology Enrichment"
+    description="GO terms enriched for items in this list."
+    label="GO Term"
+    filterLabel="Ontology"
+    filters="biological_process,cellular_component,molecular_function"
+    startClass="SequenceFeature"
+    typeClass="SequenceFeature"
+    startClassDisplay="primaryIdentifier"
+    enrich="ontologyAnnotations.ontologyTerm.parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="ontologyAnnotations.ontologyTerm.parents.namespace=[Ontology],organism.name=[list],
+	primaryIdentifier != null, ontologyAnnotations.qualifier = null,
+	ontologyAnnotations.dataSets.name = GOTerm to Mouse Marker Annotations from MGI,
+	ontologyAnnotations.evidence.code.code != ND,
+	ontologyAnnotations.ontologyTerm.parents.identifier != go:0008150,
+	ontologyAnnotations.ontologyTerm.parents.identifier != go:0003674,
+	ontologyAnnotations.ontologyTerm.parents.identifier != go:0005575"
+    views="symbol,name,primaryIdentifier,organism.name,
+	ontologyAnnotations.ontologyTerm.identifier, ontologyAnnotations.ontologyTerm.name,
+	ontologyAnnotations.ontologyTerm.parents.identifier,ontologyAnnotations.ontologyTerm.parents.name"
+    externalLink="http://www.informatics.jax.org/searches/GO.cgi?id="/>
+
+<graphdisplayer id="chromosome_distribution_for_feature"
+    title="Chromosome Distribution"
+    description="Actual: number of items in this list found on each chromosome. Expected: given the total number of items on the chromosome and the number of items in this list, the number of items expected to be found on each chromosome."
+    graphType="ColumnChart"
+    rangeLabel="Count"
+    domainLabel="Chromosome"
+    filterLabel="Organism"
+    filters="organism.name=[list]"
+    startClass="SequenceFeature"
+    typeClass="SequenceFeature"
+    categoryPath="chromosome.primaryIdentifier"
+    seriesLabels="Actual,Expected"
+    seriesPath="ActualExpectedCriteria"
+    constraints="organism.name=[Organism]"
+    views="primaryIdentifier, symbol, organism.name, chromosome.primaryIdentifier,
+	chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand"/>
+
+</widgets>  
+</webconfig>

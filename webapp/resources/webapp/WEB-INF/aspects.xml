@@ -1,0 +1,22 @@
+<aspects>
+    <aspect name="Genome">
+        <subtitle>Genome annotation</subtitle>
+        <intro-text>Mouse genome features, coordinates, functional annotations.</intro-text>
+    </aspect>
+    <aspect name="Function">
+        <subtitle>GO, Pathways, Diseases, Phenotype, Domains</subtitle>
+        <intro-text>GO, Pathways, Diseases, Phenotype, Domains</intro-text>
+    </aspect>
+    <aspect name="Phenotype">
+        <subtitle>Phenotype</subtitle>
+        <intro-text>Phenotype</intro-text>
+    </aspect>
+    <aspect name="Homology">
+        <subtitle>Orthologues and paralogues</subtitle>
+        <intro-text>Orthologues and Paralogues.</intro-text>
+    </aspect>
+    <aspect name="Literature">
+        <subtitle>Literature</subtitle>
+        <intro-text>Literature</intro-text>
+    </aspect>
+</aspects>
