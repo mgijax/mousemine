@@ -85,6 +85,11 @@
         <property name="homologene.organisms" value="9606 10090"/>
      </source>
 
+  <source name="panther" type="panther">
+       <property name="src.data.dir" location="&mm_data;/panther"/>
+       <property name="panther.organisms" value="9606 10090"/>
+     </source>
+
 
   </sources>
 
