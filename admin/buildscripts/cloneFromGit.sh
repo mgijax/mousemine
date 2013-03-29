@@ -1,13 +1,14 @@
 #!/bin/sh
 
 CHECKOUT_LATEST_TAG=FALSE
-
-while getopts ":tr:o:" flag
+BRANCH="master"
+while getopts ":tr:o:b:" flag
 do
     case $flag in
 	t) CHECKOUT_LATEST_TAG=TRUE;;
 	r) GIT_REPO=$OPTARG;;
 	o) CLONE_PATH=$OPTARG;;
+	b) BRANCH=$OPTARG;;
     esac
 done
 
@@ -30,3 +31,5 @@ then
     . ~jenkins/buildscripts/checkoutLatestTag.sh $CLONE_PATH
 fi
 
+cd $CLONE_PATH
+git checkout $BRANCH
