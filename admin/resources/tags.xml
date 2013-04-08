@@ -1,5 +1,8 @@
 <tags>
  <tag name="im:report" objectIdentifier="MFeature_HDisease" type="template"></tag>
+ <tag name="im:report" objectIdentifier="HDisease_MGene" type="template"></tag>
+ <tag name="im:hidden" objectIdentifier="OntologyTerm.ontologyAnnotations" type="collection"></tag>
+ <tag name="im:report" objectIdentifier="HDisease_HGene" type="template"></tag>
  <tag name="im:aspect:Phenotype" objectIdentifier="MQTL_MFeature" type="template"></tag>
  <tag name="im:aspect:Phenotype" objectIdentifier="Lookup_MPhenotype" type="template"></tag>
  <tag name="im:aspect:Phenotype" objectIdentifier="Publication_MPhenotypes" type="template"></tag>
@@ -31,6 +34,7 @@
  <tag name="im:frontpage" objectIdentifier="MPhenotype_MFeature" type="template"></tag>
  <tag name="im:frontpage" objectIdentifier="GO_MFeatures" type="template"></tag>
  <tag name="im:frontpage" objectIdentifier="MFeature_GO" type="template"></tag>
+ <tag name="im:summary" objectIdentifier="Term_Parents" type="template"></tag>
  <tag name="im:admin" objectIdentifier="Feature_crossrefs" type="template"></tag>
  <tag name="im:aspect:Disease" objectIdentifier="HDisease_HGene" type="template"></tag>
  <tag name="im:aspect:Disease" objectIdentifier="HDisease_MGene" type="template"></tag>
