@@ -43,7 +43,7 @@
       </titles>
     </headerconfig>
     <fields>
-	<fieldconfig fieldExpr="symbol" label="Alleles" />
+	<fieldconfig fieldExpr="symbol" label="Genotype" />
 	<fieldconfig fieldExpr="name" />
 	<fieldconfig fieldExpr="background.name"  label="Background" />
     </fields>
