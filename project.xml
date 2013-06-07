@@ -39,6 +39,7 @@
 	          value="&mm_data;/obo/GeneOntology.obo"/>
     </source>
 
+
 <!-- Adult mouse anatomy ontology. 
     Deferred until a later release.
 
@@ -47,6 +48,12 @@
 	          value="&mm_data;/obo/AdultMouseAnatomy.obo"/>
     </source>
 -->
+
+    <!-- The Uberon ontology. -->
+    <source name="uberon" type="uberon" >
+	<property name="src.data.file" 
+	          value="&mm_data;/obo/uberon.obo"/>
+    </source>
 
     <!-- Sequence Ontology. -->
     <source name="so" type="so" >
