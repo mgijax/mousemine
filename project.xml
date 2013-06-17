@@ -74,10 +74,12 @@
     </source>
 -->
 
-    <!-- Fills in organism nomenclature from NCBI. -->
+
+    <!-- Fills in organism nomenclature from NCBI.
     <source name="entrez-organism" type="entrez-organism">
 	<property name="src.data.file" location="build/organisms.xml"/>
     </source>
+-->
 
 <!-- Fills in publication attributes (title, journal, etc.) by querying PubMed.
     Commented out because mouemine gets all its pub details from MGI.
