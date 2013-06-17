@@ -43,7 +43,7 @@
       </titles>
     </headerconfig>
     <fields>
-	<fieldconfig fieldExpr="symbol" label="Alleles" />
+	<fieldconfig fieldExpr="symbol" label="Genotype" />
 	<fieldconfig fieldExpr="name" />
 	<fieldconfig fieldExpr="background.name"  label="Background" />
     </fields>
@@ -364,86 +364,6 @@
 
 <widgets>
 
- <enrichmentwidgetdisplayer id="medic_enrichment_for_gene"
-    title="Human Disease Enrichment"
-    description="MEDIC terms enriched for items in this list."
-    label="MEDIC Term"
-    startClass="Gene"
-    typeClass="Gene"
-    startClassDisplay="primaryIdentifier"
-    enrich="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
-    enrichIdentifier="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier"
-    constraints="organism.name=[list],
-	primaryIdentifier != null, 
-	alleles.genotypes.ontologyAnnotations.dataSets.name = DiseaseTerm to Mouse Genotype Annotations from MGI,
-	alleles.genotypes.ontologyAnnotations.qualifier = null"
-    views="symbol,name,primaryIdentifier,organism.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
-    />
-
- <enrichmentwidgetdisplayer id="mp_enrichment_for_gene"
-    title="Mammalian Phenotype Ontology Enrichment"
-    description="MP terms enriched for items in this list."
-    label="MP Term"
-    startClass="Gene"
-    typeClass="Gene"
-    startClassDisplay="primaryIdentifier"
-    enrich="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
-    enrichIdentifier="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier"
-    constraints="organism.name=[list],
-	primaryIdentifier != null, 
-	alleles.genotypes.ontologyAnnotations.dataSets.name = MPTerm to Mouse Genotype Annotations from MGI,
-	alleles.genotypes.ontologyAnnotations.qualifier = null"
-    views="symbol,name,primaryIdentifier,organism.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
-    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
-
- <enrichmentwidgetdisplayer id="go_enrichment_for_gene"
-    title="Gene Ontology Enrichment"
-    description="GO terms enriched for items in this list."
-    label="GO Term"
-    filterLabel="Ontology"
-    filters="biological_process,cellular_component,molecular_function"
-    startClass="Gene"
-    typeClass="Gene"
-    startClassDisplay="primaryIdentifier"
-    enrich="goAnnotation.ontologyTerm.parents.name"
-    enrichIdentifier="goAnnotation.ontologyTerm.parents.identifier"
-    constraints="goAnnotation.ontologyTerm.parents.namespace=[Ontology],organism.name=[list],
-	primaryIdentifier != null, goAnnotation.qualifier = null,
-	goAnnotation.evidence.code.code != ND,
-	goAnnotation.ontologyTerm.parents.identifier != go:0008150,
-	goAnnotation.ontologyTerm.parents.identifier != go:0003674,
-	goAnnotation.ontologyTerm.parents.identifier != go:0005575"
-    views="symbol,name,primaryIdentifier,organism.name,
-	goAnnotation.ontologyTerm.identifier, goAnnotation.ontologyTerm.name,
-	goAnnotation.ontologyTerm.parents.identifier,goAnnotation.ontologyTerm.parents.name"
-    externalLink="http://www.informatics.jax.org/searches/GO.cgi?id="/>
-
-<graphdisplayer id="chromosome_distribution_for_gene"
-    title="Chromosome Distribution"
-    description="Actual: number of items in this list found on each chromosome. Expected: given the total number of items on the chromosome and the number of items in this list, the number of items expected to be found on each chromosome."
-    graphType="ColumnChart"
-    rangeLabel="Count"
-    domainLabel="Chromosome"
-    filterLabel="Organism"
-    filters="organism.name=[list]"
-    startClass="Gene"
-    typeClass="Gene"
-    categoryPath="chromosome.primaryIdentifier"
-    seriesLabels="Actual,Expected"
-    seriesPath="ActualExpectedCriteria"
-    constraints="organism.name=[Organism]"
-    views="primaryIdentifier, symbol, organism.name, chromosome.primaryIdentifier,
-	chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand"/>
-
-<!-- HAVE TO REPLICATE THE WIDGETS FOR EACH CLASS YOU WANT. INHERITANCE DOESN'T WORK. -->
 
  <enrichmentwidgetdisplayer id="medic_enrichment_for_feature"
     title="Human Disease Enrichment"
