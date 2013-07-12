@@ -1,5 +1,5 @@
 #!/bin/sh
-ALL_TESTS_PASSED=TRUE
+ALL_TESTS_PASSED=true
 
 source ~/buildscripts/doExports.sh
 
@@ -31,7 +31,7 @@ then
         ALL_TESTS_PASSED=false
 fi
 
-if [ $ALL_TESTS_PASSED ]
+if [ "$ALL_TESTS_PASSED" = "true" ]
 then
     exit 0
 else
