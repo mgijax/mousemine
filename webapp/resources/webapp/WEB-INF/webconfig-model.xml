@@ -141,9 +141,8 @@
       <fieldconfig fieldExpr="name" />
       <fieldconfig fieldExpr="sequenceOntologyTerm.name" label="Type" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chromosome" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.id" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="true" />
       <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false"/>
-      <fieldconfig fieldExpr="description" showInInlineCollection="false" doNotTruncate="true" />
+      <fieldconfig fieldExpr="description" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
     </fields>
     <bagdisplayers>
     </bagdisplayers>
