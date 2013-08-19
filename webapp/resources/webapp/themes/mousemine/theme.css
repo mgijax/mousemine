@@ -539,78 +539,9 @@ div.auto_complete {
     z-index : 1000;
 }
 
-/*
-** ADJUSTMENTS TO DISPLAY OF NEW TABLE WIDGET.
-*/
-
-.bootstrap .table td,
-.bootstrap .table th { 
-    padding : 2px;  /* reduce padding in table cells */
-}
-.bootstrap .im-col-title {
-    padding : 0; /* reduce padding around col titles */
-}
-.bootstrap .navbar { 
-    margin-bottom : 6px; /* reduce bottom padding for col headers */
-}
-
-/*
- * Remove column titles and buttons stacks from the normal flow,
- * i.e., give them absolute positioning. This will keep them from
- * creating vertical space in the header Also, the allows us to 
- * hide/show/resize these elements without jarring changes to the 
- * table. Then, by default, display only the last part of the title,
- * and only the first button in each column header. If user mouses over 
- * the area, then show the whole title and all the buttons.
+/* Default stying when column has a constraint has dotted lines. 
+ * Override that.
  */
-.bootstrap .navbar {
-    position : relative; /* so that navbar will be considered as container. */
-    height : 25px; /* give it a fixed height */
-    background-color : inherit; /* se we can pass it down. */
-}
-.bootstrap .navbar .im-th-buttons {
-    position : absolute; /* position buttons on right */
-    right : 0;
-    padding-left : 4px; /* a little more pad for mouse targeting */
-    background-color : inherit; 
-    max-width : 1em;
-    min-width : 1em;
-    max-height : 150px;
-}
-.bootstrap .navbar .im-col-title {
-    position : absolute; /* position titles on the left. */
-    background-color : inherit;
-    margin-left: -4px; 
-    padding-left: 4px;
-    max-width : 90%;
-}
-
-/* buttons */
-.bootstrap .navbar div.im-th-buttons a {
-    /* hide all the buttons */
-    opacity : 0.0;
-    float : none;
-}
-.bootstrap .navbar div.im-th-buttons > a:first-child {
-    /* except the first */
-    opacity : 1.0;
-}
-.bootstrap .navbar:hover .im-th-buttons a {
-    /* show all the buttons on mouseover */
-    opacity : 1.0;
-}
-
-/* column titles */
-.bootstrap .navbar .im-col-title .im-title-part { 
-    display : none; /* Hide all the path segments...*/
-}
-.bootstrap .navbar .im-col-title .im-title-part:last-child { 
-    display : inline-block; /* ...except the last. */
-}
-.bootstrap .navbar:hover .im-col-title .im-title-part { 
-    display : inline-block; /* Show all on mouseover */
-}
-
 .im-table-container th.im-has-constraint {
     border : none !important;
     border-left : 1px solid #ddd !important;
