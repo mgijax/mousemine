@@ -45,6 +45,10 @@
 	  stripPrefix : true,
 	  url : 'http://www.pombase.org/spombe/result/@@@@'
           },
+      'pr' : {
+	  stripPrefix : false,
+	  url : 'http://www.proconsortium.org/cgi-bin/pro/entry_pro?id=@@@@'
+          },
       'refseq' : {
 	  stripPrefix : true,
 	  url : 'http://www.ncbi.nlm.nih.gov/entrez/viewer.cgi?val=@@@@'
