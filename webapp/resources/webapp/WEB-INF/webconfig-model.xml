@@ -247,10 +247,11 @@
       <fieldconfig fieldExpr="issue"/>
       <fieldconfig fieldExpr="pages"/>
       <fieldconfig fieldExpr="pubMedId"/>
-      <fieldconfig fieldExpr="mgiId" label="MGI ID" showInSummary="false" displayer="/model/mgiPublicationLinkDisplayer.jsp"/>
+      <fieldconfig fieldExpr="mgiJnum"/>
+      <fieldconfig fieldExpr="mgiId" showInSummary="false" showInResults="false" displayer="/model/mgiPublicationLinkDisplayer.jsp"/>
       <fieldconfig fieldExpr="abstractText" doNotTruncate="true"
                    showInSummary="false" showInResults="false" showInInlineCollection="false"/>
-      <fieldconfig fieldExpr="doi"/>
+      <fieldconfig fieldExpr="doi" showInSummary="false" showInResults="false"  />
     </fields>
   </class>
 

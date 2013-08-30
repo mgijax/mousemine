@@ -592,3 +592,19 @@ input#quickSearchInput {
 	vertical-align : top;
 }
 
+/*
+ * Make disabled input text a lighter gray.
+ */
+input:disabled { color:#ccc; }
+
+/*
+ * Make the running mouse show up for results tables that are loading.
+ */
+div.progress.active {
+height : 260px;
+background-image : url("../../model/images/progress1.gif");
+}
+
+div.progress.active > div.bar {
+display : none;
+}
