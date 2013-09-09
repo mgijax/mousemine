@@ -42,6 +42,9 @@
         <title mainTitles="symbol" numberOfMainTitlesToShow="1" />
       </titles>
     </headerconfig>
+   <!--<inlinelist>
+      <table path="alleles.symbol" showInHeader="true" lineLength="100" showLinksToObjects="true" excapeXml="true" />
+    </inlinelist>-->
     <fields>
 	<fieldconfig fieldExpr="symbol" label="Genotype" />
 	<fieldconfig fieldExpr="name" />
@@ -49,6 +52,14 @@
     </fields>
   </class>
   
+  <class className="org.intermine.model.bio.GenotypeAllelePair">
+   <fields>
+	<fieldconfig fieldExpr="pairState" showInResults="true" />
+	<fieldconfig fieldExpr="allele1.symbol" showInResults="true" />
+	<fieldconfig fieldExpr="allele2.symbol" showInResults="true" />
+   </fields>
+  </class>
+
   <class className="org.intermine.model.bio.Strain">
     <fields>
 	<fieldconfig fieldExpr="strainType"/>
@@ -154,6 +165,22 @@
     </fields>
   </class>
 
+  <class className="org.intermine.model.bio.OntologyTerm">
+    <headerconfig>
+      <titles>
+	<title mainTitles="name|[identifier]" subTitles="ontology.name" />
+      </titles>
+    </headerconfig>
+    <inlinelist>
+      <table  path="synonyms.name" showInHeader="true" lineLength="100" />
+    </inlinelist>
+    <fields>
+      <fieldconfig fieldExpr="identifier"/>
+      <fieldconfig fieldExpr="name"/> 
+      <fieldconfig fieldExpr="description" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
+    </fields>
+  </class>
+
  <!-- Inline lists are not inhereted so each subclass of OntologyTerm needs its own class config -->
 
   <class className="org.intermine.model.bio.GOTerm">
@@ -168,7 +195,13 @@
   </inlinelist>
   </class>
  
-  <class className="org.intermine.model.bio.DiseaseTerm">
+  <class className="org.intermine.model.bio.MedicTerm">
+  <inlinelist>
+	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
+  </inlinelist>
+  </class>
+
+  <class className="org.intermine.model.bio.EMAPXTerm">
   <inlinelist>
 	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
   </inlinelist>
@@ -180,22 +213,6 @@
   </inlinelist>
   </class>
   
-<class className="org.intermine.model.bio.OntologyTerm">
-    <headerconfig>
-      <titles>
-	<title mainTitles="identifier|name" subTitles="ontology.name" />
-      </titles>
-    </headerconfig>
-    <inlinelist>
-      <table  path="synonyms.name" showInHeader="true" lineLength="100" />
-    </inlinelist>
-    <fields>
-      <fieldconfig fieldExpr="identifier"/>
-      <fieldconfig fieldExpr="name"/> 
-      <fieldconfig fieldExpr="description" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
-    </fields>
-  </class>
-
   <class className="org.intermine.model.bio.OntologyRelation">
     <fields>
       <fieldconfig fieldExpr="relationship"/>
