@@ -563,6 +563,8 @@ div.auto_complete {
  */
 #funding-footer {
     font-size : 9px; 
+    margin-left : 2%;
+    margin-right : 2%;
 }
 #funding-footer img { 
     /* reduce InterMine logo size */
@@ -595,16 +597,51 @@ input#quickSearchInput {
 /*
  * Make disabled input text a lighter gray.
  */
-input:disabled { color:#ccc; }
+input:disabled { 
+    color:#ccc;
+}
 
 /*
  * Make the running mouse show up for results tables that are loading.
  */
 div.progress.active {
-height : 260px;
-background-image : url("../../model/images/progress1.gif");
+    height : 260px;
+    background-image : url("../../model/images/progress1.gif");
+    background-repeat : no-repeat;
+    background-position : 50% 50%;
+    background-color : white;
+}
+div.progress.active > div.bar {
+    display : none;
 }
 
-div.progress.active > div.bar {
-display : none;
+/*
+ * Make on-page template display look nicer.
+ */
+div.report-page div.template, 
+div.report-page div.collection-table, 
+div.report-page div.im-query-display { 
+    background: #eef0f7;
 }
+div.im-query-results {
+    min-height: 0em;
+}   
+div.report-page div.collection-table {
+    border-left : 1px solid #002575;
+}
+div.collection-table div.results { 
+    border-left : none;
+}
+div.report-page div.template {
+    border-left : 1px solid #002575;
+}
+div.template div.collection-table { 
+    border-left : none;
+}
+/*
+ * Close that annoying little gap in the green buttons on template forms.
+ */
+div.button input {
+    margin-left : -1px;
+}
+
