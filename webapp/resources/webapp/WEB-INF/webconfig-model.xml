@@ -42,12 +42,10 @@
         <title mainTitles="symbol" numberOfMainTitlesToShow="1" />
       </titles>
     </headerconfig>
-   <!--<inlinelist>
-      <table path="alleles.symbol" showInHeader="true" lineLength="100" showLinksToObjects="true" excapeXml="true" />
-    </inlinelist>-->
+    <inlinelist>
+      <table label="Alleles" path="alleles.symbol" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+    </inlinelist>
     <fields>
-	<fieldconfig fieldExpr="symbol" label="Genotype" />
-	<fieldconfig fieldExpr="name" />
 	<fieldconfig fieldExpr="background.name"  label="Background" />
     </fields>
   </class>
