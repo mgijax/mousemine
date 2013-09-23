@@ -645,3 +645,6 @@ div.button input {
     margin-left : -1px;
 }
 
+div.collection-table > div > div {
+    overflow-x : visible !important;
+}
