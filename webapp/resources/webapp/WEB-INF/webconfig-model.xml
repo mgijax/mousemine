@@ -1,4 +1,6 @@
 <webconfig>
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Allele">
     <headerconfig>
       <titles>
@@ -14,8 +16,8 @@
       <fieldconfig fieldExpr="strainOfOrigin.name" showInSummary="false" label="Strain of Origin"/>
       <fieldconfig fieldExpr="primaryIdentifier" showInSummary="true"  label="MGI ID" /> <!--  displayer="/model/mgiAlleleLinkDisplayer.jsp"/>  having a displayer prevents the field from appearing the the summary -->
       <fieldconfig fieldExpr="feature.symbol" showInSummary="false" showInInlineCollection="false" label="Gene" displayer="/model/genelinkdisplayer.jsp" />
-      <fieldconfig fieldExpr="description" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
-      <fieldconfig fieldExpr="molecularNote" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
+      <fieldconfig fieldExpr="description" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
+      <fieldconfig fieldExpr="molecularNote" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
     </fields>
    <inlinelist>
       <table path="synonyms.value" showInHeader="true" lineLength="200" />
@@ -23,6 +25,8 @@
     </inlinelist>
   </class>
   
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.CellLine">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" showInSummary="false" showInInlineCollection="false" />
@@ -33,9 +37,13 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.CellLineDerivation">
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Genotype">
     <headerconfig>
       <titles>
@@ -50,14 +58,38 @@
     </fields>
   </class>
   
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.GenotypeAllelePair">
    <fields>
 	<fieldconfig fieldExpr="pairState" showInResults="true" />
-	<fieldconfig fieldExpr="allele1.symbol" showInResults="true" />
-	<fieldconfig fieldExpr="allele2.symbol" showInResults="true" />
+	<fieldconfig fieldExpr="allele1.symbol" showInResults="true" /> <!-- 1st allele always present -->
+	<fieldconfig fieldExpr="allele2.symbol" showInResults="true" /> <!-- 2nd allele can be null -->
    </fields>
   </class>
 
+  <class className="org.intermine.model.bio.OrthologueEvidence">
+   <fields>
+        <fieldconfig fieldExpr="evidenceCode.abbreviation" />
+   </fields>
+  </class>
+
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.Homologue">
+    <fields>
+	<fieldconfig fieldExpr="type"/>
+	<fieldconfig fieldExpr="gene.organism.name" />
+	<fieldconfig fieldExpr="gene.primaryIdentifier" />
+	<fieldconfig fieldExpr="gene.symbol" />
+	<fieldconfig fieldExpr="homologue.organism.name" />
+	<fieldconfig fieldExpr="homologue.primaryIdentifier" />
+	<fieldconfig fieldExpr="homologue.symbol" />
+    </fields>
+  </class>
+
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Strain">
     <fields>
 	<fieldconfig fieldExpr="strainType"/>
@@ -65,18 +97,24 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Author">
     <fields>
       <fieldconfig fieldExpr="name"/>
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.BioEntity">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Chromosome">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
@@ -85,12 +123,16 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Comment">
     <fields>
       <fieldconfig fieldExpr="type"/>
       <fieldconfig fieldExpr="description"/>
     </fields>
   </class>
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.CrossReference">
     <fields>
       <fieldconfig fieldExpr="identifier"/>
@@ -99,6 +141,8 @@
       <fieldconfig fieldExpr="source.url" />
     </fields>
   </class>
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.DataSet">
     <fields>
       <fieldconfig fieldExpr="name"/>
@@ -106,6 +150,8 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.DataSource">
     <fields>
       <fieldconfig fieldExpr="name"/>
@@ -113,6 +159,8 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Gene">
    <inlinelist>
       <table path="synonyms.value" showInHeader="true" lineLength="100" />
@@ -122,12 +170,16 @@
     </bagdisplayers>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.ProteinCodingGene">
    <inlinelist>
       <table path="synonyms.value" showInHeader="true" lineLength="100" />
     </inlinelist>
   </class>
 
+
+  <!-- =============================================================== -->
  <class className="org.intermine.model.bio.Location">
     <fields>
       <fieldconfig fieldExpr="locatedOn.primaryIdentifier" label="chromosome" />
@@ -138,6 +190,8 @@
   </class>
 
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.SequenceFeature">
     <headerconfig>
       <titles>
@@ -151,18 +205,22 @@
       <fieldconfig fieldExpr="sequenceOntologyTerm.name" label="Type" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chromosome" showInInlineCollection="false" showInSummary="false" />
       <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false"/>
-      <fieldconfig fieldExpr="description" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
+      <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
     </fields>
     <bagdisplayers>
     </bagdisplayers>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Ontology">
     <fields>
     <fieldconfig fieldExpr="name"/>
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.OntologyTerm">
     <headerconfig>
       <titles>
@@ -181,36 +239,48 @@
 
  <!-- Inline lists are not inhereted so each subclass of OntologyTerm needs its own class config -->
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.GOTerm">
   <inlinelist>
 	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
   </inlinelist>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.MPTerm">
   <inlinelist>
 	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
   </inlinelist>
   </class>
  
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.MedicTerm">
   <inlinelist>
 	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
   </inlinelist>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.EMAPXTerm">
   <inlinelist>
 	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
   </inlinelist>
   </class>
   
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.SOTerm">
   <inlinelist>
 	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
   </inlinelist>
   </class>
   
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.OntologyRelation">
     <fields>
       <fieldconfig fieldExpr="relationship"/>
@@ -219,6 +289,8 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.OntologyTermSynonym">
     <fields>
       <fieldconfig fieldExpr="name"/>
@@ -226,6 +298,8 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Organism">
     <fields>
       <fieldconfig fieldExpr="name"/>
@@ -233,6 +307,8 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Protein">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
@@ -244,6 +320,8 @@
     </bagdisplayers>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Publication">
     <headerconfig>
       <titles>
@@ -270,6 +348,8 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Sequence">
     <fields>
       <fieldconfig fieldExpr="residues" fieldExporter="org.intermine.bio.web.export.ResidueFieldExporter"
@@ -280,12 +360,16 @@
     <tabledisplayer src="/model/sequenceShortDisplayer.jsp"/>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Synonym">
     <fields>
       <fieldconfig fieldExpr="value" label="synonym" />
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Transcript">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
@@ -297,6 +381,8 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.OntologyAnnotation">
     <!--
     <inlinelist>
@@ -312,6 +398,8 @@
    </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.IntergenicRegion">
     <fields>
         <fieldconfig fieldExpr="id"/>
@@ -323,6 +411,8 @@
     </fields>
   </class>
 
+
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.GeneFlankingRegion">
     <fields>
         <fieldconfig fieldExpr="id"/>
@@ -334,11 +424,15 @@
     </fields>
   </class>
 
+
+<!-- =============================================================== -->
 <!-- exporters -->
   <tableExportConfig id="sequence" className="org.intermine.bio.web.export.SequenceHttpExporter"/>
   <tableExportConfig id="gff3" className="org.intermine.bio.web.export.GFF3HttpExporter"/>
   <tableExportConfig id="bed" className="org.intermine.bio.web.export.BEDHttpExporter"/>
 
+
+<!-- =============================================================== -->
 <!-- report displayers -->
 <reportdisplayers>
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.SequenceFeatureDisplayer"
@@ -377,6 +471,8 @@
 
 </reportdisplayers>
 
+
+<!-- =============================================================== -->
 <widgets>
 
 

@@ -1,11 +1,11 @@
 <tags>
  <tag name="im:admin" objectIdentifier="Feature_crossrefs" type="template"></tag>
  <tag name="im:aspect:Disease" objectIdentifier="HDisease_HGene" type="template"></tag>
- <tag name="im:hidden" objectIdentifier="OntologyTerm.ontologyAnnotations" type="collection"></tag>
  <tag name="im:aspect:Disease" objectIdentifier="HGene_HDisease" type="template"></tag>
  <tag name="im:aspect:Disease" objectIdentifier="Lookup_HDisease" type="template"></tag>
  <tag name="im:aspect:Disease" objectIdentifier="HDisease_Publications" type="template"></tag>
  <tag name="im:aspect:Function" objectIdentifier="GO_Publications" type="template"></tag>
+ <tag name="im:aspect:Function" objectIdentifier="Gene.goAnnotation" type="collection"></tag>
  <tag name="im:aspect:Function" objectIdentifier="Lookup_GO" type="template"></tag>
  <tag name="im:public" objectIdentifier="Bmp disease lists - Thu Mar 14 2013" type="bag"></tag>
  <tag name="im:public" objectIdentifier="Endocrine MP Alleles - Thu Mar 14 2013" type="bag"></tag>
@@ -17,113 +17,6 @@
  <tag name="im:aspect:Function" objectIdentifier="GO_Publications_NoChildren" type="template"></tag>
  <tag name="im:aspect:Genome" objectIdentifier="Feature_overlapping" type="template"></tag>
  <tag name="im:aspect:Genome" objectIdentifier="Lookup_MAlleles" type="template"></tag>
- <tag name="im:aspect:Genome" objectIdentifier="MQTL_MFeature" type="template"></tag>
- <tag name="im:aspect:Genome" objectIdentifier="Coords_Features" type="template"></tag>
- <tag name="im:aspect:Genome" objectIdentifier="Lookup_Features" type="template"></tag>
- <tag name="im:aspect:Genome" objectIdentifier="Feature_crossrefs" type="template"></tag>
- <tag name="im:aspect:Homology" objectIdentifier="Gene_Ortholog" type="template"></tag>
- <tag name="im:aspect:Homology" objectIdentifier="HGene_MPhenotype" type="template"></tag>
- <tag name="im:aspect:Literature" objectIdentifier="GO_Publications" type="template"></tag>
- <tag name="im:aspect:Literature" objectIdentifier="MFeature_Publication" type="template"></tag>
- <tag name="im:aspect:Literature" objectIdentifier="Publication_MFeature" type="template"></tag>
- <tag name="im:aspect:Literature" objectIdentifier="Publication_MPhenotypes" type="template"></tag>
- <tag name="im:aspect:Literature" objectIdentifier="MPhenotype_Publications" type="template"></tag>
- <tag name="im:aspect:Literature" objectIdentifier="Publication_HDisease" type="template"></tag>
- <tag name="im:aspect:Literature" objectIdentifier="Publication_GO" type="template"></tag>
- <tag name="im:aspect:Literature" objectIdentifier="GO_Publications_NoChildren" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="MAllele_Genotype" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="MAllele_HDisease" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="HGene_MPhenotype" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="MAllele_MPhenotype" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="MQTL_MFeature" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="Lookup_MPhenotype" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="Publication_MPhenotypes" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="MPhenotype_Publications" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="MFeature_MPhenotype" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="MFeature_MAllele" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="HDisease_HGene" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="GO_Publications" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="MQTL_MFeature" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Coords_Features" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="MFeature_Publication" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Publication_MFeature" type="template"></tag>
- <tag name="im:converter" objectIdentifier="Gene_To_Protein_Type_Converter" type="template"></tag>
- <tag name="im:converter" objectIdentifier="Protein_To_Gene_Type_Converter" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Protein_GOterms" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Lookup_Features" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Organism_GoTerm_GeneWithannotation" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Gene_allGOTerms" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Lookup_MPhenotype" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Lookup_GO" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Lookup_HDisease" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="HDisease_Publications" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Publication_MPhenotypes" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="MPhenotype_Publications" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Publication_HDisease" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="MFeature_MPhenotype" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="GO_MFeatures" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="MFeature_GO" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Feature_overlapping" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="Publication_GO" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="GO_MFeatures_NoChildren" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="GO_Publications_NoChildren" type="template"></tag>
- <tag name="im:public" objectIdentifier="Pax GO Terms 2013-03-14" type="bag"></tag>
- <tag name="im:public" objectIdentifier="Pax Publications 2013-03-14" type="bag"></tag>
- <tag name="im:public" objectIdentifier="Lookup_MAlleles" type="template"></tag>
- <tag name="im:public" objectIdentifier="MAllele_Genotype" type="template"></tag>
- <tag name="im:public" objectIdentifier="Term_Parents" type="template"></tag>
- <tag name="im:public" objectIdentifier="Feature_overlapping" type="template"></tag>
- <tag name="im:public" objectIdentifier="Gene_Ortholog" type="template"></tag>
- <tag name="im:public" objectIdentifier="HDisease_HGene" type="template"></tag>
- <tag name="im:public" objectIdentifier="HGene_HDisease" type="template"></tag>
- <tag name="im:public" objectIdentifier="HGene_MPhenotype" type="template"></tag>
- <tag name="im:public" objectIdentifier="MAllele_HDisease" type="template"></tag>
- <tag name="im:public" objectIdentifier="MAllele_MPhenotype" type="template"></tag>
- <tag name="im:public" objectIdentifier="GO_Publications" type="template"></tag>
- <tag name="im:public" objectIdentifier="Coords_Features" type="template"></tag>
- <tag name="im:public" objectIdentifier="MFeature_Publication" type="template"></tag>
- <tag name="im:public" objectIdentifier="Publication_MFeature" type="template"></tag>
- <tag name="im:public" objectIdentifier="Lookup_Features" type="template"></tag>
- <tag name="im:public" objectIdentifier="Lookup_GO" type="template"></tag>
- <tag name="im:public" objectIdentifier="Lookup_MPhenotype" type="template"></tag>
- <tag name="im:public" objectIdentifier="Lookup_HDisease" type="template"></tag>
- <tag name="im:report" objectIdentifier="HDisease_HGene" type="template"></tag>
- <tag name="im:public" objectIdentifier="HDisease_Publications" type="template"></tag>
- <tag name="im:aspect:Disease" objectIdentifier="HDisease_MModel" type="template"></tag>
- <tag name="im:public" objectIdentifier="HDisease_MModel" type="template"></tag>
- <tag name="im:report" objectIdentifier="HDisease_MModel" type="template"></tag>
- <tag name="im:aspect:Disease" objectIdentifier="MFeature_HDisease" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="MFeature_HDisease" type="template"></tag>
- <tag name="im:public" objectIdentifier="MFeature_HDisease" type="template"></tag>
- <tag name="im:report" objectIdentifier="MFeature_HDisease" type="template"></tag>
- <tag name="im:aspect:Phenotype" objectIdentifier="MPhenotype_MGenotype" type="template"></tag>
- <tag name="im:frontpage" objectIdentifier="MPhenotype_MGenotype" type="template"></tag>
- <tag name="im:public" objectIdentifier="MPhenotype_MGenotype" type="template"></tag>
- <tag name="im:public" objectIdentifier="Publication_MPhenotypes" type="template"></tag>
- <tag name="im:public" objectIdentifier="MPhenotype_Publications" type="template"></tag>
- <tag name="im:public" objectIdentifier="Publication_HDisease" type="template"></tag>
- <tag name="im:public" objectIdentifier="MFeature_MPhenotype" type="template"></tag>
- <tag name="im:public" objectIdentifier="GO_MFeatures" type="template"></tag>
- <tag name="im:public" objectIdentifier="MFeature_GO" type="template"></tag>
- <tag name="im:public" objectIdentifier="MFeature_MAllele" type="template"></tag>
- <tag name="im:public" objectIdentifier="Feature_crossrefs" type="template"></tag>
- <tag name="im:public" objectIdentifier="Publication_GO" type="template"></tag>
- <tag name="im:public" objectIdentifier="GO_MFeatures_NoChildren" type="template"></tag>
- <tag name="im:public" objectIdentifier="GO_Publications_NoChildren" type="template"></tag>
- <tag name="im:report" objectIdentifier="MAllele_Genotype" type="template"></tag>
- <tag name="im:report" objectIdentifier="Term_Parents" type="template"></tag>
- <tag name="im:report" objectIdentifier="Feature_overlapping" type="template"></tag>
- <tag name="im:report" objectIdentifier="Feature_crossrefs" type="template"></tag>
- <tag name="im:report" objectIdentifier="Gene_Ortholog" type="template"></tag>
- <tag name="im:report" objectIdentifier="MAllele_HDisease" type="template"></tag>
- <tag name="im:report" objectIdentifier="MAllele_MPhenotype" type="template"></tag>
- <tag name="im:report" objectIdentifier="MFeature_GO" type="template"></tag>
- <tag name="im:report" objectIdentifier="MFeature_MAllele" type="template"></tag>
- <tag name="im:report" objectIdentifier="MFeature_Publication" type="template"></tag>
- <tag name="im:report" objectIdentifier="MFeature_MPhenotype" type="template"></tag>
- <tag name="im:report" objectIdentifier="GO_MFeatures" type="template"></tag>
- <tag name="im:report" objectIdentifier="GO_MFeatures_NoChildren" type="template"></tag>
- <tag name="im:aspect:Function" objectIdentifier="Gene.goAnnotation" type="collection"></tag>
  <tag name="im:aspect:Genome" objectIdentifier="Chromosome.features" type="collection"></tag>
  <tag name="im:aspect:Genome" objectIdentifier="Chromosome.transcripts" type="collection"></tag>
  <tag name="im:aspect:Genome" objectIdentifier="Protein.genes" type="collection"></tag>
@@ -147,16 +40,72 @@
  <tag name="im:aspect:Genome" objectIdentifier="org.intermine.model.bio.Chromosome" type="class"></tag>
  <tag name="im:aspect:Genome" objectIdentifier="LocatedSequenceFeature.chromosomeLocation" type="reference"></tag>
  <tag name="im:aspect:Genome" objectIdentifier="LocatedSequenceFeature.overlappingFeatures" type="collection"></tag>
+ <tag name="im:aspect:Genome" objectIdentifier="MQTL_MFeature" type="template"></tag>
+ <tag name="im:aspect:Genome" objectIdentifier="Coords_Features" type="template"></tag>
+ <tag name="im:aspect:Genome" objectIdentifier="Lookup_Features" type="template"></tag>
+ <tag name="im:aspect:Genome" objectIdentifier="Feature_crossrefs" type="template"></tag>
+ <tag name="im:aspect:Homology" objectIdentifier="Gene_Ortholog" type="template"></tag>
+ <tag name="im:aspect:Homology" objectIdentifier="HGene_MPhenotype" type="template"></tag>
  <tag name="im:aspect:Literature" objectIdentifier="BioEntity.publications" type="collection"></tag>
+ <tag name="im:aspect:Literature" objectIdentifier="GO_Publications" type="template"></tag>
+ <tag name="im:aspect:Literature" objectIdentifier="MFeature_Publication" type="template"></tag>
+ <tag name="im:aspect:Literature" objectIdentifier="Publication_MFeature" type="template"></tag>
+ <tag name="im:aspect:Literature" objectIdentifier="Publication_MPhenotypes" type="template"></tag>
+ <tag name="im:aspect:Literature" objectIdentifier="MPhenotype_Publications" type="template"></tag>
+ <tag name="im:aspect:Literature" objectIdentifier="Publication_HDisease" type="template"></tag>
+ <tag name="im:aspect:Literature" objectIdentifier="Publication_GO" type="template"></tag>
+ <tag name="im:aspect:Literature" objectIdentifier="GO_Publications_NoChildren" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="MAllele_Genotype" type="template"></tag>
  <tag name="im:aspect:Phenotype" objectIdentifier="SequenceFeature.alleles" type="collection"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="MAllele_HDisease" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="HGene_MPhenotype" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="MAllele_MPhenotype" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="MQTL_MFeature" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="Lookup_MPhenotype" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="Publication_MPhenotypes" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="MPhenotype_Publications" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="MFeature_MPhenotype" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="MFeature_MAllele" type="template"></tag>
+ <tag name="im:converter" objectIdentifier="Gene_To_Protein_Type_Converter" type="template"></tag>
+ <tag name="im:converter" objectIdentifier="Protein_To_Gene_Type_Converter" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Protein_GOterms" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Organism_GoTerm_GeneWithannotation" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Gene_allGOTerms" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="HDisease_HGene" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="GO_Publications" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="MQTL_MFeature" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Coords_Features" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="MFeature_Publication" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Publication_MFeature" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Lookup_Features" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Lookup_MPhenotype" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Lookup_GO" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Lookup_HDisease" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="HDisease_Publications" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Publication_MPhenotypes" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="MPhenotype_Publications" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Publication_HDisease" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="MFeature_MPhenotype" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="GO_MFeatures" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="MFeature_GO" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Feature_overlapping" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Publication_GO" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="GO_MFeatures_NoChildren" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="GO_Publications_NoChildren" type="template"></tag>
+ <tag name="im:aspect:Function" objectIdentifier="Term_Parents" type="template"></tag>
  <tag name="im:hidden" objectIdentifier="Allele.genotypes" type="collection"></tag>
+ <tag name="im:aspect:Function" objectIdentifier="Term_Children" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Term_Children" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Pax GO Terms 2013-03-14" type="bag"></tag>
  <tag name="im:hidden" objectIdentifier="BioEntity.subjects" type="collection"></tag>
+ <tag name="im:report" objectIdentifier="Term_Children" type="template"></tag>
  <tag name="im:hidden" objectIdentifier="BioEntity.objects" type="collection"></tag>
  <tag name="im:hidden" objectIdentifier="Evidence.relations" type="collection"></tag>
  <tag name="im:hidden" objectIdentifier="BioEntity.relations" type="collection"></tag>
  <tag name="im:hidden" objectIdentifier="BioEntity.organism" type="reference"></tag>
  <tag name="im:hidden" objectIdentifier="BioEntity.dataSets" type="collection"></tag>
  <tag name="im:hidden" objectIdentifier="BioEntity.ontologyAnnotations" type="collection"></tag>
+ <tag name="im:public" objectIdentifier="Pax Publications 2013-03-14" type="bag"></tag>
  <tag name="im:hidden" objectIdentifier="SequenceFeature.chromosome" type="reference"></tag>
  <tag name="im:hidden" objectIdentifier="Gene.upstreamIntergenicRegion" type="reference"></tag>
  <tag name="im:hidden" objectIdentifier="Gene.downstreamIntergenicRegion" type="reference"></tag>
@@ -173,6 +122,10 @@
  <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.Gene" type="class"></tag>
  <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.OntologyTerm" type="class"></tag>
  <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.Publication" type="class"></tag>
+ <tag name="im:public" objectIdentifier="Lookup_MAlleles" type="template"></tag>
+ <tag name="im:public" objectIdentifier="MAllele_Genotype" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Term_Parents" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Feature_overlapping" type="template"></tag>
  <tag name="im:public" objectIdentifier="Protein_GOtermsSpecificOntology" type="template"></tag>
  <tag name="im:public" objectIdentifier="Protein_GOterms" type="template"></tag>
  <tag name="im:public" objectIdentifier="Gene_particularGoannotation" type="template"></tag>
@@ -181,16 +134,67 @@
  <tag name="im:public" objectIdentifier="Organism_GoTerm_GeneWithannotation" type="template"></tag>
  <tag name="im:public" objectIdentifier="Organism_GoTerm_Gene" type="template"></tag>
  <tag name="im:public" objectIdentifier="Gene_Identifiers" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Gene_Ortholog" type="template"></tag>
+ <tag name="im:public" objectIdentifier="HDisease_HGene" type="template"></tag>
+ <tag name="im:public" objectIdentifier="HGene_HDisease" type="template"></tag>
+ <tag name="im:public" objectIdentifier="HGene_MPhenotype" type="template"></tag>
  <tag name="im:public" objectIdentifier="Mouse DNA repair genes" type="bag"></tag>
+ <tag name="im:public" objectIdentifier="MAllele_HDisease" type="template"></tag>
+ <tag name="im:public" objectIdentifier="MAllele_MPhenotype" type="template"></tag>
+ <tag name="im:public" objectIdentifier="GO_Publications" type="template"></tag>
  <tag name="im:public" objectIdentifier="Mouse MicroRNA targets from microRNA.org" type="bag"></tag>
  <tag name="im:public" objectIdentifier="human cancer genes: a census. Nat Rev Cancer 2004" type="bag"></tag>
+ <tag name="im:public" objectIdentifier="Coords_Features" type="template"></tag>
+ <tag name="im:public" objectIdentifier="MFeature_Publication" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Publication_MFeature" type="template"></tag>
  <tag name="im:public" objectIdentifier="DNA repair genes - Mon Sep 10 2012" type="bag"></tag>
  <tag name="im:public" objectIdentifier="SequenceFeature list - Fri Sep 07 2012" type="bag"></tag>
+ <tag name="im:public" objectIdentifier="Lookup_Features" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Lookup_GO" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Lookup_MPhenotype" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Lookup_HDisease" type="template"></tag>
+ <tag name="im:hidden" objectIdentifier="OntologyTerm.ontologyAnnotations" type="collection"></tag>
+ <tag name="im:report" objectIdentifier="HDisease_HGene" type="template"></tag>
+ <tag name="im:public" objectIdentifier="HDisease_Publications" type="template"></tag>
+ <tag name="im:aspect:Disease" objectIdentifier="HDisease_MModel" type="template"></tag>
+ <tag name="im:public" objectIdentifier="HDisease_MModel" type="template"></tag>
  <tag name="im:public" objectIdentifier="GOTerm list - Wed Sep 19 2012" type="bag"></tag>
  <tag name="im:public" objectIdentifier="Some Adh pubs - 13 Sep 2012 7.32" type="bag"></tag>
+ <tag name="im:report" objectIdentifier="HDisease_MModel" type="template"></tag>
+ <tag name="im:aspect:Disease" objectIdentifier="MFeature_HDisease" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="MFeature_HDisease" type="template"></tag>
+ <tag name="im:public" objectIdentifier="MFeature_HDisease" type="template"></tag>
+ <tag name="im:report" objectIdentifier="MFeature_HDisease" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="MPhenotype_MGenotype" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="MPhenotype_MGenotype" type="template"></tag>
+ <tag name="im:public" objectIdentifier="MPhenotype_MGenotype" type="template"></tag>
  <tag name="im:public" objectIdentifier="DiseaseTerm list - Fri Sep 21 2012" type="bag"></tag>
  <tag name="im:public" objectIdentifier="MPTerm list - Sat Sep 22 2012" type="bag"></tag>
+ <tag name="im:public" objectIdentifier="Publication_MPhenotypes" type="template"></tag>
+ <tag name="im:public" objectIdentifier="MPhenotype_Publications" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Publication_HDisease" type="template"></tag>
+ <tag name="im:public" objectIdentifier="MFeature_MPhenotype" type="template"></tag>
+ <tag name="im:public" objectIdentifier="GO_MFeatures" type="template"></tag>
  <tag name="im:public" objectIdentifier="Mouse microRNA targets from microRNA.org" type="bag"></tag>
+ <tag name="im:public" objectIdentifier="MFeature_GO" type="template"></tag>
+ <tag name="im:public" objectIdentifier="MFeature_MAllele" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Feature_crossrefs" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Publication_GO" type="template"></tag>
+ <tag name="im:public" objectIdentifier="GO_MFeatures_NoChildren" type="template"></tag>
+ <tag name="im:public" objectIdentifier="GO_Publications_NoChildren" type="template"></tag>
+ <tag name="im:report" objectIdentifier="MAllele_Genotype" type="template"></tag>
+ <tag name="im:report" objectIdentifier="Term_Parents" type="template"></tag>
+ <tag name="im:report" objectIdentifier="Feature_overlapping" type="template"></tag>
+ <tag name="im:report" objectIdentifier="Feature_crossrefs" type="template"></tag>
+ <tag name="im:report" objectIdentifier="Gene_Ortholog" type="template"></tag>
+ <tag name="im:report" objectIdentifier="MAllele_HDisease" type="template"></tag>
+ <tag name="im:report" objectIdentifier="MAllele_MPhenotype" type="template"></tag>
+ <tag name="im:report" objectIdentifier="MFeature_GO" type="template"></tag>
+ <tag name="im:report" objectIdentifier="MFeature_MAllele" type="template"></tag>
+ <tag name="im:report" objectIdentifier="MFeature_Publication" type="template"></tag>
+ <tag name="im:report" objectIdentifier="MFeature_MPhenotype" type="template"></tag>
+ <tag name="im:report" objectIdentifier="GO_MFeatures" type="template"></tag>
+ <tag name="im:report" objectIdentifier="GO_MFeatures_NoChildren" type="template"></tag>
  <tag name="im:summary" objectIdentifier="Allele.feature" type="reference"></tag>
  <tag name="im:summary" objectIdentifier="MicroarrayOligo.transcript" type="reference"></tag>
  <tag name="im:summary" objectIdentifier="RegulatoryRegion.gene" type="reference"></tag>

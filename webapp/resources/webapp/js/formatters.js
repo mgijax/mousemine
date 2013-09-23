@@ -121,7 +121,7 @@
     var lf = intermine.results.formatters.Location;
     var lfnew = function(o){
         var s = o.get('strand');
-        return lf.call(this,o) + (s>0?' +':s<0?' -':'');
+        return lf.call(this,o) + (s>0?' (+)':s<0?' (-)':'');
         };
     lfnew.replaces = lf.replaces;
     lfnew.merge = lf.merge;
