@@ -91,6 +91,12 @@
     return '<i class="icon-globe"></i> <a href="'+url+'" target="_blank" >'+id+'</a>';
   };
 
+  var escapeHtml = function(str) {
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+  }
+
   /*
   * Given an OntologyAnnotationEvidence object, format the withText field with links.
   */
@@ -104,16 +110,46 @@
     return val.substr(0,len) + (val.length>len ? "...":"");
   };
 
+  var formatExpressionText = function(id){
+
+      return id==null ? id : '<i class="icon-globe"></i> <a href="http://www.informatics.jax.org/accession/'+id+'" target="_blank" >'+id+'</a>';
+  };
+
+  var formatExpressionImage = function(imageLabel, id){
+
+      if (imageLabel == null)
+	  return null;
+
+      var figure = imageLabel.replace(/[^a-zA-Z0-9]+/g, "_");
+      return '<i class="icon-globe"></i> <a href="http://www.informatics.jax.org/assay/'+id+'#'+figure+'_id" target="_blank" >'+escapeHtml(imageLabel)+'</a>';
+  };
+
+  var formatEmapxTerm = function(imObj){
+      var ns = imObj.get('namespace');
+      var name = imObj.get('name');
+      if(!ns)
+          return name;
+      else if(!name)
+          return ns;
+      else
+          return ns.substring(ns.indexOf(':')+1) + ':' + name;
+  };
+
+
   if (intermine) { 
     //intermine.setOptions({CellPreviewTrigger: 'hover'});
 
     delete intermine.results.formatters.Publication;
     delete intermine.results.formatsets.genomic["Publication.title"];
 
+    formatEmapxTerm.replaces = ['namespace','name'];
+
     intermine.setOptions({
         'Location.start': true,
         'Location.end': true,
-	'Location.strand' : true
+        'Location.strand' : true,
+	'EMAPXTerm.namespace' : true,
+	'EMAPXTerm.name' : true
       }, 
       'intermine.results.formatsets.genomic');
 
@@ -127,12 +163,17 @@
     lfnew.merge = lf.merge;
     lfnew.replaces.push('strand');
     intermine.results.formatters.Location = lfnew;
+    intermine.results.formatters.EMAPXTerm = formatEmapxTerm;
 
     intermine.scope('intermine.results.formatsets.genomic', 
         {
 	'OntologyAnnotationEvidence.withText' : formatWithText ,
         'Publication.title': function(o){return abbreviate(o.get("title"),35);}, 
-        'Publication.citation':function(o){return abbreviate(o.get("citation"),35);}
+	'Publication.citation':function(o){return abbreviate(o.get("citation"),35);},
+        'GXDExpression.assayId':function(o){return formatExpressionText(o.get("assayId"));},
+	'GXDExpression.probe':function(o){return formatExpressionText(o.get("probe"));},
+	'GXDExpression.image':function(o){return formatExpressionImage(o.get("image"),o.get("assayId"));}
+
         });	
   }
 }));

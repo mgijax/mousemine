@@ -7,6 +7,10 @@
         <subtitle>GO, Pathways, Diseases, Phenotype, Domains</subtitle>
         <intro-text>GO, Pathways, Diseases, Phenotype, Domains</intro-text>
     </aspect>
+    <aspect name="Expression">
+        <subtitle>Expression</subtitle>
+        <intro-text>Expression</intro-text>
+    </aspect>
     <aspect name="Phenotype">
         <subtitle>Phenotype</subtitle>
         <intro-text>Phenotype</intro-text>
@@ -14,6 +18,10 @@
     <aspect name="Disease">
         <subtitle>Disease</subtitle>
         <intro-text>Disease</intro-text>
+    </aspect>
+    <aspect name="Expression">
+        <subtitle>Expression</subtitle>
+        <intro-text>Expression</intro-text>
     </aspect>
     <aspect name="Homology">
         <subtitle>Orthologues and paralogues</subtitle>
