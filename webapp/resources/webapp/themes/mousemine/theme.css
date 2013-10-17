@@ -648,3 +648,9 @@ div.button input {
 div.collection-table > div > div {
     overflow-x : visible !important;
 }
+
+/*
+ * Tweak styling of gbrowse map display on gene pages.
+ */
+#gbrowsedisplayer-wrapper { background-color : #eef0f7; border-left : thin solid #002575; }
+#gbrowsedisplayer-wrapper img { border : none !important; padding : 10px; }
