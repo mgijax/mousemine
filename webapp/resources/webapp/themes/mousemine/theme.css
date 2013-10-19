@@ -654,3 +654,12 @@ div.collection-table > div > div {
  */
 #gbrowsedisplayer-wrapper { background-color : #eef0f7; border-left : thin solid #002575; }
 #gbrowsedisplayer-wrapper img { border : none !important; padding : 10px; }
+
+/*
+ * Override an imtables.css rule that increases the font size when you hover over an
+ * external link. (Which makes the display jumpy.)
+ */
+.intermine [class^="icon-"]:hover {
+    text-decoration : underline;
+    font-size : inherit;
+}
