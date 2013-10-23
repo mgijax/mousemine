@@ -663,3 +663,7 @@ div.collection-table > div > div {
     text-decoration : underline;
     font-size : inherit;
 }
+
+a.icon-globe span {
+    font-family : sans-serif;
+}
