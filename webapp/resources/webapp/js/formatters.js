@@ -90,6 +90,10 @@
     return '<a class="'+cls+'" href="'+url+'" target="'+target+'">'+text+'</a>';
   };
 
+  var wrapSpan = function(text){
+      return '<span>'+text+'</span>';
+  };
+
   /*
   * Given an id like "MGI:123456" or "OMIM:76543", returns a link to the corresponding page at
   * the corresponding resource. If the database (as indicated by the prefix part) is unknown, returns
@@ -101,7 +105,7 @@
     if(!e) return id;
     var lt = e.stripPrefix ? parts[1] : id; // link text
     var url= e.url.replace(/@@@@/, lt);	    // href
-    return formatLink(url, id, "_blank", true);
+    return formatLink(url, wrapSpan(id), "_blank", true);
   };
 
   /*
@@ -135,7 +139,7 @@
    */
   var formatMGILink = function(id){
     var url = 'http://www.informatics.jax.org/accession/'+id;
-    return formatLink(url, id, "_blank", true);
+    return formatLink(url, wrapSpan(id), "_blank", true);
   };
 
   /*
@@ -151,7 +155,7 @@
 
       var figure = imageLabel.replace(/[^a-zA-Z0-9]+/g, "_");
       var url = 'http://www.informatics.jax.org/assay/'+id+'#'+figure+'_id';
-      return formatLink(url, escapeHtml(imageLabel), "_blank", true)
+      return formatLink(url, wrapSpan(escapeHtml(imageLabel)), "_blank", true)
   };
 
   /*
