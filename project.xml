@@ -39,6 +39,12 @@
 	          value="&mm_data;/obo/GeneOntology.obo"/>
     </source>
 
+    <!-- EMAP MA and GXD anatomy terms --> 
+    <source name="gxd-anatomy" type="gxd-anatomy" >
+        <property name="src.data.file"
+                  value="&mm_data;/obo/EMAPX.obo"/>
+    </source>
+
 
 <!-- Adult mouse anatomy ontology. 
     Deferred until a later release.
