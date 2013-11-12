@@ -2,19 +2,25 @@
 # compareMmAndMgi.py
 #
 # Script to run pairs of queries, one against MouseMine and one against MGI, 
-# and compare the results. 
+# and compare the results. Produces (on stdout) a diagnostic report of all tests run
+# and which (if any) failed.
 # 
 # Usage:
-#    % python compareQueries.py CONFIGFILE.cfg
+#    % python compareQueries.py CONFIGFILE.cfg [MINE.properties]
 #
 # CONFIGFILE.cfg is a configuration file is standard cfg format (see standard Python
-# library, ConfigParser). It contains settings defining the database connections 
-# and the tests
+# library, ConfigParser). It contains the tests to run. CONFIGFILE,is required.
+# 
+# The optional second argument specifies the MINE.properties file, which contains connection
+# parameters for both MouseMine and for the MGI adhoc database. 
+# (Defaults to ~/.intermine/mousemine.properties)
 #
 #
 
 import sys
 from ConfigParser import ConfigParser
+import re
+import os
 import mgiadhoc
 
 compFcns = {
@@ -36,14 +42,23 @@ def readTests(cfname):
 	    cp.tests.append(line[1:-2])
     return cp
 
-def getConnection(cp, name):
-    secName = "CONNECTION:"+name
-    host = cp.get(secName, "host")
-    database = cp.get(secName, "database")
-    user = cp.get(secName, "user")
-    password = cp.get(secName, "password")
-    con = mgiadhoc.connect(host=host, database=database, user=user, password=password)
-    return con
+def getConnectionDataFromPropertiesFile(fname="~/.intermine/mousemine.properties", dname="production"):
+    try:
+	fname = os.path.expanduser(fname)
+	fd = open(fname,'r')
+	data = fd.read()
+	fd.close()
+	return {
+	'host'    : re.search('db.%s.datasource.serverName=(.*)'%dname,   data).group(1).strip(),
+	'database': re.search('db.%s.datasource.databaseName=(.*)'%dname, data).group(1).strip(),
+	'user'    : re.search('db.%s.datasource.user=(.*)'%dname,         data).group(1).strip(),
+	'password': re.search('db.%s.datasource.password=(.*)'%dname,     data).group(1).strip()
+	}
+    except:
+        raise RuntimeError("Could not get connection data from: "+fname)
+
+def getConnection(cdata):
+    return mgiadhoc.connect(**cdata)
 
 def doQ(con, q):
     return mgiadhoc.sql( q, connection=con )
@@ -74,21 +89,49 @@ def doTest(name, mgiquery, mmquery, filter, op):
 	return False
     
 
+def usage():
+    print "usage: %s TESTS.cfg [MINE.properties] > RESULTS" % sys.argv[0]
+    sys.exit(0)
+
 def main():
     global mgicon
     global mmcon
+    if len(sys.argv) == 1 or len(sys.argv) > 3:
+        usage()
     cp = readTests( sys.argv[1] )
-    mgicon = getConnection(cp, "mgi")
-    mmcon  = getConnection(cp, "mousemine")
+    mpFile = "~/.intermine/mousemine.properties"
+    if len(sys.argv) == 3:
+        mpFile = sys.argv[2]
+    mgiparams = getConnectionDataFromPropertiesFile(dname="mgiadhoc",fname=mpFile)
+    mmparams = getConnectionDataFromPropertiesFile(dname="production",fname=mpFile)
+    mgicon = getConnection(mgiparams)
+    mmcon =  getConnection(mmparams)
+    print "-"*60
+    print "MGI/MouseMine Comparative Acceptance Tests"
+    print "MGI connection:", mgiparams['host'], mgiparams['database']
+    print "MouseMine connection:", mmparams['host'], mmparams['database']
     res = True
+    failedTests = []
     for s in cp.tests:
-        res2 = doTest(s[5:], cp.get(s,"mgi"), cp.get(s, "mousemine"), cp.get(s, "filter"), cp.get(s, "compare"))
+	tname = s[5:]
+        res2 = doTest(
+	    tname, 
+	    cp.get(s,"mgi"), 
+	    cp.get(s,"mousemine"), 
+	    cp.get(s,"filter"), 
+	    cp.get(s,"compare"))
+	if not res2:
+	    failedTests.append(tname)
 	res = res and res2
+    print
+    print "-"*60
     if res:
-	print "PASSED."
+	print "PASSED all tests."
 #        sys.exit(0)
     else:
-	print "FAILED."
+	print "FAILED these tests:"
+	for t in failedTests:
+	    print "    " + t
 #        sys.exit(-1)
 
 main()
