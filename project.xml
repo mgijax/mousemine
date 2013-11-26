@@ -1,5 +1,5 @@
 <!DOCTYPE bio [
-<!ENTITY mm_data "/var/lib/jenkins/jobs/Load_Build_Dumper/workspace/output">
+<!ENTITY mm_data "/var/lib/jenkins/prepper/output">
 ]>
 
 <project type="bio">
