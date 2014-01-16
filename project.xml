@@ -81,12 +81,6 @@
     </source>
 -->
 
-
-    <!-- Fills in organism nomenclature from NCBI. -->
-    <source name="entrez-organism" type="entrez-organism">
-	<property name="src.data.file" location="build/organisms.xml"/>
-    </source>
-
 <!-- Fills in publication attributes (title, journal, etc.) by querying PubMed.
     Commented out because mouemine gets all its pub details from MGI.
     
@@ -95,15 +89,22 @@
     </source> 
 -->
 
+
+     <!-- Note: worm '6239' is not loaded from homologene, intermine has an open bug. -->
      <source name="homologene" type="homologene">
        <property name="src.data.dir" location="&mm_data;/homologene"/>
-        <property name="homologene.organisms" value="9606 10090"/>
+        <property name="homologene.organisms" value="7227 9606 10090 10116 7955 4932"/>
      </source>
 
-  <source name="panther" type="panther">
+    <source name="panther" type="panther">
        <property name="src.data.dir" location="&mm_data;/panther"/>
-       <property name="panther.organisms" value="9606 10090"/>
+       <property name="panther.organisms" value="7227 9606 10090 10116 7955 6239 4932"/>
      </source>
+
+    <!-- Fills in organism nomenclature from NCBI. -->
+    <source name="entrez-organism" type="entrez-organism">
+	<property name="src.data.file" location="build/organisms.xml"/>
+    </source>
 
 
   </sources>
