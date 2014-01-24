@@ -14,6 +14,26 @@
 
   <sources>
 
+    <source name="fmfd-fly" type="fmfd" >
+        <property name="src.data.file" value="&mm_data;/fmfd/fly.features.xml" />
+	</source>
+
+    <source name="fmfd-rat" type="fmfd" >
+        <property name="src.data.file" value="&mm_data;/fmfd/rat.features.xml" />
+	</source>
+
+    <source name="fmfd-worm" type="fmfd" >
+        <property name="src.data.file" value="&mm_data;/fmfd/worm.features.xml" />
+	</source>
+
+    <source name="fmfd-yeast" type="fmfd" >
+        <property name="src.data.file" value="&mm_data;/fmfd/yeast.features.xml" />
+	</source>
+
+    <source name="fmfd-zebrafish" type="fmfd" >
+        <property name="src.data.file" value="&mm_data;/fmfd/zebrafish.features.xml" />
+	</source>
+
     <!-- The main data source. A dump of MGI data. 
          This source also defines all data model extensions for mousemine.
 	 -->
@@ -44,23 +64,6 @@
         <property name="src.data.file"
                   value="&mm_data;/obo/EMAPX.obo"/>
     </source>
-
-
-<!-- Adult mouse anatomy ontology. 
-    Deferred until a later release.
-
-    <source name="mgi-adultmouse" type="mgi-adultmouse" >
-	<property name="src.data.file" 
-	          value="&mm_data;/obo/AdultMouseAnatomy.obo"/>
-    </source>
--->
-
-    <!-- The Uberon ontology.
-    <source name="uberon" type="uberon" >
-	<property name="src.data.file" 
-	          value="&mm_data;/obo/uberon.obo"/>
-    </source>
--->
 
     <!-- Sequence Ontology. -->
     <source name="so" type="so" >
@@ -101,7 +104,6 @@
        <property name="panther.organisms" value="7227 9606 10090 10116 7955 6239 4932"/>
      </source>
 
-    <!-- Fills in organism nomenclature from NCBI. -->
     <source name="entrez-organism" type="entrez-organism">
 	<property name="src.data.file" location="build/organisms.xml"/>
     </source>
