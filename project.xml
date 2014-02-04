@@ -15,61 +15,60 @@
   <sources>
 
     <source name="fmfd-fly" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/fmfd/fly.features.xml" />
+        <property name="src.data.file" value="&mm_data;/flymine/latest/features.xml" />
 	</source>
 
     <source name="fmfd-rat" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/fmfd/rat.features.xml" />
+        <property name="src.data.file" value="&mm_data;/ratmine/latest/features.xml" />
 	</source>
 
     <source name="fmfd-worm" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/fmfd/worm.features.xml" />
+        <property name="src.data.file" value="&mm_data;/wormmine/latest/features.xml" />
 	</source>
 
     <source name="fmfd-yeast" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/fmfd/yeast.features.xml" />
+        <property name="src.data.file" value="&mm_data;/yeastmine/latest/features.xml" />
 	</source>
 
     <source name="fmfd-zebrafish" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/fmfd/zebrafish.features.xml" />
+        <property name="src.data.file" value="&mm_data;/zebrafishmine/latest/features.xml" />
 	</source>
 
     <!-- The main data source. A dump of MGI data. 
          This source also defines all data model extensions for mousemine.
 	 -->
     <source name="mgi-base" type="mgi-base" >
-	<property name="src.data.dir" value="&mm_data;/mgi-base/"/>
+	<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>
     </source>
 
     <!-- The MEDIC disease ontology.  -->
     <source name="mgi-medic" type="mgi-medic" >
 	<property name="src.data.file" 
-	          value="&mm_data;/obo/MEDIC_conflated.obo"/>
+	          value="&mm_data;/medic/latest/MEDIC_conflated.obo"/>
     </source>
 
     <!-- The Mammalian Phenotype ontology. -->
     <source name="mgi-mp" type="mgi-mp" >
 	<property name="src.data.file" 
-	          value="&mm_data;/obo/MammalianPhenotype.obo"/>
+	          value="&mm_data;/mp/latest/MammalianPhenotype.obo"/>
     </source>
 
     <!-- The GO ontology. -->
     <source name="mgi-go" type="mgi-go" >
 	<property name="src.data.file" 
-	          value="&mm_data;/obo/GeneOntology.obo"/>
+	          value="&mm_data;/go/latest/GeneOntology.obo"/>
     </source>
 
     <!-- EMAP MA and GXD anatomy terms --> 
     <source name="gxd-anatomy" type="gxd-anatomy" >
         <property name="src.data.file"
-                  value="&mm_data;/obo/EMAPX.obo"/>
+                  value="&mm_data;/emapx/latest/EMAPX.obo"/>
     </source>
 
     <!-- Sequence Ontology. -->
     <source name="so" type="so" >
 	<property name="src.data.file" location="../../bio/sources/so/so.obo"/>
     </source>
-
 
 <!-- The MGI catalog of mouse genome features (gene models).
     Deferred until a later release.
@@ -95,12 +94,12 @@
 
      <!-- Note: worm '6239' is not loaded from homologene, intermine has an open bug. -->
      <source name="homologene" type="homologene">
-       <property name="src.data.dir" location="&mm_data;/homologene"/>
+       <property name="src.data.dir" location="&mm_data;/homologene/latest"/>
         <property name="homologene.organisms" value="7227 9606 10090 10116 7955 4932"/>
      </source>
 
     <source name="panther" type="panther">
-       <property name="src.data.dir" location="&mm_data;/panther"/>
+       <property name="src.data.dir" location="&mm_data;/panther/latest"/>
        <property name="panther.organisms" value="7227 9606 10090 10116 7955 6239 4932"/>
      </source>
 
