@@ -61,8 +61,10 @@
 
     <!-- EMAP MA and GXD anatomy terms --> 
     <source name="gxd-anatomy" type="gxd-anatomy" >
+        <property name="converter.class" 
+		  value="org.intermine.bio.dataconversion.EmapaOboConverter"/>
         <property name="src.data.file"
-                  value="&mm_data;/emapx/latest/EMAPX.obo"/>
+                  value="&mm_data;/emapa/latest/EMAPA.obo"/>
     </source>
 
     <!-- Sequence Ontology. -->
