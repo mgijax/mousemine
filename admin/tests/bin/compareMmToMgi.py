@@ -21,7 +21,7 @@ import sys
 from ConfigParser import ConfigParser
 import re
 import os
-import mgiadhoc
+import mgiadhoc as db
 
 compFcns = {
     'eq' : lambda x,y : x==y,
@@ -42,26 +42,8 @@ def readTests(cfname):
 	    cp.tests.append(line[1:-2])
     return cp
 
-def getConnectionDataFromPropertiesFile(fname="~/.intermine/mousemine.properties", dname="production"):
-    try:
-	fname = os.path.expanduser(fname)
-	fd = open(fname,'r')
-	data = fd.read()
-	fd.close()
-	return {
-	'host'    : re.search('db.%s.datasource.serverName=(.*)'%dname,   data).group(1).strip(),
-	'database': re.search('db.%s.datasource.databaseName=(.*)'%dname, data).group(1).strip(),
-	'user'    : re.search('db.%s.datasource.user=(.*)'%dname,         data).group(1).strip(),
-	'password': re.search('db.%s.datasource.password=(.*)'%dname,     data).group(1).strip()
-	}
-    except:
-        raise RuntimeError("Could not get connection data from: "+fname)
-
-def getConnection(cdata):
-    return mgiadhoc.connect(**cdata)
-
 def doQ(con, q):
-    return mgiadhoc.sql( q, connection=con )
+    return db.sql( q, connection=con )
 
 def doTest(name, mgiquery, mmquery, filter, op):
     try:
@@ -102,10 +84,10 @@ def main():
     mpFile = "~/.intermine/mousemine.properties"
     if len(sys.argv) == 3:
         mpFile = sys.argv[2]
-    mgiparams = getConnectionDataFromPropertiesFile(dname="mgiadhoc",fname=mpFile)
-    mmparams = getConnectionDataFromPropertiesFile(dname="production",fname=mpFile)
-    mgicon = getConnection(mgiparams)
-    mmcon =  getConnection(mmparams)
+    mgiparams = db.getConnectionParamsFromPropertiesFile(dname="mgiadhoc",fname=mpFile)
+    mgicon = db.connect(**mgiparams)
+    mmparams = db.getConnectionParamsFromPropertiesFile(dname="production",fname=mpFile)
+    mmcon =  db.connect(**mmparams)
     print "-"*60
     print "MGI/MouseMine Comparative Acceptance Tests"
     print "MGI connection:", mgiparams['host'], mgiparams['database']
