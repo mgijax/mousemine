@@ -270,11 +270,10 @@
 	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
   </inlinelist>
   <fields>
-      <fieldconfig fieldExpr="namespace"/> 
-      <fieldconfig fieldExpr="name"/> 
-      <fieldconfig fieldExpr="obsolete"/> 
       <fieldconfig fieldExpr="startsAt"/> 
       <fieldconfig fieldExpr="endsAt"/> 
+      <fieldconfig fieldExpr="namespace"/> 
+      <fieldconfig fieldExpr="name"/> 
   </fields>
   </class>
   
