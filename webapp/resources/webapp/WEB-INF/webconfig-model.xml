@@ -265,10 +265,16 @@
 
 
   <!-- =============================================================== -->
-  <class className="org.intermine.model.bio.EMAPXTerm">
+  <class className="org.intermine.model.bio.EMAPATerm">
   <inlinelist>
 	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
   </inlinelist>
+  <fields>
+      <fieldconfig fieldExpr="startsAt"/> 
+      <fieldconfig fieldExpr="endsAt"/> 
+      <fieldconfig fieldExpr="namespace"/> 
+      <fieldconfig fieldExpr="name"/> 
+  </fields>
   </class>
   
 
@@ -493,9 +499,30 @@
 	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
 	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
 	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
-    />
- <enrichmentwidgetdisplayer id="mp_enrichment_for_feature"
+	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name" />
+
+ <enrichmentwidgetdisplayer id="emapa_enrichment_for_feature"
+    title="Anatomy Enrichment"
+    description="Anatomy (EMAPA) terms enriched for items in this list."
+    label="EMAPA Term"
+    startClass="SequenceFeature"
+    typeClass="SequenceFeature"
+    startClassDisplay="primaryIdentifier"
+    enrich="expression.structure.parents.name"
+    enrichIdentifier="expression.structure.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	expression.strength != Absent,
+	expression.strength != Ambiguous"
+    views="symbol,name,primaryIdentifier,organism.name,
+	expression.structure.identifier,
+	expression.structure.name,
+	expression.strength,
+	expression.pattern,
+	expression.structure.parents.identifier,
+	expression.structure.parents.name" />
+
+<enrichmentwidgetdisplayer id="mp_enrichment_for_feature"
     title="Mammalian Phenotype Ontology Enrichment"
     description="MP terms enriched for items in this list."
     label="MP Term"

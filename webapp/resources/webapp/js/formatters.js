@@ -143,6 +143,12 @@
   };
 
   /*
+   */
+  var formatExpressionAge = function(age){
+    return age.replace('embryonic day ','E').replace('postnatal day ','P');
+  };
+
+  /*
    * Returns an anchor tag to a specific location on a GXD assay detail.
    * ImageLabel is the displayed label of the specimen (for insitu data) or of the
    * gel image (for gel data).
@@ -154,26 +160,11 @@
 	  return null;
 
       var figure = imageLabel.replace(/[^a-zA-Z0-9]+/g, "_");
+      if(!id)
+          return wrapSpan(escapeHtml(imageLabel));
       var url = 'http://www.informatics.jax.org/assay/'+id+'#'+figure+'_id';
       return formatLink(url, wrapSpan(escapeHtml(imageLabel)), "_blank", true)
   };
-
-  /*
-   * Formats an EMAPX term by combining the namespace (which contains the Theiler stage)
-   * and the structure name. So for example, a structure with namespace="EMAPX:TS18"
-   * and structure name="heart" would be formatted as "TS18:heart".
-   */
-  var formatEmapxTerm = function(imObj){
-      var ns = imObj.get('namespace');
-      var name = imObj.get('name');
-      if(!ns)
-          return name;
-      else if(!name)
-          return ns;
-      else
-          return ns.substring(ns.indexOf(':')+1) + ':' + name;
-  };
-  formatEmapxTerm.replaces = ['namespace','name'];
 
   /* uncomment to enable the table popups (previews) on hover, instead of click */
   //intermine.setOptions({CellPreviewTrigger: 'hover'});
@@ -199,17 +190,15 @@
 
 
   intermine.results.formatters.Location = lfnew;
-  intermine.results.formatters.EMAPXTerm = formatEmapxTerm;
   
   intermine.setOptions({
       'Location.start': true,
       'Location.end': true,
       'Location.strand' : true,
-      'EMAPXTerm.namespace' : true,
-      'EMAPXTerm.name' : true,
       'OntologyAnnotationEvidence.withText' : formatWithText ,
       'Publication.title': function(o){return abbreviate(o.get("title"),35);}, 
       'Publication.citation':function(o){return abbreviate(o.get("citation"),35);},
+      'GXDExpression.age' : function(o){return formatExpressionAge(o.get("age"));},
       'GXDExpression.assayId':function(o){return formatMGILink(o.get("assayId"));},
       'GXDExpression.probe':function(o){return formatMGILink(o.get("probe"));},
       'GXDExpression.image':function(o){return formatExpressionImage(o.get("image"),o.get("assayId"));}
