@@ -21,13 +21,19 @@
   <tag name="im:aspect:Disease" objectIdentifier="MFeature_HDisease" type="template">
   </tag>
 
-  <tag name="im:aspect:Expression" objectIdentifier="Gene_Expression" type="template">
+  <tag name="im:aspect:Expression" objectIdentifier="Structure_Expression" type="template">
   </tag>
 
   <tag name="im:aspect:Expression" objectIdentifier="Publication_Expression" type="template">
   </tag>
 
-  <tag name="im:aspect:Expression" objectIdentifier="Structure_Expression" type="template">
+  <tag name="im:aspect:Expression" objectIdentifier="Gene_Expression" type="template">
+  </tag>
+
+  <tag name="im:aspect:Function" objectIdentifier="Term_Ancestors" type="template">
+  </tag>
+
+  <tag name="im:aspect:Function" objectIdentifier="Term_Descendants" type="template">
   </tag>
 
   <tag name="im:aspect:Function" objectIdentifier="GO_Publications" type="template">
@@ -58,48 +64,6 @@
   </tag>
 
   <tag name="im:aspect:Function" objectIdentifier="Term_Children" type="template">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Feature_overlapping" type="template">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Lookup_MAlleles" type="template">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Chromosome.features" type="collection">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Chromosome.transcripts" type="collection">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Protein.genes" type="collection">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Transcript.introns" type="collection">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="CDS.MRNA" type="reference">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Chromosome.genes" type="collection">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Gene_particularGoannotation" type="template">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="org.intermine.model.bio.Gene" type="class">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="LocatedSequenceFeature.sequence" type="reference">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Transcript.gene" type="reference">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Gene.transcripts" type="collection">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="org.intermine.model.bio.UTR" type="class">
   </tag>
 
   <tag name="im:aspect:Genome" objectIdentifier="Gene_allGOTerms" type="template">
@@ -145,6 +109,48 @@
   </tag>
 
   <tag name="im:aspect:Genome" objectIdentifier="Feature_crossrefs" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Feature_overlapping" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Lookup_MAlleles" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Chromosome.features" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Chromosome.transcripts" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Protein.genes" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Transcript.introns" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="CDS.MRNA" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Chromosome.genes" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Gene_particularGoannotation" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="org.intermine.model.bio.Gene" type="class">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="LocatedSequenceFeature.sequence" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Transcript.gene" type="reference">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="Gene.transcripts" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="org.intermine.model.bio.UTR" type="class">
   </tag>
 
   <tag name="im:aspect:Homology" objectIdentifier="Gene_Ortholog" type="template">
@@ -220,6 +226,12 @@
   </tag>
 
   <tag name="im:converter" objectIdentifier="Protein_To_Gene_Type_Converter" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Gene_Expression" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Structure_Expression" type="template">
   </tag>
 
   <tag name="im:frontpage" objectIdentifier="Protein_GOterms" type="template">
@@ -300,13 +312,19 @@
   <tag name="im:frontpage" objectIdentifier="MPhenotype_MGenotype" type="template">
   </tag>
 
-  <tag name="im:frontpage" objectIdentifier="Gene_Expression" type="template">
-  </tag>
-
   <tag name="im:frontpage" objectIdentifier="Publication_Expression" type="template">
   </tag>
 
-  <tag name="im:frontpage" objectIdentifier="Structure_Expression" type="template">
+  <tag name="im:hidden" objectIdentifier="EMAPATerm.expression" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="SequenceFeature.expression" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="BioEntity.ontologyAnnotations" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="OntologyTerm.parents" type="collection">
   </tag>
 
   <tag name="im:hidden" objectIdentifier="Allele.genotypes" type="collection">
@@ -379,6 +397,18 @@
   </tag>
 
   <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.Publication" type="class">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Gene_Expression" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Structure_Expression" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Term_Ancestors" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Term_Descendants" type="template">
   </tag>
 
   <tag name="im:public" objectIdentifier="Bmp disease lists - Thu Mar 14 2013" type="bag">
@@ -552,13 +582,19 @@
   <tag name="im:public" objectIdentifier="Term_Children" type="template">
   </tag>
 
-  <tag name="im:public" objectIdentifier="Gene_Expression" type="template">
-  </tag>
-
   <tag name="im:public" objectIdentifier="Publication_Expression" type="template">
   </tag>
 
-  <tag name="im:public" objectIdentifier="Structure_Expression" type="template">
+  <tag name="im:report" objectIdentifier="Gene_Expression" type="template">
+  </tag>
+
+  <tag name="im:report" objectIdentifier="Structure_Expression" type="template">
+  </tag>
+
+  <tag name="im:report" objectIdentifier="Term_Ancestors" type="template">
+  </tag>
+
+  <tag name="im:report" objectIdentifier="Term_Descendants" type="template">
   </tag>
 
   <tag name="im:report" objectIdentifier="HDisease_HGene" type="template">
@@ -612,13 +648,7 @@
   <tag name="im:report" objectIdentifier="Term_Children" type="template">
   </tag>
 
-  <tag name="im:report" objectIdentifier="Gene_Expression" type="template">
-  </tag>
-
   <tag name="im:report" objectIdentifier="Publication_Expression" type="template">
-  </tag>
-
-  <tag name="im:report" objectIdentifier="Structure_Expression" type="template">
   </tag>
 
   <tag name="im:summary" objectIdentifier="Allele.feature" type="reference">

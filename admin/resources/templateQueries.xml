@@ -18,24 +18,13 @@
     <constraint path="SequenceFeature" editable="true" op="LOOKUP" value="Bmp2, Bmp4" extraValue="M. musculus"/>
   </query>
 </template>
-<template name="Gene_Expression" title="Gene --&gt; Expression annotations" comment="">
-  <query name="Gene_Expression" model="genomic" view="GXDExpression.assayType GXDExpression.feature.symbol GXDExpression.feature.primaryIdentifier GXDExpression.structure.namespace GXDExpression.structure.name GXDExpression.strength GXDExpression.pattern GXDExpression.genotype.symbol GXDExpression.sex GXDExpression.age GXDExpression.assayId GXDExpression.probe GXDExpression.image GXDExpression.publication.mgiJnum" longDescription="Returns expression annotations for the specified gene(s)." sortOrder="GXDExpression.assayId asc" constraintLogic="A and B">
-    <constraint path="GXDExpression.feature.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
-    <constraint path="GXDExpression.feature" code="A" editable="true" op="LOOKUP" value="Pax6" extraValue=""/>
-  </query>
-</template>
-<template name="Gene_Ortholog" title="Genes --&gt; Homologs" comment="">
-  <query name="Gene_Ortholog" model="genomic" view="Gene.primaryIdentifier Gene.symbol Gene.organism.name Gene.homologues.homologue.primaryIdentifier Gene.homologues.homologue.symbol Gene.homologues.homologue.organism.name Gene.homologues.type Gene.homologues.dataSets.name" longDescription="Returns homologs of specified genes." sortOrder="Gene.primaryIdentifier asc">
-    <constraint path="Gene" editable="true" op="LOOKUP" value="C4a, Sox9" extraValue="M. musculus"/>
-  </query>
-</template>
 <template name="GO_MFeatures" title="Functions (GO terms and children) --&gt; Mouse features" comment="">
   <query name="GO_MFeatures" model="genomic" view="SequenceFeature.ontologyAnnotations.ontologyTerm.namespace SequenceFeature.ontologyAnnotations.ontologyTerm.identifier SequenceFeature.ontologyAnnotations.ontologyTerm.name SequenceFeature.ontologyAnnotations.qualifier SequenceFeature.ontologyAnnotations.evidence.code.code SequenceFeature.ontologyAnnotations.evidence.withText SequenceFeature.primaryIdentifier SequenceFeature.symbol SequenceFeature.name SequenceFeature.mgiType SequenceFeature.ontologyAnnotations.evidence.publications.mgiJnum SequenceFeature.ontologyAnnotations.evidence.publications.pubMedId SequenceFeature.ontologyAnnotations.evidence.publications.citation" longDescription="Returns mouse features associated with specified GO terms (and any children of this GO term)." sortOrder="SequenceFeature.mgiType asc" constraintLogic="A and D and C">
     <constraint path="SequenceFeature.ontologyAnnotations.dataSets.name" code="A" editable="false" description="" op="=" value="GOTerm to Mouse Marker Annotations from MGI"/>
     <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm" editable="false" type="GOTerm"/>
     <constraint path="SequenceFeature.organism.taxonId" code="D" editable="false" description="" op="=" value="10090"/>
     <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm.parents" editable="false" type="GOTerm"/>
-    <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm.parents" code="C" editable="true" op="LOOKUP" value="DNA repair" extraValue=""/>
+    <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm.parents" code="C" editable="true" op="LOOKUP" value="DNA repair"/>
   </query>
 </template>
 <template name="GO_MFeatures_NoChildren" title="Functions (GO terms) --&gt; Mouse features" comment="">
@@ -43,7 +32,7 @@
     <constraint path="SequenceFeature.organism.taxonId" code="D" editable="false" description="" op="=" value="10090"/>
     <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm" editable="false" type="GOTerm"/>
     <constraint path="SequenceFeature.ontologyAnnotations.dataSets.name" code="A" editable="false" description="" op="=" value="GOTerm to Mouse Marker Annotations from MGI"/>
-    <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm" code="C" editable="true" op="LOOKUP" value="DNA repair" extraValue=""/>
+    <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm" code="C" editable="true" op="LOOKUP" value="DNA repair"/>
   </query>
 </template>
 <template name="GO_MFeatures_NoNamespace" title="Functions (GO terms and children) --&gt; Mouse features" comment="">
@@ -52,7 +41,7 @@
     <constraint path="SequenceFeature.organism.taxonId" code="D" editable="false" description="" op="=" value="10090"/>
     <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm" editable="false" type="GOTerm"/>
     <constraint path="SequenceFeature.ontologyAnnotations.dataSets.name" code="A" editable="false" description="" op="=" value="GOTerm to Mouse Marker Annotations from MGI"/>
-    <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm.parents" code="C" editable="true" op="LOOKUP" value="DNA repair" extraValue=""/>
+    <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm.parents" code="C" editable="true" op="LOOKUP" value="DNA repair"/>
   </query>
 </template>
 <template name="GO_MFeatures_NoPubs" title="Functions (GO terms and children) --&gt; Mouse features" comment="">
@@ -61,18 +50,29 @@
     <constraint path="SequenceFeature.organism.taxonId" code="D" editable="false" description="" op="=" value="10090"/>
     <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm" editable="false" type="GOTerm"/>
     <constraint path="SequenceFeature.ontologyAnnotations.dataSets.name" code="A" editable="false" description="" op="=" value="GOTerm to Mouse Marker Annotations from MGI"/>
-    <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm.parents" code="C" editable="true" op="LOOKUP" value="DNA repair" extraValue=""/>
+    <constraint path="SequenceFeature.ontologyAnnotations.ontologyTerm.parents" code="C" editable="true" op="LOOKUP" value="DNA repair"/>
   </query>
 </template>
 <template name="GO_Publications" title="Functions (GO terms and children) --&gt; Publications" comment="">
   <query name="GO_Publications" model="genomic" view="GOTerm.identifier GOTerm.name GOTerm.ontologyAnnotations.evidence.code.code GOTerm.ontologyAnnotations.evidence.withText GOTerm.ontologyAnnotations.evidence.publications.mgiJnum GOTerm.ontologyAnnotations.evidence.publications.pubMedId GOTerm.ontologyAnnotations.evidence.publications.firstAuthor GOTerm.ontologyAnnotations.evidence.publications.journal GOTerm.ontologyAnnotations.evidence.publications.title GOTerm.ontologyAnnotations.evidence.publications.year GOTerm.ontologyAnnotations.qualifier" longDescription="Returns publications related to specified function (GO) terms, i.e., those cited by annotations involving those terms  (and any children of the GO terms)." sortOrder="GOTerm.ontologyAnnotations.evidence.publications.year desc">
     <constraint path="GOTerm.parents" editable="false" type="GOTerm"/>
-    <constraint path="GOTerm.parents" editable="true" op="LOOKUP" value="homeostatic process" extraValue=""/>
+    <constraint path="GOTerm.parents" editable="true" op="LOOKUP" value="homeostatic process"/>
   </query>
 </template>
 <template name="GO_Publications_NoChildren" title="Functions (GO terms) --&gt; Publications" comment="">
   <query name="GO_Publications_NoChildren" model="genomic" view="GOTerm.identifier GOTerm.name GOTerm.ontologyAnnotations.evidence.code.code GOTerm.ontologyAnnotations.evidence.withText GOTerm.ontologyAnnotations.evidence.publications.mgiJnum GOTerm.ontologyAnnotations.evidence.publications.pubMedId GOTerm.ontologyAnnotations.evidence.publications.firstAuthor GOTerm.ontologyAnnotations.evidence.publications.journal GOTerm.ontologyAnnotations.evidence.publications.title GOTerm.ontologyAnnotations.evidence.publications.year" longDescription="Returns publications related to specified function (GO) terms, i.e., those cited by annotations involving those terms." sortOrder="GOTerm.identifier asc">
-    <constraint path="GOTerm" editable="true" op="LOOKUP" value="homeostatic process" extraValue=""/>
+    <constraint path="GOTerm" editable="true" op="LOOKUP" value="homeostatic process"/>
+  </query>
+</template>
+<template name="Gene_Expression" title="Gene --&gt; Expression annotations" comment="">
+  <query name="Gene_Expression" model="genomic" view="GXDExpression.assayType GXDExpression.feature.symbol GXDExpression.feature.primaryIdentifier GXDExpression.stage GXDExpression.age GXDExpression.structure.name GXDExpression.strength GXDExpression.pattern GXDExpression.genotype.symbol GXDExpression.sex GXDExpression.assayId GXDExpression.probe GXDExpression.image GXDExpression.publication.mgiJnum" longDescription="Returns expression annotations for the specified gene(s)." sortOrder="GXDExpression.assayId asc" constraintLogic="A and B">
+    <constraint path="GXDExpression.feature.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
+    <constraint path="GXDExpression.feature" code="A" editable="true" op="LOOKUP" value="Pax6"/>
+  </query>
+</template>
+<template name="Gene_Ortholog" title="Genes --&gt; Homologs" comment="">
+  <query name="Gene_Ortholog" model="genomic" view="Gene.primaryIdentifier Gene.symbol Gene.organism.name Gene.homologues.homologue.primaryIdentifier Gene.homologues.homologue.symbol Gene.homologues.homologue.organism.name Gene.homologues.type Gene.homologues.dataSets.name" longDescription="Returns homologs of specified genes." sortOrder="Gene.primaryIdentifier asc">
+    <constraint path="Gene" editable="true" op="LOOKUP" value="C4a, Sox9" extraValue="M. musculus"/>
   </query>
 </template>
 <template name="HDisease_HGene" title="Diseases (MEDIC terms) --&gt; Human genes" comment="">
@@ -80,7 +80,7 @@
     <constraint path="Gene.ontologyAnnotations.dataSets.name" code="B" editable="false" description="" op="=" value="DiseaseTerm to Human Marker Annotations from MGI"/>
     <constraint path="Gene.ontologyAnnotations.ontologyTerm" editable="false" type="MedicTerm"/>
     <constraint path="Gene.ontologyAnnotations.ontologyTerm.parents" editable="false" type="MedicTerm"/>
-    <constraint path="Gene.ontologyAnnotations.ontologyTerm.parents" code="A" editable="true" op="LOOKUP" value="*diabetes*" extraValue=""/>
+    <constraint path="Gene.ontologyAnnotations.ontologyTerm.parents" code="A" editable="true" op="LOOKUP" value="*diabetes*"/>
   </query>
 </template>
 <template name="HDisease_MModel" title="Diseases (MEDIC terms) --&gt; Mouse models" comment="">
@@ -93,14 +93,14 @@
     <constraint path="Gene.alleles.genotypes.ontologyAnnotations.dataSets.name" code="B" editable="false" description="" op="=" value="DiseaseTerm to Mouse Genotype Annotations from MGI"/>
     <constraint path="Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.parents" editable="false" type="MedicTerm"/>
     <constraint path="Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm" editable="false" type="MedicTerm"/>
-    <constraint path="Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.parents" code="A" editable="true" op="LOOKUP" value="parkinson*" extraValue=""/>
+    <constraint path="Gene.alleles.genotypes.ontologyAnnotations.ontologyTerm.parents" code="A" editable="true" op="LOOKUP" value="parkinson*"/>
   </query>
 </template>
 <template name="HDisease_Publications" title="Diseases (MEDIC terms) --&gt; Publications" comment="">
   <query name="HDisease_Publications" model="genomic" view="MedicTerm.identifier MedicTerm.name MedicTerm.ontologyAnnotations.evidence.publications.mgiJnum MedicTerm.ontologyAnnotations.evidence.publications.pubMedId MedicTerm.ontologyAnnotations.evidence.publications.firstAuthor MedicTerm.ontologyAnnotations.evidence.publications.journal MedicTerm.ontologyAnnotations.evidence.publications.title MedicTerm.ontologyAnnotations.evidence.publications.year" longDescription="Returns mouse model publications for the specified disease (MEDIC) terms." sortOrder="MedicTerm.name asc" constraintLogic="A and B">
     <constraint path="MedicTerm.parents" editable="false" type="MedicTerm"/>
     <constraint path="MedicTerm.ontologyAnnotations.dataSets.name" code="A" editable="false" description="" op="=" value="DiseaseTerm to Mouse Genotype Annotations from MGI"/>
-    <constraint path="MedicTerm.parents" code="B" editable="true" op="LOOKUP" value="Parkinson*" extraValue=""/>
+    <constraint path="MedicTerm.parents" code="B" editable="true" op="LOOKUP" value="Parkinson*"/>
   </query>
 </template>
 <template name="HGene_HDisease" title="Human genes --&gt; Diseases (MEDIC) terms" comment="">
@@ -170,7 +170,7 @@
     <constraint path="Allele.genotypes.ontologyAnnotations.dataSets.name" code="A" editable="false" description="" op="=" value="DiseaseTerm to Mouse Genotype Annotations from MGI"/>
     <constraint path="Allele.organism.taxonId" code="C" editable="false" description="" op="=" value="10090"/>
     <constraint path="Allele.genotypes.ontologyAnnotations.ontologyTerm" editable="false" type="MedicTerm"/>
-    <constraint path="Allele" code="D" editable="true" op="LOOKUP" value="Kras*" extraValue=""/>
+    <constraint path="Allele" code="D" editable="true" op="LOOKUP" value="Kras*"/>
   </query>
 </template>
 <template name="MAllele_MPhenotype" title="Mouse alleles --&gt; Mammalian phenotypes (MP terms)" comment="">
@@ -183,7 +183,7 @@
     <constraint path="Allele.genotypes.organism.taxonId" code="A" editable="false" description="" op="=" value="10090"/>
     <constraint path="Allele.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
     <constraint path="Allele.genotypes.ontologyAnnotations.ontologyTerm" editable="false" type="MPTerm"/>
-    <constraint path="Allele" code="D" editable="true" op="LOOKUP" value="Kras*" extraValue=""/>
+    <constraint path="Allele" code="D" editable="true" op="LOOKUP" value="Kras*"/>
   </query>
 </template>
 <template name="MFeature_GO" title="Mouse features --&gt; Functions (GO terms)" comment="">
@@ -211,7 +211,7 @@
   <query name="MFeature_MAllele" model="genomic" view="SequenceFeature.primaryIdentifier SequenceFeature.symbol SequenceFeature.alleles.primaryIdentifier SequenceFeature.alleles.symbol SequenceFeature.alleles.name SequenceFeature.alleles.alleleType" longDescription="Returns alleles of the specified features." sortOrder="SequenceFeature.primaryIdentifier asc" constraintLogic="A and B and C">
     <constraint path="SequenceFeature.organism.taxonId" code="A" editable="false" description="" op="=" value="10090"/>
     <constraint path="SequenceFeature.alleles.isWildType" code="C" editable="false" description="" op="=" value="false"/>
-    <constraint path="SequenceFeature" code="B" editable="true" op="LOOKUP" value="Pax6" extraValue=""/>
+    <constraint path="SequenceFeature" code="B" editable="true" op="LOOKUP" value="Pax6"/>
   </query>
 </template>
 <template name="MFeature_MPhenotype" title="Mouse features --&gt; Mammalian phenotypes (MP terms)" comment="">
@@ -243,14 +243,14 @@
     <constraint path="SequenceFeature.alleles.isRecombinase" code="D" editable="false" description="" op="=" value="false"/>
     <constraint path="SequenceFeature.alleles.genotypes.zygosity" code="E" editable="false" description="" op="!=" value="cx"/>
     <constraint path="SequenceFeature.alleles.genotypes.ontologyAnnotations.qualifier" code="F" editable="false" description="" op="IS NULL"/>
-    <constraint path="SequenceFeature.alleles.genotypes.ontologyAnnotations.ontologyTerm.parents" code="A" editable="true" description="Phenotype" op="LOOKUP" value="*tail morphology*" extraValue=""/>
+    <constraint path="SequenceFeature.alleles.genotypes.ontologyAnnotations.ontologyTerm.parents" code="A" editable="true" description="Phenotype" op="LOOKUP" value="*tail morphology*"/>
   </query>
 </template>
 <template name="MPhenotype_Publications" title="Mammalian phenotypes (MP terms) --&gt; Publications" comment="">
   <query name="MPhenotype_Publications" model="genomic" view="MPTerm.identifier MPTerm.name MPTerm.ontologyAnnotations.evidence.publications.pubMedId MPTerm.ontologyAnnotations.evidence.publications.mgiJnum MPTerm.ontologyAnnotations.evidence.publications.firstAuthor MPTerm.ontologyAnnotations.evidence.publications.journal MPTerm.ontologyAnnotations.evidence.publications.title MPTerm.ontologyAnnotations.evidence.publications.year" longDescription="Returns publications associated with the specified MP term(s). These pubs were used in phenotype annotations." sortOrder="MPTerm.ontologyAnnotations.evidence.publications.year asc" constraintLogic="A and C">
     <constraint path="MPTerm.ontologyAnnotations.dataSets.name" code="A" editable="false" description="" op="=" value="MPTerm to Mouse Genotype Annotations from MGI"/>
     <constraint path="MPTerm.parents" editable="false" type="MPTerm"/>
-    <constraint path="MPTerm.parents" code="C" editable="true" op="LOOKUP" value="*tail morphology*" extraValue=""/>
+    <constraint path="MPTerm.parents" code="C" editable="true" op="LOOKUP" value="*tail morphology*"/>
   </query>
 </template>
 <template name="MQTL_MFeature" title="Mouse QTL --&gt; Overlapping features" comment="">
@@ -261,27 +261,27 @@
   </query>
 </template>
 <template name="Publication_Expression" title="Publication --&gt; Expression annotations" comment="">
-  <query name="Publication_Expression" model="genomic" view="GXDExpression.assayType GXDExpression.feature.symbol GXDExpression.feature.primaryIdentifier GXDExpression.structure.namespace GXDExpression.structure.name GXDExpression.strength GXDExpression.pattern GXDExpression.genotype.symbol GXDExpression.sex GXDExpression.age GXDExpression.assayId GXDExpression.probe GXDExpression.image GXDExpression.publication.mgiJnum" longDescription="Returns expression annotations for the specified publication(s)." sortOrder="GXDExpression.assayId asc" constraintLogic="B and A">
+  <query name="Publication_Expression" model="genomic" view="GXDExpression.assayType GXDExpression.feature.symbol GXDExpression.feature.primaryIdentifier GXDExpression.stage GXDExpression.structure.name GXDExpression.strength GXDExpression.pattern GXDExpression.genotype.symbol GXDExpression.sex GXDExpression.age GXDExpression.assayId GXDExpression.probe GXDExpression.image GXDExpression.publication.mgiJnum" longDescription="Returns expression annotations for the specified publication(s)." sortOrder="GXDExpression.assayId asc" constraintLogic="B and A">
     <constraint path="GXDExpression.feature.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
-    <constraint path="GXDExpression.publication" code="A" editable="true" op="LOOKUP" value="J:49164, 9636075" extraValue=""/>
+    <constraint path="GXDExpression.publication" code="A" editable="true" op="LOOKUP" value="J:49164, 9636075"/>
   </query>
 </template>
 <template name="Publication_GO" title="Publication --&gt; Functions (GO terms)" comment="">
   <query name="Publication_GO" model="genomic" view="GOTerm.ontologyAnnotations.evidence.publications.mgiJnum GOTerm.ontologyAnnotations.evidence.publications.pubMedId GOTerm.ontologyAnnotations.evidence.publications.firstAuthor GOTerm.ontologyAnnotations.evidence.publications.journal GOTerm.ontologyAnnotations.evidence.publications.title GOTerm.ontologyAnnotations.evidence.publications.year GOTerm.ontologyAnnotations.subject.primaryIdentifier GOTerm.ontologyAnnotations.subject.symbol GOTerm.namespace GOTerm.ontologyAnnotations.qualifier GOTerm.identifier GOTerm.name GOTerm.ontologyAnnotations.evidence.code.code GOTerm.ontologyAnnotations.evidence.withText" longDescription="Returns gene functions (GO terms) reported in specified publication(s)." sortOrder="GOTerm.identifier asc">
     <constraint path="GOTerm.ontologyAnnotations.subject" editable="false" type="SequenceFeature"/>
-    <constraint path="GOTerm.ontologyAnnotations.evidence.publications" editable="true" op="LOOKUP" value="12068289" extraValue=""/>
+    <constraint path="GOTerm.ontologyAnnotations.evidence.publications" editable="true" op="LOOKUP" value="12068289"/>
   </query>
 </template>
 <template name="Publication_HDisease" title="Publication --&gt; Human diseases (MEDIC terms)" comment="">
   <query name="Publication_HDisease" model="genomic" view="MedicTerm.ontologyAnnotations.evidence.publications.mgiJnum MedicTerm.ontologyAnnotations.evidence.publications.pubMedId MedicTerm.ontologyAnnotations.evidence.publications.firstAuthor MedicTerm.ontologyAnnotations.evidence.publications.journal MedicTerm.ontologyAnnotations.evidence.publications.title MedicTerm.ontologyAnnotations.evidence.publications.year MedicTerm.identifier MedicTerm.name" longDescription="Returns human diseases (MEDIC terms) reported in specified publication(s)." sortOrder="MedicTerm.identifier asc">
-    <constraint path="MedicTerm.ontologyAnnotations.evidence.publications" editable="true" op="LOOKUP" value="J:166985, J:60638, J:85268" extraValue=""/>
+    <constraint path="MedicTerm.ontologyAnnotations.evidence.publications" editable="true" op="LOOKUP" value="J:166985, J:60638, J:85268"/>
   </query>
 </template>
 <template name="Publication_MFeature" title="Publication --&gt; Mouse features" comment="">
   <query name="Publication_MFeature" model="genomic" view="Publication.mgiJnum Publication.pubMedId Publication.firstAuthor Publication.journal Publication.title Publication.year Publication.bioEntities.primaryIdentifier Publication.bioEntities.symbol Publication.bioEntities.name Publication.bioEntities.mgiType" longDescription="Returns mouse features associated with the specified publication(s)." sortOrder="Publication.bioEntities.symbol asc" constraintLogic="A and B">
     <constraint path="Publication.bioEntities" editable="false" type="SequenceFeature"/>
     <constraint path="Publication.bioEntities.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
-    <constraint path="Publication" code="A" editable="true" op="LOOKUP" value="J:185670" extraValue=""/>
+    <constraint path="Publication" code="A" editable="true" op="LOOKUP" value="J:185670"/>
   </query>
 </template>
 <template name="Publication_MPhenotypes" title="Publication --&gt; Mammalian phenotypes (MP terms)" comment="">
@@ -290,24 +290,35 @@
   </query>
 </template>
 <template name="Structure_Expression" title="Anatomical structure --&gt; Expression annotations" comment="">
-  <query name="Structure_Expression" model="genomic" view="GXDExpression.assayType GXDExpression.feature.symbol GXDExpression.feature.primaryIdentifier GXDExpression.structure.namespace GXDExpression.structure.name GXDExpression.strength GXDExpression.pattern GXDExpression.genotype.symbol GXDExpression.sex GXDExpression.age GXDExpression.assayId GXDExpression.probe GXDExpression.image GXDExpression.publication.mgiJnum" longDescription="Returns expression annotations for the specified anatomical structure(s)." sortOrder="GXDExpression.assayId asc" constraintLogic="B and A">
-    <constraint path="GXDExpression.structure.parents" editable="false" type="EMAPXTerm"/>
+  <query name="Structure_Expression" model="genomic" view="GXDExpression.assayType GXDExpression.feature.symbol GXDExpression.feature.primaryIdentifier GXDExpression.stage GXDExpression.age GXDExpression.structure.name GXDExpression.strength GXDExpression.pattern GXDExpression.genotype.symbol GXDExpression.sex GXDExpression.assayId GXDExpression.probe GXDExpression.image GXDExpression.publication.mgiJnum" longDescription="Returns expression annotations for the specified anatomical structure(s)." sortOrder="GXDExpression.assayId asc" constraintLogic="B and A">
     <constraint path="GXDExpression.feature.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
-    <constraint path="GXDExpression.structure.parents" code="A" editable="true" op="LOOKUP" value="*spinal cord" extraValue=""/>
+    <constraint path="GXDExpression.structure.parents" editable="false" type="EMAPATerm"/>
+    <constraint path="GXDExpression.structure.parents" code="A" editable="true" op="LOOKUP" value="future spinal cord"/>
+  </query>
+</template>
+<template name="Term_Ancestors" title="Ontology Term --&gt; All ancestors" comment="">
+  <query name="Term_Ancestors" model="genomic" view="OntologyTerm.parents.identifier OntologyTerm.parents.name OntologyTerm.identifier OntologyTerm.name" longDescription="Returns the given term(s) and all their descendant terms." sortOrder="OntologyTerm.identifier asc">
+    <constraint path="OntologyTerm" editable="true" op="LOOKUP" value="EMAPA:35115"/>
   </query>
 </template>
 <template name="Term_Children" title="Ontology Term --&gt; Direct children" comment="">
   <query name="Term_Children" model="genomic" view="OntologyTerm.relations.childTerm.identifier OntologyTerm.relations.childTerm.name OntologyTerm.relations.relationship OntologyTerm.identifier OntologyTerm.name" longDescription="" sortOrder="OntologyTerm.identifier asc" constraintLogic="A and B and C">
     <constraint path="OntologyTerm.relations.direct" code="B" editable="false" description="" op="=" value="true"/>
     <constraint path="OntologyTerm.relations.parentTerm" code="C" editable="false" op="=" loopPath="OntologyTerm"/>
-    <constraint path="OntologyTerm" code="A" editable="true" op="LOOKUP" value="GO:0035909" extraValue=""/>
+    <constraint path="OntologyTerm" code="A" editable="true" op="LOOKUP" value="GO:0035909"/>
+  </query>
+</template>
+<template name="Term_Descendants" title="Ontology Term --&gt; All descendants" comment="">
+  <query name="Term_Descendants" model="genomic" view="OntologyTerm.parents.identifier OntologyTerm.parents.name OntologyTerm.identifier OntologyTerm.name" longDescription="Returns the given term(s) and all their descendant terms." sortOrder="OntologyTerm.identifier asc">
+    <constraint path="OntologyTerm.parents" editable="true" op="LOOKUP" value="GO:0035909"/>
   </query>
 </template>
 <template name="Term_Parents" title="Ontology Term --&gt; Direct parents" comment="">
   <query name="Term_Parents" model="genomic" view="OntologyTerm.identifier OntologyTerm.name OntologyTerm.relations.relationship OntologyTerm.relations.parentTerm.identifier OntologyTerm.relations.parentTerm.name" longDescription="" sortOrder="OntologyTerm.identifier asc" constraintLogic="A and B and C">
     <constraint path="OntologyTerm.relations.childTerm" code="C" editable="false" op="=" loopPath="OntologyTerm"/>
     <constraint path="OntologyTerm.relations.direct" code="B" editable="false" description="" op="=" value="true"/>
-    <constraint path="OntologyTerm" code="A" editable="true" op="LOOKUP" value="GO:0035909" extraValue=""/>
+    <constraint path="OntologyTerm" code="A" editable="true" op="LOOKUP" value="GO:0035909"/>
   </query>
 </template>
 </template-queries>
+
