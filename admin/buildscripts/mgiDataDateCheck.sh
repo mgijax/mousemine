@@ -1,19 +1,7 @@
-# !/bin/sh
+#!/bin/sh
 
-
-current=$(grep 'project.releaseVersion' /var/lib/jenkins/intermine/mousemine/webapp/build/main/intermine.properties)
-
-dumper=$(grep 'project.releaseVersion' /var/lib/jenkins/.intermine/mousemine.properties)
-
-echo $dumper
-echo $current
-
-if [ "$dumper" = "$current" ]
- then
-	echo "Dumped data is same as deployed. Don't build."
-	exit 99
- else
-	echo "Dumped data is new. Need to build."
-	exit 0
-fi	
+export LD_LIBRARY_PATH=/usr/local/pgsql/lib
+cd ~/etl_build/etl/bin
+python ./checkForMgiUpdate.py
+e=$?; if [ $e -ne 0 ]; then exit $e; fi
 
