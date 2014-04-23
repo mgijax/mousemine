@@ -453,7 +453,7 @@
 	 replacesFields=""
 	 placement="Genome"
 	 types="SequenceFeature"
-         parameters="{'baseURL':'http://gbr3/JBrowse/index.html?data=data/mouse','defaultTrack':'MGI_Genome_Features', 'QTL':'MGI_QTL'}"/>
+         parameters="{'baseURL':'http://jbrowse.informatics.jax.org/?data=data/mouse','defaultTrack':'MGI_Genome_Features', 'QTL':'MGI_QTL'}"/>
 
      <!--
      <reportdisplayer javaClass="org.intermine.bio.web.displayer.OverlappingFeaturesDisplayer"
