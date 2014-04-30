@@ -448,12 +448,12 @@
 	types="SequenceFeature"/>
 
 
-    <reportdisplayer javaClass="org.intermine.bio.web.displayer.JBrowseDisplayer"
-	 jspName="model/jbrowseDisplayer.jsp"
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.JGBrowseDisplayer"
+	 jspName="model/jgbrowseDisplayer.jsp"
 	 replacesFields=""
 	 placement="Genome"
 	 types="SequenceFeature"
-         parameters="{'baseURL':'http://jbrowse.informatics.jax.org/?data=data/mouse','defaultTrack':'MGI_Genome_Features', 'QTL':'MGI_QTL'}"/>
+         parameters="{'baseURL':'http://jbrowse.informatics.jax.org/?data=data/mouse','defaultTrack':'MGI_Genome_Features,NCBI,ENSEMBL,HAVANA_VEGA', 'QTL':'MGI_QTL'}"/>
 
      <!--
      <reportdisplayer javaClass="org.intermine.bio.web.displayer.OverlappingFeaturesDisplayer"
