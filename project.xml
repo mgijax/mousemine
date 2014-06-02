@@ -93,11 +93,9 @@
     </source> 
 -->
 
-
-     <!-- Note: worm '6239' is not loaded from homologene, intermine has an open bug. -->
      <source name="homologene" type="homologene">
        <property name="src.data.dir" location="&mm_data;/homologene/latest"/>
-        <property name="homologene.organisms" value="7227 9606 10090 10116 7955 4932"/>
+       <property name="homologene.organisms" value="7227 9606 10090 10116 7955 4932 6239"/>
      </source>
 
     <source name="panther" type="panther">
