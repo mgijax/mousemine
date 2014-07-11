@@ -667,3 +667,13 @@ div.collection-table > div > div {
 a.icon-globe span {
     font-family : sans-serif;
 }
+
+/*
+ * Styling for MGI link tab.
+ */
+#menucontainer #nav #mgi span {
+    font-size:16px;
+    line-height : 12px;
+    vertical-align : middle;
+    font-weight: lighter;
+}
