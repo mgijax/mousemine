@@ -677,3 +677,7 @@ a.icon-globe span {
     vertical-align : middle;
     font-weight: lighter;
 }
+
+.templateConstraintOptional .optionalSelected {
+    text-decoration : underline;
+}
