@@ -10,18 +10,21 @@
     <fields>
       <fieldconfig fieldExpr="symbol" />
       <fieldconfig fieldExpr="name"/>
-      <fieldconfig fieldExpr="alleleType"/>
+      <fieldconfig fieldExpr="primaryIdentifier" showInSummary="true"  label="ID" /> 
+      <fieldconfig fieldExpr="alleleType" showInSummary="true" />
+      <fieldconfig fieldExpr="feature.symbol" showInSummary="false" showInInlineCollection="false" label="Gene" displayer="/model/genelinkdisplayer.jsp" />
+      <fieldconfig fieldExpr="attributeString" />
       <fieldconfig fieldExpr="inheritanceMode" showInSummary="false" />
       <fieldconfig fieldExpr="glTransmission" label="Transmission" showInSummary="false" />
       <fieldconfig fieldExpr="strainOfOrigin.name" showInSummary="false" label="Strain of Origin"/>
-      <fieldconfig fieldExpr="primaryIdentifier" showInSummary="true"  label="MGI ID" /> <!--  displayer="/model/mgiAlleleLinkDisplayer.jsp"/>  having a displayer prevents the field from appearing the the summary -->
-      <fieldconfig fieldExpr="feature.symbol" showInSummary="false" showInInlineCollection="false" label="Gene" displayer="/model/genelinkdisplayer.jsp" />
+
       <fieldconfig fieldExpr="description" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
       <fieldconfig fieldExpr="molecularNote" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
     </fields>
    <inlinelist>
-      <table path="synonyms.value" showInHeader="true" lineLength="200" />
       <table path="mutations.name" showInHeader="true" lineLength="200" />
+      <table path="cellLines.name" showInHeader="true" lineLength="200" showLinksToObjects="true" />
+      <table path="synonyms.value" showInHeader="true" lineLength="200" />
     </inlinelist>
   </class>
   
@@ -32,9 +35,13 @@
       <fieldconfig fieldExpr="primaryIdentifier" showInSummary="false" showInInlineCollection="false" />
       <fieldconfig fieldExpr="name" showInSummary="true" showInInlineCollection="true" />
       <fieldconfig fieldExpr="derivation.parentCellLine.name" showInSummary="true" />
-      <fieldconfig fieldExpr="strain.name" showInSummary="false"/>
+      <!--<fieldconfig fieldExpr="strain.name" showInSummary="false"/>-->
       <fieldconfig fieldExpr="cellLineType" showInSummary="true" />
     </fields>
+   <inlinelist>
+      <table path="strain.name" showInHeader="true" showLinksToObjects="true" />
+      <table path="alleles.symbol" showInHeader="true" showLinksToObjects="true" />
+    </inlinelist>
   </class>
 
 
@@ -582,7 +589,7 @@
     filters="organism.name=[list]"
     startClass="SequenceFeature"
     typeClass="SequenceFeature"
-    categoryPath="chromosome.primaryIdentifier"
+    categoryPath="chromosome.symbol"
     seriesLabels="Actual,Expected"
     seriesPath="ActualExpectedCriteria"
     constraints="organism.name=[Organism]"
