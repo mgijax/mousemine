@@ -31,7 +31,6 @@
  <tag name="im:aspect:Genome" objectIdentifier="Feature_crossrefs" type="template"></tag>
  <tag name="im:aspect:Homology" objectIdentifier="Gene_Ortholog" type="template"></tag>
  <tag name="im:aspect:Homology" objectIdentifier="HGene_MPhenotype" type="template"></tag>
- <tag name="im:aspect:Literature" objectIdentifier="BioEntity.publications" type="collection"></tag>
  <tag name="im:aspect:Literature" objectIdentifier="GO_Publications" type="template"></tag>
  <tag name="im:aspect:Literature" objectIdentifier="MFeature_Publication" type="template"></tag>
  <tag name="im:aspect:Literature" objectIdentifier="Publication_MFeature" type="template"></tag>
@@ -245,6 +244,13 @@
  <tag name="im:aspect:Phenotype" objectIdentifier="MPhenotype_MGenotype" type="template"></tag>
  <tag name="im:public" objectIdentifier="MPhenotype_MGenotype" type="template"></tag>
  <tag name="im:report" objectIdentifier="MPhenotype_MGenotype" type="template"></tag>
+ <tag name="im:public" objectIdentifier="Q_Allele_by_categories" type="template"></tag>
+ <tag name="im:aspect:Genome" objectIdentifier="Q_Allele_by_categories" type="template"></tag>
+ <tag name="im:aspect:Phenotype" objectIdentifier="Q_Allele_by_categories" type="template"></tag>
+ <tag name="im:frontpage" objectIdentifier="Q_Allele_by_categories" type="template"></tag>
+ <tag name="im:hidden" objectIdentifier="Allele.alleleAttributes" type="collection"></tag>
+ <tag name="im:public" objectIdentifier="_Genotype_Phenotype" type="template"></tag>
+ <tag name="im:public" objectIdentifier="_Genotype_Disease" type="template"></tag>
  <tag name="im:summary" objectIdentifier="RegulatoryRegion.gene" type="reference"></tag>
  <tag name="im:summary" objectIdentifier="BioEntity.synonyms" type="collection"></tag>
  <tag name="im:summary" objectIdentifier="Gene.publications" type="collection"></tag>
