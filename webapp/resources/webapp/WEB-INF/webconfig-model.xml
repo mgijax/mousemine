@@ -61,7 +61,9 @@
       <table label="Alleles" path="alleles.symbol" showInHeader="true" lineLength="100" showLinksToObjects="true" />
     </inlinelist>
     <fields>
+	<fieldconfig fieldExpr="symbol"  />
 	<fieldconfig fieldExpr="background.name"  label="Background" />
+	<fieldconfig fieldExpr="zygosity"  />
     </fields>
   </class>
   
@@ -496,25 +498,6 @@
 <widgets>
 
 
- <enrichmentwidgetdisplayer id="medic_enrichment_for_feature"
-    title="Human Disease Enrichment"
-    description="MEDIC terms enriched for items in this list."
-    label="MEDIC Term"
-    startClass="SequenceFeature"
-    typeClass="SequenceFeature"
-    startClassDisplay="primaryIdentifier"
-    enrich="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
-    enrichIdentifier="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier"
-    constraints="organism.name=[list],
-	primaryIdentifier != null, 
-	alleles.genotypes.ontologyAnnotations.dataSets.name = DiseaseTerm to Mouse Genotype Annotations from MGI,
-	alleles.genotypes.ontologyAnnotations.qualifier = null"
-    views="symbol,name,primaryIdentifier,organism.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name" />
-
  <enrichmentwidgetdisplayer id="emapa_enrichment_for_feature"
     title="Anatomy Enrichment"
     description="Anatomy (EMAPA) terms enriched for items in this list."
@@ -543,17 +526,16 @@
     startClass="SequenceFeature"
     typeClass="SequenceFeature"
     startClassDisplay="primaryIdentifier"
-    enrich="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
-    enrichIdentifier="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier"
+    enrich="ontologyAnnotations.ontologyTerm[MPTerm].parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
     constraints="organism.name=[list],
 	primaryIdentifier != null, 
-	alleles.genotypes.ontologyAnnotations.dataSets.name = MPTerm to Mouse Genotype Annotations from MGI,
-	alleles.genotypes.ontologyAnnotations.qualifier = null"
+	ontologyAnnotations.qualifier = null"
     views="symbol,name,primaryIdentifier,organism.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
+	ontologyAnnotations.ontologyTerm.identifier, 
+	ontologyAnnotations.ontologyTerm.name,
+	ontologyAnnotations.ontologyTerm.parents.identifier,
+	ontologyAnnotations.ontologyTerm.parents.name"
     externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
 
  <enrichmentwidgetdisplayer id="go_enrichment_for_feature"
@@ -595,6 +577,44 @@
     constraints="organism.name=[Organism]"
     views="primaryIdentifier, symbol, organism.name, chromosome.primaryIdentifier,
 	chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand"/>
+
+<enrichmentwidgetdisplayer id="mp_enrichment_for_genotype"
+    title="Mammalian Phenotype Ontology Enrichment"
+    description="MP terms enriched for items in this list."
+    label="MP Term"
+    startClass="Genotype"
+    typeClass="Genotype"
+    startClassDisplay="primaryIdentifier"
+    enrich="ontologyAnnotations.ontologyTerm.parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	ontologyAnnotations.dataSets.name = MPTerm to Mouse Genotype Annotations from MGI,
+	ontologyAnnotations.qualifier = null"
+    views="symbol,background.name,primaryIdentifier,organism.name,
+	ontologyAnnotations.ontologyTerm.identifier, 
+	ontologyAnnotations.ontologyTerm.name,
+	ontologyAnnotations.ontologyTerm.parents.identifier,
+	ontologyAnnotations.ontologyTerm.parents.name"
+    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
+
+ <enrichmentwidgetdisplayer id="disease_enrichment_for_genotype"
+    title="Human Disease Enrichment"
+    description="Disease terms enriched for items in this list."
+    label="Disease Term"
+    startClass="Genotype"
+    typeClass="Genotype"
+    startClassDisplay="primaryIdentifier"
+    enrich="ontologyAnnotations.ontologyTerm[DiseaseTerm].parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	ontologyAnnotations.qualifier = null"
+    views="symbol,background.name,primaryIdentifier,organism.name,
+	ontologyAnnotations.ontologyTerm.identifier, 
+	ontologyAnnotations.ontologyTerm.name,
+	ontologyAnnotations.ontologyTerm.parents.identifier,
+	ontologyAnnotations.ontologyTerm.parents.name" />
 
 </widgets>  
 </webconfig>
