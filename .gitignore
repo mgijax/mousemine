@@ -3,5 +3,8 @@
 
 .DS_Store
 *.log
+*intermine.log.*
 dist/
 */build/
+*.pyc
+*cookies.txt
