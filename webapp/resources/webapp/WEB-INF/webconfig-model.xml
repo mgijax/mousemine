@@ -10,18 +10,21 @@
     <fields>
       <fieldconfig fieldExpr="symbol" />
       <fieldconfig fieldExpr="name"/>
-      <fieldconfig fieldExpr="alleleType"/>
+      <fieldconfig fieldExpr="primaryIdentifier" showInSummary="true"  label="ID" /> 
+      <fieldconfig fieldExpr="alleleType" showInSummary="true" />
+      <fieldconfig fieldExpr="feature.symbol" showInSummary="false" showInInlineCollection="false" label="Gene" displayer="/model/genelinkdisplayer.jsp" />
+      <fieldconfig fieldExpr="attributeString" />
       <fieldconfig fieldExpr="inheritanceMode" showInSummary="false" />
       <fieldconfig fieldExpr="glTransmission" label="Transmission" showInSummary="false" />
       <fieldconfig fieldExpr="strainOfOrigin.name" showInSummary="false" label="Strain of Origin"/>
-      <fieldconfig fieldExpr="primaryIdentifier" showInSummary="true"  label="MGI ID" /> <!--  displayer="/model/mgiAlleleLinkDisplayer.jsp"/>  having a displayer prevents the field from appearing the the summary -->
-      <fieldconfig fieldExpr="feature.symbol" showInSummary="false" showInInlineCollection="false" label="Gene" displayer="/model/genelinkdisplayer.jsp" />
+
       <fieldconfig fieldExpr="description" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
       <fieldconfig fieldExpr="molecularNote" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
     </fields>
    <inlinelist>
-      <table path="synonyms.value" showInHeader="true" lineLength="200" />
       <table path="mutations.name" showInHeader="true" lineLength="200" />
+      <table path="cellLines.name" showInHeader="true" lineLength="200" showLinksToObjects="true" />
+      <table path="synonyms.value" showInHeader="true" lineLength="200" />
     </inlinelist>
   </class>
   
@@ -32,9 +35,13 @@
       <fieldconfig fieldExpr="primaryIdentifier" showInSummary="false" showInInlineCollection="false" />
       <fieldconfig fieldExpr="name" showInSummary="true" showInInlineCollection="true" />
       <fieldconfig fieldExpr="derivation.parentCellLine.name" showInSummary="true" />
-      <fieldconfig fieldExpr="strain.name" showInSummary="false"/>
+      <!--<fieldconfig fieldExpr="strain.name" showInSummary="false"/>-->
       <fieldconfig fieldExpr="cellLineType" showInSummary="true" />
     </fields>
+   <inlinelist>
+      <table path="strain.name" showInHeader="true" showLinksToObjects="true" />
+      <table path="alleles.symbol" showInHeader="true" showLinksToObjects="true" />
+    </inlinelist>
   </class>
 
 
@@ -54,7 +61,9 @@
       <table label="Alleles" path="alleles.symbol" showInHeader="true" lineLength="100" showLinksToObjects="true" />
     </inlinelist>
     <fields>
+	<fieldconfig fieldExpr="symbol"  />
 	<fieldconfig fieldExpr="background.name"  label="Background" />
+	<fieldconfig fieldExpr="zygosity"  />
     </fields>
   </class>
   
@@ -447,21 +456,21 @@
 	placement="Genome"
 	types="SequenceFeature"/>
 
-   <reportdisplayer javaClass="org.intermine.bio.web.displayer.GBrowseDisplayer"
+ <!--  <reportdisplayer javaClass="org.intermine.bio.web.displayer.GBrowseDisplayer"
         jspName="model/gbrowseDisplayer.jsp"
         replacesFields=""
         placement="Genome"
         types="SequenceFeature"/>
+-->
 
-<!-- We are not useing the JBrowser displayer for now
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.JGBrowseDisplayer"
 	 jspName="model/jgbrowseDisplayer.jsp"
 	 replacesFields=""
 	 placement="Genome"
 	 types="SequenceFeature"
          parameters="{'baseURL':'http://jbrowse.informatics.jax.org/?data=data/mouse','defaultTrack':'MGI_Genome_Features,NCBI,ENSEMBL,HAVANA_VEGA', 'QTL':'MGI_QTL'}"/>
- -->
-     <!--
+     
+<!--
      <reportdisplayer javaClass="org.intermine.bio.web.displayer.OverlappingFeaturesDisplayer"
                      jspName="model/overlappingFeaturesDisplayer.jsp"
                      replacesFields="overlappingFeatures"
@@ -488,25 +497,6 @@
 <!-- =============================================================== -->
 <widgets>
 
-
- <enrichmentwidgetdisplayer id="medic_enrichment_for_feature"
-    title="Human Disease Enrichment"
-    description="MEDIC terms enriched for items in this list."
-    label="MEDIC Term"
-    startClass="SequenceFeature"
-    typeClass="SequenceFeature"
-    startClassDisplay="primaryIdentifier"
-    enrich="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
-    enrichIdentifier="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier"
-    constraints="organism.name=[list],
-	primaryIdentifier != null, 
-	alleles.genotypes.ontologyAnnotations.dataSets.name = DiseaseTerm to Mouse Genotype Annotations from MGI,
-	alleles.genotypes.ontologyAnnotations.qualifier = null"
-    views="symbol,name,primaryIdentifier,organism.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name" />
 
  <enrichmentwidgetdisplayer id="emapa_enrichment_for_feature"
     title="Anatomy Enrichment"
@@ -536,17 +526,16 @@
     startClass="SequenceFeature"
     typeClass="SequenceFeature"
     startClassDisplay="primaryIdentifier"
-    enrich="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
-    enrichIdentifier="alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier"
+    enrich="ontologyAnnotations.ontologyTerm[MPTerm].parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
     constraints="organism.name=[list],
 	primaryIdentifier != null, 
-	alleles.genotypes.ontologyAnnotations.dataSets.name = MPTerm to Mouse Genotype Annotations from MGI,
-	alleles.genotypes.ontologyAnnotations.qualifier = null"
+	ontologyAnnotations.qualifier = null"
     views="symbol,name,primaryIdentifier,organism.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.identifier, 
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.name,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.identifier,
-	alleles.genotypes.ontologyAnnotations.ontologyTerm.parents.name"
+	ontologyAnnotations.ontologyTerm.identifier, 
+	ontologyAnnotations.ontologyTerm.name,
+	ontologyAnnotations.ontologyTerm.parents.identifier,
+	ontologyAnnotations.ontologyTerm.parents.name"
     externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
 
  <enrichmentwidgetdisplayer id="go_enrichment_for_feature"
@@ -582,12 +571,50 @@
     filters="organism.name=[list]"
     startClass="SequenceFeature"
     typeClass="SequenceFeature"
-    categoryPath="chromosome.primaryIdentifier"
+    categoryPath="chromosome.symbol"
     seriesLabels="Actual,Expected"
     seriesPath="ActualExpectedCriteria"
     constraints="organism.name=[Organism]"
     views="primaryIdentifier, symbol, organism.name, chromosome.primaryIdentifier,
 	chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand"/>
+
+<enrichmentwidgetdisplayer id="mp_enrichment_for_genotype"
+    title="Mammalian Phenotype Ontology Enrichment"
+    description="MP terms enriched for items in this list."
+    label="MP Term"
+    startClass="Genotype"
+    typeClass="Genotype"
+    startClassDisplay="primaryIdentifier"
+    enrich="ontologyAnnotations.ontologyTerm.parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	ontologyAnnotations.dataSets.name = MPTerm to Mouse Genotype Annotations from MGI,
+	ontologyAnnotations.qualifier = null"
+    views="symbol,background.name,primaryIdentifier,organism.name,
+	ontologyAnnotations.ontologyTerm.identifier, 
+	ontologyAnnotations.ontologyTerm.name,
+	ontologyAnnotations.ontologyTerm.parents.identifier,
+	ontologyAnnotations.ontologyTerm.parents.name"
+    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
+
+ <enrichmentwidgetdisplayer id="disease_enrichment_for_genotype"
+    title="Human Disease Enrichment"
+    description="Disease terms enriched for items in this list."
+    label="Disease Term"
+    startClass="Genotype"
+    typeClass="Genotype"
+    startClassDisplay="primaryIdentifier"
+    enrich="ontologyAnnotations.ontologyTerm[DiseaseTerm].parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	ontologyAnnotations.qualifier = null"
+    views="symbol,background.name,primaryIdentifier,organism.name,
+	ontologyAnnotations.ontologyTerm.identifier, 
+	ontologyAnnotations.ontologyTerm.name,
+	ontologyAnnotations.ontologyTerm.parents.identifier,
+	ontologyAnnotations.ontologyTerm.parents.name" />
 
 </widgets>  
 </webconfig>
