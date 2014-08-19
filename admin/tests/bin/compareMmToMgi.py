@@ -55,11 +55,12 @@ def doTest(name, mgiquery, mmquery, filter, op):
         if func is None:
             func = eval( "lambda x,y : " + op )
         vmgi = filt(doQ( mgicon, mgiquery ))
-        print "MGI:", vmgi
         vmm  = filt(doQ( mmcon,  mmquery  ))
-	print "MM: ", vmm
         res  = func(vmgi, vmm)
 	print res
+	if not res:
+	    print "MGI:", vmgi
+	    print "MM: ", vmm
 	return res
     except:
         print "Test caught an exception."
@@ -96,6 +97,10 @@ def main():
     failedTests = []
     for s in cp.tests:
 	tname = s[5:]
+	# check if enabled
+	eflag = cp.get(s,"enabled",{"enabled":"true"}).lower().strip()
+	if eflag == "false":
+	    continue
         res2 = doTest(
 	    tname, 
 	    cp.get(s,"mgi"), 
