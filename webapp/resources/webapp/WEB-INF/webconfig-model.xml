@@ -498,26 +498,24 @@
 <widgets>
 
 
- <enrichmentwidgetdisplayer id="emapa_enrichment_for_feature"
-    title="Anatomy Enrichment"
-    description="Anatomy (EMAPA) terms enriched for items in this list."
-    label="EMAPA Term"
+<enrichmentwidgetdisplayer id="disease_enrichment_for_feature"
+    title="Disease Enrichment"
+    description="Disease terms enriched for items in this list."
+    label="Disease Term"
     startClass="SequenceFeature"
     typeClass="SequenceFeature"
     startClassDisplay="primaryIdentifier"
-    enrich="expression.structure.parents.name"
-    enrichIdentifier="expression.structure.parents.identifier"
+    enrich="ontologyAnnotations.ontologyTerm[MedicTerm].parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
     constraints="organism.name=[list],
 	primaryIdentifier != null, 
-	expression.strength != Absent,
-	expression.strength != Ambiguous"
+	ontologyAnnotations.qualifier = null"
     views="symbol,name,primaryIdentifier,organism.name,
-	expression.structure.identifier,
-	expression.structure.name,
-	expression.strength,
-	expression.pattern,
-	expression.structure.parents.identifier,
-	expression.structure.parents.name" />
+	ontologyAnnotations.ontologyTerm.identifier, 
+	ontologyAnnotations.ontologyTerm.name,
+	ontologyAnnotations.ontologyTerm.parents.identifier,
+	ontologyAnnotations.ontologyTerm.parents.name"
+    />
 
 <enrichmentwidgetdisplayer id="mp_enrichment_for_feature"
     title="Mammalian Phenotype Ontology Enrichment"
@@ -560,6 +558,27 @@
 	ontologyAnnotations.ontologyTerm.identifier, ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,ontologyAnnotations.ontologyTerm.parents.name"
     externalLink="http://www.informatics.jax.org/searches/GO.cgi?id="/>
+
+<enrichmentwidgetdisplayer id="emapa_enrichment_for_feature"
+    title="Anatomy Enrichment"
+    description="Anatomy (EMAPA) terms enriched for items in this list."
+    label="EMAPA Term"
+    startClass="SequenceFeature"
+    typeClass="SequenceFeature"
+    startClassDisplay="primaryIdentifier"
+    enrich="expression.structure.parents.name"
+    enrichIdentifier="expression.structure.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	expression.strength != Absent,
+	expression.strength != Ambiguous"
+    views="symbol,name,primaryIdentifier,organism.name,
+	expression.structure.identifier,
+	expression.structure.name,
+	expression.strength,
+	expression.pattern,
+	expression.structure.parents.identifier,
+	expression.structure.parents.name" />
 
 <graphdisplayer id="chromosome_distribution_for_feature"
     title="Chromosome Distribution"
