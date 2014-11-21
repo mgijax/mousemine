@@ -8,7 +8,7 @@ if [ "${WORKSPACE}" != "" ]
 
 	source ~/buildscripts/doExports.sh		
 
-	psql -c "select pg_terminate_backend(procpid) from pg_stat_activity where datname='mousemine'";
+	psql -c "select pg_terminate_backend(pid) from pg_stat_activity where datname='mousemine'";
 
 	dropdb mousemine
         createdb mousemine
