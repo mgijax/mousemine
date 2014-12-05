@@ -7,6 +7,14 @@
         <subtitle>GO, Pathways, Diseases, Phenotype, Domains</subtitle>
         <intro-text>GO, Pathways, Diseases, Phenotype, Domains</intro-text>
     </aspect>
+    <aspect name="Homology">
+        <subtitle>Orthologues and paralogues</subtitle>
+        <intro-text>Orthologues and Paralogues.</intro-text>
+    </aspect>
+    <aspect name="Interactions">
+        <subtitle>Interactions</subtitle>
+        <intro-text>Interactions</intro-text>
+    </aspect>
     <aspect name="Expression">
         <subtitle>Expression</subtitle>
         <intro-text>Expression</intro-text>
@@ -18,14 +26,6 @@
     <aspect name="Disease">
         <subtitle>Disease</subtitle>
         <intro-text>Disease</intro-text>
-    </aspect>
-    <aspect name="Expression">
-        <subtitle>Expression</subtitle>
-        <intro-text>Expression</intro-text>
-    </aspect>
-    <aspect name="Homology">
-        <subtitle>Orthologues and paralogues</subtitle>
-        <intro-text>Orthologues and Paralogues.</intro-text>
     </aspect>
     <aspect name="Literature">
         <subtitle>Literature</subtitle>

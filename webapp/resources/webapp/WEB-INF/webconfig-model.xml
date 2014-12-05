@@ -99,6 +99,31 @@
 
 
   <!-- =============================================================== -->
+    <class className="org.intermine.model.bio.Interaction">
+	<fields>
+	<fieldconfig fieldExpr="details.type" />
+	<fieldconfig fieldExpr="details.relationshipType.name" />
+	<fieldconfig fieldExpr="details.role1" />
+	<fieldconfig fieldExpr="gene1.symbol" />
+	<fieldconfig fieldExpr="details.role2" />
+	<fieldconfig fieldExpr="gene2.symbol" />
+	</fields>
+    </class>
+
+    <class className="org.intermine.model.bio.InteractionExperiment">
+	<fields>
+	<fieldconfig fieldExpr="name"/>
+	<fieldconfig fieldExpr="description"/>
+	</fields>
+    </class>
+
+    <class className="org.intermine.model.bio.InteractionTerm">
+	<fields>
+	<fieldconfig fieldExpr="identifier"/>
+	<fieldconfig fieldExpr="name"/>
+	</fields>
+    </class>
+  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Strain">
     <fields>
 	<fieldconfig fieldExpr="strainType"/>
@@ -450,6 +475,12 @@
 <!-- =============================================================== -->
 <!-- report displayers -->
 <reportdisplayers>
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.CytoscapeNetworkDisplayer"
+	jspName="model/cytoscapeNetworkDisplayer.jsp"
+	replacesFields="interactions"
+	placement="Interactions"
+	types="Gene,Protein"/>
+
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.SequenceFeatureDisplayer"
 	jspName="model/sequenceFeatureDisplayer.jsp"
 	replacesFields="chromosomeLocation,sequence,length,sequenceOntologyTerm,locations,cytoLocation"
