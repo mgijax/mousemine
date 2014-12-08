@@ -110,6 +110,10 @@
     </source>
 
 
+    <source name="update-publications" type="update-publications" >
+        <property name="src.data.file" location="&mm_data;/mgi-base/latest/Publication.xml"/>
+    </source>
+
   </sources>
 
   <post-processing>
