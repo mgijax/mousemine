@@ -87,14 +87,6 @@
     </source>
 -->
 
-<!-- Fills in publication attributes (title, journal, etc.) by querying PubMed.
-    Commented out because mouemine gets all its pub details from MGI.
-    
-    <source name="update-publications" type="update-publications" >
-	<property name="src.data.file" location="build/publications.xml"/>
-    </source> 
--->
-
      <source name="homologene" type="homologene">
        <property name="src.data.dir" location="&mm_data;/homologene/latest"/>
        <property name="homologene.organisms" value="7227 9606 10090 10116 7955 4932 6239"/>
@@ -109,9 +101,17 @@
 	<property name="src.data.file" location="build/organisms.xml"/>
     </source>
 
+    <source name="reactome" type="biopax">
+        <property name="src.data.dir" location="&mm_data;/reactome/latest/"/>
+        <property name="biopax.organisms" value="10090 9606"/>
+        <property name="biopax.datasourcename" value="Reactome"/>
+        <property name="biopax.datasetname" value="Reactome data set"/>
+        <property name="biopax.curated" value="false"/>
+    </source>
+
 
     <source name="update-publications" type="update-publications" >
-        <property name="src.data.file" location="&mm_data;/mgi-base/latest/Publication.xml"/>
+        <property name="src.data.file" location="build/publication.xml"/>
     </source>
 
   </sources>
