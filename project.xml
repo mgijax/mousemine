@@ -74,6 +74,11 @@
 	<property name="biogrid.organisms" value="10090 9606"/>
 	</source>
 
+    <source name="psi-intact" type="psi">
+	<property name="src.data.dir" location="&mm_data;/intact/latest/"/>
+	<property name="intact.organisms" value="10090 9606"/>
+	</source>
+
 <!-- The MGI catalog of mouse genome features (gene models).
     Deferred until a later release.
 
@@ -101,6 +106,7 @@
 	<property name="src.data.file" location="build/organisms.xml"/>
     </source>
 
+    <!--
     <source name="reactome" type="biopax">
         <property name="src.data.dir" location="&mm_data;/reactome/latest/"/>
         <property name="biopax.organisms" value="10090 9606"/>
@@ -108,6 +114,7 @@
         <property name="biopax.datasetname" value="Reactome data set"/>
         <property name="biopax.curated" value="false"/>
     </source>
+    -->
 
 
     <source name="update-publications" type="update-publications" >
