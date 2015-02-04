@@ -681,3 +681,11 @@ a.icon-globe span {
 .templateConstraintOptional .optionalSelected {
     text-decoration : underline;
 }
+
+/*
+ * Export controls in interaction display widget are broken. Fix won't come out until 2.0.
+ * For now, hide the controls. User just gets the graph display.
+ */
+#cytoscapenetworkdisplayer-wrapper #cwtabsbyside {
+    display : none !important;
+}
