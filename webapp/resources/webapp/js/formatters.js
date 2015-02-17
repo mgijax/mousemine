@@ -167,7 +167,7 @@
   };
 
   /* uncomment to enable the table popups (previews) on hover, instead of click */
-  //intermine.setOptions({CellPreviewTrigger: 'hover'});
+  intermine.setOptions({CellPreviewTrigger: 'click'});
   
   /* There is a registered, though disabled, Pub formatter by default.
    * Have to physically remove it before we can register out own (below)

@@ -4,8 +4,16 @@
         <intro-text>Mouse genome features, coordinates, functional annotations.</intro-text>
     </aspect>
     <aspect name="Function">
-        <subtitle>GO, Pathways, Diseases, Phenotype, Domains</subtitle>
-        <intro-text>GO, Pathways, Diseases, Phenotype, Domains</intro-text>
+        <subtitle>Gene function</subtitle>
+        <intro-text>Gene function</intro-text>
+    </aspect>
+    <aspect name="Homology">
+        <subtitle>Orthologues and paralogues</subtitle>
+        <intro-text>Orthologues and Paralogues.</intro-text>
+    </aspect>
+    <aspect name="Interactions">
+        <subtitle>Interactions</subtitle>
+        <intro-text>Interactions</intro-text>
     </aspect>
     <aspect name="Expression">
         <subtitle>Expression</subtitle>
@@ -18,14 +26,6 @@
     <aspect name="Disease">
         <subtitle>Disease</subtitle>
         <intro-text>Disease</intro-text>
-    </aspect>
-    <aspect name="Expression">
-        <subtitle>Expression</subtitle>
-        <intro-text>Expression</intro-text>
-    </aspect>
-    <aspect name="Homology">
-        <subtitle>Orthologues and paralogues</subtitle>
-        <intro-text>Orthologues and Paralogues.</intro-text>
     </aspect>
     <aspect name="Literature">
         <subtitle>Literature</subtitle>
