@@ -9,6 +9,8 @@
 <!-- headMenu.jsp -->
 <html:xhtml/>
 
+<link rel="shortcut icon" type="image/x-icon" href="model/images/favicon.ico">
+
 <tiles:importAttribute name="fixedLayout" ignore="true" />
 
 <!-- Header container -->
@@ -16,12 +18,44 @@
 
   <!-- Header -->
   <c:set value="${WEB_PROPERTIES['header.links']}" var="headerLinks"/>
+  <c:set value="${WEB_PROPERTIES['logo']==null ? 'logo.png' : WEB_PROPERTIES['logo']}" var="logoFile"/>
 
   <c:if test="${fn:length(headerLinks) > 0}">
     <%-- Menu appearing at the top right (about, etc..) --%>
     <div id="topnav">
+  <span id="loginbar">
+        <c:if test="${PROFILE.loggedIn}">
+            <span id="username">
+              <!-- display (optionally trimmed) username -->
+              <c:choose>
+                <c:when test="${! empty PROVIDER}">
+                  <c:choose>
+                    <c:when test="${empty USERNAME || USERNAME == 'nullnull'}">
+                      <c:set var="displayUserName" value="logged in with OpenID"/>
+                    </c:when>
+            <c:otherwise>
+              <c:set var="displayUserName" value="${USERNAME}"/>
+            </c:otherwise>
+                  </c:choose>
+        </c:when>
+        <c:otherwise>
+          <c:set var="displayUserName" value="${PROFILE.username}"/>
+        </c:otherwise>
+        </c:choose>
+        <c:choose>
+                <c:when test="${fn:length(displayUserName) > 25}">
+                  <c:out value="${fn:substring(displayUserName,0,25)}"/>&hellip;
+                </c:when>
+                <c:otherwise>
+                  <c:out value="${displayUserName}"/>
+                </c:otherwise>
+              </c:choose>
+            </span>
+	    &nbsp;
+        </c:if>
+        <span class="login"><im:login/></span>
+	&nbsp;|&nbsp;
       <c:forEach var="entry" items="${headerLinks}" varStatus="status">
-        <c:if test="${status.count != 1}">&nbsp;|&nbsp;</c:if>
         <c:set value="header.links.${entry}" var="linkProp"/>
         <c:choose>
           <c:when test="${!empty WEB_PROPERTIES[linkProp]}">
@@ -31,14 +65,18 @@
             <a href="${WEB_PROPERTIES['project.sitePrefix']}/${entry}.shtml">${entry}</a>
           </c:otherwise>
         </c:choose>
+	&nbsp;|&nbsp;
       </c:forEach>
+        <span><a href="#" onclick="showContactForm();return false;"><fmt:message key="feedback.link"/></a></span>
+    </ul>
     </div>
   </c:if>
   <div id="header">
-    <a href="${WEB_PROPERTIES['project.sitePrefix']}" alt="Home" rel="NOFOLLOW"><img id="logo" src="model/images/logo.png" width="45px" height="43px" alt="Logo" /></a>
+    <a href="${WEB_PROPERTIES['project.sitePrefix']}" alt="Home" rel="NOFOLLOW"><img id="logo" src="model/images/${logoFile}" width="45px" height="43px" alt="Logo" /></a>
     <h1><html:link href="${WEB_PROPERTIES['project.sitePrefix']}/"><c:out value="${WEB_PROPERTIES['project.title']}" escapeXml="false"/></html:link></h1>
-    <p id="version"><fmt:message key="header.version"/> <c:out value="${WEB_PROPERTIES['project.releaseVersion']}" escapeXml="false"/></span>
-    <p><c:out value="${WEB_PROPERTIES['project.subTitle']}" escapeXml="false"/></p>
+    <p id="subtitle"><c:out value="${WEB_PROPERTIES['project.subTitle']}" escapeXml="false"/></p>
+    <p id="installation"><c:out value="${WEB_PROPERTIES['project.installation']}" escapeXml="false"/></p>
+    <p id="version"> <c:out value="${WEB_PROPERTIES['project.releaseVersion']}" escapeXml="false"/></p>
   </div>
 
     <!-- Tab Menu -->
@@ -82,51 +120,14 @@
           <fmt:message key="menu.api"/>
         </a>
       </li>
-      </li>
       <li id="mymine"  <c:if test="${tab == 'mymine'}">class="activelink"</c:if>>
         <a href="/${WEB_PROPERTIES['webapp.path']}/mymine.do">
           <span><fmt:message key="menu.mymine"/></span>
         </a>
       </li>
       <li id="mgi"  <c:if test="${tab == 'mgi'}">class="activelink"</c:if>>
-        <a href="http://www.informatics.jax.org" target="_blank" title="Opens the MGI home page in a new tab.">
-          <fmt:message key="menu.mgi"/>
-       </a>
+        <a href="http://www.informatics.jax.org" target="_blank" title="Opens the MGI home page in a new tab.">MGI</a>
       </li>
-    </ul>
-  <ul id="loginbar">
-        <li><a href="#" onclick="showContactForm();return false;"><fmt:message key="feedback.link"/></a></li>
-        <c:if test="${PROFILE.loggedIn}">
-            <li>
-
-              <!-- display (optionally trimmed) username -->
-              <c:choose>
-                <c:when test="${! empty PROVIDER}">
-                  <c:choose>
-                    <c:when test="${empty USERNAME || USERNAME == 'nullnull'}">
-                      <c:set var="displayUserName" value="logged in with OpenID"/>
-                    </c:when>
-                   <c:otherwise>
-                     <c:set var="displayUserName" value="${USERNAME}"/>
-                   </c:otherwise>
-                  </c:choose>
-                </c:when>
-                <c:otherwise>
-                  <c:set var="displayUserName" value="${PROFILE.name}"/>
-                </c:otherwise>
-              </c:choose>
-
-              <c:choose>
-                <c:when test="${fn:length(displayUserName) > 25}">
-                  <c:out value="${fn:substring(displayUserName,0,25)}"/>&hellip;
-                </c:when>
-                <c:otherwise>
-                  <c:out value="${displayUserName}"/>
-                </c:otherwise>
-              </c:choose>
-            </li>
-        </c:if>
-        <li class="last"><im:login/></li>
     </ul>
   </div>
 

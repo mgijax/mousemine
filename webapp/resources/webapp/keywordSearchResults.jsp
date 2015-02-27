@@ -167,7 +167,7 @@ input.submit {
             <c:when test="${searchTotalHits > 0}">
               <h1 class="title">Search results <c:out value="${searchOffset + 1}
                      to ${fn:length(searchResults) + searchOffset} out of ${searchTotalHits}" /> for
-                       <i><c:out value="${searchTerm}" /></i></h1>
+                      "<c:out value="${searchTerm}" />"</h1>
                    </c:when>
                    <c:otherwise>
                      <h1 class="title">Unfortunately, your search for "<c:out value="${searchTerm}" />" did not return
@@ -360,8 +360,8 @@ input.submit {
             <input type="hidden" id="ids" name="ids" value="" />
             <input type="hidden" id="allChecked" name="allChecked" value="false" />
             <input type="hidden" name="source" value="keywordSearchResults" /> 
-            <input type="hidden" id="totalHits" name="totalHits" value="${searchTotalHits}" />
-            <input type="hidden" id="searchTerm" name="searchTerm" value="${fn:escapeXml(searchTerm)}" />
+            
+            <input type="hidden" id="searchTerm" name="searchTerm" value="${searchTerm}" />
             <input type="hidden" id="jsonFacets" name="jsonFacets" value="<c:out value="${jsonFacets}"/>" />
             
             <input type="hidden" name="newBagName" value="new_${searchFacetValues['Category']}_list" />
