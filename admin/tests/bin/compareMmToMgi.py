@@ -43,7 +43,9 @@ def readTests(cfname):
     return cp
 
 def doQ(con, q):
-    return db.sql( q, connection=con )
+    r = db.sql( q, connection=con )
+    r.sort()
+    return r
 
 def doTest(name, mgiquery, mmquery, filter, op):
     try:
