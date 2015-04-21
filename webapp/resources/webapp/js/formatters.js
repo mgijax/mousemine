@@ -131,6 +131,7 @@
    * Truncate a string to no more than len characters, with a trailing "...".
    */
   var abbreviate = function(val, len){
+    if(val == null) return null;
     return val.substr(0,len) + (val.length>len ? "...":"");
   };
 
