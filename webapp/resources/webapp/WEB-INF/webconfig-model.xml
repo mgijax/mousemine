@@ -17,9 +17,9 @@
       <fieldconfig fieldExpr="inheritanceMode" showInSummary="false" />
       <fieldconfig fieldExpr="glTransmission" label="Transmission" showInSummary="false" />
       <fieldconfig fieldExpr="strainOfOrigin.name" showInSummary="false" label="Strain of Origin"/>
-
       <fieldconfig fieldExpr="description" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
       <fieldconfig fieldExpr="molecularNote" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
+      <fieldconfig fieldExpr="earliestPublication.citation" label="Earliest Citation" showInInlineCollection="false" showInSummary="false" showInResults="false"/>
     </fields>
    <inlinelist>
       <table path="mutations.name" showInHeader="true" lineLength="200" />
@@ -240,6 +240,7 @@
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chromosome" showInInlineCollection="false" showInSummary="false" />
       <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false"/>
       <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
+      <fieldconfig fieldExpr="earliestPublication.citation" label="Earliest Citation" showInInlineCollection="false" showInSummary="false" showInResults="false"/>
     </fields>
     <bagdisplayers>
     </bagdisplayers>
