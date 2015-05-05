@@ -19,12 +19,12 @@
       <fieldconfig fieldExpr="strainOfOrigin.name" showInSummary="false" label="Strain of Origin"/>
       <fieldconfig fieldExpr="description" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
       <fieldconfig fieldExpr="molecularNote" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
-      <fieldconfig fieldExpr="earliestPublication.citation" label="Earliest Citation" showInInlineCollection="false" showInSummary="false" showInResults="false"/>
     </fields>
    <inlinelist>
       <table path="mutations.name" showInHeader="true" lineLength="200" />
       <table path="cellLines.name" showInHeader="true" lineLength="200" showLinksToObjects="true" />
       <table path="synonyms.value" showInHeader="true" lineLength="200" />
+      <table path="earliestPublication.citation" label="Earliest Citation" showInHeader="true" lineLength="200" showLinksToObjects="true" />
     </inlinelist>
   </class>
   
@@ -198,6 +198,7 @@
   <class className="org.intermine.model.bio.Gene">
    <inlinelist>
       <table path="synonyms.value" showInHeader="true" lineLength="100" />
+      <table path="earliestPublication.citation" showInHeader="true" lineLength="200" showLinksToObjects="true" />
     </inlinelist>
     <bagdisplayers>
       <displayer src="friendlyMineLinkDisplayer.tile" showOnLeft="false" />
@@ -240,10 +241,10 @@
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chromosome" showInInlineCollection="false" showInSummary="false" />
       <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false"/>
       <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
-      <fieldconfig fieldExpr="earliestPublication.citation" label="Earliest Citation" showInInlineCollection="false" showInSummary="false" showInResults="false"/>
     </fields>
-    <bagdisplayers>
-    </bagdisplayers>
+    <inlinelist>
+      <table path="earliestPublication.citation" showInHeader="true" lineLength="200" showLinksToObjects="true" />
+    </inlinelist>
   </class>
 
 
@@ -272,38 +273,9 @@
     </fields>
   </class>
 
- <!-- Inline lists are not inhereted so each subclass of OntologyTerm needs its own class config -->
-
-
-  <!-- =============================================================== -->
-  <class className="org.intermine.model.bio.GOTerm">
-  <inlinelist>
-	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
-  </inlinelist>
-  </class>
-
-
-  <!-- =============================================================== -->
-  <class className="org.intermine.model.bio.MPTerm">
-  <inlinelist>
-	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
-  </inlinelist>
-  </class>
- 
-
-  <!-- =============================================================== -->
-  <class className="org.intermine.model.bio.MedicTerm">
-  <inlinelist>
-	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
-  </inlinelist>
-  </class>
-
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.EMAPATerm">
-  <inlinelist>
-	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
-  </inlinelist>
   <fields>
       <fieldconfig fieldExpr="startsAt"/> 
       <fieldconfig fieldExpr="endsAt"/> 
@@ -313,12 +285,6 @@
   </class>
   
 
-  <!-- =============================================================== -->
-  <class className="org.intermine.model.bio.SOTerm">
-  <inlinelist>
-	<table path="synonyms.name" showInHeader="true" lineLength="100"/>
-  </inlinelist>
-  </class>
   
 
   <!-- =============================================================== -->
