@@ -71,7 +71,7 @@
     <source name="biogrid" type="biogrid">
 	<property name="src.data.dir" location="&mm_data;/biogrid/latest"/>
 	<property name="src.data.dir.includes" value="*psi25.xml"/>
-	<property name="biogrid.organisms" value="10090"/>
+	<property name="biogrid.organisms" value="10090 9606"/>
 	</source>
 
     <source name="psi-intact" type="psi">
