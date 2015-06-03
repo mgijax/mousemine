@@ -689,3 +689,12 @@ a.icon-globe span {
 #cytoscapenetworkdisplayer-wrapper #cwtabsbyside {
     display : none !important;
 }
+
+/* Make inline tables display the same as other fields. */
+div.inline-list ul li:first-child span {
+color: black ;
+}
+div.inline-list ul li + li { 
+font-weight : bold;
+}
+
