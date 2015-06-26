@@ -604,15 +604,15 @@ input:disabled {
 /*
  * Make the running mouse show up for results tables that are loading.
  */
-div.progress.active {
+div.im-table-container div.progress div.progress-bar-striped {
+    display : none;
+}
+div.im-table-container div.progress {
     height : 260px;
     background-image : url("../../model/images/progress1.gif");
     background-repeat : no-repeat;
     background-position : 50% 50%;
     background-color : white;
-}
-div.progress.active > div.bar {
-    display : none;
 }
 
 /*
@@ -698,3 +698,9 @@ div.inline-list ul li + li {
 font-weight : bold;
 }
 
+/*
+ * Hide the "Manage Relationships" button. It's buggy and confusing. 
+ */
+div.im-join-manager-button {
+    display: none ! important;
+}
