@@ -431,6 +431,53 @@
     </fields>
   </class>
 
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIClusterHasMember">
+    <fields>
+      <fieldconfig fieldExpr="dataSet.name" label="dataSet" />
+    </fields>
+    <inlinelist>  
+      <table path="subject.symbol" label="subject" showInHeader="true" showLinksToObjects="true" />
+      <table path="object.symbol" label="object" showInHeader="true" showLinksToObjects="true" />
+      <table path="publication.citation" label="publication" showInHeader="true" showLinksToObjects="true" />
+    </inlinelist>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIInteractsWith">
+    <fields>
+      <fieldconfig fieldExpr="dataSet.name" label="dataSet" />
+    </fields>
+    <inlinelist>  
+      <table path="subject.symbol" label="subject" showInHeader="true" showLinksToObjects="true" />
+      <table path="object.symbol" label="object" showInHeader="true" showLinksToObjects="true" />
+      <table path="publication.citation" label="publication" showInHeader="true" showLinksToObjects="true" />
+    </inlinelist>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIExpressesComponent">
+    <fields>
+      <fieldconfig fieldExpr="dataSet.name" label="dataSet" />
+    </fields>
+    <inlinelist>  
+      <table path="subject.symbol" label="subject" showInHeader="true" showLinksToObjects="true" />
+      <table path="object.symbol" label="object" showInHeader="true" showLinksToObjects="true" />
+      <table path="publication.citation" label="publication" showInHeader="true" showLinksToObjects="true" />
+    </inlinelist>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIMutationInvolves">
+    <fields>
+      <fieldconfig fieldExpr="dataSet.name" label="dataSet" />
+    </fields>
+    <inlinelist>  
+      <table path="subject.symbol" label="subject" showInHeader="true" showLinksToObjects="true" />
+      <table path="object.symbol" label="object" showInHeader="true" showLinksToObjects="true" />
+      <table path="publication.citation" label="publication" showInHeader="true" showLinksToObjects="true" />
+    </inlinelist>
+  </class>
 
 <!-- =============================================================== -->
 <!-- exporters -->
