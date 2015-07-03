@@ -431,6 +431,44 @@
     </fields>
   </class>
 
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIDirectedRelationship">
+    <fields>
+      <fieldconfig fieldExpr="subject.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="relationshipTerm" showInSummary="true" />
+      <fieldconfig fieldExpr="object.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="evidenceCode" showInSummary="true" />
+    </fields>
+  </class>
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIClusterHasMember">
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIInteractsWith">
+    <fields>
+      <fieldconfig fieldExpr="subject.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="relationshipTerm" showInSummary="true" />
+      <fieldconfig fieldExpr="object.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="evidenceCode" showInSummary="true" />
+
+      <fieldconfig fieldExpr="validation" showInSummary="true" />
+      <fieldconfig fieldExpr="score" showInSummary="true" />
+      <fieldconfig fieldExpr="algorithm" showInSummary="false" />
+      <fieldconfig fieldExpr="dataSource" showInSummary="false" />
+      <fieldconfig fieldExpr="organizerProductId" showInSummary="false" />
+      <fieldconfig fieldExpr="participantProductId" showInSummary="false" />
+      <fieldconfig fieldExpr="otherRefs" showInSummary="false" />
+    </fields>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIExpressesComponent">
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIMutationInvolves">
+  </class>
 
 <!-- =============================================================== -->
 <!-- exporters -->
