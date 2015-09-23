@@ -431,6 +431,57 @@
     </fields>
   </class>
 
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIClusterHasMember">
+    <fields>
+      <fieldconfig fieldExpr="cluster.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="relationshipTerm" showInSummary="true" />
+      <fieldconfig fieldExpr="member.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="evidenceCode" showInSummary="true" />
+      <fieldconfig fieldExpr="publication.mgiJnum" showInSummary="true" />
+    </fields>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIInteractsWith">
+    <fields>
+      <fieldconfig fieldExpr="interactor.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="relationshipTerm" showInSummary="true" />
+      <fieldconfig fieldExpr="target.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="evidenceCode" showInSummary="true" />
+      <fieldconfig fieldExpr="publication.mgiJnum" showInSummary="true" />
+
+      <fieldconfig fieldExpr="validation" showInSummary="true" />
+      <fieldconfig fieldExpr="score" showInSummary="true" />
+      <fieldconfig fieldExpr="algorithm" showInSummary="false" />
+      <fieldconfig fieldExpr="dataSource" showInSummary="false" />
+      <fieldconfig fieldExpr="organizerProductId" showInSummary="false" />
+      <fieldconfig fieldExpr="participantProductId" showInSummary="false" />
+      <fieldconfig fieldExpr="otherRefs" showInSummary="false" />
+    </fields>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIExpressesComponent">
+    <fields>
+      <fieldconfig fieldExpr="allele.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="relationshipTerm" showInSummary="true" />
+      <fieldconfig fieldExpr="feature.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="evidenceCode" showInSummary="true" />
+      <fieldconfig fieldExpr="publication.mgiJnum" showInSummary="true" />
+    </fields>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIMutationInvolves">
+    <fields>
+      <fieldconfig fieldExpr="mutation.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="relationshipTerm" showInSummary="true" />
+      <fieldconfig fieldExpr="feature.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="evidenceCode" showInSummary="true" />
+      <fieldconfig fieldExpr="publication.mgiJnum" showInSummary="true" />
+    </fields>
+  </class>
 
 <!-- =============================================================== -->
 <!-- exporters -->

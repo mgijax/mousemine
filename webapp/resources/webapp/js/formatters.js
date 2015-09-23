@@ -167,43 +167,36 @@
       return formatLink(url, wrapSpan(escapeHtml(imageLabel)), "_blank", true)
   };
 
-  /* uncomment to enable the table popups (previews) on hover, instead of click */
-  intermine.setOptions({CellPreviewTrigger: 'click'});
-  
-  /* There is a registered, though disabled, Pub formatter by default.
-   * Have to physically remove it before we can register out own (below)
-   */
-  delete intermine.results.formatters.Publication;
-  delete intermine.results.formatsets.genomic["Publication.title"];
-  
-  
-  /* Standard Location formatter doesn't include the strand. 
-   * Here's a shim to make it.
-   */
-  var lf = intermine.results.formatters.Location;
-  var lfnew = function(o){
-      var s = o.get('strand');
-      return lf.call(this,o) + (s>0?' (+)':s<0?' (-)':'');
-      };
-  lfnew.replaces = lf.replaces;
-  lfnew.merge = lf.merge;
-  lfnew.replaces.push('strand');
+  imtables.formatting.registerFormatter(
+    function(o){return formatMGILink(o.get("assayId"));},
+    "genomic",
+    "GXDExpression",
+    ["assayId"]);
 
+  imtables.formatting.registerFormatter(
+    function(o){return formatExpressionAge(o.get("age"));},
+    "genomic",
+    "GXDExpression",
+    ["age"]);
 
-  intermine.results.formatters.Location = lfnew;
-  
-  intermine.setOptions({
-      'Location.start': true,
-      'Location.end': true,
-      'Location.strand' : true,
-      'OntologyAnnotationEvidence.withText' : formatWithText ,
-      'Publication.title': function(o){return abbreviate(o.get("title"),35);}, 
-      'Publication.citation':function(o){return abbreviate(o.get("citation"),35);},
-      'GXDExpression.age' : function(o){return formatExpressionAge(o.get("age"));},
-      'GXDExpression.assayId':function(o){return formatMGILink(o.get("assayId"));},
-      'GXDExpression.probe':function(o){return formatMGILink(o.get("probe"));},
-      'GXDExpression.image':function(o){return formatExpressionImage(o.get("image"),o.get("assayId"));}
-    }, 
-    'intermine.results.formatsets.genomic');
+  imtables.formatting.registerFormatter(
+    function(o){ return formatExpressionImage(o.get("image"),o.get("assayId")); },
+    "genomic",
+    "GXDExpression",
+    ["image"]);
+
+  imtables.formatting.registerFormatter(
+    function(o){return formatMGILink(o.get("probe"));},
+    "genomic",
+    "GXDExpression",
+    ["probe"]);
+
+  imtables.formatting.registerFormatter(
+    formatWithText,
+    "genomic",
+    "OntologyAnnotationEvidence",
+    ["withText"]);
+
+  imtables.configure({TableCell: {PreviewTrigger: 'click'}});
   
 }));
