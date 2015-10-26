@@ -648,6 +648,44 @@
     views="primaryIdentifier, symbol, organism.name, chromosome.primaryIdentifier,
 	chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand"/>
 
+<enrichmentwidgetdisplayer id="mp_enrichment_for_allele"
+    title="Mammalian Phenotype Ontology Enrichment"
+    description="MP terms enriched for items in this list."
+    label="MP Term"
+    startClass="Allele"
+    typeClass="Allele"
+    startClassDisplay="primaryIdentifier"
+    enrich="ontologyAnnotations.ontologyTerm[MPTerm].parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	ontologyAnnotations.qualifier = null"
+    views="symbol,name,primaryIdentifier,organism.name,
+	ontologyAnnotations.ontologyTerm.identifier, 
+	ontologyAnnotations.ontologyTerm.name,
+	ontologyAnnotations.ontologyTerm.parents.identifier,
+	ontologyAnnotations.ontologyTerm.parents.name"
+    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
+
+<enrichmentwidgetdisplayer id="disease_enrichment_for_allele"
+    title="Disease Enrichment"
+    description="Disease terms enriched for items in this list."
+    label="Disease Term"
+    startClass="Allele"
+    typeClass="Allele"
+    startClassDisplay="primaryIdentifier"
+    enrich="ontologyAnnotations.ontologyTerm[MedicTerm].parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	ontologyAnnotations.qualifier = null"
+    views="symbol,name,primaryIdentifier,organism.name,
+	ontologyAnnotations.ontologyTerm.identifier, 
+	ontologyAnnotations.ontologyTerm.name,
+	ontologyAnnotations.ontologyTerm.parents.identifier,
+	ontologyAnnotations.ontologyTerm.parents.name"
+    />
+
 <enrichmentwidgetdisplayer id="mp_enrichment_for_genotype"
     title="Mammalian Phenotype Ontology Enrichment"
     description="MP terms enriched for items in this list."
