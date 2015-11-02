@@ -1,4 +1,5 @@
 <tags>
+
  <tag name="im:public" objectIdentifier="Gene_Expression" type="template"></tag>
  <tag name="im:frontpage" objectIdentifier="Gene_Expression" type="template"></tag>
  <tag name="im:report" objectIdentifier="Gene_Expression" type="template"></tag>
