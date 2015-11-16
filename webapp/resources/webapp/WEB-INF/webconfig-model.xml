@@ -102,11 +102,11 @@
     <class className="org.intermine.model.bio.Interaction">
 	<fields>
 	<fieldconfig fieldExpr="details.type" />
-	<fieldconfig fieldExpr="details.relationshipType.name" />
+	<fieldconfig fieldExpr="details.relationshipType" />
 	<fieldconfig fieldExpr="details.role1" />
-	<fieldconfig fieldExpr="gene1.symbol" />
+	<fieldconfig fieldExpr="participant1.symbol" />
 	<fieldconfig fieldExpr="details.role2" />
-	<fieldconfig fieldExpr="gene2.symbol" />
+	<fieldconfig fieldExpr="participant2.symbol" />
 	</fields>
     </class>
 
