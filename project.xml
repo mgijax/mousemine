@@ -34,6 +34,15 @@
         <property name="src.data.file" value="&mm_data;/zebrafishmine/latest/features.xml" />
 	</source>
 
+    <source name="data-model" type="data-model">
+    </source>
+    <!-- data-model contains all the mgi base class defintions
+         this allows mgi-base to be excluded from a build
+         which will significantly decrease the build time
+         BUT mousemine/dbmodel/resources/genomic_priorities.properties
+         needs to have mgi-base removed for the build to work
+    -->
+
     <source name="mgi-base" type="mgi-base" >
 	<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>
     </source>
