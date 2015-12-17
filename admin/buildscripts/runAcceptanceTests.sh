@@ -18,7 +18,7 @@ then
 fi
 
 cd ~/intermine/mousemine/admin/tests/bin
-python compareMmToMgi.py ../resources/tests.cfg >../output/comparative_test.txt
+python compareMmToMgi.py ../resources >../output/comparative_test.txt
 RESULT=`grep FAILED ../output/comparative_test.txt | wc -l`
 if [ "$RESULT" = 0 ]
 then
