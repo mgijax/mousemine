@@ -3,22 +3,8 @@ ALL_TESTS_PASSED=true
 
 source ~/buildscripts/doExports.sh
 
-cd ~/intermine/mousemine/integrate
-ant acceptance-tests
-RESULT=`grep FAILED build/acceptance_test.html | wc -l`
-if [ "$RESULT" = 0 ]
-then
-	echo "Integrate acceptance testing passed."
-elif [ "$RESULT" != 0 ]
-then
-	echo "Integrate acceptance testing failed."
-	cp build/acceptance_test.html ${WORKSPACE}
-	echo "${JENKINS_URL}job/${JOB_NAME}/ws/acceptance_test.html"
-	ALL_TESTS_PASSED=false
-fi
-
 cd ~/intermine/mousemine/admin/tests/bin
-python compareMmToMgi.py ../resources/tests.cfg >../output/comparative_test.txt
+python compareMmToMgi.py ../resources >../output/comparative_test.txt
 RESULT=`grep FAILED ../output/comparative_test.txt | wc -l`
 if [ "$RESULT" = 0 ]
 then

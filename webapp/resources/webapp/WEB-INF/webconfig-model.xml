@@ -493,6 +493,13 @@
 <!-- =============================================================== -->
 <!-- report displayers -->
 <reportdisplayers>
+
+<reportdisplayer javaClass="org.intermine.bio.web.displayer.CytoscapeNetworkDisplayer"
+        jspName="model/cytoscapeNetworkDisplayer.jsp"
+        replacesFields="interactions"
+        placement="Interactions"
+        types="Gene"/>
+
     <!--
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.CytoscapeNetworkDisplayer"
 	jspName="model/cytoscapeNetworkDisplayer.jsp"
