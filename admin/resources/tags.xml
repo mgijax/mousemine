@@ -51,6 +51,10 @@
        type="template">
   </tag>
 
+  <tag name="im:aspect:Disease" objectIdentifier="HDisease_MModel"
+       type="template">
+  </tag>
+
   <tag name="im:aspect:Expression" objectIdentifier="Structure_Expression"
        type="template">
   </tag>
@@ -201,50 +205,14 @@
        type="template">
   </tag>
 
-  <tag name="im:aspect:Genome" objectIdentifier="org.intermine.model.bio.Gene"
-       type="class">
-  </tag>
-
-  <tag name="im:aspect:Genome" ope="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="Publication_MFeature"
-       type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="Lookup_Features" type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="Lookup_MPhenotype"
-       type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="Lookup_GO" type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="Lookup_HDisease" type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="HDisease_Publications"
-       type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="Publication_MPhenotypes"
-       type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="MPhenotype_Publications"
-       type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="Publication_HDisease"
-       type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="GO_MFeatures" type="template">
+  <tag name="im:aspect:Genome" objectIdenpe="template">
   </tag>
 
   <tag name="im:frontpage" objectIden>
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="MFeature_GO" type="template">
+  </tag>
 
   <tag name="im:frontpage" objectIdentifier="Feature_overlapping"
        type="template">
@@ -413,6 +381,10 @@
   </tag>
 
   <tag name="im:hidden" objectIdentifier="BioEntity.locatedFeatures"
+       type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="BioEntity.interactions"
        type="collection">
   </tag>
 
@@ -682,6 +654,9 @@
        type="template">
   </tag>
 
+  <tag name="im:public" objectIdentifier="HDisease_MModel" type="template">
+  </tag>
+
   <tag name="im:report" objectIdentifier="Gene_Expression" type="template">
   </tag>
 
@@ -793,6 +768,9 @@
   </tag>
 
   <tag name="im:report" objectIdentifier="Gene_Interactions" type="template">
+  </tag>
+
+  <tag name="im:report" objectIdentifier="HDisease_MModel" type="template">
   </tag>
 
   <tag name="im:summary" objectIdentifier="Allele.feature" type="reference">
