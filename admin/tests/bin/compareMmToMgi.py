@@ -47,7 +47,7 @@ def doQ(con, q):
     r.sort()
     return r
 
-def doTest(file, name, mgiquery, mmquery, filter, op):
+def doTest(file, name, mgiquery, value, mmquery, filter, op):
     try:
 	print 
 	print "-"*60
@@ -57,8 +57,12 @@ def doTest(file, name, mgiquery, mmquery, filter, op):
         func = compFcns.get(op, None)
         if func is None:
             func = eval( "lambda x,y : " + op )
-        vmgi = filt(doQ( mgicon, mgiquery ))
-        vmm  = filt(doQ( mmcon,  mmquery  ))
+        vmm = filt(doQ( mmcon,  mmquery  ))
+        if len(mgiquery) == 0:
+            vmgi = long(value)
+            vmm = vmm[0].values()[0]
+        else:
+           vmgi = filt(doQ( mgicon, mgiquery ))
         res  = func(vmgi, vmm)
 	print res
 	if not res:
@@ -67,6 +71,7 @@ def doTest(file, name, mgiquery, mmquery, filter, op):
 	return res
     except:
         print "Test caught an exception."
+        print mgiquery
 	print name
 	ex =  sys.exc_info()
 	print ex[0], ex[1], ex[2]
@@ -108,10 +113,18 @@ def main():
 	        eflag = cp.get(s,"enabled",{"enabled":"true"}).lower().strip()
 	        if eflag == "false":
 	            continue
+
+                mgi = ""
+                value = ""
+                if cp.has_option(s,"mgi"):
+                    mgi = cp.get(s,"mgi")
+                if cp.has_option(s,"value"):
+                    value = cp.get(s,"value");
                 res2 = doTest(
                     cfname,
 	            tname, 
-	            cp.get(s,"mgi"), 
+	            mgi,
+                    value,
 	            cp.get(s,"mousemine"), 
 	            cp.get(s,"filter"), 
 	            cp.get(s,"compare"))
