@@ -240,7 +240,7 @@
       <fieldconfig fieldExpr="sequenceOntologyTerm.name" label="Type" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chromosome" showInInlineCollection="false" showInSummary="false" />
       <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false"/>
-      <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
+      <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" escapeXml="false" />
     </fields>
     <inlinelist>
       <table path="earliestPublication.citation" showInHeader="true" lineLength="200" showLinksToObjects="true" />
@@ -493,6 +493,13 @@
 <!-- =============================================================== -->
 <!-- report displayers -->
 <reportdisplayers>
+
+<reportdisplayer javaClass="org.intermine.bio.web.displayer.CytoscapeNetworkDisplayer"
+        jspName="model/cytoscapeNetworkDisplayer.jsp"
+        replacesFields="interactions"
+        placement="Interactions"
+        types="Gene"/>
+
     <!--
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.CytoscapeNetworkDisplayer"
 	jspName="model/cytoscapeNetworkDisplayer.jsp"

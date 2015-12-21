@@ -39,7 +39,7 @@ def readTests(cfname):
     cp.tests = []
     for line in open(cfname,'r'):
         if line.startswith("[TEST:"):
-	    cp.tests.append(line[1:-2])
+            cp.tests.append(line[1:-2])
     return cp
 
 def doQ(con, q):
@@ -47,17 +47,22 @@ def doQ(con, q):
     r.sort()
     return r
 
-def doTest(name, mgiquery, mmquery, filter, op):
+def doTest(file, name, mgiquery, value, mmquery, filter, op):
     try:
 	print 
 	print "-"*60
+        print "Test File:", file
 	print "TEST:", name
 	filt = eval("lambda x : " + filter)
         func = compFcns.get(op, None)
         if func is None:
             func = eval( "lambda x,y : " + op )
-        vmgi = filt(doQ( mgicon, mgiquery ))
-        vmm  = filt(doQ( mmcon,  mmquery  ))
+        vmm = filt(doQ( mmcon,  mmquery  ))
+        if len(mgiquery) == 0:
+            vmgi = long(value)
+            vmm = vmm[0].values()[0]
+        else:
+           vmgi = filt(doQ( mgicon, mgiquery ))
         res  = func(vmgi, vmm)
 	print res
 	if not res:
@@ -66,6 +71,7 @@ def doTest(name, mgiquery, mmquery, filter, op):
 	return res
     except:
         print "Test caught an exception."
+        print mgiquery
 	print name
 	ex =  sys.exc_info()
 	print ex[0], ex[1], ex[2]
@@ -75,7 +81,7 @@ def doTest(name, mgiquery, mmquery, filter, op):
     
 
 def usage():
-    print "usage: %s TESTS.cfg [MINE.properties] > RESULTS" % sys.argv[0]
+    print "usage: %s TESTS_DIR [MINE.properties] > RESULTS" % sys.argv[0]
     sys.exit(0)
 
 def main():
@@ -83,7 +89,6 @@ def main():
     global mmcon
     if len(sys.argv) == 1 or len(sys.argv) > 3:
         usage()
-    cp = readTests( sys.argv[1] )
     mpFile = "~/.intermine/mousemine.properties"
     if len(sys.argv) == 3:
         mpFile = sys.argv[2]
@@ -97,21 +102,37 @@ def main():
     print "MouseMine connection:", mmparams['host'], mmparams['database']
     res = True
     failedTests = []
-    for s in cp.tests:
-	tname = s[5:]
-	# check if enabled
-	eflag = cp.get(s,"enabled",{"enabled":"true"}).lower().strip()
-	if eflag == "false":
-	    continue
-        res2 = doTest(
-	    tname, 
-	    cp.get(s,"mgi"), 
-	    cp.get(s,"mousemine"), 
-	    cp.get(s,"filter"), 
-	    cp.get(s,"compare"))
-	if not res2:
-	    failedTests.append(tname)
-	res = res and res2
+    skippedFiles = []
+    for cfname in os.listdir(sys.argv[1]):
+        cffullname = os.path.abspath(os.path.join(sys.argv[1],cfname))
+        if cffullname.endswith(".cfg"):        
+            cp = readTests(cffullname)
+            for s in cp.tests:
+	        tname = s[5:]
+	        # check if enabled
+	        eflag = cp.get(s,"enabled",{"enabled":"true"}).lower().strip()
+	        if eflag == "false":
+	            continue
+
+                mgi = ""
+                value = ""
+                if cp.has_option(s,"mgi"):
+                    mgi = cp.get(s,"mgi")
+                if cp.has_option(s,"value"):
+                    value = cp.get(s,"value");
+                res2 = doTest(
+                    cfname,
+	            tname, 
+	            mgi,
+                    value,
+	            cp.get(s,"mousemine"), 
+	            cp.get(s,"filter"), 
+	            cp.get(s,"compare"))
+	    if not res2:
+	        failedTests.append(tname)
+            res = res and res2
+        else:
+            skippedFiles.append(cfname)
     print
     print "-"*60
     if res:
@@ -122,5 +143,7 @@ def main():
 	for t in failedTests:
 	    print "    " + t
 #        sys.exit(-1)
+    for f in skippedFiles:
+        print "Skipped non .cfg file "+f
 
 main()
