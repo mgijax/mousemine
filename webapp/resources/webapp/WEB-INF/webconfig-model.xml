@@ -105,8 +105,10 @@
 	<fieldconfig fieldExpr="details.relationshipType" />
 	<fieldconfig fieldExpr="details.role1" />
 	<fieldconfig fieldExpr="participant1.symbol" />
+	<fieldconfig fieldExpr="participant1.primaryIdentifier" />
 	<fieldconfig fieldExpr="details.role2" />
 	<fieldconfig fieldExpr="participant2.symbol" />
+	<fieldconfig fieldExpr="participant2.primaryIdentifier" />
 	</fields>
     </class>
 
@@ -325,6 +327,16 @@
     </fields>
     <bagdisplayers>
     </bagdisplayers>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.ProteinDomain">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier"/>
+      <fieldconfig fieldExpr="name"/>
+      <fieldconfig fieldExpr="shortName"/>
+      <fieldconfig fieldExpr="type"/>
+    </fields>
   </class>
 
 
