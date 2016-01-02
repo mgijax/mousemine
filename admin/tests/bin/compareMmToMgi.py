@@ -128,9 +128,9 @@ def main():
 	            cp.get(s,"mousemine"), 
 	            cp.get(s,"filter"), 
 	            cp.get(s,"compare"))
-	    if not res2:
-	        failedTests.append(tname)
-            res = res and res2
+		if not res2:
+		    failedTests.append(tname)
+		res = res and res2
         else:
             skippedFiles.append(cfname)
     print

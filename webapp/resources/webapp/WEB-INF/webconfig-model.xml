@@ -325,8 +325,18 @@
       <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
     </fields>
-    <bagdisplayers>
-    </bagdisplayers>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.ProteinDomainRegion">
+    <fields>
+      <fieldconfig fieldExpr="proteinDomain.name"/>
+      <fieldconfig fieldExpr="protein.primaryAccession"/>
+      <fieldconfig fieldExpr="start"/>
+      <fieldconfig fieldExpr="end"/>
+      <fieldconfig fieldExpr="identifier"/>
+      <fieldconfig fieldExpr="database"/>
+    </fields>
   </class>
 
   <!-- =============================================================== -->
@@ -742,6 +752,34 @@
 	ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,
 	ontologyAnnotations.ontologyTerm.parents.name" />
+
+<enrichmentwidgetdisplayer id="prot_dom_enrichment_for_gene"
+    title="Protein Domain Enrichment"
+    description="Protein Domains enriched for items in this list."
+    label="Protein Domain"
+    startClass="Gene"
+    startClassDisplay="primaryIdentifier"
+    enrich="proteins.proteinDomainRegions.proteinDomain.name"
+    enrichIdentifier="proteins.proteinDomainRegions.proteinDomain.primaryIdentifier"
+    constraints="organism.name=[list]"
+    typeClass="Gene"
+    views="secondaryIdentifier,symbol,primaryIdentifier,organism.name,
+       proteins.proteinDomainRegions.proteinDomain.primaryIdentifier,proteins.proteinDomainRegions.proteinDomain.name"
+    externalLink="http://www.ebi.ac.uk/interpro/IEntry?ac="/>
+
+<enrichmentwidgetdisplayer id="prot_dom_enrichment_for_protein"
+    title="Protein Domain Enrichment"
+    description="Protein Domains enriched for items in this list."
+    label="Protein Domain"
+    startClass="Protein"
+    startClassDisplay="primaryIdentifier"
+    enrich="proteinDomainRegions.proteinDomain.name"
+    enrichIdentifier="proteinDomainRegions.proteinDomain.primaryIdentifier"
+    constraints="organism.name=[list]"
+    typeClass="Protein"
+    views="primaryIdentifier,organism.name,proteinDomainRegions.proteinDomain.primaryIdentifier,
+       proteinDomainRegions.proteinDomain.name"
+    externalLink="http://www.ebi.ac.uk/interpro/entry/"/>
 
 </widgets>  
 </webconfig>
