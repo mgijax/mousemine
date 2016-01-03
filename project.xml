@@ -1,5 +1,5 @@
 <!DOCTYPE bio [
-<!ENTITY mm_data "/home/jer/mousemine/mousemine_etl/output">
+<!ENTITY mm_data "/var/lib/jenkins/etl_build/etl/output">
 ]>
 
 <project type="bio">
