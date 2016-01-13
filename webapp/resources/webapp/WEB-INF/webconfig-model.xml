@@ -80,7 +80,6 @@
   <class className="org.intermine.model.bio.OrthologueEvidence">
    <fields>
         <fieldconfig fieldExpr="evidenceCode.abbreviation" />
-        <fieldconfig fieldExpr="comments" />
    </fields>
   </class>
 
