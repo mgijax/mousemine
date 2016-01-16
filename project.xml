@@ -21,7 +21,7 @@
 	<property name="uniprot.organisms" value="10090"/>
 	<property name="src.data.dir" location="&mm_data;/uniprot/latest/"/>
 	<property name="creategenes" value="false"/>
-	<property name="allowduplicates" value="false"/>
+	<property name="allowduplicates" value="true"/>
 	<property name="loadfragments" value="true"/>
 	<property name="loadtrembl" value="true"/>
 	</source>
