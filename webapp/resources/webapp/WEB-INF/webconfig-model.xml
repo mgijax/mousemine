@@ -585,7 +585,7 @@
     startClass="SequenceFeature"
     typeClass="SequenceFeature"
     startClassDisplay="primaryIdentifier"
-    enrich="ontologyAnnotations.ontologyTerm[MedicTerm].parents.name"
+    enrich="ontologyAnnotations.ontologyTerm[DOTerm].parents.name"
     enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
     constraints="organism.name=[list],
 	primaryIdentifier != null, 
@@ -703,7 +703,7 @@
     startClass="Allele"
     typeClass="Allele"
     startClassDisplay="primaryIdentifier"
-    enrich="ontologyAnnotations.ontologyTerm[MedicTerm].parents.name"
+    enrich="ontologyAnnotations.ontologyTerm[DOTerm].parents.name"
     enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
     constraints="organism.name=[list],
 	primaryIdentifier != null, 

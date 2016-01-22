@@ -94,9 +94,14 @@
 	<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>
     </source>
 
-    <source name="mgi-medic" type="mgi-medic" >
+    <source name="mgi-do" type="mgi-do" >
 	<property name="src.data.file" 
-	          value="&mm_data;/medic/latest/MEDIC_conflated.obo"/>
+	          value="&mm_data;/do/latest/DiseaseOntology.obo"/>
+    </source>
+
+    <source name="mgi-omim" type="mgi-omim" >
+        <property name="src.data.file"
+                  value="&mm_data;/omim/latest/MgiOmim.obo"/>
     </source>
 
     <source name="mgi-mp" type="mgi-mp" >
