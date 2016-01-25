@@ -316,25 +316,56 @@
     </fields>
   </class>
 
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.Pathway">
+    <fields>
+      <fieldconfig fieldExpr="identifier"/>
+      <fieldconfig fieldExpr="name" />
+      <fieldconfig fieldExpr="shortName" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="curated" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+    </fields>
+  </class>
+
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Protein">
     <fields>
-      <fieldconfig fieldExpr="primaryIdentifier"/>
       <fieldconfig fieldExpr="primaryAccession"/>
+      <fieldconfig fieldExpr="name" />
+
       <fieldconfig fieldExpr="organism.name" label="Organism"/>
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+      <fieldconfig fieldExpr="length" showInSummary="true" showInInlineCollection="true" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+
+
+      <fieldconfig fieldExpr="isFragment" />
+      <fieldconfig fieldExpr="isUniprotCanonical" showInInlineCollection="false" showInSummary="false" showInResults="false"/>
+
+      <fieldconfig fieldExpr="uniprotAccession" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="uniprotName" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+
+      <fieldconfig fieldExpr="primaryIdentifier" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="secondaryIdentifier" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+
+      <fieldconfig fieldExpr="molecularWeight" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="md5checksum" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+
     </fields>
+    <inlinelist>
+	<table path="synonyms.value" showInHeader="true" lineLength="100" />
+	<table path="keywords.name" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+	<table path="components.name" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+	<table path="ecNumbers.identifier" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+    </inlinelist>
   </class>
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.ProteinDomainRegion">
     <fields>
       <fieldconfig fieldExpr="proteinDomain.name"/>
+      <fieldconfig fieldExpr="identifier"/>
       <fieldconfig fieldExpr="protein.primaryAccession"/>
       <fieldconfig fieldExpr="start"/>
       <fieldconfig fieldExpr="end"/>
-      <fieldconfig fieldExpr="identifier"/>
       <fieldconfig fieldExpr="database"/>
     </fields>
   </class>
