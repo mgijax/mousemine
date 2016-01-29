@@ -164,6 +164,7 @@
 
     <source name="update-publications" type="update-publications" >
         <property name="src.data.file" location="build/publication.xml"/>
+        <property name="cachDirName" value="/var/lib/jenkins/pubCache/"/>
     </source>
 
   </sources>
