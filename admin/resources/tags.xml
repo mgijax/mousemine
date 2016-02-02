@@ -105,9 +105,6 @@
   <tag name="im:aspect:Genome" objectIdentifier="Chromosome.transcripts" type="collection">
   </tag>
 
-  <tag name="im:aspect:Genome" objectIdentifier="Protein.genes" type="collection">
-  </tag>
-
   <tag name="im:aspect:Genome" objectIdentifier="Transcript.introns" type="collection">
   </tag>
 
@@ -201,6 +198,9 @@
   <tag name="im:aspect:Interactions" objectIdentifier="Gene.pathways" type="collection">
   </tag>
 
+  <tag name="im:aspect:Interactions" objectIdentifier="Pathway_Proteins_Genes" type="template">
+  </tag>
+
   <tag name="im:aspect:Literature" objectIdentifier="GO_Publications" type="template">
   </tag>
 
@@ -282,7 +282,13 @@
   <tag name="im:aspect:Proteins" objectIdentifier="Gene_Protein" type="template">
   </tag>
 
-  <tag name="im:aspect:Proteins" objectIdentifier="domain_protein_gene" type="template">
+  <tag name="im:aspect:Proteins" objectIdentifier="Domain_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Pathway_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Protein_Genes" type="template">
   </tag>
 
   <tag name="im:aspect:summary" objectIdentifier="Term_Children" type="template">
@@ -346,9 +352,6 @@
   </tag>
 
   <tag name="im:frontpage" objectIdentifier="Gene_allGOTerms" type="template">
-  </tag>
-
-  <tag name="im:frontpage" objectIdentifier="Protein_GOterms" type="template">
   </tag>
 
   <tag name="im:frontpage" objectIdentifier="Gene_Expression" type="template">
@@ -450,7 +453,13 @@
   <tag name="im:frontpage" objectIdentifier="Gene_Protein" type="template">
   </tag>
 
-  <tag name="im:frontpage" objectIdentifier="domain_protein_gene" type="template">
+  <tag name="im:frontpage" objectIdentifier="Domain_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Pathway_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Protein_Genes" type="template">
   </tag>
 
   <tag name="im:hidden" objectIdentifier="EMAPATerm.expression" type="collection">
@@ -510,9 +519,6 @@
   <tag name="im:hidden" objectIdentifier="SequenceFeature.alleles" type="collection">
   </tag>
 
-  <tag name="im:hidden" objectIdentifier="BioEntity.publications" type="collection">
-  </tag>
-
   <tag name="im:hidden" objectIdentifier="OntologyTerm.ontology" type="reference">
   </tag>
 
@@ -540,10 +546,10 @@
   <tag name="im:hidden" objectIdentifier="BioEntity.interactions" type="collection">
   </tag>
 
-  <tag name="im:hidden" objectIdentifier="BioEntity.crossReferences" type="collection">
+  <tag name="im:hidden" objectIdentifier="Gene.proteins" type="collection">
   </tag>
 
-  <tag name="im:hidden" objectIdentifier="Gene.proteins" type="collection">
+  <tag name="im:hidden" objectIdentifier="Protein.sequence" type="reference">
   </tag>
 
   <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.Gene" type="class">
@@ -631,9 +637,6 @@
   </tag>
 
   <tag name="im:public" objectIdentifier="DNA Repair Proteins (Jan 07,2016)" type="bag">
-  </tag>
-
-  <tag name="im:public" objectIdentifier="Protein_GOterms" type="template">
   </tag>
 
   <tag name="im:public" objectIdentifier="Gene_Expression" type="template">
@@ -789,7 +792,19 @@
   <tag name="im:public" objectIdentifier="Gene_Protein" type="template">
   </tag>
 
-  <tag name="im:public" objectIdentifier="domain_protein_gene" type="template">
+  <tag name="im:public" objectIdentifier="Domain_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Pathway_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Protein_Genes" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Homeobox domains" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="CREB pathways" type="bag">
   </tag>
 
   <tag name="im:report" objectIdentifier="Gene_Expression" type="template">
@@ -903,13 +918,7 @@
   <tag name="im:summary" objectIdentifier="Protein.publications" type="collection">
   </tag>
 
-  <tag name="im:summary" objectIdentifier="Protein.genes" type="collection">
-  </tag>
-
   <tag name="im:summary" objectIdentifier="BindingSite.factor" type="reference">
-  </tag>
-
-  <tag name="im:summary" objectIdentifier="Protein.comments" type="collection">
   </tag>
 
   <tag name="im:summary" objectIdentifier="org.intermine.model.bio.Organism" type="class">
