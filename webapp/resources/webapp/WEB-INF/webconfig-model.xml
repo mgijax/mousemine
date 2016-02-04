@@ -64,6 +64,7 @@
 	<fieldconfig fieldExpr="symbol"  />
 	<fieldconfig fieldExpr="background.name"  label="Background" />
 	<fieldconfig fieldExpr="zygosity"  />
+        <fieldconfig fieldExpr="hasMutantAllele" />
     </fields>
   </class>
   
