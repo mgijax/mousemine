@@ -291,6 +291,12 @@
   <tag name="im:aspect:Proteins" objectIdentifier="Protein_Genes" type="template">
   </tag>
 
+  <tag name="im:aspect:Proteins" objectIdentifier="Gene_Proteins_Domains" type="template">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Gene_Domains" type="template">
+  </tag>
+
   <tag name="im:aspect:summary" objectIdentifier="Term_Children" type="template">
   </tag>
 
@@ -460,6 +466,12 @@
   </tag>
 
   <tag name="im:frontpage" objectIdentifier="Protein_Genes" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Gene_Proteins_Domains" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Gene_Domains" type="template">
   </tag>
 
   <tag name="im:hidden" objectIdentifier="EMAPATerm.expression" type="collection">
@@ -786,9 +798,6 @@
   <tag name="im:public" objectIdentifier="HDisease_MModel" type="template">
   </tag>
 
-  <tag name="im:public" objectIdentifier="Gene_proteindomain" type="template">
-  </tag>
-
   <tag name="im:public" objectIdentifier="Gene_Protein" type="template">
   </tag>
 
@@ -805,6 +814,12 @@
   </tag>
 
   <tag name="im:public" objectIdentifier="CREB pathways" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Gene_Proteins_Domains" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Gene_Domains" type="template">
   </tag>
 
   <tag name="im:report" objectIdentifier="Gene_Expression" type="template">

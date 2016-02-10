@@ -166,6 +166,12 @@
     <constraint path="Gene.id" editable="true" description="Gene.id" op="=" value="0"/>
   </query>
 </template>
+<template name="Convert_Gene_To_SPProtein" title="Gene to SwissProt protein list converter" comment="">
+  <query name="Convert_Gene_To_SPProtein" model="genomic" view="Gene.id Gene.proteins.id" longDescription="" constraintLogic="A and B">
+    <constraint path="Gene.proteins.dataSets.name" code="B" editable="false" description="" op="=" value="Swiss-Prot data set"/>
+    <constraint path="Gene.id" code="A" editable="true" description="Gene.id" op="=" value="0"/>
+  </query>
+</template>
 <template name="Convert_Pathway_to_Gene" title="Pathway to gene list converter." comment="">
   <query name="Convert_Pathway_to_Gene" model="genomic" view="Pathway.id Pathway.genes.id" longDescription="" sortOrder="Pathway.id asc">
     <constraint path="Pathway.id" editable="true" op="=" value="0"/>
@@ -222,23 +228,7 @@
     <constraint path="Gene.expression.detected" code="A" editable="false" description="" op="=" value="true"/>
     <constraint path="Gene.expression.structure.parents" editable="false" type="EMAPATerm"/>
     <constraint path="Gene.interactions.participant2" editable="false" type="Gene"/>
-    <constraint path="Gene.expression.structure.parents" code="C" editable="true" description="Show gense that are expressed in:" op="LOOKUP" value="hippocampus"/>
-    <constraint path="Gene.interactions.participant2" code="E" editable="true" description="that also have protein-protein interactions with Gene:" op="LOOKUP" value="Pou5f1" extraValue="M. musculus"/>
-    <constraint path="Gene.expression.stage" code="B" editable="true" description="at Theiler Stage:" switchable="off" op="ONE OF">
-      <value>TS22
-      </value>
-      <value>TS23
-      </value>
-    </constraint>
-  </query>
-</template>
-<template name="EMAPAInteraction_Genes_New" title="Expression + Interacting Gene (protein-protein) --&gt; Genes" comment="">
-  <query name="EMAPAInteraction_Genes_New" model="genomic" view="Gene.primaryIdentifier Gene.symbol Gene.expression.structure.name Gene.expression.stage Gene.expression.assayType Gene.expression.publication.pubMedId Gene.interactions.participant2.primaryIdentifier Gene.interactions.participant2.symbol Gene.interactions.details.type Gene.interactions.details.experiment.interactionDetectionMethods.name Gene.interactions.details.experiment.publication.pubMedId" longDescription="List all genes that are expressed in a given structure/stage and have been shown to interact (protein-protein) with a specific gene. " sortOrder="Gene.symbol asc" constraintLogic="A and B and C and D and E">
-    <constraint path="Gene.interactions.participant2.organism.taxonId" code="D" editable="false" description="" op="=" value="10090"/>
-    <constraint path="Gene.expression.detected" code="A" editable="false" description="" op="=" value="true"/>
-    <constraint path="Gene.expression.structure.parents" editable="false" type="EMAPATerm"/>
-    <constraint path="Gene.interactions.participant2" editable="false" type="Gene"/>
-    <constraint path="Gene.expression.structure.parents" code="C" editable="true" description="Show gense that are expressed in:" op="LOOKUP" value="hippocampus"/>
+    <constraint path="Gene.expression.structure.parents" code="C" editable="true" description="Show genes that are expressed in:" op="LOOKUP" value="hippocampus"/>
     <constraint path="Gene.interactions.participant2" code="E" editable="true" description="that also have protein-protein interactions with Gene:" op="LOOKUP" value="Pou5f1" extraValue="M. musculus"/>
     <constraint path="Gene.expression.stage" code="B" editable="true" description="at Theiler Stage:" switchable="off" op="ONE OF">
       <value>TS22
@@ -256,6 +246,12 @@
 <template name="Feature_overlapping" title="Features --&gt; Overlapping features" comment="">
   <query name="Feature_overlapping" model="genomic" view="SequenceFeature.primaryIdentifier SequenceFeature.symbol SequenceFeature.chromosomeLocation.locatedOn.primaryIdentifier SequenceFeature.chromosomeLocation.start SequenceFeature.chromosomeLocation.end SequenceFeature.chromosomeLocation.strand SequenceFeature.overlappingFeatures.primaryIdentifier SequenceFeature.overlappingFeatures.symbol SequenceFeature.overlappingFeatures.sequenceOntologyTerm.name SequenceFeature.overlappingFeatures.chromosomeLocation.locatedOn.primaryIdentifier SequenceFeature.overlappingFeatures.chromosomeLocation.start SequenceFeature.overlappingFeatures.chromosomeLocation.end SequenceFeature.overlappingFeatures.chromosomeLocation.strand" longDescription="Returns genome features that overlap the specified features." sortOrder="SequenceFeature.symbol asc SequenceFeature.overlappingFeatures.symbol asc">
     <constraint path="SequenceFeature" editable="true" op="LOOKUP" value="Bmp2, Bmp4" extraValue="M. musculus"/>
+  </query>
+</template>
+<template name="Gene_Domains" title="Gene --&gt; Domains" comment="">
+  <query name="Gene_Domains" model="genomic" view="Gene.primaryIdentifier Gene.symbol Gene.proteins.proteinDomainRegions.proteinDomain.name Gene.proteins.proteinDomainRegions.proteinDomain.type" longDescription="Show protein domains of a specified mouse gene or genes." sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">
+    <constraint path="Gene.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
+    <constraint path="Gene" code="A" editable="true" description="Show domains for the proteins of gene:" op="LOOKUP" value="Tspan6" extraValue="M. musculus"/>
   </query>
 </template>
 <template name="Gene_Expression" title="Gene --&gt; Expression annotations" comment="">
@@ -288,15 +284,10 @@
     <constraint path="Gene" code="A" editable="true" op="LOOKUP" value="Pparg" extraValue="M. musculus"/>
   </query>
 </template>
-<template name="Gene_proteindomain" title="Gene --&gt; Protein + Domains" comment="">
-  <query name="Gene_proteindomain" model="genomic" view="Gene.primaryIdentifier Gene.symbol Gene.proteins.uniprotAccession Gene.proteins.proteinDomainRegions.proteinDomain.name Gene.proteins.proteinDomainRegions.proteinDomain.type Gene.proteins.proteinDomainRegions.start Gene.proteins.proteinDomainRegions.end Gene.proteins.proteinDomainRegions.identifier Gene.proteins.proteinDomainRegions.database" longDescription="Show protein domain information for the proteins of a specified mouse gene." sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">
+<template name="Gene_Proteins_Domains" title="Gene --&gt; Protein + Domains" comment="">
+  <query name="Gene_Proteins_Domains" model="genomic" view="Gene.primaryIdentifier Gene.symbol Gene.proteins.uniprotAccession Gene.proteins.proteinDomainRegions.proteinDomain.name Gene.proteins.proteinDomainRegions.proteinDomain.type Gene.proteins.proteinDomainRegions.start Gene.proteins.proteinDomainRegions.end Gene.proteins.proteinDomainRegions.identifier Gene.proteins.proteinDomainRegions.database" longDescription="Show protein domain information for the proteins of a specified mouse gene." sortOrder="Gene.primaryIdentifier asc" constraintLogic="A and B">
     <constraint path="Gene.organism.taxonId" code="B" editable="false" description="" op="=" value="10090"/>
     <constraint path="Gene" code="A" editable="true" description="Show domains for the proteins of gene:" op="LOOKUP" value="Tspan6" extraValue="M. musculus"/>
-  </query>
-</template>
-<template name="Gene_To_Protein_Converter" title="Gene to protein type converter" comment="">
-  <query name="Gene_To_Protein_Converter" model="genomic" view="Gene.id Gene.proteins.id" longDescription="" sortOrder="Gene.id asc">
-    <constraint path="Gene.id" editable="true" description="Gene.id" op="=" value="0"/>
   </query>
 </template>
 <template name="GO_Interaction_Genes" title="GO term + Interacting gene (protein-protein) --&gt; Genes." comment="">
@@ -524,15 +515,17 @@
     <constraint path="Pathway.name" editable="true" op="=" value="Adenylate cyclase activating pathway"/>
   </query>
 </template>
-<template name="protein_domain" title="Protein-&gt; Domains" comment="">
-  <query name="protein_domain" model="genomic" view="Protein.uniprotAccession Protein.uniprotName Protein.proteinDomainRegions.proteinDomain.name Protein.proteinDomainRegions.proteinDomain.primaryIdentifier Protein.proteinDomainRegions.proteinDomain.type Protein.proteinDomainRegions.start Protein.proteinDomainRegions.end Protein.proteinDomainRegions.identifier Protein.proteinDomainRegions.database" longDescription="Show protein domains and families for the specified protein." sortOrder="Protein.uniprotAccession asc">
-    <constraint path="Protein" editable="true" description="Show domains and families for protein:" op="LOOKUP" value="PPARG_HUMAN"/>
+<template name="Protein_Genes" title="Protein --&gt; Genes" comment="">
+  <query name="Protein_Genes" model="genomic" view="Protein.primaryAccession Protein.genes.primaryIdentifier Protein.genes.symbol Protein.genes.name" longDescription="Returns the genes associated with the specified protein(s)." sortOrder="Protein.primaryAccession asc" constraintLogic="A and B">
+    <constraint path="Protein.organism.taxonId" code="A" editable="false" description="" op="=" value="10090"/>
+    <constraint path="Protein" code="B" editable="true" op="LOOKUP" value="Q61282"/>
   </query>
 </template>
-<template name="Protein_Genes" title="Protein --&gt; Genes" comment="">
-  <query name="Protein_Genes" model="genomic" view="Protein.primaryAccession Protein.genes.symbol Protein.genes.primaryIdentifier" longDescription="Returns the genes associated with the specified protein(s)." sortOrder="Protein.primaryAccession asc" constraintLogic="A and B">
-    <constraint path="Protein.organism.taxonId" code="A" editable="false" description="" op="=" value="10090"/>
-    <constraint path="Protein" code="B" editable="true" op="LOOKUP" value="Q61282" extraValue=""/>
+<template name="Protein_GOterms" title="Protein --&gt; GO terms" comment="Added 1NOV2010: ML">
+  <query name="Protein_GOterms" model="genomic" view="Protein.primaryAccession Protein.genes.symbol Protein.genes.primaryIdentifier Protein.genes.goAnnotation.ontologyTerm.namespace Protein.genes.goAnnotation.ontologyTerm.identifier Protein.genes.goAnnotation.ontologyTerm.name Protein.genes.organism.shortName" longDescription="For a given Protein (or List of Proteins), returns the associated Gene Ontology (GO) terms. Optionally, you can specify Ontology category (eg. cellular_component, molecular_function, biological_process: OFF returns All)." sortOrder="Protein.primaryAccession asc" constraintLogic="A and B">
+    <pathDescription pathString="Protein.genes" description="Gene"/>
+    <constraint path="Protein" code="A" editable="true" description="" op="LOOKUP" value="PPARG_HUMAN" extraValue="H. sapiens"/>
+    <constraint path="Protein.genes.goAnnotation.ontologyTerm.namespace" code="B" editable="true" description="Turn Off to retrieve all GO" switchable="on" op="=" value="biological_process"/>
   </query>
 </template>
 <template name="protein_interactions" title="Protein --&gt; Interactions" comment="">
