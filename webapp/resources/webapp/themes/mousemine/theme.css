@@ -700,9 +700,3 @@ div.inline-list ul li + li {
 font-weight : bold;
 }
 
-/*
- * Hide the "Manage Relationships" button. It's buggy and confusing. 
- */
-div.im-join-manager-button {
-    display: none ! important;
-}

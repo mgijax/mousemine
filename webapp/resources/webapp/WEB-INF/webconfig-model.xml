@@ -64,6 +64,7 @@
 	<fieldconfig fieldExpr="symbol"  />
 	<fieldconfig fieldExpr="background.name"  label="Background" />
 	<fieldconfig fieldExpr="zygosity"  />
+        <fieldconfig fieldExpr="hasMutantAllele" />
     </fields>
   </class>
   
@@ -316,25 +317,56 @@
     </fields>
   </class>
 
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.Pathway">
+    <fields>
+      <fieldconfig fieldExpr="identifier"/>
+      <fieldconfig fieldExpr="name" />
+      <fieldconfig fieldExpr="shortName" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="curated" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+    </fields>
+  </class>
+
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Protein">
     <fields>
-      <fieldconfig fieldExpr="primaryIdentifier"/>
       <fieldconfig fieldExpr="primaryAccession"/>
+      <fieldconfig fieldExpr="name" />
+
       <fieldconfig fieldExpr="organism.name" label="Organism"/>
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+      <fieldconfig fieldExpr="length" showInSummary="true" showInInlineCollection="true" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+
+
+      <fieldconfig fieldExpr="isFragment" />
+      <fieldconfig fieldExpr="isUniprotCanonical" showInInlineCollection="false" showInSummary="false" showInResults="false"/>
+
+      <fieldconfig fieldExpr="uniprotAccession" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="uniprotName" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+
+      <fieldconfig fieldExpr="primaryIdentifier" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="secondaryIdentifier" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+
+      <fieldconfig fieldExpr="molecularWeight" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="md5checksum" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+
     </fields>
+    <inlinelist>
+	<table path="synonyms.value" showInHeader="true" lineLength="100" />
+	<table path="keywords.name" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+	<table path="components.name" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+	<table path="ecNumbers.identifier" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+    </inlinelist>
   </class>
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.ProteinDomainRegion">
     <fields>
       <fieldconfig fieldExpr="proteinDomain.name"/>
+      <fieldconfig fieldExpr="identifier"/>
       <fieldconfig fieldExpr="protein.primaryAccession"/>
       <fieldconfig fieldExpr="start"/>
       <fieldconfig fieldExpr="end"/>
-      <fieldconfig fieldExpr="identifier"/>
       <fieldconfig fieldExpr="database"/>
     </fields>
   </class>
@@ -578,6 +610,32 @@
 <widgets>
 
 
+<enrichmentwidgetdisplayer id="pathway_enrichment_for_gene"
+    title="Pathway Enrichment"
+    description="Pathways enriched for genes in this list - data from Reactome"
+    label="Pathways"
+    startClass="Gene"
+    startClassDisplay="primaryIdentifier"
+    enrich="pathways.name"
+    enrichIdentifier="pathways.identifier"
+    constraints="organism.taxonId=[list], primaryIdentifier != null"
+    typeClass="Gene"
+    views="symbol, organism.name, pathways.identifier, pathways.name"/>
+
+<enrichmentwidgetdisplayer id="prot_dom_enrichment_for_gene"
+    title="Protein Domain Enrichment"
+    description="Protein Domains enriched for items in this list."
+    label="Protein Domain"
+    startClass="Gene"
+    startClassDisplay="primaryIdentifier"
+    enrich="proteins.proteinDomainRegions.proteinDomain.name"
+    enrichIdentifier="proteins.proteinDomainRegions.proteinDomain.primaryIdentifier"
+    constraints="organism.name=[list]"
+    typeClass="Gene"
+    views="secondaryIdentifier,symbol,primaryIdentifier,organism.name,
+       proteins.proteinDomainRegions.proteinDomain.primaryIdentifier,proteins.proteinDomainRegions.proteinDomain.name"
+    externalLink="http://www.ebi.ac.uk/interpro/IEntry?ac="/>
+
 <enrichmentwidgetdisplayer id="disease_enrichment_for_feature"
     title="Disease Enrichment"
     description="Disease terms enriched for items in this list."
@@ -753,20 +811,6 @@
 	ontologyAnnotations.ontologyTerm.parents.identifier,
 	ontologyAnnotations.ontologyTerm.parents.name" />
 
-<enrichmentwidgetdisplayer id="prot_dom_enrichment_for_gene"
-    title="Protein Domain Enrichment"
-    description="Protein Domains enriched for items in this list."
-    label="Protein Domain"
-    startClass="Gene"
-    startClassDisplay="primaryIdentifier"
-    enrich="proteins.proteinDomainRegions.proteinDomain.name"
-    enrichIdentifier="proteins.proteinDomainRegions.proteinDomain.primaryIdentifier"
-    constraints="organism.name=[list]"
-    typeClass="Gene"
-    views="secondaryIdentifier,symbol,primaryIdentifier,organism.name,
-       proteins.proteinDomainRegions.proteinDomain.primaryIdentifier,proteins.proteinDomainRegions.proteinDomain.name"
-    externalLink="http://www.ebi.ac.uk/interpro/IEntry?ac="/>
-
 <enrichmentwidgetdisplayer id="prot_dom_enrichment_for_protein"
     title="Protein Domain Enrichment"
     description="Protein Domains enriched for items in this list."
@@ -780,6 +824,44 @@
     views="primaryIdentifier,organism.name,proteinDomainRegions.proteinDomain.primaryIdentifier,
        proteinDomainRegions.proteinDomain.name"
     externalLink="http://www.ebi.ac.uk/interpro/entry/"/>
+
+<enrichmentwidgetdisplayer id="uniprot_feature_for_protein"
+    title="UniProt Features"
+    description="UniProt features enriched for proteins in this list."
+    label="Feature"
+    startClass="Protein"
+    startClassDisplay="primaryIdentifier"
+    enrich="features.type"
+    enrichIdentifier="features.type"
+    constraints="organism.name=[list]"
+    typeClass="Protein"
+    views="primaryIdentifier, primaryAccession, organism.name,
+       features.feature.name, features.type,features.description,
+       features.begin, features.end"/>
+
+<enrichmentwidgetdisplayer id="uniprot_keywords_for_protein"
+    title="UniProt Keywords"
+    description="UniProt keywords enriched for proteins in this list."
+    label="Keyword"
+    startClass="Protein"
+    startClassDisplay="primaryIdentifier"
+    enrich="keywords.name"
+    constraints="organism.name=[list]"
+    typeClass="Protein"
+    views="primaryIdentifier, primaryAccession, organism.name,
+       keywords.name, keywords.description"/>
+
+<enrichmentwidgetdisplayer id="pathway_enrichment_for_Protein"
+    title="Pathway Enrichment"
+    description="Pathways enriched for proteins in this list - data from Reactome"
+    label="Pathways"
+    startClass="Protein"
+    startClassDisplay="primaryAccession"
+    enrich="pathways.name"
+    enrichIdentifier="pathways.identifier"
+    constraints="organism.taxonId=[list], primaryAccession != null"
+    typeClass="Protein"
+    views="primaryAccession, name, organism.name, pathways.identifier, pathways.name"/>
 
 </widgets>  
 </webconfig>

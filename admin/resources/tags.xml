@@ -1,8 +1,5 @@
 <tags>
 
-  <tag name="im:admin" objectIdentifier="Feature_crossrefs" type="template">
-  </tag>
-
   <tag name="im:aspect:Disease" objectIdentifier="HDisease_HGene" type="template">
   </tag>
 
@@ -141,9 +138,6 @@
   <tag name="im:aspect:Genome" objectIdentifier="SequenceFeature.genomicClusters" type="collection">
   </tag>
 
-  <tag name="im:aspect:Genome" objectIdentifier="SequenceFeature.transgenicExpressors" type="collection">
-  </tag>
-
   <tag name="im:aspect:Genome" objectIdentifier="Allele.mutationInvolves" type="collection">
   </tag>
 
@@ -153,9 +147,6 @@
   <tag name="im:aspect:Genome" objectIdentifier="ComplexClusterRegion.members" type="collection">
   </tag>
 
-  <tag name="im:aspect:Genome" objectIdentifier="Protein.genes" type="collection">
-  </tag>
-
   <tag name="im:aspect:Genome" objectIdentifier="MQTL_MFeature" type="template">
   </tag>
 
@@ -163,9 +154,6 @@
   </tag>
 
   <tag name="im:aspect:Genome" objectIdentifier="Lookup_Features" type="template">
-  </tag>
-
-  <tag name="im:aspect:Genome" objectIdentifier="Feature_crossrefs" type="template">
   </tag>
 
   <tag name="im:aspect:Genome" objectIdentifier="Feature_overlapping" type="template">
@@ -178,6 +166,9 @@
   </tag>
 
   <tag name="im:aspect:Genome" objectIdentifier="Q_Allele_by_categories" type="template">
+  </tag>
+
+  <tag name="im:aspect:Genome" objectIdentifier="SequenceFeature.transgenicExpressors" type="collection">
   </tag>
 
   <tag name="im:aspect:Homology" objectIdentifier="Gene_Ortholog" type="template">
@@ -202,6 +193,12 @@
   </tag>
 
   <tag name="im:aspect:Interactions" objectIdentifier="MPInteraction_Genes" type="template">
+  </tag>
+
+  <tag name="im:aspect:Interactions" objectIdentifier="Gene.pathways" type="collection">
+  </tag>
+
+  <tag name="im:aspect:Interactions" objectIdentifier="Pathway_Proteins_Genes" type="template">
   </tag>
 
   <tag name="im:aspect:Literature" objectIdentifier="GO_Publications" type="template">
@@ -282,6 +279,24 @@
   <tag name="im:aspect:Phenotype" objectIdentifier="MPInteraction_Genes" type="template">
   </tag>
 
+  <tag name="im:aspect:Proteins" objectIdentifier="Gene_Protein" type="template">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Domain_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Pathway_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Protein_Genes" type="template">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Gene_Proteins_Domains" type="template">
+  </tag>
+
+  <tag name="im:aspect:Proteins" objectIdentifier="Gene_Domains" type="template">
+  </tag>
+
   <tag name="im:aspect:summary" objectIdentifier="Term_Children" type="template">
   </tag>
 
@@ -294,13 +309,49 @@
   <tag name="im:aspect:summary" objectIdentifier="Term_Ancestors" type="template">
   </tag>
 
+  <tag name="im:aspect:summary" objectIdentifier="Feature_crossrefs" type="template">
+  </tag>
+
   <tag name="im:converter" objectIdentifier="Gene_To_Protein_Type_Converter" type="template">
   </tag>
 
   <tag name="im:converter" objectIdentifier="Protein_To_Gene_Type_Converter" type="template">
   </tag>
 
-  <tag name="im:frontpage" objectIdentifier="Protein_GOterms" type="template">
+  <tag name="im:converter" objectIdentifier="Convert_Protein_To_Gene" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_Allele_To_Gene" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_Gene_To_Allele" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_Gene_to_Pathway" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_Pathway_to_Gene" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_Protein_To_Pathway" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_Pathway_to_Protein" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_Gene_To_ProteinDomain" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_ProteinDomain_To_Gene" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_ProteinDomain_To_Protein" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_Protein_To_ProteinDomain" type="template">
+  </tag>
+
+  <tag name="im:converter" objectIdentifier="Convert_Gene_To_Protein" type="template">
   </tag>
 
   <tag name="im:frontpage" objectIdentifier="Organism_GoTerm_GeneWithannotation" type="template">
@@ -405,6 +456,24 @@
   <tag name="im:frontpage" objectIdentifier="MPInteraction_Genes" type="template">
   </tag>
 
+  <tag name="im:frontpage" objectIdentifier="Gene_Protein" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Domain_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Pathway_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Protein_Genes" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Gene_Proteins_Domains" type="template">
+  </tag>
+
+  <tag name="im:frontpage" objectIdentifier="Gene_Domains" type="template">
+  </tag>
+
   <tag name="im:hidden" objectIdentifier="EMAPATerm.expression" type="collection">
   </tag>
 
@@ -430,6 +499,12 @@
   </tag>
 
   <tag name="im:hidden" objectIdentifier="BioEntity.relations" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="BioEntity.organism" type="reference">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="BioEntity.dataSets" type="collection">
   </tag>
 
   <tag name="im:hidden" objectIdentifier="SequenceFeature.chromosome" type="reference">
@@ -480,19 +555,13 @@
   <tag name="im:hidden" objectIdentifier="BioEntity.locatedFeatures" type="collection">
   </tag>
 
-  <tag name="im:hidden" objectIdentifier="BioEntity.organism" type="reference">
-  </tag>
-
-  <tag name="im:hidden" objectIdentifier="BioEntity.dataSets" type="collection">
-  </tag>
-
-  <tag name="im:hidden" objectIdentifier="BioEntity.publications" type="collection">
-  </tag>
-
-  <tag name="im:hidden" objectIdentifier="BioEntity.crossReferences" type="collection">
-  </tag>
-
   <tag name="im:hidden" objectIdentifier="BioEntity.interactions" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="Gene.proteins" type="collection">
+  </tag>
+
+  <tag name="im:hidden" objectIdentifier="Protein.sequence" type="reference">
   </tag>
 
   <tag name="im:preferredBagType" objectIdentifier="org.intermine.model.bio.Gene" type="class">
@@ -526,9 +595,6 @@
   </tag>
 
   <tag name="im:public" objectIdentifier="Protein_GOtermsSpecificOntology" type="template">
-  </tag>
-
-  <tag name="im:public" objectIdentifier="Protein_GOterms" type="template">
   </tag>
 
   <tag name="im:public" objectIdentifier="Gene_particularGoannotation" type="template">
@@ -580,6 +646,9 @@
   </tag>
 
   <tag name="im:public" objectIdentifier="Sequence Feature List" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="DNA Repair Proteins (Jan 07,2016)" type="bag">
   </tag>
 
   <tag name="im:public" objectIdentifier="Gene_Expression" type="template">
@@ -729,16 +798,28 @@
   <tag name="im:public" objectIdentifier="HDisease_MModel" type="template">
   </tag>
 
-  <tag name="im:public" objectIdentifier="domain_protein_gene" type="template">
-  </tag>
-
   <tag name="im:public" objectIdentifier="Gene_Protein" type="template">
   </tag>
 
-  <tag name="im:public" objectIdentifier="Gene_proteindomain" type="template">
+  <tag name="im:public" objectIdentifier="Domain_Proteins_Genes" type="template">
   </tag>
 
-  <tag name="im:public" objectIdentifier="DNA Repair Proteins (Jan 07,2016)" type="bag">
+  <tag name="im:public" objectIdentifier="Pathway_Proteins_Genes" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Protein_Genes" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Homeobox domains" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="CREB pathways" type="bag">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Gene_Proteins_Domains" type="template">
+  </tag>
+
+  <tag name="im:public" objectIdentifier="Gene_Domains" type="template">
   </tag>
 
   <tag name="im:report" objectIdentifier="Gene_Expression" type="template">
@@ -831,6 +912,9 @@
   <tag name="im:report" objectIdentifier="HDisease_MModel" type="template">
   </tag>
 
+  <tag name="im:report" objectIdentifier="Gene_Protein" type="template">
+  </tag>
+
   <tag name="im:summary" objectIdentifier="Allele.feature" type="reference">
   </tag>
 
@@ -846,24 +930,12 @@
   <tag name="im:summary" objectIdentifier="Gene.publications" type="collection">
   </tag>
 
-  <tag name="im:summary" objectIdentifier="Gene.proteins" type="collection">
-  </tag>
-
   <tag name="im:summary" objectIdentifier="Protein.publications" type="collection">
-  </tag>
-
-  <tag name="im:summary" objectIdentifier="Protein.genes" type="collection">
   </tag>
 
   <tag name="im:summary" objectIdentifier="BindingSite.factor" type="reference">
   </tag>
 
-  <tag name="im:summary" objectIdentifier="Protein.comments" type="collection">
-  </tag>
-
   <tag name="im:summary" objectIdentifier="org.intermine.model.bio.Organism" type="class">
-  </tag>
-
-  <tag name="im:summary" objectIdentifier="BioEntity.organism" type="reference">
   </tag>
 </tags>
