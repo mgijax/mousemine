@@ -35,4 +35,8 @@
         <subtitle>Literature</subtitle>
         <intro-text>Literature</intro-text>
     </aspect>
+    <aspect name="Ontology">
+        <subtitle>Ontology</subtitle>
+        <intro-text>Ontology</intro-text>
+    </aspect>
 </aspects>
