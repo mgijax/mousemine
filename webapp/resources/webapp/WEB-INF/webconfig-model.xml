@@ -10,7 +10,7 @@
     <fields>
       <fieldconfig fieldExpr="symbol" />
       <fieldconfig fieldExpr="name"/>
-      <fieldconfig fieldExpr="primaryIdentifier" showInSummary="true"  label="ID" /> 
+      <fieldconfig fieldExpr="primaryIdentifier" showInSummary="true"  /> 
       <fieldconfig fieldExpr="alleleType" showInSummary="true" />
       <fieldconfig fieldExpr="feature.symbol" showInSummary="false" showInInlineCollection="false" label="Gene" displayer="/model/genelinkdisplayer.jsp" />
       <fieldconfig fieldExpr="attributeString" />
@@ -237,7 +237,7 @@
       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="ID" />
+      <fieldconfig fieldExpr="primaryIdentifier" />
       <fieldconfig fieldExpr="symbol"/>
       <fieldconfig fieldExpr="name" />
       <fieldconfig fieldExpr="sequenceOntologyTerm.name" label="Type" />
@@ -338,7 +338,7 @@
       <fieldconfig fieldExpr="length" showInSummary="true" showInInlineCollection="true" displayer="/model/sequenceShortDisplayerWithField.jsp" />
 
 
-      <fieldconfig fieldExpr="isFragment" />
+      <fieldconfig fieldExpr="isFragment" label="Fragment?"/>
       <fieldconfig fieldExpr="isUniprotCanonical" showInInlineCollection="false" showInSummary="false" showInResults="false"/>
 
       <fieldconfig fieldExpr="uniprotAccession" showInInlineCollection="false" showInSummary="false" showInResults="false" />
