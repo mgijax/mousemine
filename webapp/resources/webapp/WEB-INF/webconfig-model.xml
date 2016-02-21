@@ -341,14 +341,14 @@
       <fieldconfig fieldExpr="isFragment" label="Fragment?"/>
       <fieldconfig fieldExpr="isUniprotCanonical" showInInlineCollection="false" showInSummary="false" showInResults="false"/>
 
-      <fieldconfig fieldExpr="uniprotAccession" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="uniprotAccession" hide="true" showInInlineCollection="false" showInSummary="false" showInResults="false" />
       <fieldconfig fieldExpr="uniprotName" showInInlineCollection="false" showInSummary="false" showInResults="false" />
 
-      <fieldconfig fieldExpr="primaryIdentifier" showInInlineCollection="false" showInSummary="false" showInResults="false" />
-      <fieldconfig fieldExpr="secondaryIdentifier" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="primaryIdentifier" hide="true" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="secondaryIdentifier" hide="true" showInInlineCollection="false" showInSummary="false" showInResults="false" />
 
       <fieldconfig fieldExpr="molecularWeight" showInInlineCollection="false" showInSummary="false" showInResults="false" />
-      <fieldconfig fieldExpr="md5checksum" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+      <fieldconfig fieldExpr="md5checksum" hide="true" showInInlineCollection="false" showInSummary="false" showInResults="false" />
 
     </fields>
     <inlinelist>
@@ -356,6 +356,7 @@
 	<table path="keywords.name" showInHeader="true" lineLength="100" showLinksToObjects="true" />
 	<table path="components.name" showInHeader="true" lineLength="100" showLinksToObjects="true" />
 	<table path="ecNumbers.identifier" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+	<table path="genes.symbol" showInHeader="true" lineLength="100" showLinksToObjects="true" />
     </inlinelist>
   </class>
 
