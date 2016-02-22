@@ -12,7 +12,7 @@
       <fieldconfig fieldExpr="name"/>
       <fieldconfig fieldExpr="primaryIdentifier" showInSummary="true"  /> 
       <fieldconfig fieldExpr="alleleType" showInSummary="true" />
-      <fieldconfig fieldExpr="feature.symbol" showInSummary="false" showInInlineCollection="false" label="Gene" displayer="/model/genelinkdisplayer.jsp" />
+      <fieldconfig fieldExpr="feature.symbol" showInResults = "false" showInSummary="false" showInInlineCollection="false" label="Gene" displayer="/model/genelinkdisplayer.jsp" />
       <fieldconfig fieldExpr="attributeString" />
       <fieldconfig fieldExpr="inheritanceMode" showInSummary="false" />
       <fieldconfig fieldExpr="glTransmission" label="Transmission" showInSummary="false" />
@@ -330,16 +330,21 @@
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Protein">
+    <headerconfig>
+      <titles>
+        <title mainTitles="name" numberOfMainTitlesToShow="1" subTitles="[uniprotName]"/>
+      </titles>
+    </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryAccession"/>
-      <fieldconfig fieldExpr="name" />
-
       <fieldconfig fieldExpr="organism.name" label="Organism"/>
+
+      <fieldconfig fieldExpr="molecularWeight" showInInlineCollection="false" showInSummary="false" showInResults="false" />
       <fieldconfig fieldExpr="length" showInSummary="true" showInInlineCollection="true" displayer="/model/sequenceShortDisplayerWithField.jsp" />
 
-
-      <fieldconfig fieldExpr="isFragment" label="Fragment?"/>
+      <fieldconfig fieldExpr="isFragment" label="Fragment?" showInInlineCollection="true" showInSummary="true" showInResults="true"/>
       <fieldconfig fieldExpr="isUniprotCanonical" showInInlineCollection="false" showInSummary="false" showInResults="false"/>
+
 
       <fieldconfig fieldExpr="uniprotAccession" hide="true" showInInlineCollection="false" showInSummary="false" showInResults="false" />
       <fieldconfig fieldExpr="uniprotName" showInInlineCollection="false" showInSummary="false" showInResults="false" />
@@ -347,16 +352,16 @@
       <fieldconfig fieldExpr="primaryIdentifier" hide="true" showInInlineCollection="false" showInSummary="false" showInResults="false" />
       <fieldconfig fieldExpr="secondaryIdentifier" hide="true" showInInlineCollection="false" showInSummary="false" showInResults="false" />
 
-      <fieldconfig fieldExpr="molecularWeight" showInInlineCollection="false" showInSummary="false" showInResults="false" />
       <fieldconfig fieldExpr="md5checksum" hide="true" showInInlineCollection="false" showInSummary="false" showInResults="false" />
+
 
     </fields>
     <inlinelist>
-	<table path="synonyms.value" showInHeader="true" lineLength="100" />
-	<table path="keywords.name" showInHeader="true" lineLength="100" showLinksToObjects="true" />
-	<table path="components.name" showInHeader="true" lineLength="100" showLinksToObjects="true" />
-	<table path="ecNumbers.identifier" showInHeader="true" lineLength="100" showLinksToObjects="true" />
-	<table path="genes.symbol" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+	<table path="genes.symbol" label="Gene" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+	<table path="synonyms.value" label="Synonyms" showInHeader="true" lineLength="100" />
+	<table path="keywords.name" label="Keywords" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+	<table path="components.name" label="Components" showInHeader="true" lineLength="100" showLinksToObjects="true" />
+	<table path="ecNumbers.identifier" label="EC numbers" showInHeader="true" lineLength="100" showLinksToObjects="true" />
     </inlinelist>
   </class>
 
