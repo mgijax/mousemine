@@ -379,11 +379,16 @@
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.ProteinDomain">
+    <headerconfig>
+      <titles>
+        <title mainTitles="name" numberOfMainTitlesToShow="1" />
+      </titles>
+    </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
-      <fieldconfig fieldExpr="name"/>
-      <fieldconfig fieldExpr="shortName"/>
       <fieldconfig fieldExpr="type"/>
+      <fieldconfig fieldExpr="shortName"/>
+      <fieldconfig fieldExpr="description" doNotTruncate="true"/>
     </fields>
   </class>
 
@@ -431,7 +436,7 @@
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Synonym">
     <fields>
-      <fieldconfig fieldExpr="value" label="synonym" />
+      <fieldconfig fieldExpr="value" label="name" />
     </fields>
   </class>
 
@@ -614,7 +619,6 @@
 
 <!-- =============================================================== -->
 <widgets>
-
 
 <enrichmentwidgetdisplayer id="pathway_enrichment_for_gene"
     title="Pathway Enrichment"
@@ -868,6 +872,5 @@
     constraints="organism.taxonId=[list], primaryAccession != null"
     typeClass="Protein"
     views="primaryAccession, name, organism.name, pathways.identifier, pathways.name"/>
-
 </widgets>  
 </webconfig>
