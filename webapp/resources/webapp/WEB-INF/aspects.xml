@@ -3,6 +3,10 @@
         <subtitle>Genome annotation</subtitle>
         <intro-text>Mouse genome features, coordinates, functional annotations.</intro-text>
     </aspect>
+    <aspect name="Proteins">
+        <subtitle>Proteins, isoforms, etc.</subtitle>
+        <intro-text>Proteins, isoforms, etc.</intro-text>
+    </aspect>
     <aspect name="Function">
         <subtitle>Gene function</subtitle>
         <intro-text>Gene function</intro-text>
@@ -30,5 +34,9 @@
     <aspect name="Literature">
         <subtitle>Literature</subtitle>
         <intro-text>Literature</intro-text>
+    </aspect>
+    <aspect name="Ontology">
+        <subtitle>Ontology</subtitle>
+        <intro-text>Ontology</intro-text>
     </aspect>
 </aspects>

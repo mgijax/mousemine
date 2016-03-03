@@ -14,6 +14,53 @@
 
   <sources>
 
+    <!-- For proper merge behavior, the Uniprot load must run before mgi-base, and it must not
+         create genes or gene/protein relationships.
+    -->
+    <source name="uniprot" type="uniprot" >
+	<property name="uniprot.organisms" value="10090"/>
+	<property name="src.data.dir" location="&mm_data;/uniprot/latest/"/>
+	<property name="creategenes" value="false"/>
+	<property name="allowduplicates" value="true"/>
+	<property name="loadfragments" value="true"/>
+	<property name="loadtrembl" value="true"/>
+	</source>
+
+    <source name="uniprot-fasta" type="fasta">
+	<property name="fasta.taxonId" value="10090"/>
+	<property name="fasta.className" value="org.intermine.model.bio.Protein"/>
+	<property name="fasta.classAttribute" value="primaryAccession"/>
+	<property name="fasta.dataSetTitle" value="UniProt data set"/>
+	<property name="fasta.dataSourceName" value="UniProt"/>
+	<property name="src.data.dir" location="&mm_data;/uniprot-isoforms/latest/"/>
+	<property name="fasta.includes" value="uniprot_sprot_varsplic.fasta"/>
+	<property name="fasta.sequenceType" value="protein" />
+	<property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.UniProtFastaLoaderTask"/>
+	</source>
+
+    <source name="uniprot-keywords" type="uniprot-keywords">
+	<property name="src.data.dir" location="&mm_data;/uniprot-keywords/latest/"/>
+	<property name="src.data.dir.includes" value="keywlist.xml"/>
+	</source>
+
+    <source name="interpro" type="interpro">
+	<property name="src.data.dir" location="&mm_data;/interpro/latest/"/>
+	</source>
+
+    <!-- has to be after UniProt because only loads protein domains for loaded proteins -->
+    <source name="protein2ipr" type="protein2ipr">
+	<property name="src.data.dir" location="&mm_data;/protein2ipr/latest/"/>
+	<property name="src.data.dir.includes" value="protein2ipr.dat"/>
+	<property name="protein2ipr.organisms" value="10090"/>
+	</source>
+
+    <source name="reactome" type="reactome">
+	<property name="src.data.dir" location="&mm_data;/reactome/latest/" />
+	<property name="reactome.organisms" value="10090" />
+	<property name="reactome.datasourcename" value="Reactome"/>
+	<property name="reactome.datasetname" value="Reactome data set"/>
+	</source>
+
     <source name="fmfd-fly" type="fmfd" >
         <property name="src.data.file" value="&mm_data;/flymine/latest/features.xml" />
 	</source>
@@ -115,19 +162,9 @@
 	<property name="src.data.file" location="build/organisms.xml"/>
     </source>
 
-    <!--
-    <source name="reactome" type="biopax">
-        <property name="src.data.dir" location="&mm_data;/reactome/latest/"/>
-        <property name="biopax.organisms" value="10090 9606"/>
-        <property name="biopax.datasourcename" value="Reactome"/>
-        <property name="biopax.datasetname" value="Reactome data set"/>
-        <property name="biopax.curated" value="false"/>
-    </source>
-    -->
-
-
     <source name="update-publications" type="update-publications" >
         <property name="src.data.file" location="build/publication.xml"/>
+        <property name="cacheDirName" value="/var/lib/jenkins/pubCache/"/>
     </source>
 
   </sources>
