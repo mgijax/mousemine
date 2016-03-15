@@ -150,6 +150,12 @@
   };
 
   /*
+   */
+  var formatIsFragment = function(isFragment){
+    return isFragment ? "fragment" : "";
+  };
+
+  /*
    * Returns an anchor tag to a specific location on a GXD assay detail.
    * ImageLabel is the displayed label of the specimen (for insitu data) or of the
    * gel image (for gel data).
@@ -196,6 +202,12 @@
     "genomic",
     "OntologyAnnotationEvidence",
     ["withText"]);
+
+  imtables.formatting.registerFormatter(
+    function(o){return formatIsFragment(o.get("isFragment"));},
+    "genomic",
+    "Protein",
+    ["isFragment"]);
 
   imtables.configure({TableCell: {PreviewTrigger: 'click'}});
   
