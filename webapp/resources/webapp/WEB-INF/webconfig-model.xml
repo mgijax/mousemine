@@ -707,7 +707,7 @@
     externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="
     />
 
- <enrichmentwidgetdisplayer id="go_enrichment_for_feature"
+ <enrichmentwidgetdisplayer id="go_enrichment_for_gene"
     title="Gene Ontology Enrichment"
     description="GO terms enriched for items in this list."
     label="GO Term"
