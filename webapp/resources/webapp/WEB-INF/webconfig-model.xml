@@ -273,7 +273,7 @@
     <fields>
       <fieldconfig fieldExpr="identifier"/>
       <fieldconfig fieldExpr="name"/> 
-      <fieldconfig fieldExpr="description" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
+      <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
     </fields>
   </class>
 
@@ -283,13 +283,23 @@
   <fields>
       <fieldconfig fieldExpr="startsAt"/> 
       <fieldconfig fieldExpr="endsAt"/> 
-      <fieldconfig fieldExpr="namespace"/> 
+      <fieldconfig fieldExpr="namespace" showInSummary="false"/> 
       <fieldconfig fieldExpr="name"/> 
+      <fieldconfig fieldExpr="identifier"/> 
+      <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
   </fields>
   </class>
-  
 
-  
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.OMIMTerm">
+  <fields>
+      <fieldconfig fieldExpr="name"/> 
+      <fieldconfig fieldExpr="identifier"/> 
+      <fieldconfig fieldExpr="namespace" showInSummary="false"/> 
+      <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
+      <fieldconfig fieldExpr="omimId" hide="true"/> 
+  </fields>
+  </class>
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.OntologyRelation">
