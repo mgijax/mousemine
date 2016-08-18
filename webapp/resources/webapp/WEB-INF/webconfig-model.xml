@@ -677,7 +677,7 @@
     externalLink="portal.do?class=OMIMTerm&amp;externalids="
     />
 
-<enrichmentwidgetdisplayer id="do_enrichment_for_feature"
+<!-- <enrichmentwidgetdisplayer id="do_enrichment_for_feature"
     title="Disease Enrichment (Disease Ontology)"
     description="DO disease terms enriched for items in this list. Genes are annotated to OMIM which are cross-referenced to DO terms."
     label="DO Term"
@@ -695,7 +695,7 @@
 	ontologyAnnotations.ontologyTerm.crossReferences.identifier,
 	ontologyAnnotations.ontologyTerm.crossReferences.name"
     externalLink="portal.do?class=DOTerm&amp;externalids="
-    />
+    /> -->
 
 <enrichmentwidgetdisplayer id="mp_enrichment_for_feature"
     title="Mammalian Phenotype Ontology Enrichment"
