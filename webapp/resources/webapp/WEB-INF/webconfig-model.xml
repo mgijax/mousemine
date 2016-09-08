@@ -268,11 +268,12 @@
     </headerconfig>
     <inlinelist>
       <table  path="synonyms.name" showInHeader="true" lineLength="100" />
+      <table  path="crossReferences.identifier" showLinksToObjects="true" showInHeader="true" lineLength="100" />
     </inlinelist>
     <fields>
       <fieldconfig fieldExpr="identifier"/>
       <fieldconfig fieldExpr="name"/> 
-      <fieldconfig fieldExpr="description" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
+      <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
     </fields>
   </class>
 
@@ -282,13 +283,23 @@
   <fields>
       <fieldconfig fieldExpr="startsAt"/> 
       <fieldconfig fieldExpr="endsAt"/> 
-      <fieldconfig fieldExpr="namespace"/> 
+      <fieldconfig fieldExpr="namespace" showInSummary="false"/> 
       <fieldconfig fieldExpr="name"/> 
+      <fieldconfig fieldExpr="identifier"/> 
+      <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
   </fields>
   </class>
-  
 
-  
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.OMIMTerm">
+  <fields>
+      <fieldconfig fieldExpr="name"/> 
+      <fieldconfig fieldExpr="identifier"/> 
+      <fieldconfig fieldExpr="namespace" showInSummary="false"/> 
+      <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
+      <fieldconfig fieldExpr="omimId" hide="true"/> 
+  </fields>
+  </class>
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.OntologyRelation">
@@ -630,7 +641,8 @@
     enrichIdentifier="pathways.identifier"
     constraints="organism.taxonId=[list], primaryIdentifier != null"
     typeClass="Gene"
-    views="symbol, organism.name, pathways.identifier, pathways.name"/>
+    views="symbol, organism.name, pathways.identifier, pathways.name"
+    />
 
 <enrichmentwidgetdisplayer id="prot_dom_enrichment_for_gene"
     title="Protein Domain Enrichment"
@@ -644,26 +656,46 @@
     typeClass="Gene"
     views="secondaryIdentifier,symbol,primaryIdentifier,organism.name,
        proteins.proteinDomainRegions.proteinDomain.primaryIdentifier,proteins.proteinDomainRegions.proteinDomain.name"
-    externalLink="http://www.ebi.ac.uk/interpro/IEntry?ac="/>
+    externalLink="http://www.ebi.ac.uk/interpro/IEntry?ac="
+    />
 
 <enrichmentwidgetdisplayer id="disease_enrichment_for_feature"
-    title="Disease Enrichment"
-    description="Disease terms enriched for items in this list."
-    label="Disease Term"
+    title="Disease Enrichment (OMIM)"
+    description="OMIM disease terms enriched for items in this list."
+    label="OMIM Term"
     startClass="SequenceFeature"
     typeClass="SequenceFeature"
     startClassDisplay="primaryIdentifier"
-    enrich="ontologyAnnotations.ontologyTerm[MedicTerm].parents.name"
-    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
+    enrich="ontologyAnnotations.ontologyTerm[OMIMTerm].name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.identifier"
+    constraints="organism.name=[list],
+	primaryIdentifier != null, 
+	ontologyAnnotations.qualifier = null"
+    views="symbol,name,primaryIdentifier,organism.name,
+	ontologyAnnotations.ontologyTerm.identifier, 
+	ontologyAnnotations.ontologyTerm.name"
+    externalLink="portal.do?class=OMIMTerm&amp;externalids="
+    />
+
+<!-- <enrichmentwidgetdisplayer id="do_enrichment_for_feature"
+    title="Disease Enrichment (Disease Ontology)"
+    description="DO disease terms enriched for items in this list. Genes are annotated to OMIM which are cross-referenced to DO terms."
+    label="DO Term"
+    startClass="SequenceFeature"
+    typeClass="SequenceFeature"
+    startClassDisplay="primaryIdentifier"
+    enrich="ontologyAnnotations.ontologyTerm[OMIMTerm].crossReferences[DOTerm].parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.crossReferences.parents.identifier"
     constraints="organism.name=[list],
 	primaryIdentifier != null, 
 	ontologyAnnotations.qualifier = null"
     views="symbol,name,primaryIdentifier,organism.name,
 	ontologyAnnotations.ontologyTerm.identifier, 
 	ontologyAnnotations.ontologyTerm.name,
-	ontologyAnnotations.ontologyTerm.parents.identifier,
-	ontologyAnnotations.ontologyTerm.parents.name"
-    />
+	ontologyAnnotations.ontologyTerm.crossReferences.identifier,
+	ontologyAnnotations.ontologyTerm.crossReferences.name"
+    externalLink="portal.do?class=DOTerm&amp;externalids="
+    /> -->
 
 <enrichmentwidgetdisplayer id="mp_enrichment_for_feature"
     title="Mammalian Phenotype Ontology Enrichment"
@@ -682,7 +714,8 @@
 	ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,
 	ontologyAnnotations.ontologyTerm.parents.name"
-    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
+    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="
+    />
 
  <enrichmentwidgetdisplayer id="go_enrichment_for_gene"
     title="Gene Ontology Enrichment"
@@ -705,7 +738,8 @@
     views="symbol,name,primaryIdentifier,organism.name,
 	ontologyAnnotations.ontologyTerm.identifier, ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,ontologyAnnotations.ontologyTerm.parents.name"
-    externalLink="http://www.informatics.jax.org/searches/GO.cgi?id="/>
+    externalLink="http://www.informatics.jax.org/searches/GO.cgi?id="
+    />
 
 <enrichmentwidgetdisplayer id="emapa_enrichment_for_feature"
     title="Anatomy Enrichment"
@@ -726,7 +760,8 @@
 	expression.strength,
 	expression.pattern,
 	expression.structure.parents.identifier,
-	expression.structure.parents.name" />
+	expression.structure.parents.name" 
+    />
 
 <graphdisplayer id="chromosome_distribution_for_feature"
     title="Chromosome Distribution"
@@ -743,7 +778,8 @@
     seriesPath="ActualExpectedCriteria"
     constraints="organism.name=[Organism]"
     views="primaryIdentifier, symbol, organism.name, chromosome.primaryIdentifier,
-	chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand"/>
+	chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand"
+    />
 
 <enrichmentwidgetdisplayer id="mp_enrichment_for_allele"
     title="Mammalian Phenotype Ontology Enrichment"
@@ -762,7 +798,8 @@
 	ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,
 	ontologyAnnotations.ontologyTerm.parents.name"
-    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
+    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="
+    />
 
 <enrichmentwidgetdisplayer id="disease_enrichment_for_allele"
     title="Disease Enrichment"
@@ -771,7 +808,7 @@
     startClass="Allele"
     typeClass="Allele"
     startClassDisplay="primaryIdentifier"
-    enrich="ontologyAnnotations.ontologyTerm[MedicTerm].parents.name"
+    enrich="ontologyAnnotations.ontologyTerm[DOTerm].parents.name"
     enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
     constraints="organism.name=[list],
 	primaryIdentifier != null, 
@@ -801,7 +838,8 @@
 	ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,
 	ontologyAnnotations.ontologyTerm.parents.name"
-    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="/>
+    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="
+    />
 
  <enrichmentwidgetdisplayer id="disease_enrichment_for_genotype"
     title="Human Disease Enrichment"
@@ -819,7 +857,8 @@
 	ontologyAnnotations.ontologyTerm.identifier, 
 	ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,
-	ontologyAnnotations.ontologyTerm.parents.name" />
+	ontologyAnnotations.ontologyTerm.parents.name" 
+    />
 
 <enrichmentwidgetdisplayer id="prot_dom_enrichment_for_protein"
     title="Protein Domain Enrichment"
@@ -833,7 +872,8 @@
     typeClass="Protein"
     views="primaryIdentifier,organism.name,proteinDomainRegions.proteinDomain.primaryIdentifier,
        proteinDomainRegions.proteinDomain.name"
-    externalLink="http://www.ebi.ac.uk/interpro/entry/"/>
+    externalLink="http://www.ebi.ac.uk/interpro/entry/"
+    />
 
 <enrichmentwidgetdisplayer id="uniprot_feature_for_protein"
     title="UniProt Features"
@@ -847,7 +887,8 @@
     typeClass="Protein"
     views="primaryIdentifier, primaryAccession, organism.name,
        features.feature.name, features.type,features.description,
-       features.begin, features.end"/>
+       features.begin, features.end"
+    />
 
 <enrichmentwidgetdisplayer id="uniprot_keywords_for_protein"
     title="UniProt Keywords"
@@ -859,7 +900,8 @@
     constraints="organism.name=[list]"
     typeClass="Protein"
     views="primaryIdentifier, primaryAccession, organism.name,
-       keywords.name, keywords.description"/>
+       keywords.name, keywords.description"
+    />
 
 <enrichmentwidgetdisplayer id="pathway_enrichment_for_Protein"
     title="Pathway Enrichment"
@@ -871,6 +913,8 @@
     enrichIdentifier="pathways.identifier"
     constraints="organism.taxonId=[list], primaryAccession != null"
     typeClass="Protein"
-    views="primaryAccession, name, organism.name, pathways.identifier, pathways.name"/>
+    views="primaryAccession, name, organism.name, pathways.identifier, pathways.name"
+    />
+
 </widgets>  
 </webconfig>
