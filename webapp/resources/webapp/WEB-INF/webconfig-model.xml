@@ -730,7 +730,7 @@
     enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
     constraints="ontologyAnnotations.ontologyTerm.parents.namespace=[Ontology],organism.name=[list],
 	primaryIdentifier != null, ontologyAnnotations.qualifier = null,
-	ontologyAnnotations.dataSets.name = GOTerm to Mouse Marker Annotations from MGI,
+	ontologyAnnotations.dataSets.name = GOTerm to Mouse Feature Annotations from MGI,
 	ontologyAnnotations.evidence.code.code != ND,
 	ontologyAnnotations.ontologyTerm.parents.identifier != go:0008150,
 	ontologyAnnotations.ontologyTerm.parents.identifier != go:0003674,
