@@ -8,3 +8,4 @@ dist/
 */build/
 *.pyc
 *cookies.txt
+nohup.out

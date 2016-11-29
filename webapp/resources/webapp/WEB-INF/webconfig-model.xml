@@ -244,6 +244,7 @@
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chromosome" showInInlineCollection="false" showInSummary="false" />
       <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false"/>
       <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" escapeXml="false" />
+      <fieldconfig fieldExpr="specificity" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" escapeXml="true" />
     </fields>
     <inlinelist>
       <table path="earliestPublication.citation" showInHeader="true" lineLength="200" showLinksToObjects="true" />
