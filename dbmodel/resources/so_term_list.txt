@@ -23,7 +23,7 @@ gene
 gene_segment
 #golden_path_fragment
 #gRNA_gene
-heritable_phenotypic_marker
+#heritable_phenotypic_marker
 insertion
 intergenic_region
 intron
@@ -45,7 +45,7 @@ minisatellite
 polymorphic_pseudogene
 pseudogene
 #pseudogenic_exon
-pseudogenic_gene_segment
+#pseudogenic_gene_segment
 pseudogenic_region
 #pseudogenic_transcript
 #point_mutation
