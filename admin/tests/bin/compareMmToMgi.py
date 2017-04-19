@@ -89,7 +89,6 @@ def main():
     global mmcon
     if len(sys.argv) == 1 or len(sys.argv) > 3:
         usage()
-#    mpFile = "~/.intermine/mousemine.properties"
 
     db.setConnectionFromPropertiesFile()
 
