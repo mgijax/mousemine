@@ -292,17 +292,6 @@
   </class>
 
   <!-- =============================================================== -->
-  <class className="org.intermine.model.bio.OMIMTerm">
-  <fields>
-      <fieldconfig fieldExpr="name"/> 
-      <fieldconfig fieldExpr="identifier"/> 
-      <fieldconfig fieldExpr="namespace" showInSummary="false"/> 
-      <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" />
-      <fieldconfig fieldExpr="omimId" hide="true"/> 
-  </fields>
-  </class>
-
-  <!-- =============================================================== -->
   <class className="org.intermine.model.bio.OntologyRelation">
     <fields>
       <fieldconfig fieldExpr="relationship"/>
@@ -661,42 +650,24 @@
     />
 
 <enrichmentwidgetdisplayer id="disease_enrichment_for_feature"
-    title="Disease Enrichment (OMIM)"
-    description="OMIM disease terms enriched for items in this list."
-    label="OMIM Term"
-    startClass="SequenceFeature"
-    typeClass="SequenceFeature"
-    startClassDisplay="primaryIdentifier"
-    enrich="ontologyAnnotations.ontologyTerm[OMIMTerm].name"
-    enrichIdentifier="ontologyAnnotations.ontologyTerm.identifier"
-    constraints="organism.name=[list],
-	primaryIdentifier != null, 
-	ontologyAnnotations.qualifier = null"
-    views="symbol,name,primaryIdentifier,organism.name,
-	ontologyAnnotations.ontologyTerm.identifier, 
-	ontologyAnnotations.ontologyTerm.name"
-    externalLink="portal.do?class=OMIMTerm&amp;externalids="
-    />
-
-<!-- <enrichmentwidgetdisplayer id="do_enrichment_for_feature"
-    title="Disease Enrichment (Disease Ontology)"
-    description="DO disease terms enriched for items in this list. Genes are annotated to OMIM which are cross-referenced to DO terms."
+    title="Disease Enrichment"
+    description="Disease Ontology terms enriched for items in this list."
     label="DO Term"
     startClass="SequenceFeature"
     typeClass="SequenceFeature"
     startClassDisplay="primaryIdentifier"
-    enrich="ontologyAnnotations.ontologyTerm[OMIMTerm].crossReferences[DOTerm].parents.name"
-    enrichIdentifier="ontologyAnnotations.ontologyTerm.crossReferences.parents.identifier"
+    enrich="ontologyAnnotations.ontologyTerm[DOTerm].parents.name"
+    enrichIdentifier="ontologyAnnotations.ontologyTerm.parents.identifier"
     constraints="organism.name=[list],
 	primaryIdentifier != null, 
 	ontologyAnnotations.qualifier = null"
     views="symbol,name,primaryIdentifier,organism.name,
 	ontologyAnnotations.ontologyTerm.identifier, 
 	ontologyAnnotations.ontologyTerm.name,
-	ontologyAnnotations.ontologyTerm.crossReferences.identifier,
-	ontologyAnnotations.ontologyTerm.crossReferences.name"
-    externalLink="portal.do?class=DOTerm&amp;externalids="
-    /> -->
+	ontologyAnnotations.ontologyTerm.parents.identifier,
+	ontologyAnnotations.ontologyTerm.parents.name"
+    externalLink="http://www.informatics.jax.org/disease/"
+    />
 
 <enrichmentwidgetdisplayer id="mp_enrichment_for_feature"
     title="Mammalian Phenotype Ontology Enrichment"
@@ -715,7 +686,7 @@
 	ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,
 	ontologyAnnotations.ontologyTerm.parents.name"
-    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="
+    externalLink="http://www.informatics.jax.org/vocab/mp_ontology/"
     />
 
  <enrichmentwidgetdisplayer id="go_enrichment_for_gene"
@@ -739,7 +710,7 @@
     views="symbol,name,primaryIdentifier,organism.name,
 	ontologyAnnotations.ontologyTerm.identifier, ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,ontologyAnnotations.ontologyTerm.parents.name"
-    externalLink="http://www.informatics.jax.org/searches/GO.cgi?id="
+    externalLink="http://www.informatics.jax.org/vocab/gene_ontology/"
     />
 
 <enrichmentwidgetdisplayer id="emapa_enrichment_for_feature"
@@ -799,7 +770,7 @@
 	ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,
 	ontologyAnnotations.ontologyTerm.parents.name"
-    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="
+    externalLink="http://www.informatics.jax.org/vocab/mp_ontology/"
     />
 
 <enrichmentwidgetdisplayer id="disease_enrichment_for_allele"
@@ -839,7 +810,7 @@
 	ontologyAnnotations.ontologyTerm.name,
 	ontologyAnnotations.ontologyTerm.parents.identifier,
 	ontologyAnnotations.ontologyTerm.parents.name"
-    externalLink="http://www.informatics.jax.org/searches/Phat.cgi?id="
+    externalLink="http://www.informatics.jax.org/vocab/mp_ontology/"
     />
 
  <enrichmentwidgetdisplayer id="disease_enrichment_for_genotype"
