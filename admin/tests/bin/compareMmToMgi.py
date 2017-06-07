@@ -21,7 +21,7 @@ import sys
 from ConfigParser import ConfigParser
 import re
 import os
-import mgiadhoc as db
+import mgidbconnect as db
 
 compFcns = {
     'eq' : lambda x,y : x==y,
@@ -89,12 +89,14 @@ def main():
     global mmcon
     if len(sys.argv) == 1 or len(sys.argv) > 3:
         usage()
-    mpFile = "~/.intermine/mousemine.properties"
+
+    db.setConnectionFromPropertiesFile()
+
     if len(sys.argv) == 3:
         mpFile = sys.argv[2]
-    mgiparams = db.getConnectionParamsFromPropertiesFile(dname="mgiadhoc",fname=mpFile)
+    mgiparams = db.getConnectionParamsFromPropertiesFile()
     mgicon = db.connect(**mgiparams)
-    mmparams = db.getConnectionParamsFromPropertiesFile(dname="production",fname=mpFile)
+    mmparams = db.getConnectionParamsFromPropertiesFile(dname="production")
     mmcon =  db.connect(**mmparams)
     print "-"*60
     print "MGI/MouseMine Comparative Acceptance Tests"
