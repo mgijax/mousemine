@@ -143,9 +143,9 @@
     Mouse and human protein-protein interaction data from BioGrid and IntAct. 
     </td>
     <td > 
-      <a href="http://thebiogrid.org/" target="_new">BioGrid</a>
+      <a href="https://thebiogrid.org/" target="_new">BioGrid</a>
       <br/>
-      <a href="http://www.ebi.ac.uk/intact/" target="_new">IntAct</a>
+      <a href="https://www.ebi.ac.uk/intact/" target="_new">IntAct</a>
     </td>
   </tr>
 
@@ -167,7 +167,7 @@
     Pathways and their associations to genes and proteins.
     </td>
     <td> 
-    <a href="http://www.reactome.org/" target="_new">Reactome</a>
+    <a href="https://reactome.org/" target="_new">Reactome</a>
     </td>
   </tr>
 
@@ -229,7 +229,7 @@
     <p><h2>Homology</h2></p></td>
     <td> Mouse-Human Orthologies</td>
     <td> 
-    <a href="http://www.ncbi.nlm.nih.gov/homologene/" target="_new">Homologene</a> and <a href="http://www.pantherdb.org/">Panther</a>
+    <a href="https://www.ncbi.nlm.nih.gov/homologene/" target="_new">Homologene</a> and <a href="http://www.pantherdb.org/">Panther</a>
     </td>
   </tr>
 
