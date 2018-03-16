@@ -115,7 +115,7 @@
     </source>
 
     <source name="so" type="so" >
-	<property name="src.data.file" location="../../bio/sources/so/so.obo"/>
+	<property name="src.data.file" location="so.obo"/>
     </source>
 
     <source name="psi-mi" type="psi-mi-ontology" >
