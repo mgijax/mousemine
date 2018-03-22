@@ -7,12 +7,12 @@ buildscript {
         }
     }
     dependencies {
-        classpath group: 'org.intermine', name: 'plugin', version: '1.+'
+        classpath group: 'org.intermine', name: 'plugin', version: '2.0.+'
     }
 }
 
 ext {
-  imVersion = "2.+"
+  imVersion = "2.0.+"
 
   mineRelease = project.hasProperty('release') ? "." + release : ''
   mineName = "mousemine"
@@ -31,9 +31,10 @@ subprojects {
   repositories {
     mavenLocal()
     jcenter()
+    maven { url 'https://clojars.org/repo' }
     maven {
-	url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
-   }
+        url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
+    }
   }
 
   test {

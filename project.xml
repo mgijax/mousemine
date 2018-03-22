@@ -50,7 +50,7 @@
 	<property name="src.data.dir" location="&mm_data;/protein2ipr/latest/"/>
 	<property name="src.data.dir.includes" value="protein2ipr.dat"/>
 	<property name="protein2ipr.organisms" value="10090"/>
-	<property name=”osAlias” value=”os.production”/> 
+	<property name="osAlias" value="os.production"/> 
    </source>
 
     <source name="reactome" type="reactome">
