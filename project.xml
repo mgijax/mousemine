@@ -80,8 +80,11 @@
         <property name="src.data.file" value="&mm_data;/zebrafishmine/latest/features.xml" />
 	</source>
 
+<!-- julie is commenting this out because there is a model issue 
+     with sequence feature.alleles' reverse reference
     <source name="data-model" type="data-model">
     </source>
+-->
     <!-- data-model contains all the mgi base class defintions
          this allows mgi-base to be excluded from a build
          which will significantly decrease the build time
