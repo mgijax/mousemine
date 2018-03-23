@@ -91,11 +91,11 @@
          BUT mousemine/dbmodel/resources/genomic_priorities.properties
          needs to have mgi-base removed for the build to work
     -->
-
+<!--
     <source name="mgi-base" type="mgi-base" >
 	<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>
     </source>
-
+-->
     <source name="mgi-do" type="mgi-do" >
 	<property name="src.data.file" 
 	          value="&mm_data;/do/latest/DiseaseOntology.obo"/>
