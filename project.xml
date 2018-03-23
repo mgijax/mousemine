@@ -61,23 +61,23 @@
 	</source>
 
     <source name="fmfd-fly" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/flymine/latest/features.xml" />
+        <property name="src.data.file" location="&mm_data;/flymine/latest/features.xml" />
 	</source>
 
     <source name="fmfd-rat" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/ratmine/latest/features.xml" />
+        <property name="src.data.file" location="&mm_data;/ratmine/latest/features.xml" />
 	</source>
 
     <source name="fmfd-worm" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/wormmine/latest/features.xml" />
+        <property name="src.data.file" location="&mm_data;/wormmine/latest/features.xml" />
 	</source>
 
     <source name="fmfd-yeast" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/yeastmine/latest/features.xml" />
+        <property name="src.data.file" location="&mm_data;/yeastmine/latest/features.xml" />
 	</source>
 
     <source name="fmfd-zebrafish" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/zebrafishmine/latest/features.xml" />
+        <property name="src.data.file" location="&mm_data;/zebrafishmine/latest/features.xml" />
 	</source>
 
 <!-- julie is commenting this out because there is a model issue 
@@ -98,17 +98,17 @@
 -->
     <source name="mgi-do" type="mgi-do" >
 	<property name="src.data.file" 
-	          value="&mm_data;/do/latest/DiseaseOntology.obo"/>
+	          location="&mm_data;/do/latest/DiseaseOntology.obo"/>
     </source>
 
     <source name="mgi-mp" type="mgi-mp" >
 	<property name="src.data.file" 
-	          value="&mm_data;/mp/latest/MammalianPhenotype.obo"/>
+	          location="&mm_data;/mp/latest/MammalianPhenotype.obo"/>
     </source>
 
     <source name="mgi-go" type="mgi-go" >
 	<property name="src.data.file" 
-	          value="&mm_data;/go/latest/GeneOntology.obo"/>
+	          location="&mm_data;/go/latest/GeneOntology.obo"/>
     </source>
 
     <source name="gxd-anatomy" type="gxd-anatomy" >
@@ -123,7 +123,7 @@
     </source>
 
     <source name="psi-mi" type="psi-mi-ontology" >
-	<property name="src.data.file" value="&mm_data;/psi-mi/latest/psi-mi.obo"/>
+	<property name="src.data.file" location="&mm_data;/psi-mi/latest/psi-mi.obo"/>
 	</source>
 
     <source name="biogrid" type="biogrid">
