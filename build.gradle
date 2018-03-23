@@ -7,13 +7,11 @@ buildscript {
         }
     }
     dependencies {
-        classpath group: 'org.intermine', name: 'plugin', version: '2.0.+'
+        classpath group: 'org.intermine', name: 'plugin', version: System.getProperty("imVersion")
     }
 }
 
 ext {
-  imVersion = "2.0.+"
-
   mineRelease = project.hasProperty('release') ? "." + release : ''
   mineName = "mousemine"
   minePropertyFileName = "${mineName}.properties$mineRelease"
