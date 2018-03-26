@@ -115,7 +115,7 @@
         <property name="converter.class" 
 		  value="org.intermine.bio.dataconversion.EmapaOboConverter"/>
         <property name="src.data.file"
-                  value="&mm_data;/emapa/latest/EMAPA.obo"/>
+                  location="&mm_data;/emapa/latest/EMAPA.obo"/>
     </source>
 
     <source name="so" type="so" >
