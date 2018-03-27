@@ -128,10 +128,19 @@
     </class>
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Strain">
+    <headerconfig>
+      <titles>
+        <title mainTitles="name" />
+      </titles>
+    </headerconfig>
     <fields>
-	<fieldconfig fieldExpr="strainType"/>
-	<fieldconfig fieldExpr="name"/>
+	<fieldconfig fieldExpr="primaryIdentifier" showInSummary="true" />
+	<fieldconfig fieldExpr="name" showInSummary="true" />
+	<fieldconfig fieldExpr="attributeString" showInSummary="true" />
     </fields>
+    <inlinelist>
+      <table path="synonyms.value" showInHeader="true" lineLength="100" />
+    </inlinelist>
   </class>
 
 
