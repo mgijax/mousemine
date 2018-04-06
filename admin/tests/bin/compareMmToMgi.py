@@ -92,11 +92,12 @@ def main():
 
     db.setConnectionFromPropertiesFile()
 
+    mpFile = "~/.intermine/mousemine.properties"
     if len(sys.argv) == 3:
         mpFile = sys.argv[2]
-    mgiparams = db.getConnectionParamsFromPropertiesFile()
+    mgiparams = db.getConnectionParamsFromPropertiesFile(fname=mpFile)
     mgicon = db.connect(**mgiparams)
-    mmparams = db.getConnectionParamsFromPropertiesFile(dname="production")
+    mmparams = db.getConnectionParamsFromPropertiesFile(dname="production", fname=mpFile)
     mmcon =  db.connect(**mmparams)
     print "-"*60
     print "MGI/MouseMine Comparative Acceptance Tests"

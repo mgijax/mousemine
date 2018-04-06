@@ -39,6 +39,7 @@ def setConnection(**cparms):
 def getConnectionParamsFromPropertiesFile(dname=None, fname="~/.intermine/mousemine.properties"):
     try:
         fname = os.path.abspath(os.path.expanduser(fname))
+	print fname
         fd = open(fname,'r')
         data = fd.read()
         fd.close()
