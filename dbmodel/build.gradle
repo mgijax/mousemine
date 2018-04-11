@@ -33,7 +33,7 @@ dbModelConfig {
 
 mineDBModelConfig {
     modelName = "genomic"
-    extraModelsStart = "so_additions.xml genomic_additions.xml global_additions.xml extra_additions.xml"
+    extraModelsStart = "so_additions.xml genomic_additions.xml global_additions.xml extraAdditions_model.xml"
     extraModelsEnd = ""
 }
 
