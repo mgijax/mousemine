@@ -1,5 +1,6 @@
 <!DOCTYPE bio [
 <!ENTITY mm_data "/var/lib/jenkins/etl_build/etl/output">
+<!ENTITY my_data "/home/jer/mousemine/mousemine_etl/output">
 ]>
 
 <project type="bio">
@@ -14,9 +15,19 @@
 
   <sources>
 
+    <source name="mgi-gff" type="mgi-gff">
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="MGP"/>
+      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="src.data.dir" location="/home/jer/straindata/gff/"/>
+    </source>
+
     <!-- For proper merge behavior, the Uniprot load must run before mgi-base, and it must not
          create genes or gene/protein relationships.
     -->
+    <!--
     <source name="uniprot" type="uniprot" >
 	<property name="uniprot.organisms" value="10090"/>
 	<property name="src.data.dir" location="&mm_data;/uniprot/latest/"/>
@@ -46,8 +57,10 @@
     <source name="interpro" type="interpro">
 	<property name="src.data.dir" location="&mm_data;/interpro/latest/"/>
 	</source>
+    -->
 
     <!-- has to be after UniProt because only loads protein domains for loaded proteins -->
+    <!--
     <source name="protein2ipr" type="protein2ipr">
 	<property name="src.data.dir" location="&mm_data;/protein2ipr/latest/"/>
 	<property name="src.data.dir.includes" value="protein2ipr.dat"/>
@@ -80,6 +93,7 @@
     <source name="fmfd-zebrafish" type="fmfd" >
         <property name="src.data.file" value="&mm_data;/zebrafishmine/latest/features.xml" />
 	</source>
+    -->
 
     <source name="data-model" type="data-model">
     </source>
@@ -89,11 +103,12 @@
          BUT mousemine/dbmodel/resources/genomic_priorities.properties
          needs to have mgi-base removed for the build to work
     -->
-
     <source name="mgi-base" type="mgi-base" >
 	<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>
+	<!--<property name="src.data.dir" value="&my_data;/mgi-base/empty/"/>-->
     </source>
 
+    <!--
     <source name="mgi-do" type="mgi-do" >
 	<property name="src.data.file" 
 	          value="&mm_data;/do/latest/DiseaseOntology.obo"/>
@@ -135,19 +150,6 @@
 	<property name="intact.organisms" value="10090 9606"/>
 	</source>
 
-<!-- The MGI catalog of mouse genome features (gene models).
-    Deferred until a later release.
-
-    <source name="mgi-gff" type="mgi-gff">
-      <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGI"/>
-      <property name="gff3.dataSourceName" value="MGI"/>
-      <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mus musculus genome"/>
-      <property name="src.data.dir" location="/Users/jer/work/mouseminedata/gff/"/>
-    </source>
--->
-
      <source name="homologene" type="homologene">
        <property name="src.data.dir" location="&mm_data;/homologene/latest"/>
        <property name="homologene.organisms" value="7227 9606 10090 10116 7955 4932 6239"/>
@@ -166,31 +168,36 @@
         <property name="src.data.file" location="build/publication.xml"/>
         <property name="cacheDirName" value="/var/lib/jenkins/pubCache/"/>
     </source>
+    -->
 
   </sources>
 
   <post-processing>
+    <!-- 
+	 See http://intermine.readthedocs.io/en/latest/database/database-building/post-processing/
+    -->
 	
-    <!-- this runs the postprocessing steps in all sources -->
     <post-process name="do-sources"/>
 
     <post-process name="create-references"/>
-<!-- Don't bother with transfer-sequences yet, since we don't have any sequences to transfer.
-     Don't create intergenic regions for now.
+
+<!--
     <post-process name="transfer-sequences"/>
+    <post-process name="create-utr-references"/>
+    <post-process name="create-intron-features"/>
+    <post-process name="make-spanning-locations"/>
     <post-process name="create-intergenic-region-features"/>
+    <post-process name="create-gene-flanking-features"/>
+    <post-process name="create-location-overlap-index"/>
 -->
     <post-process name="create-chromosome-locations-and-lengths"/>
     <post-process name="create-bioseg-location-index"/>
     <post-process name="create-overlap-view"/>
-<!--
-    Don't create flanking regions for now.
-    <post-process name="create-gene-flanking-features"/>
--->
-    <post-process name="summarise-objectstore"/>
+
     <post-process name="create-autocomplete-index"/>
     <post-process name="create-search-index"/>
     <post-process name="create-attribute-indexes"/>
+    <post-process name="summarise-objectstore"/>
 		
   </post-processing>
 
