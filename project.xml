@@ -25,7 +25,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="/home/jer/mousemine/mousemine_etl/bin/straindata/gff3.samples/"/>
+      <property name="src.data.dir" location="/home/jer/mousemine/mousemine_etl/bin/straindata/gff3/"/>
     </source>
 
     <!-- For proper merge behavior, the Uniprot load must run before mgi-base, and it must not
