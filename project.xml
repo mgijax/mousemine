@@ -15,13 +15,17 @@
 
   <sources>
 
+    <source name="so" type="so" >
+	<property name="src.data.file" location="../../bio/sources/so/so.obo"/>
+    </source>
+
     <source name="mgi-gff" type="mgi-gff">
       <property name="gff3.taxonId" value="10090"/>
       <property name="gff3.seqDataSourceName" value="MGP"/>
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="/home/jer/straindata/gff/"/>
+      <property name="src.data.dir" location="/home/jer/mousemine/mousemine_etl/bin/straindata/gff3.samples/"/>
     </source>
 
     <!-- For proper merge behavior, the Uniprot load must run before mgi-base, and it must not
@@ -104,8 +108,8 @@
          needs to have mgi-base removed for the build to work
     -->
     <source name="mgi-base" type="mgi-base" >
-	<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>
-	<!--<property name="src.data.dir" value="&my_data;/mgi-base/empty/"/>-->
+	<!--<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>-->
+	<property name="src.data.dir" value="&my_data;/mgi-base/empty/"/>
     </source>
 
     <!--
@@ -130,11 +134,9 @@
         <property name="src.data.file"
                   value="&mm_data;/emapa/latest/EMAPA.obo"/>
     </source>
+    -->
 
-    <source name="so" type="so" >
-	<property name="src.data.file" location="../../bio/sources/so/so.obo"/>
-    </source>
-
+    <!--
     <source name="psi-mi" type="psi-mi-ontology" >
 	<property name="src.data.file" value="&mm_data;/psi-mi/latest/psi-mi.obo"/>
 	</source>
@@ -176,12 +178,17 @@
     <!-- 
 	 See http://intermine.readthedocs.io/en/latest/database/database-building/post-processing/
     -->
-	
     <post-process name="do-sources"/>
-
     <post-process name="create-references"/>
-
+    <post-process name="create-chromosome-locations-and-lengths"/>
+    <post-process name="create-location-overlap-index"/>
+    <post-process name="create-overlap-view"/>
+    <post-process name="create-attribute-indexes"/>
+    <post-process name="create-autocomplete-index"/>
+    <post-process name="summarise-objectstore"/>
+    <post-process name="create-search-index"/>
 <!--
+    Other available postprocesses...
     <post-process name="transfer-sequences"/>
     <post-process name="create-utr-references"/>
     <post-process name="create-intron-features"/>
@@ -190,14 +197,6 @@
     <post-process name="create-gene-flanking-features"/>
     <post-process name="create-location-overlap-index"/>
 -->
-    <post-process name="create-chromosome-locations-and-lengths"/>
-    <post-process name="create-bioseg-location-index"/>
-    <post-process name="create-overlap-view"/>
-
-    <post-process name="create-autocomplete-index"/>
-    <post-process name="create-search-index"/>
-    <post-process name="create-attribute-indexes"/>
-    <post-process name="summarise-objectstore"/>
 		
   </post-processing>
 

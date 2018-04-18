@@ -1,7 +1,6 @@
 aberrant_processed_transcript
 #allele
 #BAC_end
-# no idea why I have to include this, but otherwise, I get a compiler error
 bidirectional_promoter_lncRNA
 #binding_site
 #cDNA_clone
@@ -35,8 +34,9 @@ J_gene_segment
 lincRNA
 lincRNA_gene
 lnc_RNA
-#match
-#match_part
+lncRNA_gene
+match
+match_part
 miRNA
 miRNA_gene
 mRNA
@@ -61,8 +61,8 @@ read
 RNA
 rRNA
 rRNA_gene
-#RNase_MRP_RNA_gene
-#RNase_P_RNA_gene
+RNase_MRP_RNA_gene
+RNase_P_RNA_gene
 #regulatory_region
 #reverse_primer
 #Robertsonian_fusion
@@ -77,15 +77,14 @@ snoRNA
 snoRNA_gene
 snRNA
 snRNA_gene
-#SRP_RNA_gene
-#stRNA_gene
+SRP_RNA_gene
 #start_codon
 #stop_codon
 syntenic_region
 #telomere
-#telomerase_RNA_gene
+telomerase_RNA_gene
 #TF_binding_site
-#tmRNA_gene
+tmRNA_gene
 transgene
 tRNA
 tRNA_gene
