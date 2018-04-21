@@ -6,14 +6,14 @@
 # and which (if any) failed.
 # 
 # Usage:
-#    % python compareQueries.py CONFIGFILE.cfg [MINE.properties]
+#    % python compareQueries.py CONFIGFILE.cfg [MINE.properties] > testresults.txt
 #
-# CONFIGFILE.cfg is a configuration file is standard cfg format (see standard Python
-# library, ConfigParser). It contains the tests to run. CONFIGFILE,is required.
+# CONFIGFILE.cfg is a configuration file in standard cfg format (see standard Python
+# library, ConfigParser). It contains the tests to run. CONFIGFILE is required.
 # 
 # The optional second argument specifies the MINE.properties file, which contains connection
 # parameters for both MouseMine and for the MGI adhoc database. 
-# (Defaults to ~/.intermine/mousemine.properties)
+# The defaults is ~USER/.intermine/mousemine.properties.
 #
 #
 
@@ -32,8 +32,14 @@ compFcns = {
     'ge' : lambda x,y : x>=y,
     }
 
+DEFAULTS = {
+    'compare': 'eq',
+    'filter': 'x',
+    'enabled' : 'true',
+    }
+
 def readTests(cfname):
-    cp = ConfigParser()
+    cp = ConfigParser(DEFAULTS)
     cp.read(cfname)
     # need to be able to get the tests (sections) in order
     cp.tests = []
@@ -59,14 +65,16 @@ def doTest(file, name, mgiquery, value, mmquery, filter, op):
             func = eval( "lambda x,y : " + op )
         vmm = filt(doQ( mmcon,  mmquery  ))
         if len(mgiquery) == 0:
+	    otherTitle = "VALUE:"
             vmgi = long(value)
             vmm = vmm[0].values()[0]
         else:
+	   otherTitle = "MGI:"
            vmgi = filt(doQ( mgicon, mgiquery ))
         res  = func(vmgi, vmm)
 	print res
 	if not res:
-	    print "MGI:", vmgi
+	    print otherTitle, vmgi
 	    print "MM: ", vmm
 	return res
     except:
@@ -106,10 +114,15 @@ def main():
     res = True
     failedTests = []
     skippedFiles = []
-    for cfname in os.listdir(sys.argv[1]):
-        cffullname = os.path.abspath(os.path.join(sys.argv[1],cfname))
-        if cffullname.endswith(".cfg"):        
-            cp = readTests(cffullname)
+
+    if os.path.isdir(sys.argv[1]):
+        files = [os.path.abspath(os.path.join(sys.argv[1],fn)) for fn in os.listdir(sys.argv[1])]
+    else:
+        files = [sys.argv[1]]
+
+    for cfname in files:
+        if cfname.endswith(".cfg"):        
+            cp = readTests(cfname)
             for s in cp.tests:
 	        tname = s[5:]
 	        # check if enabled
@@ -132,7 +145,7 @@ def main():
 	            cp.get(s,"filter"), 
 	            cp.get(s,"compare"))
 		if not res2:
-		    failedTests.append(tname)
+		    failedTests.append(cfname+"::"+tname)
 		res = res and res2
         else:
             skippedFiles.append(cfname)
