@@ -1,5 +1,4 @@
 <webconfig>
-<![CDATA[
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Allele">
@@ -899,5 +898,4 @@
     />
 
 </widgets>  
-]]>
 </webconfig>
