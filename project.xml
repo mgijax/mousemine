@@ -88,7 +88,7 @@
     -->
 
     <source name="mgi-base" type="mgi-base" >
-	<property name="src.data.dir" location="&mm_data;/mgi-base/latest/"/>
+	<property name="src.data.dir" location="/local-homes/julie/data/mousemine/mgi-base/"/>
     </source>
 
     <source name="mgi-do" type="mgi-do" >
