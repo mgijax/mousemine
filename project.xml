@@ -25,7 +25,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_129s1svimj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -36,7 +36,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_aj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -47,7 +47,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_akrj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -58,7 +58,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_balbcj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -69,7 +69,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_c3hhej.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -80,7 +80,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_c57bl6j.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -91,7 +91,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_c57bl6nj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -102,7 +102,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_casteij.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -113,7 +113,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_cbaj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -124,7 +124,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_dba2j.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -135,7 +135,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_fvbnj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -146,7 +146,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_lpj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -157,7 +157,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_nodshiltj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -168,7 +168,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_nzohlltj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -179,7 +179,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_pwkphj.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -190,7 +190,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_musculus_wsbeij.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -201,7 +201,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_caroli.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -212,7 +212,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_pahari.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -223,7 +223,7 @@
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/fasta/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="fasta.includes" value="mus_spretus.*.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
@@ -234,11 +234,10 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3/"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3/"/>
     </source>
 
 
-    <![CDATA[
     <!-- For proper merge behavior, the Uniprot load must run before mgi-base, and it must not
          create genes or gene/protein relationships.
     -->
@@ -306,8 +305,6 @@
         <property name="src.data.file" value="&mm_data;/zebrafishmine/latest/features.xml" />
 	</source>
 
-    ]]>
-
     <source name="data-model" type="data-model">
     </source>
     <!-- data-model contains all the mgi base class defintions
@@ -318,10 +315,8 @@
     -->
     <source name="mgi-base" type="mgi-base" >
 	<!--<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>-->
-	<property name="src.data.dir" value="&my_data;/mgi-base/empty/"/>
+	<property name="src.data.dir" value="&mm_data;/mgi-base/empty/"/>
     </source>
-
-    <![CDATA[
 
     <source name="mgi-do" type="mgi-do" >
 	<property name="src.data.file" 
@@ -378,7 +373,6 @@
         <property name="src.data.file" location="build/publication.xml"/>
         <property name="cacheDirName" value="/var/lib/jenkins/pubCache/"/>
     </source>
-    ]]>
 
   </sources>
 
