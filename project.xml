@@ -19,7 +19,7 @@
 	<property name="src.data.file" location="../../bio/sources/so/so.obo"/>
     </source>
 
-    <source name="strain-genomes-fasta-1" type="fasta">
+    <source name="strain-genomes-fasta-1" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -30,7 +30,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-2" type="fasta">
+    <source name="strain-genomes-fasta-2" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -41,7 +41,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-3" type="fasta">
+    <source name="strain-genomes-fasta-3" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -52,7 +52,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-4" type="fasta">
+    <source name="strain-genomes-fasta-4" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -63,7 +63,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-5" type="fasta">
+    <source name="strain-genomes-fasta-5" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -74,7 +74,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-6" type="fasta">
+    <source name="strain-genomes-fasta-6" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -85,7 +85,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-7" type="fasta">
+    <source name="strain-genomes-fasta-7" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -96,7 +96,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-8" type="fasta">
+    <source name="strain-genomes-fasta-8" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -107,7 +107,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-9" type="fasta">
+    <source name="strain-genomes-fasta-9" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -118,7 +118,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-10" type="fasta">
+    <source name="strain-genomes-fasta-10" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -129,7 +129,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-11" type="fasta">
+    <source name="strain-genomes-fasta-11" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -140,7 +140,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-12" type="fasta">
+    <source name="strain-genomes-fasta-12" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -151,7 +151,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-13" type="fasta">
+    <source name="strain-genomes-fasta-13" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -162,7 +162,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-14" type="fasta">
+    <source name="strain-genomes-fasta-14" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -173,7 +173,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-15" type="fasta">
+    <source name="strain-genomes-fasta-15" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -184,7 +184,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-16" type="fasta">
+    <source name="strain-genomes-fasta-16" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -195,7 +195,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-17" type="fasta">
+    <source name="strain-genomes-fasta-17" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -206,7 +206,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-18" type="fasta">
+    <source name="strain-genomes-fasta-18" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -217,7 +217,7 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-19" type="fasta">
+    <source name="strain-genomes-fasta-19" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
@@ -373,6 +373,7 @@
         <property name="cacheDirName" value="/var/lib/jenkins/pubCache/"/>
     </source>
 
+
   </sources>
 
   <post-processing>
@@ -389,6 +390,7 @@
     <post-process name="create-autocomplete-index"/>
     <post-process name="summarise-objectstore"/>
     <post-process name="create-search-index"/>
+
 <!--
     Other available postprocesses...
     <post-process name="create-utr-references"/>
