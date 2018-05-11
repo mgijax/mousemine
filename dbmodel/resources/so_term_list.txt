@@ -95,7 +95,7 @@ VD_gene_segment
 V_gene_segment
 
 # many-to-many part_of relationships (default is many-to-one)
-#exon.transcript
+exon.transcript
 #intron.transcript
 #UTR.transcript
 #EST.overlapping_EST_set
