@@ -196,7 +196,7 @@
     </source>
 
     <source name="strain-genomes-fasta-17" type="mgi-fasta">
-      <property name="fasta.taxonId" value="10090"/>
+      <property name="fasta.taxonId" value="10089"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
@@ -207,7 +207,7 @@
     </source>
 
     <source name="strain-genomes-fasta-18" type="mgi-fasta">
-      <property name="fasta.taxonId" value="10090"/>
+      <property name="fasta.taxonId" value="10093"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
@@ -218,7 +218,7 @@
     </source>
 
     <source name="strain-genomes-fasta-19" type="mgi-fasta">
-      <property name="fasta.taxonId" value="10090"/>
+      <property name="fasta.taxonId" value="10096"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
@@ -236,7 +236,6 @@
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3/"/>
     </source>
-
 
     <!-- For proper merge behavior, the Uniprot load must run before mgi-base, and it must not
          create genes or gene/protein relationships.
@@ -372,7 +371,6 @@
         <property name="src.data.file" location="build/publication.xml"/>
         <property name="cacheDirName" value="/var/lib/jenkins/pubCache/"/>
     </source>
-
 
   </sources>
 
