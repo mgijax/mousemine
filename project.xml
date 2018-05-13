@@ -151,14 +151,25 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="strain-genomes-fasta-13" type="mgi-fasta">
+    <source name="strain-genomes-fasta-13a" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
       <property name="fasta.dataSourceName" value="MGP"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
-      <property name="fasta.includes" value="mus_musculus_nodshiltj.*.fa"/>
+      <property name="fasta.includes" value="mus_musculus_nodshiltj.chromosome.?.fa"/>
+      <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
+    </source>
+
+    <source name="strain-genomes-fasta-13b" type="mgi-fasta">
+      <property name="fasta.taxonId" value="10090"/>
+      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="fasta.includes" value="mus_musculus_nodshiltj.chromosome.??.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
