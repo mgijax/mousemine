@@ -50,6 +50,7 @@ processed_transcript
 protein_coding_gene
 polymorphic_pseudogene
 pseudogene
+pseudogenic_gene_segment
 pseudogenic_region
 pseudogenic_transcript
 #point_mutation
