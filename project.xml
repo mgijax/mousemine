@@ -323,7 +323,7 @@
          BUT mousemine/dbmodel/resources/genomic_priorities.properties
          needs to have mgi-base removed for the build to work
     -->
-    <source name="mgi-base" type="mgi-base" >
+    <source name="mgi-base" type="mgi-base" dump="true">
 	<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>
     </source>
 
@@ -374,7 +374,7 @@
        <property name="panther.organisms" value="7227 9606 10090 10116 7955 6239 4932"/>
      </source>
 
-    <source name="entrez-organism" type="entrez-organism">
+    <source name="entrez-organism" type="entrez-organism" dump="true">
 	<property name="src.data.file" location="build/organisms.xml"/>
     </source>
 
