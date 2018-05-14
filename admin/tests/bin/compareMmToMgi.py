@@ -66,7 +66,7 @@ def doTest(file, name, mgiquery, value, mmquery, filter, op):
         vmm = filt(doQ( mmcon,  mmquery  ))
         if len(mgiquery) == 0:
 	    otherTitle = "VALUE:"
-            vmgi = long(value)
+            vmgi = eval(value)
             vmm = vmm[0].values()[0]
         else:
 	   otherTitle = "MGI:"
@@ -153,12 +153,10 @@ def main():
     print "-"*60
     if res:
 	print "PASSED all tests."
-#        sys.exit(0)
     else:
 	print "FAILED these tests:"
 	for t in failedTests:
 	    print "    " + t
-#        sys.exit(-1)
     for f in skippedFiles:
         print "Skipped non .cfg file "+f
 
