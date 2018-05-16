@@ -25,7 +25,7 @@ def explodedWebAppDir = "$buildDir/explodedWebApp"
 def mergePropsDir = "$buildDir/props"
 
 webappConfig {
-    mineName = "${mineInstanceName}"
+    mineName = "mousemine"
     objectStoreName = "os.production"
     userProfileObjectStoreName = "os.userprofile-production"
     userProfileObjectStoreWriterName = "osw.userprofile-production"
