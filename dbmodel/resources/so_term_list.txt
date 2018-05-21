@@ -45,11 +45,14 @@ mt_gene
 ncRNA
 ncRNA_gene
 NMD_transcript
+pre_miRNA
+primary_transcript
 processed_pseudogene
 processed_transcript
 protein_coding_gene
 polymorphic_pseudogene
 pseudogene
+pseudogenic_exon
 pseudogenic_gene_segment
 pseudogenic_region
 pseudogenic_transcript
