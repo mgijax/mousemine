@@ -259,7 +259,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_caroli.gff3"/>
     </source>
 
@@ -269,7 +269,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_129s1svimj.gff3"/>
     </source>
 
@@ -279,7 +279,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_aj.gff3"/>
     </source>
 
@@ -289,7 +289,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_akrj.gff3"/>
     </source>
 
@@ -299,7 +299,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_balbcj.gff3"/>
     </source>
 
@@ -309,7 +309,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_c3hhej.gff3"/>
     </source>
 
@@ -319,7 +319,7 @@
       <property name="gff3.dataSourceName" value="MGI"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="C57BL/6J genome from MGI"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_c57bl6j.gff3"/>
     </source>
 
@@ -329,7 +329,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_c57bl6nj.gff3"/>
     </source>
 
@@ -339,7 +339,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_casteij.gff3"/>
     </source>
 
@@ -349,7 +349,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_cbaj.gff3"/>
     </source>
 
@@ -359,7 +359,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_dba2j.gff3"/>
     </source>
 
@@ -369,7 +369,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_fvbnj.gff3"/>
     </source>
 
@@ -379,7 +379,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_lpj.gff3"/>
     </source>
 
@@ -389,7 +389,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_nodshiltj.gff3"/>
     </source>
 
@@ -399,7 +399,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_nzohlltj.gff3"/>
     </source>
 
@@ -409,7 +409,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_pwkphj.gff3"/>
     </source>
 
@@ -419,7 +419,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_wsbeij.gff3"/>
     </source>
 
@@ -429,7 +429,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_pahari.gff3"/>
     </source>
 
@@ -439,7 +439,7 @@
       <property name="gff3.dataSourceName" value="MGP"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="src.data.dir" location="&my_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_spretus.gff3"/>
     </source>
 
@@ -520,7 +520,7 @@
     -->
     <source name="mgi-base" type="mgi-base" dump="true">
 	<!-- <property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/> -->
-	<property name="src.data.dir" value="&my_data;/mgi-base/empty/"/>
+	<property name="src.data.dir" value="&mm_data;/mgi-base/empty/"/>
     </source>
 
     <source name="mgi-do" type="mgi-do" >
