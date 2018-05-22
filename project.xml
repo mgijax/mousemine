@@ -519,8 +519,7 @@
          needs to have mgi-base removed for the build to work
     -->
     <source name="mgi-base" type="mgi-base" dump="true">
-	<!-- <property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/> -->
-	<property name="src.data.dir" value="&mm_data;/mgi-base/empty/"/>
+	<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>
     </source>
 
     <source name="mgi-do" type="mgi-do" >
