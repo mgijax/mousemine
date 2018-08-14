@@ -1,6 +1,8 @@
 <!DOCTYPE bio [
 <!ENTITY mm_data "/var/lib/jenkins/etl_build/etl/output">
 <!ENTITY my_data "/home/jer/mousemine/mousemine_etl/output">
+<!ENTITY mgp_source "Mouse Genomes Project (MGP)">
+<!ENTITY mgp_dataset "Mouse Genomes Project Strain Data">
 ]>
 
 <project type="bio">
@@ -28,8 +30,8 @@
      -->
     <source name="mus_caroli-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10089"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -39,8 +41,8 @@
 
     <source name="mus_musculus_129s1svimj-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -50,8 +52,8 @@
 
     <source name="mus_musculus_aj-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -61,8 +63,8 @@
 
     <source name="mus_musculus_akrj-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -72,8 +74,8 @@
 
     <source name="mus_musculus_balbcj-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -83,8 +85,8 @@
 
     <source name="mus_musculus_c3hhej-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -94,8 +96,8 @@
 
     <source name="mus_musculus_c57bl6j-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -105,8 +107,8 @@
 
     <source name="mus_musculus_c57bl6nj-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -116,8 +118,8 @@
 
     <source name="mus_musculus_casteij-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -127,8 +129,8 @@
 
     <source name="mus_musculus_cbaj-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -138,8 +140,8 @@
 
     <source name="mus_musculus_dba2j-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -149,8 +151,8 @@
 
     <source name="mus_musculus_fvbnj-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -160,8 +162,8 @@
 
     <source name="mus_musculus_lpj-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -172,8 +174,8 @@
     <!-- Have to break nodshiltj into parts a and b because it's too big to do in one go. -->
     <source name="mus_musculus_nodshiltj-a-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -183,8 +185,8 @@
 
     <source name="mus_musculus_nodshiltj-b-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -194,8 +196,8 @@
 
     <source name="mus_musculus_nzohlltj-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -205,8 +207,8 @@
 
     <source name="mus_musculus_pwkphj-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -216,8 +218,8 @@
 
     <source name="mus_musculus_wsbeij-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -227,8 +229,8 @@
 
     <source name="mus_pahari-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10093"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -238,8 +240,8 @@
 
     <source name="mus_spretus-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10096"/>
-      <property name="fasta.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
-      <property name="fasta.dataSourceName" value="MGP"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
@@ -255,67 +257,67 @@
 
     <source name="mus_caroli-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10089"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_caroli.gff3"/>
     </source>
 
     <source name="mus_musculus_129s1svimj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_129s1svimj.gff3"/>
     </source>
 
     <source name="mus_musculus_aj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_aj.gff3"/>
     </source>
 
     <source name="mus_musculus_akrj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_akrj.gff3"/>
     </source>
 
     <source name="mus_musculus_balbcj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_balbcj.gff3"/>
     </source>
 
     <source name="mus_musculus_c3hhej-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_c3hhej.gff3"/>
     </source>
 
     <source name="mus_musculus_c57bl6j-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
       <property name="gff3.dataSourceName" value="MGI"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
       <property name="gff3.dataSetTitle" value="C57BL/6J genome from MGI"/>
@@ -325,120 +327,120 @@
 
     <source name="mus_musculus_c57bl6nj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_c57bl6nj.gff3"/>
     </source>
 
     <source name="mus_musculus_casteij-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_casteij.gff3"/>
     </source>
 
     <source name="mus_musculus_cbaj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_cbaj.gff3"/>
     </source>
 
     <source name="mus_musculus_dba2j-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_dba2j.gff3"/>
     </source>
 
     <source name="mus_musculus_fvbnj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_fvbnj.gff3"/>
     </source>
 
     <source name="mus_musculus_lpj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_lpj.gff3"/>
     </source>
 
     <source name="mus_musculus_nodshiltj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_nodshiltj.gff3"/>
     </source>
 
     <source name="mus_musculus_nzohlltj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_nzohlltj.gff3"/>
     </source>
 
     <source name="mus_musculus_pwkphj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_pwkphj.gff3"/>
     </source>
 
     <source name="mus_musculus_wsbeij-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_wsbeij.gff3"/>
     </source>
 
     <source name="mus_pahari-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10093"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_pahari.gff3"/>
     </source>
 
     <source name="mus_spretus-gff" type="mgi-gff" dump="true">
       <property name="gff3.taxonId" value="10096"/>
-      <property name="gff3.seqDataSourceName" value="MGP"/>
-      <property name="gff3.dataSourceName" value="MGP"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
       <property name="gff3.seqClsName" value="Chromosome"/>
-      <property name="gff3.dataSetTitle" value="Mouse Genomes Project Strain Data"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_spretus.gff3"/>
     </source>

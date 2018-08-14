@@ -21,15 +21,26 @@
   
   <!-- ******************************************************* -->
   <tr>
-    <td rowspan="3" class="leftcol">
+    <td rowspan="4" class="leftcol">
     <h2><p>Genome</p></h2>
     </td>
     <td>
-    Mouse genome feature catalog. All mouse features from MGI, including nomenclature, 
-    synonyms, ids, genome coordinates and cross-references (external database IDs).
+    Mouse genome feature catalog. All canonical mouse genes and other genome features from 
+    MGI, including nomenclature, synonyms, genome coordinates and cross-references (external database IDs).
     </td>
     <td> 
     <a href="http://www.informatics.jax.org/" target="_new">MGI</a>
+    </td>
+  </tr>
+
+  <tr>
+    <td> 
+    Multiple strain genomes. Complete genomes for 19 mouse inbred strains. 
+    Includes chromosome assembly sequences and genome annotations.
+    Features in each strain's genome are connected to the canonical (MGI) gene, and vice versa.
+    </td>
+    <td> 
+    <a href="https://www.sanger.ac.uk/science/data/mouse-genomes-project"  target="_new">Mouse Genomes Project (MGP)</a> and <a href="http://ensemblgenomes.org/"  target="_new">ENSEMBL</a>
     </td>
   </tr>
 
