@@ -103,9 +103,6 @@
           <fmt:message key="menu.customQuery"/>&nbsp;
         </a>
       </li>
-      <li id="mgv"  <c:if test="${tab == 'mgv'}">class="activelink"</c:if>>
-        <a href="http://proto.informatics.jax.org/prototypes/mgv/" target="_blank" title="Browse multiple mouse genomes."><span>Viewer</span></a>
-      </li>
       <c:if test="${WEB_PROPERTIES['genomicRegionSearch.display'] == 'true'}">
           <li id="genomicRegionSearch" <c:if test="${tab == 'genomicRegionSearch'}">class="activelink"</c:if>>
             <a href="/${WEB_PROPERTIES['webapp.path']}/genomicRegionSearch.do">
@@ -113,6 +110,9 @@
             </a>
           </li>
       </c:if>
+      <li id="mgv"  <c:if test="${tab == 'mgv'}">class="activelink"</c:if>>
+        <a href="http://proto.informatics.jax.org/prototypes/mgv/" target="_blank" title="Browse multiple mouse genomes."><span>Viewer</span></a>
+      </li>
       <li id="category" <c:if test="${tab == 'dataCategories'}">class="activelink"</c:if>>
         <a href="/${WEB_PROPERTIES['webapp.path']}/dataCategories.do">
           <fmt:message key="menu.dataCategories"/>
