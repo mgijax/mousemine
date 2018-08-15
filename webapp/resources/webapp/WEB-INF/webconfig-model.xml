@@ -212,9 +212,6 @@
       <table path="synonyms.value" showInHeader="true" lineLength="100" />
       <table path="earliestPublication.citation" showInHeader="true" lineLength="200" showLinksToObjects="true" />
     </inlinelist>
-    <bagdisplayers>
-      <displayer src="friendlyMineLinkDisplayer.tile" showOnLeft="false" />
-    </bagdisplayers>
   </class>
 
 
@@ -252,8 +249,13 @@
       <fieldconfig fieldExpr="sequenceOntologyTerm.name" label="Type" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chromosome" showInInlineCollection="false" showInSummary="false" />
       <!--
+	   Would like to have these fields displayed on report page, and the following works fine.
+	   Unfortunately, it adversely affects the list analysis page because that uses the same config.
+	   While the report page adapts nicely when a field value is null, the list analysis page
+	   loses such rows out of the displayed table. Grrr...
+
       <fieldconfig fieldExpr="strain.name" label="Strain" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="canonical.primaryIdentifier" label="Canonical" showInInlineCollection="false" showInSummary="false" displayer="/model/canonicalGeneLinkDisplayer.jsp" />
+      <fieldconfig fieldExpr="canonical.primaryIdentifier" label="Canonical" showInInlineCollection="false" showInSummary="false" outerInSummary="true" displayer="/model/canonicalGeneLinkDisplayer.jsp" />
       -->
       <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false"/>
       <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" escapeXml="false" />
