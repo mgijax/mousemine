@@ -699,4 +699,7 @@ color: black ;
 div.inline-list ul li + li { 
 font-weight : bold;
 }
-
+/* don't display empty inline tables */
+div.collection-table.gray {
+    display: none;
+}
