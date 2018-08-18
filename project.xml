@@ -27,7 +27,8 @@
 	************************************************
         There is a memory leak somewhere that means we can't load all the fasta
         files in a single source. Have to break them up, so we'll go strain-by-strain. 
-     -->
+        Have to further break nodshiltj into parts a and b because it's too big to do in one go.
+    -->
     <source name="mus_caroli-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10089"/>
       <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
@@ -171,7 +172,6 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <!-- Have to break nodshiltj into parts a and b because it's too big to do in one go. -->
     <source name="mus_musculus_nodshiltj-a-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
@@ -478,7 +478,6 @@
 	<property name="src.data.dir" location="&mm_data;/interpro/latest/"/>
 	</source>
 
-    <!-- has to be after UniProt because only loads protein domains for loaded proteins -->
     <source name="protein2ipr" type="protein2ipr">
 	<property name="src.data.dir" location="&mm_data;/protein2ipr/latest/"/>
 	<property name="src.data.dir.includes" value="protein2ipr.dat"/>
