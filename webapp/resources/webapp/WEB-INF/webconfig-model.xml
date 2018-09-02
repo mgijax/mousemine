@@ -460,12 +460,46 @@
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.Transcript">
     <fields>
+      <fieldconfig fieldExpr="sequenceOntologyTerm.name"/>
       <fieldconfig fieldExpr="primaryIdentifier"/>
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-      <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false"/>
-      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="false" showInSummary="false" />
+      <fieldconfig fieldExpr="length" />
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" />
+    </fields>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.Exon">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier"/>
+      <fieldconfig fieldExpr="length" />
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" />
+    </fields>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.UTR">
+    <fields>
+      <fieldconfig fieldExpr="sequenceOntologyTerm.name"/>
+      <fieldconfig fieldExpr="primaryIdentifier"/>
+      <fieldconfig fieldExpr="length" />
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" />
+    </fields>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.CDS">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier"/>
+      <fieldconfig fieldExpr="length" />
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" />
     </fields>
   </class>
 
