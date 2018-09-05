@@ -284,19 +284,29 @@
     </tiles:insert>
   </div>
  
+  <c:set var="showAttrLinks" value="yes"></c:set>
   <c:set var="getFriendly" value="no"></c:set>
-   <c:if test="${fn:endsWith(fn:toLowerCase(object.type), 'gene') && object.object.canonical == null}">
-    <c:set var="getFriendly" value="yes"></c:set>
+  <c:if test="${fn:endsWith(fn:toLowerCase(object.type), 'gene')}">
+      <c:if test="${object.object.strain != null}">
+	<c:set var="showAttrLinks" value="no"></c:set>
+      </c:if>
+
+      <c:if test="${object.object.canonical == null}">
+	<c:set var="getFriendly" value="yes"></c:set>
+      </c:if>
   </c:if>
+
   <c:set var="object_bk" value="${object}"/>
   <c:set var="object" value="${reportObject.object}" scope="request"/>
   <div id="external-links">
     <c:if test="${getFriendly == 'yes'}">
 	<tiles:insert name="otherMinesLink.tile" />
     </c:if>
-    <tiles:insert name="attributeLinks.tile" >
+    <c:if test="${showAttrLinks == 'yes'}">
+      <tiles:insert name="attributeLinks.tile" >
         <tiles:put name="reportObject" beanName="object" />
-  </tiles:insert>
+      </tiles:insert>
+    </c:if>
   </div>
   <c:set var="object" value="${object_bk}"/>
 

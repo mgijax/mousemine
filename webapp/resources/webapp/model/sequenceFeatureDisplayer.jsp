@@ -157,22 +157,26 @@
         </c:otherwise>
       </c:choose>
     </td>
-	  <c:choose>
-	  <c:when test="${not empty feature.strain}">
-            <td class="label">Browser:</td>
-	    <td>
-	    <a target="_blank" href="http://proto.informatics.jax.org/prototypes/mgv/#landmark=${feature.primaryIdentifier}&flank=5000&ref=${feature.strain.name}&genomes=C57BL/6J+A/J+129S1/SvImJ+AKR/J+BALB/cJ+C3H/HeJ&highlight=${feature.primaryIdentifier}">Multiple Genome Viewer</a>
-	    </td>
-	  </c:when>
-	  <c:when test="${fn:startsWith(feature.primaryIdentifier, 'MGI:') && !empty feature.sequenceOntologyTerm}">
-	    <c:if test="${fn:endsWith(feature.sequenceOntologyTerm.name,'gene')}">
+	  <c:if test="${fn:endsWith(feature.sequenceOntologyTerm.name,'gene')}">
+	    <c:set var="highlight" value="${feature.primaryIdentifier}"/>
+	    <c:if test="${not empty feature.canonical}">
+	      <c:set var="highlight" value="${feature.canonical.primaryIdentifier}"/>
+	    </c:if>
+	    <c:choose>
+	    <c:when test="${not empty feature.strain}">
+              <td class="label">Browser:</td>
+	      <td>
+	      <a target="_blank" href="http://proto.informatics.jax.org/prototypes/mgv/#landmark=${feature.primaryIdentifier}&length=${ 4 * feature.length}&ref=${feature.strain.name}&genomes=C57BL/6J&highlight=${highlight}">Multiple Genome Viewer (MGV)</a>
+	      </td>
+	    </c:when>
+	    <c:when test="${fn:startsWith(feature.primaryIdentifier, 'MGI:') && !empty feature.sequenceOntologyTerm}">
 		<td class="label">Browser:</td>
 		<td>
-		<a target="_blank" href="http://proto.informatics.jax.org/prototypes/mgv/#landmark=${feature.primaryIdentifier}&flank=5000&ref=C57BL/6J&genomes=C57BL/6J+A/J+129S1/SvImJ+AKR/J+BALB/cJ+C3H/HeJ&highlight=${feature.primaryIdentifier}">Multiple Genome Viewer</a>
+		<a target="_blank" href="http://proto.informatics.jax.org/prototypes/mgv/#landmark=${feature.primaryIdentifier}&length=${4*feature.length}&ref=C57BL/6J&genomes=C57BL/6J&highlight=${highlight}">Multiple Genome Viewer (MGV)</a>
 		</td>
-	    </c:if>
-	  </c:when>
-	  </c:choose>
+	    </c:when>
+	    </c:choose>
+	  </c:if>
 
     <c:choose>
       <c:when test="${!empty cytoLocation}">
