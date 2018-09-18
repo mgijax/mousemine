@@ -248,7 +248,7 @@
       <fieldconfig fieldExpr="name" />
       <fieldconfig fieldExpr="sequenceOntologyTerm.name" label="Type" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" label="Chromosome" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="name" label="Strain" showInInlineCollection="false" showInSummary="false" />
+      <fieldconfig fieldExpr="name" showInInlineCollection="false" showInSummary="false" />
       <!--
 	   Would like to have these fields displayed on report page, and the following works fine.
 	   Unfortunately, it adversely affects the list analysis page because that uses the same config.
