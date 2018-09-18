@@ -286,7 +286,11 @@
  
   <c:set var="showAttrLinks" value="yes"></c:set>
   <c:set var="getFriendly" value="no"></c:set>
-  <c:if test="${fn:endsWith(fn:toLowerCase(object.type), 'gene')}">
+  <c:set var="ftype" value="${fn:toLowerCase(object.type)}"></c:set>
+  <c:if test="${ftype == 'exon' || ftype == 'cds' || ftype == 'transcript' || ftype == 'mrna' }">
+    <c:set var="showAttrLinks" value="no"></c:set>
+  </c:if>
+  <c:if test="${fn:endsWith(ftype, 'gene')}">
       <c:if test="${object.object.strain != null}">
 	<c:set var="showAttrLinks" value="no"></c:set>
       </c:if>
