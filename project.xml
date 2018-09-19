@@ -128,14 +128,25 @@
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
-    <source name="mus_musculus_cbaj-fasta" type="mgi-fasta">
+    <source name="mus_musculus_cbaj-a-fasta" type="mgi-fasta">
       <property name="fasta.taxonId" value="10090"/>
       <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
       <property name="fasta.dataSourceName" value="&mgp_source;"/>
       <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
-      <property name="fasta.includes" value="mus_musculus_cbaj.*.fa"/>
+      <property name="fasta.includes" value="mus_musculus_cbaj.chromosome.?.fa"/>
+      <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
+    </source>
+
+    <source name="mus_musculus_cbaj-b-fasta" type="mgi-fasta">
+      <property name="fasta.taxonId" value="10090"/>
+      <property name="fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="fasta.includes" value="mus_musculus_cbaj.chromosome.??.fa"/>
       <property name="fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
 
