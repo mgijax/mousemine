@@ -1,8 +1,6 @@
 #!/bin/sh
 ALL_TESTS_PASSED=true
 
-source ~/buildscripts/doExports.sh
-
 cd ~/intermine/mousemine/admin/tests/bin
 python compareMmToMgi.py ../resources >../output/comparative_test.txt
 RESULT=`grep FAILED ../output/comparative_test.txt | wc -l`
