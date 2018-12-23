@@ -326,6 +326,12 @@
       <property name="src.data.dir.includes" value="mus_musculus_c3hhej.gff3"/>
     </source>
 
+<!--
+Temporarily disabled until there is a fix for this gff load
+Error: /var/lib/jenkins/intermine/imbuild/source.xml:253: java.lang.IllegalArgumentException: no class found in model for: SenseOverlappingLncRNAGene (original GFF record type: sense overlapping lncRNA gene) for record: <GFF3Record: sequenceID: 2|C57BL/6J source: MGI type: sense overlapping lncRNA gene start: 180984232 end: 180987275 score: null strand: + phase: null attributes: {strain=[C57BL/6J], mgi_id=[MGI:2444774], ID=[MGI_C57BL6J_2444774]}>
+
+
+
     <source name="mus_musculus_c57bl6j-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
       <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
@@ -335,6 +341,7 @@
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_c57bl6j.gff3"/>
     </source>
+-->
 
     <source name="mus_musculus_c57bl6nj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
