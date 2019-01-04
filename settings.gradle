@@ -1,0 +1,6 @@
+rootProject.name = 'mousemine'
+
+include ':dbmodel',':webapp'
+
+project(':dbmodel').projectDir = new File(settingsDir, './dbmodel')
+project(':webapp').projectDir = new File(settingsDir, './webapp')
