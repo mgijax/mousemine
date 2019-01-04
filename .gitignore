@@ -10,3 +10,4 @@ dist/
 *cookies.txt
 nohup.out
 .gradle
+*.cache
