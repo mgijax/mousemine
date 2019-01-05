@@ -1,11 +1,8 @@
 #!/bin/sh
 
-source ~/buildscripts/doExports.sh
-
 cd ~/intermine/mousemine/webapp
 
 ant clean
-
 find . -exec touch {} \;
 
 if [ "$1" != "" ]

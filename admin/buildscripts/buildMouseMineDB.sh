@@ -1,27 +1,33 @@
 #!/bin/sh
-if [ "${WORKSPACE}" != "" ]
- then
-	if [ ! -d "dumps" ]
-	then
-		ln -s /usr/local/pgsql/dumps dumps
-	fi
 
-	source ~/buildscripts/doExports.sh		
+RESTART=false
 
-	psql -c "select pg_terminate_backend(pid) from pg_stat_activity where datname='mousemine'";
+while getopts r opt
+do case "$opt" in
+	r) RESTART=true;;
+   esac
+done
 
-	dropdb mousemine
-        createdb mousemine
 
-	. ~/buildscripts/startTomcat.sh
+if [ ! -d "dumps" ]
+then
+    ln -s /usr/local/pgsql/jenkins_data/dumps dumps
+fi
 
-	cd ~/intermine/mousemine
-	../bio/scripts/project_build -b -v localhost ${WORKSPACE}/dumps/mm-dump
+export PGUSER=intermine
+cd ~/intermine/mousemine
 
-	cd ~/intermine/mousemine/webapp
-	ant precompute-templates
-
+if [[ $RESTART = true ]]
+then
+    # restart build from last completed checkpoint
+    #   no loading dumped data - assumes previous data is in database
+    ../bio/scripts/project_build -r -v localhost ${WORKSPACE}/dumps/mm-dump
 else
-	echo "script requires jenkins param WORKSPACE to be set."
-	exit 99
+    # good old-fashioned normal build
+    psql -c "select pg_terminate_backend(pid) from pg_stat_activity where datname='mousemine'";
+
+    dropdb mousemine
+    createdb mousemine
+
+    ../bio/scripts/project_build -b -v localhost ${WORKSPACE}/dumps/mm-dump
 fi

@@ -4,9 +4,21 @@
 export PGPASSWORD="mgdpub"
 ADHOC_UPDATE=`psql -h mgi-adhoc -U mgd_public -d mgd -c "SELECT lastdump_date from mgi_dbinfo" | sed -n '3p'`
 
+if [ "$1" != "" ]
+then
+    PREFIX=$1
+else
+    PREFIX=www
+fi
 
 # retrive date for last MouseMine database update
-wget -O ~/tmp/mmdb_date.txt http://www.mousemine.org/mousemine/service/query/results?query=%3Cquery+name%3D%22%22+model%3D%22genomic%22+view%3D%22DataSource.description%22+longDescription%3D%22%22%3E%3Cconstraint+path%3D%22DataSource.name%22+op%3D%22%3D%22+value%3D%22MGI%22%2F%3E%3C%2Fquery%3E
+#
+# The xml query for the url below:
+# <query name="" model="genomic" view="DataSource.description" longDescription="">
+#  <constraint path="DataSource.name" op="=" value="MGI"/>
+# </query>
+#
+wget -O ~/tmp/mmdb_date.txt http://${PREFIX}.mousemine.org/mousemine/service/query/results?query=%3Cquery+name%3D%22%22+model%3D%22genomic%22+view%3D%22DataSource.description%22+longDescription%3D%22%22%3E%3Cconstraint+path%3D%22DataSource.name%22+op%3D%22%3D%22+value%3D%22MGI%22%2F%3E%3C%2Fquery%3E
 MMDB_UPDATE=`grep "....-..-.." -o ~/tmp/mmdb_date.txt`
 
 
