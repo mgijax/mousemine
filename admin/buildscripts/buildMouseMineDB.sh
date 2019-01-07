@@ -21,7 +21,7 @@ if [[ $RESTART = true ]]
 then
     # restart build from last completed checkpoint
     #   no loading dumped data - assumes previous data is in database
-    ../bio/scripts/project_build -r -v localhost ${WORKSPACE}/dumps/mm-dump
+    ../bio/scripts/project_build -l -v localhost ${WORKSPACE}/dumps/mm-dump
 else
     # good old-fashioned normal build
     psql -c "select pg_terminate_backend(pid) from pg_stat_activity where datname='mousemine'";
