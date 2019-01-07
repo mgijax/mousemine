@@ -1,5 +1,6 @@
 aberrant_processed_transcript
 #allele
+antisense_lncRNA_gene
 #BAC_end
 bidirectional_promoter_lncRNA
 #binding_site
@@ -62,6 +63,7 @@ QTL
 read
 #reciprocal_chromosomal_translocation
 #retrotransposon
+ribozyme_gene
 RNA
 rRNA
 rRNA_gene
@@ -74,6 +76,7 @@ scRNA
 scRNA_gene
 sense_intronic_ncRNA_gene
 sense_overlap_ncRNA
+sense_overlap_ncRNA_gene
 sequence_collection
 sequence_feature
 sequence_variant
