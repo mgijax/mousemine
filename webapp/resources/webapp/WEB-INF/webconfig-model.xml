@@ -19,7 +19,8 @@
       <fieldconfig fieldExpr="strainOfOrigin.name" showInSummary="false" label="Strain of Origin"/>
       <fieldconfig fieldExpr="description" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
       <fieldconfig fieldExpr="molecularNote" showInResults="false" showInInlineCollection="false" showInSummary="false" doNotTruncate="true" escapeXml="false" />
-    </fields>
+      <fieldconfig fieldExpr="publications2" label="Publication categories" />
+   </fields>
    <inlinelist>
       <table path="mutations.name" showInHeader="true" lineLength="200" />
       <table path="cellLines.name" showInHeader="true" lineLength="200" showLinksToObjects="true" />
@@ -28,6 +29,14 @@
     </inlinelist>
   </class>
   
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.AllelePublication">
+    <fields>
+      <fieldconfig fieldExpr="type" />
+      <fieldconfig fieldExpr="publication.mgiJnum" />
+      <fieldconfig fieldExpr="publication.citation" />
+    </fields>
+  </class>
 
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.CellLine">
