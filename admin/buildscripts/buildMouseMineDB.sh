@@ -11,7 +11,7 @@ done
 
 if [ ! -d "dumps" ]
 then
-    ln -s /usr/local/pgsql/jenkins_data/dumps dumps
+    ln -s /var/lib/pgsql/jenkins_data/dumps dumps
 fi
 
 export PGUSER=intermine
