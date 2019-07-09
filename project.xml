@@ -8,17 +8,14 @@
 <project type="bio">
 	
   <property name="target.model" value="genomic"/>
-  <property name="source.location" location="../bio/sources/"/>
-  <property name="source.location" location="../bio/sources/mgi/"/>
   <property name="common.os.prefix" value="common"/>
   <property name="intermine.properties.file" value="mousemine.properties"/>
-  <property name="default.intermine.properties.file" location="../default.intermine.integrate.properties"/>
   <property name="dataLoader.allowMultipleErrors" value="true"/>
 
   <sources>
 
     <source name="so" type="so" >
-	<property name="src.data.file" location="../../bio/sources/so/so.obo"/>
+	<property name="src.data.file" location="so.obo"/>
     </source>
 
     <!-- 
@@ -493,6 +490,7 @@
 	<property name="src.data.dir" location="&mm_data;/protein2ipr/latest/"/>
 	<property name="src.data.dir.includes" value="protein2ipr.dat"/>
 	<property name="protein2ipr.organisms" value="10090"/>
+    <property name="osAlias" value="os.production"/>
 	</source>
 
     <source name="reactome" type="reactome">
@@ -531,7 +529,7 @@
          needs to have mgi-base removed for the build to work
     -->
     <source name="mgi-base" type="mgi-base" dump="true">
-	<property name="src.data.dir" value="&mm_data;/mgi-base/latest/"/>
+	<property name="src.data.dir" location="&mm_data;/mgi-base/latest/"/>
     </source>
 
     <source name="mgi-do" type="mgi-do" >
@@ -582,11 +580,11 @@
      </source>
 
     <source name="entrez-organism" type="entrez-organism" dump="true">
-	<property name="src.data.file" location="build/organisms.xml"/>
+	<property name="src.data.file" location="organisms.xml"/>
     </source>
 
     <source name="update-publications" type="update-publications">
-        <property name="src.data.file" location="build/publication.xml"/>
+        <property name="src.data.file" location="publication.xml"/>
         <property name="cacheDirName" value="/var/lib/jenkins/pubCache/"/>
     </source>
 
