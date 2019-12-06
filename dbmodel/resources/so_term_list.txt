@@ -1,6 +1,7 @@
 aberrant_processed_transcript
 #allele
 antisense_lncRNA_gene
+antisense_RNA
 #BAC_end
 bidirectional_promoter_lncRNA
 #binding_site
@@ -27,6 +28,7 @@ gene
 gene_segment
 #golden_path_fragment
 #gRNA_gene
+guide_RNA
 #heritable_phenotypic_marker
 insertion
 intergenic_region
@@ -67,7 +69,9 @@ ribozyme_gene
 RNA
 rRNA
 rRNA_gene
+RNase_MRP_RNA
 RNase_MRP_RNA_gene
+RNase_P_RNA
 RNase_P_RNA_gene
 #regulatory_region
 #reverse_primer
@@ -89,6 +93,7 @@ SRP_RNA_gene
 #stop_codon
 syntenic_region
 #telomere
+telomerase_RNA
 telomerase_RNA_gene
 #TF_binding_site
 three_prime_overlapping_ncrna
@@ -102,6 +107,7 @@ unconfirmed_transcript
 UTR
 VD_gene_segment
 V_gene_segment
+Y_RNA
 
 # many-to-many part_of relationships (default is many-to-one)
 exon.transcript
