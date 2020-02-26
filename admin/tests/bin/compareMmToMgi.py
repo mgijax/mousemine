@@ -18,7 +18,7 @@
 #
 
 import sys
-from ConfigParser import ConfigParser
+from configparser import ConfigParser
 import re
 import os
 import mgidbconnect as db
@@ -39,7 +39,7 @@ DEFAULTS = {
     }
 
 def readTests(cfname):
-    cp = ConfigParser(DEFAULTS)
+    cp = ConfigParser(defaults=DEFAULTS)
     cp.read(cfname)
     # need to be able to get the tests (sections) in order
     cp.tests = []
@@ -49,47 +49,49 @@ def readTests(cfname):
     return cp
 
 def doQ(con, q):
-    r = db.sql( q, connection=con )
-    r.sort()
-    return r
+    r0 = db.sql( q, connection=con )
+    r1 = list(map(lambda x: tuple(x.values()), r0))
+    r1.sort()
+    return r1
 
 def doTest(file, name, mgiquery, value, mmquery, filter, op):
     try:
-	print 
-	print "-"*60
-        print "Test File:", file
-	print "TEST:", name
-	filt = eval("lambda x : " + filter)
+        print() 
+        print("-"*60)
+        print("Test File:", file)
+        print("TEST:", name)
+        filt = eval("lambda x : " + filter)
         func = compFcns.get(op, None)
         if func is None:
             func = eval( "lambda x,y : " + op )
         vmm = filt(doQ( mmcon,  mmquery  ))
         if len(mgiquery) == 0:
-	    otherTitle = "VALUE:"
+            otherTitle = "VALUE:"
             vmgi = eval(value)
-            vmm = vmm[0].values()[0]
+            vmm = vmm[0][0]
         else:
-	   otherTitle = "MGI:"
+           otherTitle = "MGI:"
            vmgi = filt(doQ( mgicon, mgiquery ))
+        #print(vmgi, vmm)
         res  = func(vmgi, vmm)
-	print res
-	if not res:
-	    print otherTitle, vmgi
-	    print "MM: ", vmm
-	return res
+        print(res)
+        if not res:
+            print(otherTitle, vmgi)
+            print("MM: ", vmm)
+        return res
     except:
-        print "Test caught an exception."
-        print mgiquery
-	print name
-	ex =  sys.exc_info()
-	print ex[0], ex[1], ex[2]
-	mgicon.reset()
-	mmcon.reset()
-	return False
+        print("Test caught an exception.")
+        print(mgiquery)
+        print(name)
+        ex =  sys.exc_info()
+        print(ex[0], ex[1], ex[2])
+        mgicon.reset()
+        mmcon.reset()
+        return False
     
 
 def usage():
-    print "usage: %s TESTS_DIR [MINE.properties] > RESULTS" % sys.argv[0]
+    print("usage: %s TESTS_DIR [MINE.properties] > RESULTS" % sys.argv[0])
     sys.exit(0)
 
 def main():
@@ -97,20 +99,18 @@ def main():
     global mmcon
     if len(sys.argv) == 1 or len(sys.argv) > 3:
         usage()
-
-    db.setConnectionFromPropertiesFile()
-
     mpFile = "~/.intermine/mousemine.properties"
     if len(sys.argv) == 3:
         mpFile = sys.argv[2]
+    db.setConnectionFromPropertiesFile(fname=mpFile)
     mgiparams = db.getConnectionParamsFromPropertiesFile(fname=mpFile)
     mgicon = db.connect(**mgiparams)
     mmparams = db.getConnectionParamsFromPropertiesFile(dname="production", fname=mpFile)
     mmcon =  db.connect(**mmparams)
-    print "-"*60
-    print "MGI/MouseMine Comparative Acceptance Tests"
-    print "MGI connection:", mgiparams['host'], mgiparams['database']
-    print "MouseMine connection:", mmparams['host'], mmparams['database']
+    print("-"*60)
+    print("MGI/MouseMine Comparative Acceptance Tests")
+    print("MGI connection:", mgiparams['host'], mgiparams['database'])
+    print("MouseMine connection:", mmparams['host'], mmparams['database'])
     res = True
     failedTests = []
     skippedFiles = []
@@ -124,11 +124,11 @@ def main():
         if cfname.endswith(".cfg"):        
             cp = readTests(cfname)
             for s in cp.tests:
-	        tname = s[5:]
-	        # check if enabled
-	        eflag = cp.get(s,"enabled",{"enabled":"true"}).lower().strip()
-	        if eflag == "false":
-	            continue
+                tname = s[5:]
+                # check if enabled
+                eflag = cp.get(s,"enabled",fallback="true").lower().strip()
+                if eflag == "false":
+                    continue
 
                 mgi = ""
                 value = ""
@@ -138,26 +138,26 @@ def main():
                     value = cp.get(s,"value");
                 res2 = doTest(
                     cfname,
-	            tname, 
-	            mgi,
+                    tname, 
+                    mgi,
                     value,
-	            cp.get(s,"mousemine"), 
-	            cp.get(s,"filter"), 
-	            cp.get(s,"compare"))
-		if not res2:
-		    failedTests.append(cfname+"::"+tname)
-		res = res and res2
+                    cp.get(s,"mousemine"), 
+                    cp.get(s,"filter"), 
+                    cp.get(s,"compare"))
+                if not res2:
+                    failedTests.append(cfname+"::"+tname)
+                res = res and res2
         else:
             skippedFiles.append(cfname)
-    print
-    print "-"*60
+    print()
+    print("-"*60)
     if res:
-	print "PASSED all tests."
+        print("PASSED all tests.")
     else:
-	print "FAILED these tests:"
-	for t in failedTests:
-	    print "    " + t
+        print("FAILED these tests:")
+        for t in failedTests:
+            print("    " + t)
     for f in skippedFiles:
-        print "Skipped non .cfg file "+f
+        print("Skipped non .cfg file "+f)
 
 main()

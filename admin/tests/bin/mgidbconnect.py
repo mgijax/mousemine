@@ -39,7 +39,6 @@ def setConnection(**cparms):
 def getConnectionParamsFromPropertiesFile(dname=None, fname="~/.intermine/mousemine.properties"):
     try:
         fname = os.path.abspath(os.path.expanduser(fname))
-	print fname
         fd = open(fname,'r')
         data = fd.read()
         fd.close()
@@ -93,12 +92,12 @@ def sqliter(query, connection=None):
 #
 def sql(queries, parsers=None, args={}, connection=None):
     single = False
-    if type(queries) not in [types.ListType,types.TupleType]:
-	queries = [queries]
-	single=True
-    if type(parsers) not in [types.ListType,types.TupleType]:
+    if type(queries) not in [list,tuple]:
+        queries = [queries]
+        single=True
+    if type(parsers) not in [list,tuple]:
         parsers = [parsers]*len(queries)
-    if type(args) not in [types.ListType,types.TupleType]:
+    if type(args) not in [list,tuple]:
         args = [args]*len(parsers)
 
     if len(queries) != len(parsers):
@@ -106,35 +105,35 @@ def sql(queries, parsers=None, args={}, connection=None):
 
     closeCon = False
     if connection is None:
-	connection = connect()
-	closeCon = True
+        connection = connect()
+        closeCon = True
 
     results = []
     for i,q in enumerate(queries):
         cur = connection.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
         cur.execute(q)
-	p = parsers[i]
-	a = args[i]
-	if p == 'ignore':
-	    results.append(None)
-	elif cur.statusmessage.startswith('SELECT'):
-	    if p is None:
-		qr = []
-		for r in cur:
-		    #qr.append( dict(r) )
-		    qr.append( r )
-		results.append(qr)
-	    else:
-	        for r in cur:
-		    #p( dict(r), **a )
-		    p( r, **a )
-		results.append(None)
-	else:
-	    results.append(None)
+        p = parsers[i]
+        a = args[i]
+        if p == 'ignore':
+            results.append(None)
+        elif cur.statusmessage.startswith('SELECT'):
+            if p is None:
+                qr = []
+                for r in cur:
+                    #qr.append( dict(r) )
+                    qr.append( r )
+                results.append(qr)
+            else:
+                for r in cur:
+                    #p( dict(r), **a )
+                    p( r, **a )
+                results.append(None)
+        else:
+            results.append(None)
         cur.close()
 
     if closeCon:
-	connection.close()
+        connection.close()
 
     if single:
         return results[0]
@@ -144,7 +143,7 @@ def sql(queries, parsers=None, args={}, connection=None):
 #
 def __test__():
     def p(r):
-        print r['symbol'], r['name']
+        print(r['symbol'], r['name'])
 
     qlist = [ 
       'select count(*) from mrk_marker', 
@@ -152,8 +151,15 @@ def __test__():
       ]
     sql( qlist, ['ignore', p])
 
+    global res
+    res = []
     for r in sqliter("select * from acc_mgitype"):
-      print r
+      print(r)
+      res.append(r)
 
 if __name__ == "__main__":
+    HOST="mgi-adhoc.jax.org"
+    DATABASE="mgd"
+    USER="mgd_public"
+    PASSWORD="mgdpub"
     __test__()
