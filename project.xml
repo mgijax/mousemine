@@ -539,11 +539,6 @@
 	          value="&mm_data;/do/latest/DiseaseOntology.obo"/>
     </source>
 
-    <source name="mgi-mp" type="mgi-mp" >
-	<property name="src.data.file" 
-	          value="&mm_data;/mp/latest/MammalianPhenotype.obo"/>
-    </source>
-
     <source name="mgi-go" type="mgi-go" >
 	<property name="src.data.file" 
 	          value="&mm_data;/go/latest/GeneOntology.obo"/>
@@ -555,6 +550,15 @@
         <property name="src.data.file"
                   value="&mm_data;/emapa/latest/EMAPA.obo"/>
     </source>
+
+    <!-- MP source must come AFTER EMAPA source, or the MP terms will not
+         merge properly.
+    -->
+    <source name="mgi-mp" type="mgi-mp" >
+	<property name="src.data.file" 
+	          value="&mm_data;/mp/latest/MammalianPhenotype.obo"/>
+    </source>
+
 
     <source name="psi-mi" type="psi-mi-ontology" >
 	<property name="src.data.file" value="&mm_data;/psi-mi/latest/psi-mi.obo"/>
