@@ -1,42 +1,24 @@
 <aspects>
-    <aspect name="Genome">
-        <subtitle>Genome annotation</subtitle>
-        <intro-text>Mouse genome features, coordinates, functional annotations.</intro-text>
-    </aspect>
-    <aspect name="Proteins">
-        <subtitle>Proteins, isoforms, etc.</subtitle>
-        <intro-text>Proteins, isoforms, etc.</intro-text>
-    </aspect>
-    <aspect name="Function">
-        <subtitle>Gene function</subtitle>
-        <intro-text>Gene function</intro-text>
-    </aspect>
-    <aspect name="Homology">
-        <subtitle>Orthologues and paralogues</subtitle>
-        <intro-text>Orthologues and Paralogues.</intro-text>
-    </aspect>
-    <aspect name="Interactions">
-        <subtitle>Interactions</subtitle>
-        <intro-text>Interactions</intro-text>
-    </aspect>
-    <aspect name="Expression">
-        <subtitle>Expression</subtitle>
-        <intro-text>Expression</intro-text>
-    </aspect>
-    <aspect name="Phenotype">
-        <subtitle>Phenotype</subtitle>
-        <intro-text>Phenotype</intro-text>
-    </aspect>
-    <aspect name="Disease">
-        <subtitle>Disease</subtitle>
-        <intro-text>Disease</intro-text>
-    </aspect>
-    <aspect name="Literature">
-        <subtitle>Literature</subtitle>
-        <intro-text>Literature</intro-text>
-    </aspect>
-    <aspect name="Ontology">
-        <subtitle>Ontology</subtitle>
-        <intro-text>Ontology</intro-text>
-    </aspect>
+  <aspect name="Genomics">
+    <subtitle>Genome annotation</subtitle>
+    <icon-image>model/images/genomics.gif</icon-image>
+    <large-image>model/images/genomics.gif</large-image>
+    <intro-text>
+      The gene structure and other genome annotation in MalariaMine are provided by
+      a variety of curated source databases.  In most cases MalariaMine includes
+      all genome features that have chromosomal locations.
+    </intro-text>
+    <tile-name>model/genomics.jsp</tile-name>
+    <aspect-source name="GeneDB" url="http://www.genedb.org"/>
+  </aspect>
+  <aspect name="Proteins">
+    <subtitle>Protein and proteomics&lt;br/&gt;data</subtitle>
+    <icon-image>model/images/proteins.png</icon-image>
+    <large-image>model/images/proteins.png</large-image>
+    <intro-text>
+      Protein annotation (including family and domain annotation) from UniProt.
+    </intro-text>
+    <tile-name>model/proteins.jsp</tile-name>
+    <aspect-source name="UniProt" url="http://www.uniprot.org"/>
+  </aspect>
 </aspects>

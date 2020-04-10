@@ -10,3 +10,6 @@ dist/
 *cookies.txt
 nohup.out
 .gradle
+idresolver.cache
+organisms.xml
+publications.xml

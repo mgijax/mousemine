@@ -4,20 +4,8 @@
 <action path="/sequenceExporter"
   type="org.intermine.bio.web.struts.SequenceExportAction" />
 
-<action path="/chartRenderer"
-        type="org.flymine.web.ChartRenderer"
-        parameter="method"/>
-
-<!-- <action path="/initSequenceExportOptions"
-        type="org.intermine.bio.web.struts.SequenceExportOptionsController"/> -->
-
-<action path="/initSequenceFeatureExportOptions"
-        type="org.intermine.bio.web.struts.SequenceFeatureExportOptionsController"/>
-
-<action path="/galaxyExportOptions" forward="galaxyExportOptions.page"/>
-
-<action path="/initGalaxyExportOptions"
-        type="org.intermine.bio.web.struts.GalaxyExportOptionsController"/>
+<action path="/initSequenceExportOptions"
+        type="org.intermine.bio.web.struts.SequenceExportOptionsController"/>
 
 <action path="/sequenceExportAction" name="sequenceExportForm"
         type="org.intermine.web.struts.TableExportAction" parameter="method"/>
@@ -28,14 +16,13 @@
 <action path="/bedExportAction" name="bedExportForm"
         type="org.intermine.web.struts.TableExportAction" parameter="method"/>
 
+<action path="/galaxyExportOptions" forward="galaxyExportOptions.page"/>
+
+<action path="/initGalaxyExportOptions"
+        type="org.intermine.bio.web.struts.GalaxyExportOptionsController"/>
+
 <action path="/galaxyExportAction" name="galaxyExportForm"
         type="org.intermine.bio.web.struts.GalaxyExportAction" parameter="method"/>
-
-<action path="/cytoscapeNetworkExport"
-        type="org.intermine.bio.web.struts.CytoscapeNetworkExportAction"/>
-
-<action path="/cytoscapeNetworkAjax"
-        type="org.intermine.bio.web.struts.CytoscapeNetworkAjaxAction"/>
 
 <!-- Beginning of Genomic Region Search configuration -->
 
@@ -57,5 +44,3 @@
 <!-- End of Genomic Region Search configuration -->
 
 <action path="/initFriendlyMineLinkDisplayer" type="org.intermine.bio.web.FriendlyMineLinkController"/>
-
-<action path="/precomputeTemplates" type="org.intermine.web.struts.PrecomputeTemplatesAction"/>
