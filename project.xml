@@ -89,7 +89,7 @@
       <property name="src.data.dir" location="&mm_data;/interpro/latest/"/>
     </source>
 
-    <!-- has to be after UniProt because only loads protein domains for loaded proteins -->
+    <!-- has to be run after UniProt because only loads protein domains for loaded proteins -->
     <source name="protein2ipr" type="protein2ipr">
       <property name="src.data.dir" location="&mm_data;/protein2ipr/latest/"/>
       <property name="src.data.dir.includes" value="protein2ipr.dat"/>
@@ -103,6 +103,7 @@
       <property name="reactome.datasourcename" value="Reactome"/>
       <property name="reactome.datasetname" value="Reactome data set"/>
     </source>
+
 
 
     <source name="fmfd-fly" type="fmfd" >
