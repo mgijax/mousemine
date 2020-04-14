@@ -17,7 +17,7 @@
     </source>
 
 
-<!--
+
     <source name="mus_caroli-fasta" type="mgi-fasta">
       <property name="mgi-fasta.taxonId" value="10089"/>
       <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
@@ -26,9 +26,8 @@
       <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="mgi-fasta.includes" value="mus_caroli.*.fa"/>
-      <property name="mgi-fasta.loaderClassName" value="org.intermine.bio.dataconversion.MGIStrainFastaLoader"/>
     </source>
--->
+
 
 
 
