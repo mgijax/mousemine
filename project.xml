@@ -17,6 +17,14 @@
     </source>
 
 
+    <!--                                                                                                                
+        ************************************************                                                                
+        ************** FASTA Chromosome Assemblies *****                                                                
+        ************************************************                                                                
+        There is a memory leak somewhere that means we can't load all the fasta                                         
+        files in a single source. Have to break them up, so we'll go strain-by-strain.                                  
+        Have to further break nodshiltj into parts a and b because it's too big to do in one go.                        
+    -->
 
     <source name="mus_caroli-fasta" type="mgi-fasta">
       <property name="mgi-fasta.taxonId" value="10089"/>
@@ -27,6 +35,211 @@
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="mgi-fasta.includes" value="mus_caroli.*.fa"/>
     </source>
+
+    <source name="mus_musculus_129s1svimj-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_129s1svimj.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_aj-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_aj.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_akrj-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_akrj.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_balbcj-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_balbcj.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_c3hhej-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_c3hhej.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_c57bl6j-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_c57bl6j.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_c57bl6nj-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_c57bl6nj.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_casteij-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_casteij.*.fa"/>
+    </source>
+
+<!--
+    <source name="mus_musculus_cbaj-a-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_cbaj.chromosome.?.fa"/>
+    </source>
+-->
+
+    <source name="mus_musculus_cbaj-b-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_cbaj.chromosome.??.fa"/>
+    </source>
+
+    <source name="mus_musculus_dba2j-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_dba2j.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_fvbnj-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_fvbnj.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_lpj-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_lpj.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_nodshiltj-a-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_nodshiltj.chromosome.?.fa"/>
+    </source>
+
+<!--
+    <source name="mus_musculus_nodshiltj-b-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_nodshiltj.chromosome.??.fa"/>
+    </source>
+-->
+
+    <source name="mus_musculus_nzohlltj-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_nzohlltj.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_pwkphj-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_pwkphj.*.fa"/>
+    </source>
+
+    <source name="mus_musculus_wsbeij-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10090"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_wsbeij.*.fa"/>
+    </source>
+
+    <source name="mus_pahari-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10093"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_pahari.*.fa"/>
+    </source>
+
+    <source name="mus_spretus-fasta" type="mgi-fasta">
+      <property name="mgi-fasta.taxonId" value="10096"/>
+      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
+      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
+      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
+      <property name="mgi-fasta.includes" value="mus_spretus.*.fa"/>
+    </source>
+
 
 
 
@@ -156,9 +369,6 @@
       <property name="src.data.dir" location="&mm_data;/homologene/latest"/>
       <property name="homologene.organisms" value="7227 9606 10090 10116 7955 4932 6239"/>
     </source>
--->
-
-<!-- Error (intermine.log): 2020-03-22 19:20:44 INFO  org.intermine.bio.dataconversion.PsiConverter  [] - RESOLVER: failed to resolve gene to one identifier, ignoring gene: ENSP00000425006 count: 0 : [] 
 -->
 
 
