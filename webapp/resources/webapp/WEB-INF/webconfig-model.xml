@@ -109,6 +109,40 @@
 
 
   <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.HTExperiment">
+    <headerconfig>
+    </headerconfig>
+    <inlinelist>
+      <table path="variables.name" showInHeader="true" />
+    </inlinelist>
+    <fields>
+      <fieldconfig fieldExpr="experimentId" />
+      <fieldconfig fieldExpr="seriesId" />
+      <fieldconfig fieldExpr="name" />
+      <fieldconfig fieldExpr="experimentType" />
+      <fieldconfig fieldExpr="studyType" />
+      <fieldconfig fieldExpr="source" />
+      <fieldconfig fieldExpr="description" doNotTruncate="true"
+                   showInSummary="false" showInResults="false" showInInlineCollection="false"/>
+      <fieldconfig fieldExpr="notes" doNotTruncate="true"
+                   showInSummary="false" showInResults="false" showInInlineCollection="false"/>
+    </fields>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.HTSample">
+    <fields>
+      <fieldconfig fieldExpr="name" />
+      <fieldconfig fieldExpr="sex" />
+      <fieldconfig fieldExpr="age" />
+      <fieldconfig fieldExpr="stage" />
+      <fieldconfig fieldExpr="structure.name" />
+      <fieldconfig fieldExpr="notes" doNotTruncate="true"
+                   showInSummary="false" showInResults="false" showInInlineCollection="false"/>
+    </fields>
+  </class>
+
+  <!-- =============================================================== -->
     <class className="org.intermine.model.bio.Interaction">
 	<fields>
 	<fieldconfig fieldExpr="details.type" />
