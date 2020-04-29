@@ -23,8 +23,8 @@
         ************************************************                                                                
         There is a memory leak somewhere that means we can't load all the fasta                                         
         files in a single source. Have to break them up, so we'll go strain-by-strain.                                  
-        Have to further break nodshiltj into parts a and b because it's too big to do in one go.                        
     -->
+
 
     <source name="mus_caroli-fasta" type="mgi-fasta">
       <property name="mgi-fasta.taxonId" value="10089"/>
@@ -116,26 +116,14 @@
       <property name="mgi-fasta.includes" value="mus_musculus_casteij.*.fa"/>
     </source>
 
-<!--
-    <source name="mus_musculus_cbaj-a-fasta" type="mgi-fasta">
+    <source name="mus_musculus_cbaj-fasta" type="mgi-fasta">
       <property name="mgi-fasta.taxonId" value="10090"/>
       <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
       <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
       <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
-      <property name="mgi-fasta.includes" value="mus_musculus_cbaj.chromosome.?.fa"/>
-    </source>
--->
-
-    <source name="mus_musculus_cbaj-b-fasta" type="mgi-fasta">
-      <property name="mgi-fasta.taxonId" value="10090"/>
-      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
-      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
-      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
-      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
-      <property name="mgi-fasta.includes" value="mus_musculus_cbaj.chromosome.??.fa"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_cbaj.chromosome.*.fa"/>
     </source>
 
     <source name="mus_musculus_dba2j-fasta" type="mgi-fasta">
@@ -168,27 +156,15 @@
       <property name="mgi-fasta.includes" value="mus_musculus_lpj.*.fa"/>
     </source>
 
-    <source name="mus_musculus_nodshiltj-a-fasta" type="mgi-fasta">
+    <source name="mus_musculus_nodshiltj-fasta" type="mgi-fasta">
       <property name="mgi-fasta.taxonId" value="10090"/>
       <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
       <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
       <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
       <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
-      <property name="mgi-fasta.includes" value="mus_musculus_nodshiltj.chromosome.?.fa"/>
+      <property name="mgi-fasta.includes" value="mus_musculus_nodshiltj.chromosome.*.fa"/>
     </source>
-
-<!--
-    <source name="mus_musculus_nodshiltj-b-fasta" type="mgi-fasta">
-      <property name="mgi-fasta.taxonId" value="10090"/>
-      <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
-      <property name="mgi-fasta.dataSourceName" value="&mgp_source;"/>
-      <property name="mgi-fasta.className" value="org.intermine.model.bio.Chromosome"/>
-      <property name="mgi-fasta.classAttribute" value="primaryIdentifier"/>
-      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
-      <property name="mgi-fasta.includes" value="mus_musculus_nodshiltj.chromosome.??.fa"/>
-    </source>
--->
 
     <source name="mus_musculus_nzohlltj-fasta" type="mgi-fasta">
       <property name="mgi-fasta.taxonId" value="10090"/>
@@ -239,7 +215,7 @@
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="mgi-fasta.includes" value="mus_spretus.*.fa"/>
     </source>
-
+-->
 
 
 
@@ -301,7 +277,9 @@
       <property name="src.data.dir" location="&mm_data;/interpro/latest/"/>
     </source>
 
+
     <!-- has to be run after UniProt because only loads protein domains for loaded proteins -->
+
     <source name="protein2ipr" type="protein2ipr">
       <property name="src.data.dir" location="&mm_data;/protein2ipr/latest/"/>
       <property name="src.data.dir.includes" value="protein2ipr.dat"/>
@@ -361,7 +339,6 @@
 
 
 
-
 <!-- Error - Duplicate objects found for pk org.intermine.model.bio.Gene.key_primaryidentifier: Gene [briefDescription=null, chromosome=null, chromosomeLocation=null, description=null, downstreamIntergenicRegion=null, id=13160, length=null, name=null, organism=94709, primaryIdentifier="ND1", score=null, scoreType=null, secondaryIdentifier=null, sequence=null, sequenceOntologyTerm=94712, strain=null, symbol=null, upstreamIntergenicRegion=null] 
 -->
 <!--
@@ -380,11 +357,11 @@
     <source name="mgi-mp" type="mgi-mp" >
         <property name="src.data.file" location="&mm_data;/mp/latest/MammalianPhenotype.obo"/>
     </source>
-<!--
+
     <source name="mgi-go" type="mgi-go" >
         <property name="src.data.file" location="&mm_data;/go/latest/GeneOntology.obo"/>
     </source>
--->
+
 
     <source name="gxd-anatomy" type="gxd-anatomy" >
         <property name="converter.class" value="org.intermine.bio.dataconversion.EmapaOboConverter"/>
@@ -403,10 +380,10 @@
     </source>
 
 
-
   </sources>
 
   <post-processing>
+
     <post-process name="create-references"/>
     <post-process name="create-chromosome-locations-and-lengths"/>
     <post-process name="transfer-sequences"/>
@@ -417,6 +394,7 @@
     <post-process name="summarise-objectstore"/>
     <post-process name="create-autocomplete-index"/>
     <post-process name="create-search-index"/>
+
   </post-processing>
 
 </project>
