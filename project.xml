@@ -18,11 +18,11 @@
 
 
     <!--                                                                                                                
-        ************************************************                                                                
-        ************** FASTA Chromosome Assemblies *****                                                                
-        ************************************************                                                                
-        There is a memory leak somewhere that means we can't load all the fasta                                         
-        files in a single source. Have to break them up, so we'll go strain-by-strain.                                  
+        ************************************************
+        ************** FASTA Chromosome Assemblies *****
+        ************************************************
+        There is a memory leak somewhere that means we can't load all the fasta
+        files in a single source. Have to break them up, so we'll go strain-by-strain.
     -->
 
 
@@ -36,6 +36,7 @@
       <property name="mgi-fasta.includes" value="mus_caroli.*.fa"/>
     </source>
 
+<!--
     <source name="mus_musculus_129s1svimj-fasta" type="mgi-fasta">
       <property name="mgi-fasta.taxonId" value="10090"/>
       <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
@@ -217,17 +218,13 @@
     </source>
 -->
 
-
-
-
-
-    <!--                                                                                                     
-        ************************************************                                                     
-        ************** GFF3 Gene Model Files ***********                                                     
-        ************************************************                                                     
+    <!--
+        ************************************************
+        ************** GFF3 Gene Model Files ***********
+        ************************************************
     -->
 
-<!--
+
     <source name="mus_caroli-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10089"/>
       <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
@@ -236,6 +233,190 @@
       <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_caroli.gff3"/>
+    </source>
+
+
+<!--
+
+    <source name="mus_musculus_129s1svimj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_129s1svimj.gff3"/>
+    </source>
+
+
+    <source name="mus_musculus_aj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_aj.gff3"/>
+    </source>
+
+    <source name="mus_musculus_akrj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_akrj.gff3"/>
+    </source>
+
+    <source name="mus_musculus_balbcj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_balbcj.gff3"/>
+    </source>
+
+    <source name="mus_musculus_c3hhej-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_c3hhej.gff3"/>
+    </source>
+
+    <source name="mus_musculus_c57bl6j-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="MGI"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="C57BL/6J genome from MGI"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_c57bl6j.gff3"/>
+    </source>
+
+    <source name="mus_musculus_c57bl6nj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_c57bl6nj.gff3"/>
+    </source>
+
+    <source name="mus_musculus_casteij-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_casteij.gff3"/>
+    </source>
+
+    <source name="mus_musculus_cbaj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_cbaj.gff3"/>
+    </source>
+
+    <source name="mus_musculus_dba2j-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_dba2j.gff3"/>
+    </source>
+
+    <source name="mus_musculus_fvbnj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_fvbnj.gff3"/>
+    </source>
+
+    <source name="mus_musculus_lpj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_lpj.gff3"/>
+    </source>
+
+    <source name="mus_musculus_nodshiltj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_nodshiltj.gff3"/>
+    </source>
+
+    <source name="mus_musculus_nzohlltj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_nzohlltj.gff3"/>
+    </source>
+
+    <source name="mus_musculus_pwkphj-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_pwkphj.gff3"/>
+    </source>
+
+    <source name="mus_musculus_wsbeij-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10090"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_musculus_wsbeij.gff3"/>
+    </source>
+
+    <source name="mus_pahari-gff" type="mgi-gff" >
+      <property name="gff3.taxonId" value="10093"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_pahari.gff3"/>
+    </source>
+
+    <source name="mus_spretus-gff" type="mgi-gff" dump="true">
+      <property name="gff3.taxonId" value="10096"/>
+      <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
+      <property name="gff3.dataSourceName" value="&mgp_source;"/>
+      <property name="gff3.seqClsName" value="Chromosome"/>
+      <property name="gff3.dataSetTitle" value="&mgp_dataset;"/>
+      <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
+      <property name="src.data.dir.includes" value="mus_spretus.gff3"/>
     </source>
 -->
 
@@ -280,6 +461,7 @@
 
     <!-- has to be run after UniProt because only loads protein domains for loaded proteins -->
 
+<!--
     <source name="protein2ipr" type="protein2ipr">
       <property name="src.data.dir" location="&mm_data;/protein2ipr/latest/"/>
       <property name="src.data.dir.includes" value="protein2ipr.dat"/>
@@ -334,7 +516,7 @@
       <property name="src.data.dir" location="&mm_data;/intact/latest/"/>
       <property name="intact.organisms" value="10090 9606"/>
     </source>
-
+-->
 
 
 
@@ -348,7 +530,7 @@
     </source>
 -->
 
-
+<!--
     <source name="mgi-do" type="mgi-do" >
         <property name="src.data.file" location="&mm_data;/do/latest/DiseaseOntology.obo"/>
     </source>
@@ -378,12 +560,12 @@
       <property name="src.data.file" location="publications.xml"/>
       <property name="cacheDirName" value="/var/lib/jenkins/pubCache/"/>
     </source>
-
+-->
 
   </sources>
 
   <post-processing>
-
+<!--
     <post-process name="create-references"/>
     <post-process name="create-chromosome-locations-and-lengths"/>
     <post-process name="transfer-sequences"/>
@@ -394,7 +576,7 @@
     <post-process name="summarise-objectstore"/>
     <post-process name="create-autocomplete-index"/>
     <post-process name="create-search-index"/>
-
+-->
   </post-processing>
 
 </project>
