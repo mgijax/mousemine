@@ -18,6 +18,7 @@
 #
 
 import sys
+import argparse
 from configparser import ConfigParser
 import re
 import os
@@ -38,13 +39,13 @@ DEFAULTS = {
     'enabled' : 'true',
     }
 
-def readTests(cfname):
+def readTests(cfname, matchFcn):
     cp = ConfigParser(defaults=DEFAULTS)
     cp.read(cfname)
     # need to be able to get the tests (sections) in order
     cp.tests = []
     for line in open(cfname,'r'):
-        if line.startswith("[TEST:"):
+        if line.startswith("[TEST:") and matchFcn(line):
             cp.tests.append(line[1:-2])
     return cp
 
@@ -94,14 +95,46 @@ def usage():
     print("usage: %s TESTS_DIR [MINE.properties] > RESULTS" % sys.argv[0])
     sys.exit(0)
 
+def parseArgs () :
+    parser = argparse.ArgumentParser("Runs acceptance tests.")
+
+    parser.add_argument(
+      'testfile',
+      help="Test file or directory. If directory, all test files will be run.")
+
+    parser.add_argument(
+      '-p', '--properties',
+      dest='propsfile',
+      default='~/.intermine/mousemine.properties',
+      help="Intermine properties file containing connection data. Default=%(default)s")
+
+    parser.add_argument(
+      '-t', '--test',
+      dest='tests',
+      metavar='TEST',
+      default=[],
+      action='append',
+      help="Run tests matching the string. Repeatable. Default is to run all tests.")
+
+    args = parser.parse_args()
+    if len(args.tests) == 0:
+        args.matcher = lambda s: True
+    else:
+        args.matcher = lambda s: True in map(lambda ss: ss in s, args.tests)
+    return args
+    
 def main():
     global mgicon
     global mmcon
+    args = parseArgs()
+    '''
     if len(sys.argv) == 1 or len(sys.argv) > 3:
         usage()
     mpFile = "~/.intermine/mousemine.properties"
     if len(sys.argv) == 3:
         mpFile = sys.argv[2]
+    '''
+    mpFile = args.propsfile
     db.setConnectionFromPropertiesFile(fname=mpFile)
     mgiparams = db.getConnectionParamsFromPropertiesFile(fname=mpFile)
     mgicon = db.connect(**mgiparams)
@@ -115,14 +148,14 @@ def main():
     failedTests = []
     skippedFiles = []
 
-    if os.path.isdir(sys.argv[1]):
-        files = [os.path.abspath(os.path.join(sys.argv[1],fn)) for fn in os.listdir(sys.argv[1])]
+    if os.path.isdir(args.testfile):
+        files = [os.path.abspath(os.path.join(args.testfile, fn)) for fn in os.listdir(args.testfile)]
     else:
-        files = [sys.argv[1]]
+        files = [args.testfile]
 
     for cfname in files:
         if cfname.endswith(".cfg"):        
-            cp = readTests(cfname)
+            cp = readTests(cfname, args.matcher)
             for s in cp.tests:
                 tname = s[5:]
                 # check if enabled
