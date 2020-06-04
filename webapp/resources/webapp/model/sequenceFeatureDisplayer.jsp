@@ -166,13 +166,13 @@
 	    <c:when test="${not empty feature.strain}">
               <td class="label">Browser:</td>
 	      <td>
-	      <a target="_blank" href="http://proto.informatics.jax.org/prototypes/mgv/#landmark=${feature.primaryIdentifier}&length=${ 4 * feature.length}&ref=${feature.strain.name}&genomes=C57BL/6J&highlight=${highlight}">Multiple Genome Viewer (MGV)</a>
+	      <a target="_blank" href="http://www.informatics.jax.org/mgv/#landmark=${feature.primaryIdentifier}&length=${ 4 * feature.length}&ref=${feature.strain.name}&genomes=C57BL/6J&highlight=${highlight}">Multiple Genome Viewer (MGV)</a>
 	      </td>
 	    </c:when>
 	    <c:when test="${fn:startsWith(feature.primaryIdentifier, 'MGI:') && !empty feature.sequenceOntologyTerm}">
 		<td class="label">Browser:</td>
 		<td>
-		<a target="_blank" href="http://proto.informatics.jax.org/prototypes/mgv/#landmark=${feature.primaryIdentifier}&length=${4*feature.length}&ref=C57BL/6J&genomes=C57BL/6J&highlight=${highlight}">Multiple Genome Viewer (MGV)</a>
+		<a target="_blank" href="http://www.informatics.jax.org/mgv/#landmark=${feature.primaryIdentifier}&length=${4*feature.length}&ref=C57BL/6J&genomes=C57BL/6J&highlight=${highlight}">Multiple Genome Viewer (MGV)</a>
 		</td>
 	    </c:when>
 	    </c:choose>
