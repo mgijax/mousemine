@@ -133,12 +133,13 @@
   <class className="org.intermine.model.bio.HTSample">
     <fields>
       <fieldconfig fieldExpr="name" />
+      <fieldconfig fieldExpr="organismName" />
       <fieldconfig fieldExpr="sex" />
       <fieldconfig fieldExpr="age" />
       <fieldconfig fieldExpr="stage" />
       <fieldconfig fieldExpr="structure.name" />
-      <fieldconfig fieldExpr="notes" doNotTruncate="true"
-                   showInSummary="false" showInResults="false" showInInlineCollection="false"/>
+      <fieldconfig fieldExpr="notes" />
+      <fieldconfig fieldExpr="curationStatus" />
     </fields>
   </class>
 
