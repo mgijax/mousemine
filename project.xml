@@ -10,12 +10,13 @@
   <property name="target.model" value="genomic"/>
   <property name="common.os.prefix" value="common"/>
 
+
   <sources>
+
     <source name="so" type="so" >
       <property name="src.data.file" location="so.obo"/>
       <property name="licence" value="https://creativecommons.org/licenses/by/4.0/"/>
     </source>
-
 
     <!--                                                                                                                
         ************************************************
@@ -24,7 +25,6 @@
         There is a memory leak somewhere that means we can't load all the fasta
         files in a single source. Have to break them up, so we'll go strain-by-strain.
     -->
-
 
     <source name="mus_caroli-fasta" type="mgi-fasta">
       <property name="mgi-fasta.taxonId" value="10089"/>
@@ -36,7 +36,6 @@
       <property name="mgi-fasta.includes" value="mus_caroli.*.fa"/>
     </source>
 
-<!--
     <source name="mus_musculus_129s1svimj-fasta" type="mgi-fasta">
       <property name="mgi-fasta.taxonId" value="10090"/>
       <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
@@ -216,7 +215,7 @@
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/fasta/"/>
       <property name="mgi-fasta.includes" value="mus_spretus.*.fa"/>
     </source>
--->
+
 
     <!--
         ************************************************
@@ -234,7 +233,6 @@
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_caroli.gff3"/>
     </source>
-
 
 <!--
 
@@ -458,10 +456,8 @@
       <property name="src.data.dir" location="&mm_data;/interpro/latest/"/>
     </source>
 
-
     <!-- has to be run after UniProt because only loads protein domains for loaded proteins -->
 
-<!--
     <source name="protein2ipr" type="protein2ipr">
       <property name="src.data.dir" location="&mm_data;/protein2ipr/latest/"/>
       <property name="src.data.dir.includes" value="protein2ipr.dat"/>
@@ -475,7 +471,6 @@
       <property name="reactome.datasourcename" value="Reactome"/>
       <property name="reactome.datasetname" value="Reactome data set"/>
     </source>
-
 
 
     <source name="fmfd-fly" type="fmfd" >
@@ -502,6 +497,30 @@
 
 
 
+    <source name="mgi-base" type="mgi-base" >
+        <property name="src.data.dir" location="&mm_data;/mgi-base/latest/"/>
+    </source>
+
+
+
+
+    <source name="mgi-do" type="mgi-do" >
+        <property name="src.data.file" location="&mm_data;/do/latest/DiseaseOntology.obo"/>
+    </source>
+
+    <source name="mgi-mp" type="mgi-mp" >
+        <property name="src.data.file" location="&mm_data;/mp/latest/MammalianPhenotype.obo"/>
+    </source>
+
+    <source name="mgi-go" type="mgi-go" >
+        <property name="src.data.file" location="&mm_data;/go/latest/GeneOntology.obo"/>
+    </source>
+
+    <source name="gxd-anatomy" type="gxd-anatomy" >
+        <property name="converter.class" value="org.intermine.bio.dataconversion.EmapaOboConverter"/>
+        <property name="src.data.file" location="&mm_data;/emapa/latest/EMAPA.obo"/>
+    </source>
+
     <source name="psi-mi" type="psi-mi-ontology" >
       <property name="src.data.file" location="&mm_data;/psi-mi/latest/psi-mi.obo"/>
     </source>
@@ -516,41 +535,16 @@
       <property name="src.data.dir" location="&mm_data;/intact/latest/"/>
       <property name="intact.organisms" value="10090 9606"/>
     </source>
--->
 
-
-
-
-<!-- Error - Duplicate objects found for pk org.intermine.model.bio.Gene.key_primaryidentifier: Gene [briefDescription=null, chromosome=null, chromosomeLocation=null, description=null, downstreamIntergenicRegion=null, id=13160, length=null, name=null, organism=94709, primaryIdentifier="ND1", score=null, scoreType=null, secondaryIdentifier=null, sequence=null, sequenceOntologyTerm=94712, strain=null, symbol=null, upstreamIntergenicRegion=null] 
--->
-<!--
     <source name="homologene" type="homologene">
       <property name="src.data.dir" location="&mm_data;/homologene/latest"/>
       <property name="homologene.organisms" value="7227 9606 10090 10116 7955 4932 6239"/>
     </source>
--->
 
-<!--
-    <source name="mgi-do" type="mgi-do" >
-        <property name="src.data.file" location="&mm_data;/do/latest/DiseaseOntology.obo"/>
-    </source>
-
-
-    <source name="mgi-mp" type="mgi-mp" >
-        <property name="src.data.file" location="&mm_data;/mp/latest/MammalianPhenotype.obo"/>
-    </source>
-
-    <source name="mgi-go" type="mgi-go" >
-        <property name="src.data.file" location="&mm_data;/go/latest/GeneOntology.obo"/>
-    </source>
-
-
-    <source name="gxd-anatomy" type="gxd-anatomy" >
-        <property name="converter.class" value="org.intermine.bio.dataconversion.EmapaOboConverter"/>
-        <property name="src.data.file" location="&mm_data;/emapa/latest/EMAPA.obo"/>
-    </source>
-
-
+    <source name="panther" type="panther">
+       <property name="src.data.dir" location="&mm_data;/panther/latest"/>
+       <property name="panther.organisms" value="7227 9606 10090 10116 7955 6239 4932"/>
+     </source>
 
     <source name="entrez-organism" type="entrez-organism">
       <property name="src.data.file" location="organisms.xml"/>
@@ -560,21 +554,23 @@
       <property name="src.data.file" location="publications.xml"/>
       <property name="cacheDirName" value="/var/lib/jenkins/pubCache/"/>
     </source>
--->
 
   </sources>
 
   <post-processing>
-<!--
-    <post-process name="create-references"/>
-    <post-process name="create-chromosome-locations-and-lengths"/>
-    <post-process name="transfer-sequences"/>
+
     <post-process name="do-sources"/>
+    <post-process name="transfer-sequences"/>
+    <post-process name="create-references"/>
+<!--   
+    <post-process name="create-chromosome-locations-and-lengths"/>
+-->
     <post-process name="create-location-overlap-index"/>
     <post-process name="create-overlap-view"/>
     <post-process name="create-attribute-indexes"/>
-    <post-process name="summarise-objectstore"/>
     <post-process name="create-autocomplete-index"/>
+    <post-process name="summarise-objectstore"/>
+<!--
     <post-process name="create-search-index"/>
 -->
   </post-processing>
