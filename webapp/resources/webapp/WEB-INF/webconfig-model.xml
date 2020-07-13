@@ -828,6 +828,9 @@
 	expression.structure.parents.name" 
     />
 
+<!--  Note: This is commented out, becuase is caused an ERROR in the browser and disabled the templates 
+            diplayed below the enrichments, when viewing a list of genes. 
+
 <graphdisplayer id="chromosome_distribution_for_feature"
     title="Chromosome Distribution"
     description="Actual: number of items in this list found on each chromosome. Expected: given the total number of items on the chromosome and the number of items in this list, the number of items expected to be found on each chromosome."
@@ -845,6 +848,7 @@
     views="primaryIdentifier, symbol, organism.name, chromosome.primaryIdentifier,
 	chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand"
     />
+-->
 
 <enrichmentwidgetdisplayer id="mp_enrichment_for_allele"
     title="Mammalian Phenotype Ontology Enrichment"
