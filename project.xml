@@ -26,6 +26,7 @@
         files in a single source. Have to break them up, so we'll go strain-by-strain.
     -->
 
+
     <source name="mus_caroli-fasta" type="mgi-fasta">
       <property name="mgi-fasta.taxonId" value="10089"/>
       <property name="mgi-fasta.dataSetTitle" value="&mgp_dataset;"/>
@@ -234,8 +235,6 @@
       <property name="src.data.dir.includes" value="mus_caroli.gff3"/>
     </source>
 
-<!--
-
     <source name="mus_musculus_129s1svimj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
       <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
@@ -245,7 +244,6 @@
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_musculus_129s1svimj.gff3"/>
     </source>
-
 
     <source name="mus_musculus_aj-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10090"/>
@@ -407,7 +405,7 @@
       <property name="src.data.dir.includes" value="mus_pahari.gff3"/>
     </source>
 
-    <source name="mus_spretus-gff" type="mgi-gff" dump="true">
+    <source name="mus_spretus-gff" type="mgi-gff" >
       <property name="gff3.taxonId" value="10096"/>
       <property name="gff3.seqDataSourceName" value="&mgp_source;"/>
       <property name="gff3.dataSourceName" value="&mgp_source;"/>
@@ -416,7 +414,6 @@
       <property name="src.data.dir" location="&mm_data;/strain-genomes/latest/gff3"/>
       <property name="src.data.dir.includes" value="mus_spretus.gff3"/>
     </source>
--->
 
 
 
@@ -455,6 +452,7 @@
     <source name="interpro" type="interpro">
       <property name="src.data.dir" location="&mm_data;/interpro/latest/"/>
     </source>
+
 
     <!-- has to be run after UniProt because only loads protein domains for loaded proteins -->
 
@@ -497,9 +495,11 @@
 
 
 
+
     <source name="mgi-base" type="mgi-base" >
         <property name="src.data.dir" location="&mm_data;/mgi-base/latest/"/>
     </source>
+
 
 
 
@@ -558,18 +558,17 @@
   </sources>
 
   <post-processing>
-
     <post-process name="do-sources"/>
     <post-process name="transfer-sequences"/>
     <post-process name="create-references"/>
-<!--   
     <post-process name="create-chromosome-locations-and-lengths"/>
--->
     <post-process name="create-location-overlap-index"/>
     <post-process name="create-overlap-view"/>
     <post-process name="create-attribute-indexes"/>
+
     <post-process name="create-autocomplete-index"/>
     <post-process name="summarise-objectstore"/>
+
 <!--
     <post-process name="create-search-index"/>
 -->
