@@ -550,7 +550,7 @@
       <property name="src.data.file" location="organisms.xml"/>
     </source>
 
-    <source name="update-publications" type="update-publications">
+    <source name="update-publications" type="update-publications" dump="true">
       <property name="src.data.file" location="publications.xml"/>
       <property name="cacheDirName" value="/var/lib/jenkins/pubCache/"/>
     </source>
@@ -558,16 +558,18 @@
   </sources>
 
   <post-processing>
-    <post-process name="do-sources"/>
+<!--
     <post-process name="transfer-sequences"/>
-    <post-process name="create-references"/>
     <post-process name="create-chromosome-locations-and-lengths"/>
+    <post-process name="create-references"/>
+    <post-process name="do-sources"/>
     <post-process name="create-location-overlap-index"/>
     <post-process name="create-overlap-view"/>
     <post-process name="create-attribute-indexes"/>
 
     <post-process name="create-autocomplete-index"/>
     <post-process name="summarise-objectstore"/>
+-->
 
 <!--
     <post-process name="create-search-index"/>
