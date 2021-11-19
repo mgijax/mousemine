@@ -539,6 +539,11 @@
 	          value="&mm_data;/do/latest/DiseaseOntology.obo"/>
     </source>
 
+    <source name="mgi-cl" type="mgi-cl" >
+	<property name="src.data.file" 
+	          value="&mm_data;/cl/latest/CellOntology.obo"/>
+    </source>
+
     <source name="mgi-mp" type="mgi-mp" >
 	<property name="src.data.file" 
 	          value="&mm_data;/mp/latest/MammalianPhenotype.obo"/>
