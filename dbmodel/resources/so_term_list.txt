@@ -76,7 +76,7 @@ RNase_MRP_RNA
 RNase_MRP_RNA_gene
 RNase_P_RNA
 RNase_P_RNA_gene
-#regulatory_region
+regulatory_region
 #reverse_primer
 #Robertsonian_fusion
 scRNA
