@@ -18,7 +18,7 @@
   <sources>
 
     <source name="so" type="so" >
-	<property name="src.data.file" location="../../bio/sources/so/so.obo"/>
+	<property name="src.data.file" location="&mm_data;/so/latest/SequenceOntology.obo"/>
     </source>
 
     <!-- 
