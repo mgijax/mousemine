@@ -37,7 +37,7 @@ intron
 J_gene_segment
 lincRNA
 lincRNA_gene
-lnc_RNA
+lncRNA
 lncRNA_gene
 match
 match_part
@@ -81,9 +81,8 @@ regulatory_region
 #Robertsonian_fusion
 scRNA
 scRNA_gene
-sense_intronic_ncRNA_gene
-sense_overlap_ncRNA
-sense_overlap_ncRNA_gene
+sense_intronic_lncRNA_gene
+sense_overlap_lncRNA_gene
 sequence_collection
 sequence_feature
 sequence_variant
