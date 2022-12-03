@@ -4,6 +4,7 @@ antisense_lncRNA_gene
 antisense_RNA
 #BAC_end
 bidirectional_promoter_lncRNA
+bidirectional_promoter_lncRNA_gene
 #binding_site
 #cDNA_clone
 CDS
