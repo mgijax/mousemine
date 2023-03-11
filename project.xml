@@ -502,26 +502,6 @@
 	<property name="reactome.datasetname" value="Reactome data set"/>
 	</source>
 
-    <source name="fmfd-fly" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/flymine/latest/features.xml" />
-	</source>
-
-    <source name="fmfd-rat" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/ratmine/latest/features.xml" />
-	</source>
-
-    <source name="fmfd-worm" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/wormmine/latest/features.xml" />
-	</source>
-
-    <source name="fmfd-yeast" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/yeastmine/latest/features.xml" />
-	</source>
-
-    <source name="fmfd-zebrafish" type="fmfd" >
-        <property name="src.data.file" value="&mm_data;/zebrafishmine/latest/features.xml" />
-	</source>
-
     <source name="data-model" type="data-model">
     </source>
     <!-- data-model contains all the mgi base class defintions
@@ -585,10 +565,6 @@
        <property name="src.data.dir" location="&mm_data;/panther/latest"/>
        <property name="panther.organisms" value="7227 9606 10090 10116 7955 6239 4932"/>
      </source>
-
-    <source name="entrez-organism" type="entrez-organism" dump="true">
-	<property name="src.data.file" location="build/organisms.xml"/>
-    </source>
 
     <source name="update-publications" type="update-publications">
         <property name="src.data.file" location="build/publication.xml"/>
