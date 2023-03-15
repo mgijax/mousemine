@@ -624,10 +624,25 @@
   <!-- =============================================================== -->
   <class className="org.intermine.model.bio.MGIExpressesComponent">
     <fields>
+      <fieldconfig fieldExpr="allele.primaryIdentifier" showInSummary="true" />
       <fieldconfig fieldExpr="allele.symbol" showInSummary="true" />
       <fieldconfig fieldExpr="relationshipTerm" showInSummary="true" />
+      <fieldconfig fieldExpr="feature.primaryIdentifier" showInSummary="true" />
       <fieldconfig fieldExpr="feature.symbol" showInSummary="true" />
-      <fieldconfig fieldExpr="evidenceCode" showInSummary="true" />
+      <fieldconfig fieldExpr="feature.organism.commonName" showInSummary="true" />
+      <fieldconfig fieldExpr="publication.mgiJnum" showInSummary="true" />
+    </fields>
+  </class>
+
+  <!-- =============================================================== -->
+  <class className="org.intermine.model.bio.MGIAlleleToDriverGene">
+    <fields>
+      <fieldconfig fieldExpr="allele.primaryIdentifier" showInSummary="true" />
+      <fieldconfig fieldExpr="allele.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="relationshipTerm" showInSummary="true" />
+      <fieldconfig fieldExpr="feature.primaryIdentifier" showInSummary="true" />
+      <fieldconfig fieldExpr="feature.symbol" showInSummary="true" />
+      <fieldconfig fieldExpr="feature.organism.commonName" showInSummary="true" />
       <fieldconfig fieldExpr="publication.mgiJnum" showInSummary="true" />
     </fields>
   </class>
