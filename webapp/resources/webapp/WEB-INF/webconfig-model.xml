@@ -305,7 +305,7 @@
       <fieldconfig fieldExpr="strain.name" label="Strain" showInInlineCollection="false" showInSummary="false" />
       <fieldconfig fieldExpr="canonical.primaryIdentifier" label="Canonical" showInInlineCollection="false" showInSummary="false" outerInSummary="true" displayer="/model/canonicalGeneLinkDisplayer.jsp" />
       -->
-      <fieldconfig fieldExpr="organism.name" label="Organism" showInResults="false"/>
+      <fieldconfig fieldExpr="organism.commonName" label="Organism" showInResults="false"/>
       <fieldconfig fieldExpr="description" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" escapeXml="false" />
       <fieldconfig fieldExpr="specificity" showInSummary="false" showInInlineCollection="false" showInResults="false" doNotTruncate="true" escapeXml="true" />
     </fields>
