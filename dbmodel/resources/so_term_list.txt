@@ -51,6 +51,7 @@ ncRNA
 ncRNA_gene
 NMD_transcript
 open_chromatin_region
+origin_of_replication
 pre_miRNA
 primary_transcript
 processed_pseudogene
@@ -106,6 +107,7 @@ tRNA
 tRNA_gene
 three_prime_UTR
 transcript
+transcriptional_cis_regulatory_region
 unconfirmed_transcript
 UTR
 VD_gene_segment
