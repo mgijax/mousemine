@@ -2,7 +2,7 @@
 
 # retrive date for last adhoc update
 export PGPASSWORD="mgdpub"
-ADHOC_UPDATE=`psql -h mgi-adhoc -U mgd_public -d mgd -c "SELECT lastdump_date from mgi_dbinfo" | sed -n '3p'`
+ADHOC_UPDATE=`psql -h bhmgidb07lp.jax.org -U mgd_public -d pub -c "SELECT lastdump_date from mgi_dbinfo" | sed -n '3p'`
 
 if [ "$1" != "" ]
 then
