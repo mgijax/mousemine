@@ -158,8 +158,8 @@ def __test__():
       res.append(r)
 
 if __name__ == "__main__":
-    HOST="mgi-adhoc.jax.org"
-    DATABASE="mgd"
+    HOST="bhmgidb07lp.jax.org"
+    DATABASE="pub"
     USER="mgd_public"
     PASSWORD="mgdpub"
     __test__()
